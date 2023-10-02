@@ -129,7 +129,7 @@ footer {
     }
 
     .bolas-inicio{
-        margin-top: -100px;
+        margin-top: -200px;
         margin-left: -500px;
     }
   }
@@ -142,17 +142,17 @@ footer {
     }
 
     #bola1{
-        margin-top: -100px;
+        margin-top: -70px;
         margin-left: 0px;
     }
 
     #bola2{
-        margin-top: -310px;
+        margin-top: -270px;
         margin-left: 50px;
     }
 
     #bola3{
         margin-left: 385px;
-        margin-top: -200px;
+        margin-top: -180px;
     }
   }
