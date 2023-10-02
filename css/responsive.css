@@ -1,0 +1,8 @@
+@media (display-mode: fullscreen) {
+    #container-hero {
+        margin-top: 50px;
+    }
+    #container-sobre {
+        margin-top: 60px;
+    }
+}

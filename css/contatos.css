@@ -1,0 +1,39 @@
+#contatos {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    min-height: 32vh;
+    background-color: #010203;
+}
+
+#container-contatos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+#fale-comigo{
+    max-width: 800px;
+    padding: 50px;
+}
+
+#fale-comigo h4{
+    text-align: left;
+}
+
+#fale-comigo p{
+    text-align: justify;
+}
+
+#enderecos-contatos{
+    margin: 0;
+    padding: 50px;
+    line-height: 40px;
+    border-left: white solid;
+    height: fit-content;
+}
+
+#contatos a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

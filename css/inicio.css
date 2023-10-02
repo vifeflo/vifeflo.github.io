@@ -1,0 +1,106 @@
+#inicio {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 100vh;
+    padding-top: 230px;
+    background-color: #010203;
+}
+
+#container-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: fadein 1s;
+}
+
+#container-hero img {
+    /*Ícone hero*/
+    animation: blob var(--blob_duration) ease-in-out alternate infinite;
+    filter: saturate(1.1);
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#container-hero h1 {
+    /*h1 vinicius florencio*/
+    z-index: 999;
+    position: absolute;
+    text-align: left;
+    min-width: 483px;
+    margin-top: -160px;
+    margin-left: 510px;
+}
+
+#container-hero p {
+    /*Texto análise e desenvolvimento de sistemas etc.*/
+    position: relative;
+    color: white;
+    min-width: 554px;
+    font-weight: 300;
+    font-size: 1.875em;
+    line-height: 35px;
+    text-shadow: 4px 4px 6px black;
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-weight: 300;
+    font-size: 1.25em;
+    line-height: 50px;
+    text-shadow: 4px 4px 6px black;
+    animation: fadein 1s;
+}
+
+.bolas-inicio{
+    position: absolute;
+}
+
+#bola1{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #FFF338;
+    box-shadow: 0px 0px 80px 0px #FFF338;
+    border-radius: 50%;
+    margin-left: -50px;
+    margin-top: -30px;
+    animation: scale2 10s alternate infinite ease-in-out;
+  }
+  
+  #bola2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #00DFA2;
+    box-shadow: 0px 0px 80px 0px #00DFA2;
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-top: -280px;
+    animation: scale1 10s alternate infinite ease-in-out;
+  }
+  
+  #bola3{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #D67BFF;
+    box-shadow: 0px 0px 80px 0px #D67BFF;
+    border-radius: 50%;
+    margin-left: 400px;
+    margin-top: -200px;
+    animation: scale2 10s alternate infinite ease-in-out;
+    animation-delay: 5s;
+  }

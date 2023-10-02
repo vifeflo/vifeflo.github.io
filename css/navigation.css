@@ -1,0 +1,25 @@
+.navigation {
+    /*Barra de navegação branca*/
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+    width: 100%;
+    height: 70px;
+    gap: 150px;
+    animation: fadein 1s;
+    background-color: #010203;
+}
+
+.navigation p {
+    /*Textos da barra de navegação*/
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+}
+
+.navigation p:hover{
+    color: #FFBF00;
+}

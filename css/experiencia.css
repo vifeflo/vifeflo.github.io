@@ -1,0 +1,108 @@
+#experiencia {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #010203;
+}
+
+#container-titulo{
+    display: flex;
+    justify-content: right;
+    margin-bottom: -80px;
+    padding-right: 50px;
+}
+
+#experiencia-titulo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    width: fit-content;
+    z-index: 999;
+}
+
+#experiencia-titulo p{
+    font-size: 25px;
+    font-weight: 200;
+    padding: 0px 20px;
+    color: white;
+    z-index: 999;
+}
+
+#experiencia-titulo a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#container-experiencia {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 30px;
+    padding: 50px; 
+}
+
+.experiencia-item {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    z-index: 999;
+    padding: 50px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.experiencia-texto {
+    text-align: justify;
+    max-width: 1000px;
+    font-size: 25px;
+    gap: 0 0 30px;
+    color: white;
+    z-index: 999;
+}
+
+.bolas-experiencia{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+}
+
+#bola4{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    margin-left: -50px;
+    background-color: #FFF338;
+    box-shadow: 0px 0px 80px 0px #FFF338;
+    border-radius: 50%;
+    animation: scale1 10s alternate infinite ease-in-out;
+  }
+  
+  #bola5{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    margin-left: -50px;
+    background-color: #D67BFF;
+    box-shadow: 0px 0px 80px 0px #D67BFF;
+    border-radius: 50%;
+    animation: scale2 10s alternate infinite ease-in-out;
+    animation-delay: 5s;
+  }
+  
+  #bola6{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    margin-left: -50px;
+    background-color: #00DFA2;
+    box-shadow: 0px 0px 80px 0px #00DFA2;
+    border-radius: 50%;
+    animation: scale1 10s alternate infinite ease-in-out;
+  }
