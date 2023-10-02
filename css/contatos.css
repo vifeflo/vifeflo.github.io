@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    min-height: 35vh;
+    min-height: 22vh;
     background-color: #010203;
 }
 
@@ -15,7 +15,7 @@
 }
 
 #fale-comigo{
-    max-width: 650px;
+    max-width: 90vw;
 }
 
 #fale-comigo h4{
@@ -52,7 +52,7 @@
     #enderecos-contatos{
         border-left: none;
         border-top: white solid;
-        max-width: 85vw;
+        max-width: 90vw;
         padding: 20px 0;
     }
 

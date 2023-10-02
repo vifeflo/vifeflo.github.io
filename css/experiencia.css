@@ -115,7 +115,12 @@
     #container-titulo{
         justify-content: center;
         padding: 0;
-        margin-bottom: -40px;
+        margin-bottom: 0px;
+    }
+
+    #container-experiencia{
+        margin-top: 0px;
+        gap: 10px;
     }
 
     .experiencia-data h3{
@@ -129,5 +134,9 @@
 
     .experiencia-item h3, h4{
         text-align: center;
+    }
+
+    #bola4, #bola5, #bola6{
+        display: none;
     }
   }
