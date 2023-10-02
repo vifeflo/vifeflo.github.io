@@ -2,18 +2,20 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    min-height: 27vh;
+    min-height: 35vh;
     background-color: #010203;
 }
 
 #container-contatos{
+    margin-top: 23px;
     display: flex;
     flex-direction: row;
+    gap:20px;
+    padding: 0 40px;
 }
 
 #fale-comigo{
-    max-width: 700px;
-    padding: 20px 60px;
+    max-width: 650px;
 }
 
 #fale-comigo h4{
@@ -26,10 +28,13 @@
 
 #enderecos-contatos{
     margin: 0;
-    padding: 20px 60px;
     line-height: 40px;
     border-left: white solid;
     height: fit-content;
+}
+
+#enderecos-contatos p{
+    padding-left: 20px;
 }
 
 #contatos a:hover{
@@ -37,13 +42,28 @@
     text-decoration: underline;
 }
 
+/* Query laptop */
 @media screen and (max-width: 1200px){
     #container-contatos{
         flex-direction: column;
+        width: 100vw;
     }
 
     #enderecos-contatos{
         border-left: none;
         border-top: white solid;
+        max-width: 85vw;
+        padding: 20px 0;
+    }
+
+    #enderecos-contatos p{
+        padding:0;
     }
 }
+/* Query menor tela */
+@media screen and (max-width: 492px){
+    #enderecos-contatos p{
+        font-size: 15px;
+    }
+  }
+

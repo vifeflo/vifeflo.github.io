@@ -130,3 +130,10 @@ html::-webkit-scrollbar-thumb {
     transform: scale(0.8);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  html{
+    overflow-x: hidden;
+  }
+}
+

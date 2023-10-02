@@ -29,7 +29,6 @@
 #experiencia-titulo p{
     font-size: 25px;
     font-weight: 200;
-    padding: 0px 20px;
     color: white;
     z-index: 999;
 }
@@ -44,7 +43,7 @@
     flex-direction: column;
     margin-top: 70px;
     gap: 50px;
-    padding: 30px;
+    padding: 60px 20px;
 }
 
 .experiencia-item {
@@ -52,7 +51,7 @@
     flex-direction: row;
     gap: 50px;
     z-index: 999;
-    padding: 50px 0;
+    padding: 30px 20px;
     border-radius: 16px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -62,7 +61,7 @@
     text-align: justify;
     max-width: 1000px;
     font-size: 25px;
-    gap: 0 0 30px;
+    gap: 30px;
     color: white;
     z-index: 999;
 }
@@ -111,6 +110,7 @@
     animation: scale1 10s alternate infinite ease-in-out;
   }
 
+  /* Query laptop */
   @media screen and (max-width: 1200px) {
     #container-titulo{
         justify-content: center;
@@ -118,17 +118,16 @@
         margin-bottom: -40px;
     }
 
+    .experiencia-data h3{
+        padding: 0;
+    }
+
     .experiencia-item{
-        padding: 10px;
         gap: 5px;
         flex-direction: column;
     }
 
     .experiencia-item h3, h4{
         text-align: center;
-    }
-
-    .experiencia-item p{
-        padding: 20px;
     }
   }
