@@ -20,7 +20,7 @@ html{
   scroll-snap-type: y mandatory;
 }
 
-ul {
+li {
   list-style-type: none;
 }
 

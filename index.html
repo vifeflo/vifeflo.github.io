@@ -8,39 +8,46 @@
     <title>Vinicius Florencio | Estudante de ADS</title>
     <link rel="icon" type="images/x-icon" href="/img/tech.png" />
 </head>
-<script type="text/javascript" src="/js/script.js"></script>
+
 
 <body>
-    <!-- Barra de navegação -->
-    <nav>
-        <ul class="navigation">
-            <li>
-                <a href="#top">
-                    <p>Início</p>
-                </a>
-            </li>
-            <li>
-                <a href="#sobre">
-                    <p>Sobre</p>
-                </a>
-            </li>
-            <li>
-                <a href="#experiencia">
-                    <p>Experiência</p>
-                </a>
-            </li>
-            <li>
-                <a href="#projetos">
-                    <p>Projetos</p>
-                </a>
-            </li>
-            <li>
-                <a href="#contatos">
-                    <p>Contatos</p>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <!-- Barra de navegação -->
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#top" class="nav-link">
+                        Início
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre" class="nav-link">
+                        Sobre
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experiencia" class="nav-link">
+                        Experiência
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projetos" class="nav-link">
+                        Projetos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contatos" class="nav-link">
+                        Contatos
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
     <!-- Início da seção home/landing page -->
     <section id="inicio">
@@ -66,7 +73,7 @@
 
         <div id="container-sobre">
             <div id="sobre-box">
-                <h2>Sobre<br>mim</h2>
+                <h2>Sobre mim</h2>
                 <p>Me chamo <span class="texto-destaque">Vinicius Ferreira Florencio</span>, tenho 24 anos e sou morador
                     de São Vicente na Baixada
                     Santista. Sou apaixonado por pets, videogames, fantasia, metal e tecnologia.<br><br>Estou cursando o
@@ -83,7 +90,7 @@
             </div>
 
             <div id="sobre-stack">
-                <h2>Tech<br>stack</h2>
+                <h2>Tech stack</h2>
                 <ul>
                     <li><img class="icons" src="/img/html5.png" title="HTML5"></li>
                     <li><img class="icons" src="/img/css3.png" title="CSS3"></li>
@@ -122,8 +129,8 @@
                         <h3>Auxiliar de Bibliotecário</h3>
                         <h4><span class="texto-destaque">Prefeitura da Estância Balneária de Praia Grande</span></h4>
                         <p> Em outubro de 2022, assumi a posição de <span class="texto-destaque">Auxiliar de
-                                Bibliotecário</span> na E.M. Ronaldo
-                            Sérgio Lameiro Alves Ramos, onde fiquei encarregado da gestão da biblioteca.<br> Mantive
+                                Bibliotecário</span> na <span class="texto-destaque">E.M. Ronaldo
+                            Sérgio Lameiro Alves Ramos</span>, onde fiquei encarregado da gestão da biblioteca.<br> Mantive
                             essa função
                             até fevereiro de 2023, quando tomei a decisão de me desligar para me concentrar nos meus
                             estudos.
@@ -140,9 +147,9 @@
                     <div class="experiencia-texto">
                         <h3>Agente Administrativo</h3>
                         <h4><span class="texto-destaque">Prefeitura da Estância Balneária de Praia Grande</span></h4>
-                        <p>Trabalhei na E.M. Thereza Magri de dezembro de 2018 até
+                        <p>Trabalhei na <span class="texto-destaque">E.M. Thereza Magri</span> de dezembro de 2018 até
                             janeiro de 2022 e, em
-                            seguida, na E.M. São Francisco de Assis de janeiro a outubro
+                            seguida, na <span class="texto-destaque">E.M. São Francisco de Assis</span> de janeiro a outubro
                             de 2022.<br> Durante esse
                             período desempenhei um papel fundamental na administração das escolas, atendendo tanto ao
                             público como aos membros da equipe.
@@ -191,12 +198,10 @@
                             class="texto-destaque">JavaScript</span>. <br> O objetivo dessa página e
                         promover
                         meus
-                        projetos pessoais e atrair possíveis contratantes e clientes.
-                        <br><br>
-                    <p><a href="https://github.com/Vinocas/website-vinicius" target=”_blank”>Repositório do projeto
-                            ⤓</a>
+                        projetos pessoais e atrair possíveis contratantes e clientes. <br><br></p><a
+                        href="https://github.com/Vinocas/website-vinicius" target=”_blank”>Repositório do projeto
+                        ⤓</a>
                 </div>
-                </p>
             </div>
         </div>
         </div>
@@ -230,6 +235,7 @@
             </div>
         </div>
     </section>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -2,19 +2,18 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    min-height: 32vh;
+    min-height: 27vh;
     background-color: #010203;
 }
 
 #container-contatos{
     display: flex;
     flex-direction: row;
-    margin-top: 25px;
 }
 
 #fale-comigo{
-    max-width: 800px;
-    padding: 50px;
+    max-width: 700px;
+    padding: 20px 60px;
 }
 
 #fale-comigo h4{
@@ -27,7 +26,7 @@
 
 #enderecos-contatos{
     margin: 0;
-    padding: 50px;
+    padding: 20px 60px;
     line-height: 40px;
     border-left: white solid;
     height: fit-content;
@@ -36,4 +35,15 @@
 #contatos a:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px){
+    #container-contatos{
+        flex-direction: column;
+    }
+
+    #enderecos-contatos{
+        border-left: none;
+        border-top: white solid;
+    }
 }

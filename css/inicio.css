@@ -41,6 +41,7 @@
 #container-hero p {
     /*Texto análise e desenvolvimento de sistemas etc.*/
     position: relative;
+    display: flex;
     color: white;
     min-width: 554px;
     font-weight: 300;
@@ -103,4 +104,33 @@ footer {
     margin-top: -200px;
     animation: scale2 10s alternate infinite ease-in-out;
     animation-delay: 5s;
+  }
+
+  @media screen and (max-width: 1200px){
+    #container-hero {
+        flex-direction: column;
+        margin-top: -30px;
+    }
+
+    #container-hero h1{
+        margin-top: -50px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #container-hero p{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bolas-inicio{
+        margin-top: 275px;
+        margin-left: -500px;
+    }
+  }
+
+  @media screen and (max-width: 492px){
+    #container-hero{
+        transform: scale(0.8);
+    }
   }
