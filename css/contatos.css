@@ -67,6 +67,7 @@
 @media screen and (max-width: 492px){
     
     #enderecos-contatos p{
+        text-align: center;
         font-size: 22px;
     }
   }
