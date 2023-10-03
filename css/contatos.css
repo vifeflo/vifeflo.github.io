@@ -15,7 +15,7 @@
 }
 
 #fale-comigo{
-    max-width: 90vw;
+    max-width: 600px;
 }
 
 #fale-comigo h4{
@@ -52,8 +52,12 @@
     #enderecos-contatos{
         border-left: none;
         border-top: white solid;
-        max-width: 90vw;
+        max-width: 93vw;
         padding: 20px 0;
+    }
+
+    #fale-comigo{
+        max-width: 93vw;
     }
 
     #enderecos-contatos p{
@@ -62,8 +66,9 @@
 }
 /* Query menor tela */
 @media screen and (max-width: 492px){
+    
     #enderecos-contatos p{
-        font-size: 15px;
+        font-size: 22px;
     }
   }
 
