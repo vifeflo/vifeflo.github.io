@@ -131,9 +131,8 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1250px) {
   html{
     overflow-x: hidden;
   }
 }
-

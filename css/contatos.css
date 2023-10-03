@@ -43,7 +43,7 @@
 }
 
 /* Query laptop */
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1250px) {
     #container-contatos{
         flex-direction: column;
         width: 100vw;

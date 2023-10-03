@@ -64,7 +64,7 @@
 }
 
 /* Query laptop */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1250px) {
     #container-sobre{
         gap: 30px;
     }

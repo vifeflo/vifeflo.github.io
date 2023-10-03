@@ -111,7 +111,7 @@ footer {
   }
 
   /* Query laptop */
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1250px) {
     #container-hero {
         flex-direction: column;
         margin-top: 0px;
