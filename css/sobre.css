@@ -25,7 +25,7 @@
     display: flex;
     justify-content: center;
     gap: 50px;
-    margin-top: 90px;
+    margin-top: 30px;
 }
 
 #sobre-box h2 {
@@ -68,6 +68,10 @@
     height: 50px;
 }
 
+#spotify{
+    height: 550px;
+}
+
 /* Query laptop */
 @media screen and (max-width: 1250px) {
     #container-sobre{
@@ -90,4 +94,9 @@
         flex-direction: column;
         gap: 20px;
     }
+
+    #spotify{
+        height: 400px;
+    }
+    
 }
