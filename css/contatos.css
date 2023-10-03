@@ -2,16 +2,15 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    min-height: 22vh;
+    max-height: 100vh;
     background-color: #010203;
 }
 
 #container-contatos{
-    margin-top: 23px;
     display: flex;
     flex-direction: row;
     gap:20px;
-    padding: 0 40px;
+    padding: 40px 40px;
 }
 
 #fale-comigo{

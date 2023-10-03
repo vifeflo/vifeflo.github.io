@@ -10,6 +10,7 @@
     display: flex;
     justify-content: right;
     margin-bottom: -60px;
+    padding-top: 60px;
     padding-right: 50px;
 }
 
@@ -41,7 +42,6 @@
 #container-experiencia {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
     gap: 50px;
     padding: 60px 20px;
 }
@@ -137,6 +137,6 @@
     }
 
     #bola4, #bola5, #bola6{
-        display: none;
+        margin-top: 50px
     }
   }

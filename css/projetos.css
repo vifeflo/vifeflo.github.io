@@ -12,7 +12,7 @@
     flex-direction: column;
     margin-top: 100px;
     gap: 30px;
-    padding-bottom: 50px;
+    padding: 60px 40px;
 }
 
 #projetos-titulo h2{
@@ -26,7 +26,8 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    padding: 0 40px;
+    padding: 0 40px 40px;
+    max-width: 1230px;
 }
 
 .projeto-item h3{
@@ -41,8 +42,6 @@
     text-align: justify;
     color: white;
     font-size: 25px;
-    max-width: 575px;
-    height: 300px;
 }
 
 .projeto-item a{
@@ -56,24 +55,19 @@
     text-decoration: underline;
 }
 
-#gif-projeto{
-    width: 533px;
-    height: 300px;
-    margin-top: -50px;
-    background-image: url(/img/projeto-vinicius.png);
-    background-size: cover;
+.projeto-item img{
     border-radius: 10px;
     box-shadow: -10px 10px #FFBF00;
 }
 
-#gif-projeto:hover{
+.projeto-item img:hover{
     background-image: url(/img/projeto-vinicius.gif);
 }
 
 /* Query laptop */
 @media screen and (max-width: 1250px) {
     #container-projetos{
-        margin-top: 70px;
+        margin-top: 0px;
     }
 
     #projetos-titulo h2{
@@ -87,11 +81,11 @@
 
     .projeto-item h3{
         text-align: center;
-        margin-top: -80px;
+        margin-top: -30px;
     }
 
     .projeto-item p{
-        max-width: 1000px;
+
     }
 
     #projetos a{
@@ -99,7 +93,29 @@
         justify-content: center;
     }
 
-    #gif-projeto{
+    .projeto-item img{
+        margin-top: 0px;
+        transform: scale(100%);
+        background-image: url(/img/projeto-vinicius.gif);
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .projeto-item img{
+        margin-top: -40px;
         transform: scale(75%);
+    }
+    .projeto-item h3{
+        margin-top: -70px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .projeto-item img{
+        margin-top: -60px;
+        transform: scale(60%);
+    }
+    .projeto-item h3{
+        margin-top: -90px;
     }
 }
