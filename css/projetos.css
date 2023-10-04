@@ -60,10 +60,6 @@
     box-shadow: -10px 10px #FFBF00;
 }
 
-.projeto-item img:hover{
-    background-image: url(/img/projeto-vinicius.gif);
-}
-
 /* Query laptop */
 @media screen and (max-width: 1250px) {
     #container-projetos{
@@ -84,20 +80,11 @@
         margin-top: -30px;
     }
 
-    .projeto-item p{
-
-    }
-
     #projetos a{
         display: flex;
         justify-content: center;
     }
 
-    .projeto-item img{
-        margin-top: 0px;
-        transform: scale(100%);
-        background-image: url(/img/projeto-vinicius.gif);
-    }
 }
 
 @media screen and (max-width: 610px) {
