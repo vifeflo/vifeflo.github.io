@@ -81,7 +81,7 @@
     }
 
     #enderecos-contatos a {
-        font-size: 22px;
+        font-size: 19px;
     }
 }
 
@@ -91,9 +91,6 @@
         padding-left: 0;
     }
 
-    #enderecos-contatos a {
-        font-size: 20px;
-    }
 }
 
 @media screen and (max-width: 400px) {
