@@ -48,6 +48,7 @@
     font-size: 25px;
     padding-left: 5px;
     text-wrap: nowrap;
+    white-space: nowrap
 }
 
 #contatos a:hover {
