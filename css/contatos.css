@@ -48,7 +48,8 @@
     font-size: 25px;
     padding-left: 5px;
     text-wrap: nowrap;
-    white-space: nowrap
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #contatos a:hover {
@@ -78,34 +79,11 @@
 /* Query menor tela */
 @media screen and (max-width: 492px) {
 
-    #endereco-contatos{
-        padding-left: 0;
-    }
-
     #enderecos-contatos a {
         font-size: 20px;
     }
 
-    #endereco-contatos img{
-        padding-left: 0;
-    }
-}
-
-@media screen and (max-width: 450px) {
-
-    #endereco-contatos{
-        padding-left: 0;
-    }
-
-}
-
-@media screen and (max-width: 400px) {
-
-    #endereco-contatos{
-        padding-left: 0;
-    }
-
-    #enderecos-contatos a {
-        font-size: 17px;
+    #container-contatos{
+        padding: 40px 20px;
     }
 }
