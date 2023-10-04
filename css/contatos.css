@@ -31,11 +31,15 @@
     border-left: white solid;
     height: fit-content;
     display: flex;
-    padding-left: 25px;
+    padding-left: 7px;
 }
 
 #enderecos-contatos img{
     width: 25px;
+    height: auto;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #enderecos-contatos a {
@@ -74,6 +78,10 @@
 /* Query menor tela */
 @media screen and (max-width: 492px) {
 
+    #endereco-contatos{
+        padding-left: 0;
+    }
+
     #enderecos-contatos a {
         font-size: 22px;
     }
@@ -81,12 +89,20 @@
 
 @media screen and (max-width: 450px) {
 
+    #endereco-contatos{
+        padding-left: 0;
+    }
+
     #enderecos-contatos a {
         font-size: 20px;
     }
 }
 
 @media screen and (max-width: 400px) {
+
+    #endereco-contatos{
+        padding-left: 0;
+    }
 
     #enderecos-contatos a {
         font-size: 17px;
