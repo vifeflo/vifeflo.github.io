@@ -35,7 +35,9 @@
 }
 
 #enderecos-contatos img{
-    width: 25px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    width: 30px;
     height: auto;
     -webkit-user-drag: none;
     -webkit-user-select: none;
@@ -44,7 +46,7 @@
 
 #enderecos-contatos a {
     font-size: 25px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 #contatos a:hover {
@@ -68,10 +70,6 @@
 
     #fale-comigo {
         max-width: 93vw;
-    }
-
-    #enderecos-contatos p {
-        padding: 0;
     }
 }
 
