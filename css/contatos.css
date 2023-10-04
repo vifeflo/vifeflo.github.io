@@ -32,6 +32,9 @@
     height: fit-content;
     display: flex;
     padding-left: 7px;
+    text-wrap: nowrap;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #enderecos-contatos img{
@@ -47,9 +50,6 @@
 #enderecos-contatos a {
     font-size: 25px;
     padding-left: 5px;
-    text-wrap: nowrap;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 #contatos a:hover {
