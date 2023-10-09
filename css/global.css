@@ -82,6 +82,8 @@ h4 {
 
 :root {
   --blob_duration: 15s;
+  --cor-preto:#010203;
+  --cor-cinza:#030507;
 }
 
 html::-webkit-scrollbar-track {

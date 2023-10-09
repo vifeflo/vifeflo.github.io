@@ -3,7 +3,7 @@
     justify-content: center;
     width: 100vw;
     min-height: 100vh;
-    background-color: #030507;
+    background-color: var(--cor-cinza);
     z-index: 999;
 }
 

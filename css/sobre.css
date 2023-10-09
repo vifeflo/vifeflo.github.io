@@ -5,7 +5,7 @@
     margin: 0px;
     width: 100%;
     min-height: 100vh;
-    background-color: #030507;
+    background-color: var(--cor-cinza);
     z-index: 999;
 }
 

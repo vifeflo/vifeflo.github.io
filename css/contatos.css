@@ -3,7 +3,7 @@
     justify-content: center;
     width: 100vw;
     max-height: 100vh;
-    background-color: #010203;
+    background-color: var(--cor-preto);
 }
 
 #container-contatos {
