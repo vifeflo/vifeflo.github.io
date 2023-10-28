@@ -3,7 +3,7 @@
     width: 100vw;
     display: flex;
     position: fixed;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 0 25px;
     z-index: 1000;
@@ -12,11 +12,13 @@
 
 .nav-menu {
     display: flex;
-    gap: 70px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
 }
 
 .nav-link {
-    font-size: 25px;
+    font-size: 1.563rem;
     font-weight: 400;
     color: white;
     transition: 0.3s;
@@ -41,9 +43,100 @@
     background-color: white;
 }
 
+.language img{
+    width: 30px;
+}
+
+.language-selected{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language-selected:after{
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("https://flagsapi.com/BR/flat/64.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+.language-selected.change-br:after{
+    background-image: url("https://flagsapi.com/BR/flat/64.png");
+}
+
+.language-selected.change-en:after{
+    background-image: url("https://flagsapi.com/US/flat/64.png");
+}
+
+.language ul{
+    position: absolute;
+    z-index: -1;
+    margin-left: -21px;
+    margin-top: -73px;
+    opacity: 0;
+    width: fit-content;
+    background-color: var(--cor-preto);
+    padding: 10px 20px;
+    transition: all 0.1s;
+}
+
+.language ul li a{
+    display: block;
+    font-size: 1.563rem;
+}
+
+.language:hover ul{
+    margin-top: 0px;
+    opacity: 1;
+}
+
+.language ul.show-list {
+    margin-top: 0px;
+    opacity: 1;
+}
+
+
+a.br:hover{
+    color: #FFBF00;
+}
+
+a.en:hover{
+    color: #FFBF00;
+}
+
+a.br:before{
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("https://flagsapi.com/BR/flat/64.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+    vertical-align: -15%;
+}
+
+a.en:before{
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("https://flagsapi.com/US/flat/64.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+    vertical-align: -15%;
+}
+
 @media(max-width: 768px) {
     .hamburger {
+        position: fixed;
         display: block;
+        left: 10%;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -60,18 +153,25 @@
 
     .nav-menu {
         position: fixed;
-        top: -100%;
-        margin-top: 50px;
+        justify-content: flex-start;
+        left: -100%;
+        top: 0;
         gap: 30px;
-        padding: 20px;
+        padding: 20px 0px 20px 50px;
         flex-direction: column;
         background-color: #010203;
-        width: 100vw;
+        width: 70vw;
+        height: 100vh;
         text-align: center;
         transition: 0.3s;
     }
 
+    .nav-menu {
+        display: flex;
+        align-items: center;
+    }
+
     .nav-menu.active {
-        top: 0;
+        left: 0;
     }
 }

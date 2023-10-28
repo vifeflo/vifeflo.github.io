@@ -73,7 +73,7 @@ h4 {
   filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.411));
 }
 
-.icons {
+img {
   /*Icones da página*/
   -webkit-user-drag: none;
   -webkit-user-select: none;
