@@ -110,7 +110,7 @@ $(function () {
         $("#projetos-titulo h2").text('Projects');
 
         //Projeto Willian Metzger
-        $("#projeto-willian p").html('Web and mobile application for Willian Metzger, developed in <span class="texto-destaque">HTML5</span>, <span class="texto-destaque">CSS3</span>, and <span class="texto-destaque">JavaScript</span>. The website´s objective is to showcase the developer´s personal and professional projects, as well as their contact channels. The project is in the final stage of development..');
+        $("#projeto-willian p").html('Web and mobile application for Willian Metzger, developed in <span class="texto-destaque">HTML5</span>, <span class="texto-destaque">CSS3</span>, and <span class="texto-destaque">JavaScript</span>. The website&#39;s objective is to showcase the developer&#39;s personal and professional projects, as well as their contact channels. The project is in the final stage of development..');
         
         //Projeto Portfólio
         $("#projeto-portfolio h3").html('<span class="texto-destaque">Personal portfolio</span>');
