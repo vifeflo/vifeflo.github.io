@@ -4,13 +4,13 @@
     width: 100vw;
     max-height: 100vh;
     background-color: var(--cor-preto);
+    padding: 40px 40px;
 }
 
 #container-contatos {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 40px 40px;
 }
 
 #fale-comigo {
@@ -39,12 +39,60 @@
 
 #enderecos-contatos img{
     box-sizing: border-box;
-    padding-left: 10px;
-    width: 30px;
+    padding-left: 0px;
+    width: 25px;
     height: auto;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
+}
+
+#enderecos-contatos ul li:nth-child(1) a::before {
+    content: '';
+    display: inline-block;
+    background-image: url(/img/email.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#enderecos-contatos ul li:nth-child(2) a::before {
+    content: '';
+    display: inline-block;
+    background-image: url(/img/linkedin.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#enderecos-contatos ul li:nth-child(3) a::before {
+    content: '';
+    display: inline-block;
+    background-image: url(/img/whatsapp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#enderecos-contatos ul li:nth-child(4) a::before {
+    content: '';
+    display: inline-block;
+    background-image: url(/img/github2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 #enderecos-contatos a {
@@ -80,10 +128,6 @@
 @media screen and (max-width: 492px) {
 
     #enderecos-contatos a {
-        font-size: 18px;
-    }
-
-    #container-contatos{
-        padding: 40px 20px;
+        font-size: 1.125rem;
     }
 }

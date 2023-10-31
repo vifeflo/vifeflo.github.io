@@ -58,6 +58,8 @@
 .projeto-item img{
     border-radius: 10px;
     box-shadow: -10px 10px #FFBF00;
+    max-width: 100%;
+    height: auto;
 }
 
 .projeto-gif{
@@ -101,19 +103,5 @@
 @media screen and (max-width: 610px) {
     .projeto-item img{
         margin-top: -40px;
-        transform: scale(75%);
-    }
-    .projeto-item h3{
-        margin-top: -70px;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .projeto-item img{
-        margin-top: -60px;
-        transform: scale(60%);
-    }
-    .projeto-item h3{
-        margin-top: -90px;
     }
 }
