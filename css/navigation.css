@@ -1,8 +1,8 @@
 .navbar {
-    min-height: 70px;
-    width: 100vw;
     display: flex;
     position: fixed;
+    min-height: 70px;
+    width: 100vw;
     justify-content: space-around;
     align-items: center;
     padding: 0 25px;
@@ -18,9 +18,9 @@
 }
 
 .nav-link {
+    color: white;
     font-size: 1.563rem;
     font-weight: 400;
-    color: white;
     transition: 0.3s;
 }
 
@@ -75,12 +75,12 @@
 .language ul{
     position: absolute;
     z-index: -1;
-    margin-left: -21px;
-    margin-top: -73px;
-    opacity: 0;
     width: fit-content;
     background-color: var(--cor-preto);
     padding: 10px 20px;
+    margin-left: -21px;
+    margin-top: -73px;
+    opacity: 0;
     transition: all 0.1s;
 }
 
@@ -133,8 +133,8 @@ a.en:before{
 
 @media(max-width: 768px) {
     .hamburger {
-        position: fixed;
         display: block;
+        position: fixed;
         left: 10%;
     }
 
@@ -151,6 +151,7 @@ a.en:before{
     }
 
     .nav-menu {
+        display: flex;
         position: fixed;
         justify-content: flex-start;
         left: -100%;
@@ -158,15 +159,14 @@ a.en:before{
         gap: 30px;
         padding: 20px 0px 20px 50px;
         flex-direction: column;
-        background-color: #010203;
         width: 70vw;
         height: 100vh;
+        background-color: #010203;
         text-align: center;
         transition: 0.3s;
     }
 
     .nav-menu {
-        display: flex;
         align-items: center;
     }
 
@@ -177,9 +177,9 @@ a.en:before{
     .language{
         display: flex;
         justify-content: center;
+        width: 50vw;
         border-top: solid 2px white;
         padding: 10px;
-        width: 50vw;
     }
 
     .language ul{
