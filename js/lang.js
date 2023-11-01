@@ -77,7 +77,7 @@ $(function () {
         event.preventDefault();
 
         //Título da página
-        $("title").text("Vinicius Florencio | SAD Student")
+        $("title").text("Vinicius Florencio | IT Student")
 
         //Muda a bandeira para a linguagem selecionada
         $(".language-selected").removeClass("change-br");
