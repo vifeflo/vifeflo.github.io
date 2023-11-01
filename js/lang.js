@@ -14,14 +14,19 @@ $(function () {
     $(".br").click(function () {
         event.preventDefault();
 
+        //Título da página
+        $("title").text("Vinicius Florencio | Estudante de ADS")
+
+        //Muda a bandeira para a linguagem selecionada
+        $(".language-selected").removeClass("change-en");
+        $(".language-selected").addClass("change-br");
+
         //Navegação
         $("#nav-inicio").text('Início');
         $("#nav-sobre").text('Sobre');
         $("#nav-experiencia").text('Experiência');
         $("#nav-projetos").text('Projetos');
         $("#nav-contatos").text('Contatos');
-        $(".language-selected").removeClass("change-en");
-        $(".language-selected").addClass("change-br");
 
         //Hero
         $("#container-hero p").html('Estudante de Análise e Desenvolvimento<br> de Sistemas - Fatec Rubens Lara <br> UI/UX Design & Web Development');
@@ -71,14 +76,19 @@ $(function () {
     $(".en").click(function () {
         event.preventDefault();
 
+        //Título da página
+        $("title").text("Vinicius Florencio | SAD Student")
+
+        //Muda a bandeira para a linguagem selecionada
+        $(".language-selected").removeClass("change-br");
+        $(".language-selected").addClass("change-en");
+
         //Navegação
         $("#nav-inicio").text('Home');
         $("#nav-sobre").text('About');
         $("#nav-experiencia").text('Experience');
         $("#nav-projetos").text('Projects');
         $("#nav-contatos").text('Contacts');
-        $(".language-selected").removeClass("change-br");
-        $(".language-selected").addClass("change-en");
 
         //Hero
         $("#container-hero p").html('System Analysis and Development<br> Student - Fatec Rubens Lara <br> UI/UX Design & Web Development');
