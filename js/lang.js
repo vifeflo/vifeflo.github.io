@@ -99,7 +99,7 @@ $(function () {
         
         //Experiência
         $("#experiencia-titulo h2").text('Experience');
-        $("#experiencia-titulo p").html('<a href="/files/CV-en - Vinicius Ferreira Florencio.pdf" target=”_blank”>Full resume ⤓</a>');
+        $("#experiencia-titulo p").html('<a href="/files/CV EN - Vinicius Ferreira Florencio.pdf" target=”_blank”>Full resume ⤓</a>');
       
         //Experiencia 1
         $("#experiencia1 h3").text('Librarian Assistant');
