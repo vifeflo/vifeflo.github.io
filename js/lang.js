@@ -58,7 +58,7 @@ $(function () {
         $("#projetos-titulo h2").text('Projetos');
 
         //Projeto Willian Metzger
-        $("#projeto-willian p").html('Aplicação web de Willian Metzger, desenvolvida em <span class="texto-destaque">HTML5</span>, <span class="texto-destaque">CSS3</span>, e <span class="texto-destaque">JavaScript</span>. O objetivo do website é expor projetos pessoais e profissionais do desenvolvedor, assim como seus canais de contato. O projeto está em fase final de desenvolvimento.');
+        $("#projeto-willian p").html('Aplicação web de Willian Metzger, desenvolvida em <span class="texto-destaque">HTML5</span>, <span class="texto-destaque">CSS3</span>, e <span class="texto-destaque">JavaScript</span>. O objetivo de website é expor projetos pessoais e profissionais do desenvolvedor, assim como seus canais de contato. O projeto está em fase final de desenvolvimento. <br><br><a href="https://willianmetzger.github.io/" target=”_blank”>Visitar página ⤓</a>');
         
         //Projeto Portfólio
         $("#projeto-portfolio h3").html('<span class="texto-destaque">Portfólio pessoal</span>');
@@ -120,7 +120,7 @@ $(function () {
         $("#projetos-titulo h2").text('Projects');
 
         //Projeto Willian Metzger
-        $("#projeto-willian p").html('Web application for Willian Metzger, developed in <span class="texto-destaque">HTML5</span>, <span class="texto-destaque">CSS3</span>, and <span class="texto-destaque">JavaScript</span>. The website&#39;s objective is to showcase the developer&#39;s personal and professional projects, as well as their contact channels. The project is in the final stage of development.');
+        $("#projeto-willian p").html('Web application for Willian Metzger, developed in <span class="texto-destaque">HTML5</span>, <span class="texto-destaque">CSS3</span>, and <span class="texto-destaque">JavaScript</span>. The website&#39;s objective is to showcase the developer&#39;s personal and professional projects, as well as their contact channels. The project is in the final stage of development.<br><br><a href="https://willianmetzger.github.io/" target=”_blank”>Visit page ⤓</a></p>');
         
         //Projeto Portfólio
         $("#projeto-portfolio h3").html('<span class="texto-destaque">Personal portfolio</span>');
