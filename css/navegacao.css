@@ -25,7 +25,7 @@
 }
 
 .nav-link:hover {
-    color: #FFBF00;
+    color: var(--cor-laranja);
 }
 
 .hamburger {

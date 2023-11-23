@@ -66,13 +66,6 @@
     z-index: 999;
 }
 
-.bolas-experiencia{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    max-width: 500px;
-}
-
 #bola4{
     position: absolute;
     width: 100px;

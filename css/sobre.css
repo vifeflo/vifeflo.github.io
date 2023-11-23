@@ -60,6 +60,12 @@
     height: 100px;
     border-radius: 25px;
     background-color: #010203;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#sobre-stack li:hover{
+    background-color: var(--cor-laranja);
 }
 
 #sobre-stack img{

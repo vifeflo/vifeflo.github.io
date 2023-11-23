@@ -11,6 +11,7 @@
   --blob_duration: 15s;
   --cor-preto: #010203;
   --cor-cinza: #030507;
+  --cor-laranja: #FFBF00;
 }
 
 * {
@@ -45,7 +46,7 @@ body {
 }
 
 .texto-destaque {
-  color: #FFBF00;
+  color: var(--cor-laranja);
   font-weight: bold;
 }
 
