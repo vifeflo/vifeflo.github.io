@@ -32,7 +32,7 @@
 }
 
 #sobre-box p {
-    text-align: justify;
+    text-align: left;
 }
 
 #sobre-stack {
@@ -74,7 +74,7 @@
 }
 
 #spotify{
-    height: 550px;
+    height: 420px;
 }
 
 /* Query laptop */

@@ -23,14 +23,14 @@
     z-index: 999;
     text-align: left;
     min-width: 483px;
-    margin-left: 450px;
+    margin-left: 550px;
     margin-top: -160px;
 }
 
 #container-hero img {
     background: rgba(255, 255, 255, 0);
     border-radius: 16px;
-    filter: saturate(1.1);
+    width: 45%;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     user-select: none;
@@ -43,7 +43,7 @@
     position: relative;
     display: flex;
     width: 574px;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     color: white;
     font-size: 1.875em;
     line-height: 35px;

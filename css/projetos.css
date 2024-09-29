@@ -40,7 +40,7 @@
 }
 
 .projeto-item p{
-    text-align: justify;
+    text-align: left;
     font-size: 25px;
     color: white;
 }
@@ -48,7 +48,7 @@
 .projeto-item a{
     display: flex;
     justify-content: right;
-    font-size: 25px;
+    font-size: 1.25rem;
 }
 
 .projeto-item a:hover{

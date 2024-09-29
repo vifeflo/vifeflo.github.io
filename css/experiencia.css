@@ -59,7 +59,7 @@
 
 .experiencia-texto {
     max-width: 1000px;
-    text-align: justify;
+    text-align: left;
     font-size: 25px;
     gap: 30px;
     color: white;
