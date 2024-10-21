@@ -3,7 +3,7 @@
     justify-content: center;
     width: 100vw;
     max-height: 100vh;
-    background-color: var(--cor-preto);
+    background-color: var(--cor-cinza);
     padding: 40px 40px;
 }
 
@@ -87,7 +87,7 @@
 #enderecos-contatos ul li:nth-child(4) a::before {
     content: '';
     display: inline-block;
-    background-image: url(/img/dribbble.png);
+    background-image: url(/img/behance.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 16px;
@@ -96,7 +96,7 @@
     vertical-align: middle;
 }
 
-#enderecos-contatos ul li:nth-child(5) a::before {
+/*#enderecos-contatos ul li:nth-child(5) a::before {
     content: '';
     display: inline-block;
     background-image: url(/img/github2.png);
@@ -106,7 +106,7 @@
     height: 16px;
     margin-right: 10px;
     vertical-align: middle;
-}
+}*/
 
 #enderecos-contatos a {
     padding-left: 5px;

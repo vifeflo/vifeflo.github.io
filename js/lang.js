@@ -25,8 +25,8 @@ $(function () {
         $("#nav-inicio").text('Início');
         $("#nav-sobre").text('Sobre');
         $("#nav-experiencia").text('Experiência');
-        $("#nav-projetos").text('Projetos');
-        $("#nav-contatos").text('Contatos');
+        $("#nav-projetos").text('Meu trabalho');
+        $("#nav-contatos").text('Fale comigo');
 
         //Hero
         $("#container-hero p").html('Designer de Produtos Digitais <br> UI&UX Designer');
@@ -97,8 +97,8 @@ $(function () {
         $("#nav-inicio").text('Home');
         $("#nav-sobre").text('About');
         $("#nav-experiencia").text('Experience');
-        $("#nav-projetos").text('Projects');
-        $("#nav-contatos").text('Contacts');
+        $("#nav-projetos").text('My work');
+        $("#nav-contatos").text('Contact me');
 
         //Hero
         $("#container-hero p").html('Digital Product Designer <br> UI&UX Designer');
@@ -148,7 +148,7 @@ $(function () {
 
         //Contatos
         $("#fale-comigo h4").text('Contact me');
-        $("#fale-comigo p").text('If you are interested in my work or have any questions regarding any of my projects, feel free to reach out to me.');
+        $("#fale-comigo p").text('If you are interested in my work feel free to reach out to me through my social media');
 
         return false;
     });

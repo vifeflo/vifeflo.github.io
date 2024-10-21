@@ -131,6 +131,17 @@ a.en:before{
     vertical-align: -15%;
 }
 
+#nav-projetos::after {
+    content: '';
+    display: inline-block; /* Para garantir que a imagem apareça ao lado do texto */
+    width: 20px; /* Largura da imagem */
+    height: 20px; /* Altura da imagem */
+    background-image: url('/img/openinnew.png'); /* Caminho para sua imagem */
+    background-size: cover; /* Para garantir que a imagem cubra o elemento */
+    margin-left: 5px; /* Espaço entre o texto e a imagem */
+    vertical-align: middle; /* Alinha a imagem verticalmente com o texto */
+}
+
 @media(max-width: 768px) {
     .hamburger {
         display: block;
