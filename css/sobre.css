@@ -12,9 +12,9 @@
 #container-sobre {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     max-width: 1250px;
     gap: 50px;
+    padding: 0px 40px;
 }
 
 #container-sobre h2{
