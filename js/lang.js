@@ -25,7 +25,7 @@ $(function () {
         $("#nav-inicio").text('Início');
         $("#nav-sobre").text('Sobre');
         $("#nav-experiencia").text('Experiência');
-        $("#nav-projetos").text('Meu trabalho');
+        $("#nav-projetos").text('Meu trabalho ');
         $("#nav-contatos").text('Fale comigo');
 
         //Hero
@@ -42,17 +42,17 @@ $(function () {
         //Experiencia 1
         $("#experiencia1 h3").text('Designer de Produtos Digitais');
         $("#experiencia1 h4").html('<span class="texto-destaque">ModalGR</span>');
-        $("#experiencia1 p").html('Tenho experiência na <span class="texto-destaque">criação de wireframes e protótipos</span> de alta e baixa fidelidade e forte habilidade na análise e criação de requisitos funcionais, sempre focando na experiência do usuário e na satisfação do cliente.<br><br> Sou um dos principais responsáveis pela <span class="texto-destaque">criação de MVPs</span> que ajudam a fechar negócios com clientes estratégicos da empresa e atualmente estou supervisionando a criação do nosso novo <span class="texto-destaque">design system</span>. <br><br>Aplico testes A/B e testes de usabilidade para validar designs, além de utilizar a <span class="texto-destaque">metodologia SCRUM</span> na gestão de backlog de toda a equipe de design. Em 2024, tive a oportunidade de atuar como <span class="texto-destaque">mentor do time de estagiários de UI&UX Design</span> no 2º Processo de Formação ModalGR de 2024.');
+        $("#experiencia1 p").html('Tenho experiência na <span class="texto-destaque">criação de wireframes e protótipos</span> de alta e baixa fidelidade, com forte habilidade na análise e criação de requisitos funcionais, sempre focando na experiência do usuário e na satisfação do cliente. Aplico testes A/B e testes de usabilidade para validar designs, além de utilizar a <span class="texto-destaque">metodologia SCRUM</span> na gestão de backlog de toda a equipe de design.<br><br><strong>Realizações:</strong><br> • Em menos de um ano de empresa atraí <span class="texto-destaque">três grandes clientes</span> estratégicos através do desenvolvimento de MVPs;<br> • Supervisiono a criação do novo <span class="texto-destaque">design system</span> da ModalGR;<br> • Atuei como <span class="texto-destaque">mentor do time de estagiários de UI&UX Design</span> no 2º Processo de Formação ModalGR de 2024.');
 
         //Experiencia2
         $("#experiencia2 h3").text('Estagiário WordPress');
         $("#experiencia2 h4").html('<span class="texto-destaque">ModalGR</span>');
-        $("#experiencia2 p").html('Em janeiro de 2024 eu fui selecionado no <span class="texto-destaque">Processo de Formação</span> da <span class="texto-destaque">ModalGR</span> e pude entrar no mercado de trabalho de tecnologia como desenvolvedor front-end com foco em WordPress.<br><br> Lá pude adquirir muita experiência no setor corporativo e no desenvolvimento de projetos ágeis e dinâmicos em equipe.');
+        $("#experiencia2 p").html('Em janeiro de 2024 fui selecionado no <span class="texto-destaque">Processo de Formação da ModalGR</span>, o que me permitiu ingressar no mercado de tecnologia como desenvolvedor front-end com foco em WordPress.<br><br><strong>Realizações:</strong><br> • Fui um dos principais responsáveis pelo desenvolvimento da <span class="texto-destaque">homepage da ModalGR</span>.<br> • Contribuí para o desenvolvimento de projetos ágeis e dinâmicos em equipe.');
 
         //Experiencia 3
         $("#experiencia3 h3").text('Auxiliar de Bibliotecário');
         $("#experiencia3 h4").html('<span class="texto-destaque">Prefeitura da Estância Balneária de Praia Grande</span>');
-        $("#experiencia3 p").html('Em outubro de 2022, assumi a posição de <span class="texto-destaque">Auxiliar de Bibliotecário</span> na <span class="texto-destaque">E.M. Ronaldo  Sérgio Lameira Alves Ramos</span>, onde fiquei encarregado da gestão da biblioteca.<br><br> Mantive essa função até fevereiro de 2023, quando tomei a decisão de me desligar para me concentrar nos meus estudos.');
+        $("#experiencia3 p").html('Em outubro de 2022 assumi a posição de <span class="texto-destaque">Auxiliar de Bibliotecário</span> na <span class="texto-destaque">E.M. Ronaldo  Sérgio Lameira Alves Ramos</span>, onde fiquei encarregado da gestão da biblioteca.<br><br> Mantive essa função até fevereiro de 2023, quando tomei a decisão de me desligar para me concentrar nos meus estudos.');
 
         //Experiencia4
         $("#experiencia4 h3").text('Agente Administrativo');
@@ -114,17 +114,18 @@ $(function () {
         //Experiencia 1
         $("#experiencia1 h3").text('Digital Product Designer');
         $("#experiencia1 h4").html('<span class="texto-destaque">ModalGR</span>');
-        $("#experiencia1 p").html('I have experience in <span class="texto-destaque">creating wireframes and prototypes</span> of high and low fidelity and strong skills in analyzing and creating functional requirements, always focusing on user experience and customer satisfaction.<br><br> I am one of the main responsible for the <span class="texto-destaque">creation of MVPs</span> that help close deals with strategic clients of the company and I am currently supervising the creation of our new <span class="texto-destaque">design system</span>. <br><br>I apply A/B tests and usability tests to validate designs, in addition to using the <span class="texto-destaque">SCRUM methodology</span> in managing the entire design team&apos;s backlog. In 2024, I had the opportunity to act as <span class="texto-destaque">mentor for the UI &amp; UX Design interns</span> in the 2nd ModalGR Training Process of 2024.');
+        $("#experiencia1 p").html('I have experience in the <span class="texto-destaque">creation of wireframes and prototypes</span> of both high and low fidelity, with strong skills in analyzing and creating functional requirements, always focusing on user experience and client satisfaction. I apply A/B testing and usability testing to validate designs and utilize the <span class="texto-destaque">SCRUM methodology</span> in managing the design team&apos;s backlog.<br><br><strong>Achievements:</strong><br> • In less than a year at the company I attracted <span class="texto-destaque">three major clients</span> through the development of MVPs;<br> • I am supervising the creation of ModalGR&apos;s new <span class="texto-destaque">design system</span>;<br> • Acted as a <span class="texto-destaque">mentor to the UI&UX Design intern team</span> in ModalGR&apos;s 2nd 2024 Training Program.');
 
         //Experiencia2
         $("#experiencia2 h3").text('WordPress Intern');
         $("#experiencia2 h4").html('<span class="texto-destaque">ModalGR</span>');
-        $("#experiencia2 p").html('In January 2024, I was selected for the <span class="texto-destaque">Training Process</span> at <span class="texto-destaque">ModalGR</span> and was able to enter the technology job market as a front-end developer focused on WordPress.<br><br> There I was able to gain a lot of experience in the corporate sector and in developing agile and dynamic projects in a team.');
+        $("#experiencia2 p").html('In January 2024 I was selected for the <span class="texto-destaque">ModalGR Training Process</span>, which allowed me to enter the technology market as a front-end developer focused on WordPress.<br><br><strong>Achievements:</strong><br> • I was one of the main responsible for developing the <span class="texto-destaque">ModalGR homepage</span>.<br> • I contributed to the development of agile and dynamic projects in a team.');
+
 
         //Experiencia 3
         $("#experiencia3 h3").text('Library Assistant');
         $("#experiencia3 h4").html('<span class="texto-destaque">City Hall of Praia Grande</span>');
-        $("#experiencia3 p").html('In October 2022, I took on the position of <span class="texto-destaque">Library Assistant</span> at <span class="texto-destaque">E.M. Ronaldo Sérgio Lameira Alves Ramos</span>, where I was responsible for managing the library.<br><br> I held this position until February 2023, when I decided to resign to focus on my studies.');
+        $("#experiencia3 p").html('In October 2022 I took on the position of <span class="texto-destaque">Library Assistant</span> at <span class="texto-destaque">E.M. Ronaldo Sérgio Lameira Alves Ramos</span>, where I was responsible for managing the library.<br><br> I held this position until February 2023, when I decided to resign to focus on my studies.');
 
         //Experiencia4
         $("#experiencia4 h3").text('Administrative Agent');
