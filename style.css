@@ -900,7 +900,7 @@ h1 {
         min-height: 100vh;
         height: auto;
         justify-content: center;
-        transform: translateY(-120px);
+        margin-top: -120px;
     }
 
     /* About section mobile styles */
@@ -1034,3 +1034,4 @@ h1 {
 .carousel.focused::after {
     display: none !important;
 }
+
