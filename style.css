@@ -133,7 +133,7 @@ main{
 
 .site-header {
     position: relative;
-    z-index: 2;
+    z-index: 9999;
     width: 100%;
     padding: 40px;
 }
@@ -1034,4 +1034,5 @@ h1 {
 .carousel.focused::after {
     display: none !important;
 }
+
 
