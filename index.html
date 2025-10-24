@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vinicius Florencio — UI&UX Designer</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="mobile-menu.css"/>
+<script src="script.js" defer></script>
+</head>
+	<body>
+		<main>
+			<section class="hero">
+				<div class="hero-video" aria-hidden="true">
+					<video autoplay muted loop playsinline aria-label="Decorative animated gradient mesh background">
+						<source src="/mesh.mp4" type="video/mp4">
+					</video>
+				</div>
+				<header class="site-header">
+					<div class="container nav">
+						<nav class="nav-left" aria-label="Main navigation">
+							<a href="#">Home</a>
+							<a href="#about">About me</a>
+							<a href="#experience">Experience</a>
+							<a href="#work">My work</a>
+						</nav>
+						<div class="nav-right" aria-label="Social media links">
+							<a href="https://linkedin.com/in/viniciusferreiraflorencio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+								<img src="linkedin.png" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:4px;" aria-hidden="true"/>
+								/viniciusferreiraflorencio
+							</a>
+							<a href="https://www.behance.net/vifeflo" target="_blank" rel="noopener noreferrer" aria-label="Behance portfolio">
+								<img src="behance.png" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:4px;" aria-hidden="true"/>
+								/vifeflo
+							</a>
+						</div>
+						<button class="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="menu-overlay" aria-hidden="true"></div>
+					<div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+						<nav class="mobile-nav">
+							<a href="#">Home</a>
+							<a href="#about">About me</a>
+							<a href="#experience">Experience</a>
+							<a href="#work">My work</a>
+							<a href="https://linkedin.com/in/viniciusferreiraflorencio" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn profile">
+								<img src="linkedin.png" alt="" aria-hidden="true"/>
+								<span>/viniciusferreiraflorencio</span>
+							</a>
+							<a href="https://www.behance.net/vifeflo" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Behance portfolio">
+								<img src="behance.png" alt="" aria-hidden="true"/>
+								<span>/vifeflo</span>
+							</a>
+						</nav>
+					</div>
+				</header>
+				<div class="container hero-inner">
+					<div class="hero-left">
+						<p class="eyebrow">Vinicius Florencio</p>
+						<h1>UI&UX Designer</h1>
+						<p class="hero-lead">Based in Brazil with 2+ years of experience in<br> developing user-centered solutions, MVPs and intuitive and<br> responsive SaaS interfaces</p>
+
+						<div class="hero-ctas">
+							<a class="btn primary" href="#work" aria-label="View my work portfolio">My work</a>
+							<div class="resume-dropdown">
+								<button class="btn ghost resume-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Download resume - Choose language">
+									<img src="file.png" alt="" aria-hidden="true" style="width:16px;height:16px;vertical-align:middle;"/> 
+									Download resume
+									<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px" aria-hidden="true">
+										<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</button>
+							<div class="resume-menu" role="menu" aria-label="Resume language options">
+								<div class="resume-menu-header">Choose language</div>
+								<a href="/CV EN - Vinicius Ferreira Florencio.pdf" class="resume-menu-item" role="menuitem" download>
+									<img src="usa-flag.png" alt="" aria-hidden="true" style="width:20px;height:20px;"/>
+									<span>English</span>
+								</a>
+								<a href="/CV - Vinicius Ferreira Florencio.pdf" class="resume-menu-item" role="menuitem" download>
+									<img src="brazil-flag.png" alt="" aria-hidden="true" style="width:20px;height:20px;"/>
+									<span>Portuguese</span>
+								</a>
+							</div>
+							</div>
+						</div>
+
+                        				<div class="tech-strip" aria-label="Technologies and tools">
+					<div class="container tech-icons">
+						<img src="Figma.png" alt="Figma logo - Design tool"/>
+						<img src="/Notion.png" alt="Notion logo - Productivity tool"/>
+						<img src="/AzureDevOps.png" alt="Azure DevOps logo - Development platform"/>
+						<img src="/HTML5.png" alt="HTML5 logo - Markup language"/>
+						<img src="/CSS3.png" alt="CSS3 logo - Styling language"/>
+						<img src="/JS.png" alt="JavaScript logo - Programming language"/>
+						<img src="/git.png" alt="Git logo - Version control"/>
+					</div>
+				</div>
+				</div>
+
+				<!-- tech strip spans full viewport width but icons are constrained to .container width -->
+			</section>
+
+			<section id="about" class="about container">
+				<h2><img src="about.png" alt="" aria-hidden="true" style="width:1.2em;height:1.2em;vertical-align:-0.15em;margin-right:0.4em;"/>About me</h2>
+				<div class="about-inner">
+					<div class="about-text">
+						<p>My name is <strong>Vinicius Ferreira Florencio</strong>, I'm <strong>26 years old</strong> and I live in <strong>São Paulo, Brazil</strong>. I'm passionate about pets, video games, fantasy, Nightwish, and technology.</p>
+						<p>I am a <strong>DesignOps & UI/UX Designer</strong> with over <strong>2+ years of experience</strong> developing <strong>large-scale logistics solutions</strong>. I have contributed to the ideation and creation of <strong>port and airport software</strong> used across Brazil and internationally.</p>
+						<p>Currently, I work at <strong>Mosten</strong>, where I am responsible for building and maintaining the company's <strong>design system</strong> and occasionally <strong>mentoring new design interns</strong>.</p>
+						<p>I am also completing a degree in <strong>Systems Analysis and Development</strong>, expected to graduate in <strong>December 2025</strong>.</p>
+					</div>
+					<div class="about-image">
+						<img src="/vinicius.jpg" alt="Portrait of Vinicius Florencio, UI/UX Designer"/>
+					</div>
+				</div>
+			</section>
+
+			<section id="experience" class="experience container">
+				<div class="exp-head">
+			   <h2><img src="experience.png" alt="" aria-hidden="true" style="width:1.2em;height:1.2em;vertical-align:-0.15em;margin-right:0.4em;"/>Experience</h2>
+			<div class="resume-dropdown">
+				<button class="btn ghost exp-resume-btn resume-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Download resume - Choose language">
+					<img src="file.png" alt="" aria-hidden="true" style="width:16px;height:16px;vertical-align:middle;"/> 
+					Download resume
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px" aria-hidden="true">
+						<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			<div class="resume-menu" role="menu" aria-label="Resume language options">
+				<div class="resume-menu-header">Choose language</div>
+				<a href="/CV EN - Vinicius Ferreira Florencio.pdf" class="resume-menu-item" role="menuitem" download>
+					<img src="usa-flag.png" alt="" aria-hidden="true" style="width:20px;height:20px;"/>
+					<span>English</span>
+				</a>
+				<a href="/CV - Vinicius Ferreira Florencio.pdf" class="resume-menu-item" role="menuitem" download>
+					<img src="brazil-flag.png" alt="" aria-hidden="true" style="width:20px;height:20px;"/>
+					<span>Portuguese</span>
+				</a>
+			</div>
+			</div>
+				</div>
+
+				<div class="timeline" role="list" aria-label="Work experience timeline">
+					<div class="timeline-item" role="listitem">
+						<div class="timeline-left">
+							<div class="year" aria-label="Year 2024">2024</div>
+							<div class="vertical-line" aria-hidden="true"></div>
+						</div>
+						<div class="timeline-right">
+							<div class="experience-entry">
+								<h3>Digital Product Designer</h3>
+								<h4><img src="mosten.png" alt="Mosten company logo" />Mosten</h4>
+								<div class="description">
+									<ul>
+										<li>Created <strong>wireframes and prototypes</strong> of low and high fidelity for different stages of the design process</li>
+										<li>Designed <strong>clean, intuitive interfaces</strong> that improved user experience and met client needs</li>
+										<li>Conducted <strong>quantitative and qualitative user research</strong> to understand user behavior and guide design decisions</li>
+										<li>Ran <strong>usability tests</strong> to validate ideas and improve product performance</li>
+										<li>Worked with <strong>design thinking</strong> and the <strong>double diamond framework</strong> to structure the design process</li>
+										<li>Used <strong>Nielsen’s heuristics</strong> to ensure designs were accessible and easy to use</li>
+										<li>Built scalable interface components with <strong>atomic design</strong>, maintaining consistency across products</li>
+									</ul>
+							<p><strong><img src="sparkles.png" alt="" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.15em;margin-right:0.25em;"/>Key Achievements:</strong></p>
+									<ul>
+										<li><strong>Attracted three major clients</strong> within a year by developing MVPs that demonstrated product potential</li>
+										<li><strong>Actively participate</strong> in the creation and maintenance of the company’s design system, reducing average prototyping time by <strong>20%</strong> through standardized design components</li>
+										<li><strong>Mentored interns</strong> and organized workshops to promote a strong design culture within the company</li>
+									</ul>
+								</div>
+							</div>
+							<div class="experience-entry">
+								<h3>WordPress intern</h3>
+								<h4><img src="mosten.png" alt="Mosten company logo" />Mosten</h4>
+								<div class="description">
+									<p>In January 2024 I was selected for the <strong>Mosten Training Process</strong>, which allowed me to enter the technology market as a front-end developer focused on <strong>WordPress</strong>.</p>
+							<p><strong><img src="sparkles.png" alt="" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.15em;margin-right:0.25em;"/>Key Achievements:</strong></p>
+									<ul>
+										<li>One of the main responsible for developing the company's homepage</li>
+										<li>Contributed to the development of agile and dynamic projects in a team</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="timeline-item" role="listitem">
+						<div class="timeline-left">
+							<div class="year" aria-label="Year 2022">2022</div>
+							<div class="vertical-line" aria-hidden="true"></div>
+						</div>
+						<div class="timeline-right">
+							<div class="experience-entry">
+								<h3>Librarian Assistant</h3>
+								<h4><img src="praiagrande.png" alt="Praia Grande City Hall logo" />Praia Grande's City Hall</h4>
+								<div class="description">
+									<p>In October 2022 I took on the position of Library Assistant at E.M. Ronaldo Sérgio Lameira Alves Ramos, where I was responsible for managing the library.</p>
+									<p>I held this position until February 2023, when I decided to resign to focus on my studies.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="timeline-item" role="listitem">
+						<div class="timeline-left">
+							<div class="year" aria-label="Year 2018">2018</div>
+							<div class="vertical-line" aria-hidden="true"></div>
+						</div>
+						<div class="timeline-right">
+							<div class="experience-entry">
+								<h3>Administrative Agent</h3>
+								<h4><img src="praiagrande.png" alt="Praia Grande City Hall logo" />Praia Grande's City Hall</h4>
+								<div class="description">
+									<p>I worked at E.M. Thereza Magri from December 2018 until January 2022 and then at E.M. São Francisco de Assis from January to October 2022.</p>
+									<p>During this period, I played a key role in the administration of the schools, serving both the public and the team members.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="timeline-item" role="listitem">
+						<div class="timeline-left">
+							<div class="year" aria-label="Year 2017">2017</div>
+							<div class="vertical-line" aria-hidden="true"></div>
+						</div>
+						<div class="timeline-right">
+							<div class="experience-entry">
+								<h3>Intern</h3>
+								<h4><img src="tre-sp.png" alt="Regional Electoral Court of São Paulo logo" />Regional Electoral Court of SP</h4>
+								<div class="description">
+									<p>During my last year in High School, I was able to balance my studies with 1,040 hours of administrative work at 177th Electoral Zone of São Vicente.</p>
+									<p>There I had my first contact with customer service and was able to learn about best practices in a work environment.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="work" class="work container">
+				<div class="work-head">
+					<h2><img src="sparkles.png" alt="" aria-hidden="true" style="width:1.2em;height:1.2em;vertical-align:-0.15em;margin-right:0.4em;"/>My work</h2>
+					<div class="resume-dropdown">
+						<button class="btn ghost work-resume-btn resume-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Download resume - Choose language">
+							<img src="file.png" alt="" aria-hidden="true" style="width:16px;height:16px;vertical-align:middle;"/> 
+							Download resume
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px" aria-hidden="true">
+								<path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</button>
+					<div class="resume-menu" role="menu" aria-label="Resume language options">
+						<div class="resume-menu-header">Choose language</div>
+						<a href="/CV EN - Vinicius Ferreira Florencio.pdf" class="resume-menu-item" role="menuitem" download>
+							<img src="usa-flag.png" alt="" aria-hidden="true" style="width:20px;height:20px;"/>
+							<span>English</span>
+						</a>
+						<a href="/CV - Vinicius Ferreira Florencio.pdf" class="resume-menu-item" role="menuitem" download>
+							<img src="brazil-flag.png" alt="" aria-hidden="true" style="width:20px;height:20px;"/>
+							<span>Portuguese</span>
+						</a>
+					</div>
+					</div>
+				</div>
+
+				<div class="projects-grid" role="list" aria-label="Portfolio projects">
+					<article class="project-card" role="listitem">
+						<div class="project-image">
+							<img src="basic.png" alt="Basic UI Kit project preview showing component library interface"/>
+						</div>
+						<div class="project-info">
+							<h3>Basic UI Kit</h3>
+							<div class="tags" role="list" aria-label="Project tags">
+								<span role="listitem">Figma</span><span role="listitem">Components</span><span role="listitem">Library</span>
+							</div>
+							<p>An scalable open design toolkit created for the community</p>
+							<a href="https://www.figma.com/design/P1EaKgMs0a7Vdc9I848hYa/Basic-UI-Kit?node-id=1-3&t=iw2xPtWJewTS3m30-1" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open Basic UI Kit project in Figma">
+								Open in Figma
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left: 4px" aria-hidden="true">
+									<path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="project-card" role="listitem">
+						<div class="project-image">
+							<img src="designly.png" alt="design.ly project preview showing mobile landing page interface"/>
+						</div>
+						<div class="project-info">
+							<h3>design.ly</h3>
+							<div class="tags" role="list" aria-label="Project tags">
+								<span role="listitem">Mobile</span><span role="listitem">Landing page</span>
+							</div>
+							<p>A mobile landing page created for a fictional design company</p>
+							<a href="https://www.figma.com/design/6q3492HT0GOE7juGLdrx5n/Portfolio?node-id=52-2&t=WMQ6YQarwopZhiTI-1" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open design.ly project in Figma">
+								Open in Figma
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left: 4px" aria-hidden="true">
+									<path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="project-card" role="listitem">
+						<div class="project-image">
+							<img src="studyin.png" alt="StudyIn project preview showing mobile study app interface"/>
+						</div>
+						<div class="project-info">
+							<h3>StudyIn</h3>
+							<div class="tags" role="list" aria-label="Project tags">
+								<span role="listitem">Mobile</span><span role="listitem">MVP</span><span role="listitem">College</span>
+							</div>
+							<p>A study on mobile systems and components developed during my college years</p>
+							<a href="https://www.figma.com/design/TjXsNKaLpZUA0wfJpmJTDY/StudyIn?node-id=2-3&t=2sQl2RPyWzrw77TF-1" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open StudyIn project in Figma">
+								Open in Figma
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left: 4px" aria-hidden="true">
+									<path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section id="contact" class="contact container">
+				<div class="contact-left">
+					<h2><img src="contact.png" alt="" aria-hidden="true" style="width:1.2em;height:1.2em;vertical-align:-0.15em;margin-right:0.4em;"/>Contact me</h2>
+					<p>If you are interested in my work feel free to reach out to me through my social media. I will answer you as soon as I can!</p>
+				</div>
+				<div class="contact-right" role="list" aria-label="Contact information">
+					<a href="mailto:viniciusferreiraflorencio@live.com" class="contact-item" role="listitem" aria-label="Send email to viniciusferreiraflorencio@live.com">
+						<img src="email.png" alt="" aria-hidden="true"/>
+						<span>viniciusferreiraflorencio@live.com</span>
+					</a>
+					<a href="https://linkedin.com/in/viniciusferreiraflorencio" target="_blank" rel="noopener noreferrer" class="contact-item" role="listitem" aria-label="LinkedIn profile">
+						<img src="linkedin.png" alt="" aria-hidden="true" style="width:18px;height:18px;vertical-align:middle;margin-right:4px;"/>
+						/viniciusferreiraflorencio
+					</a>
+					<a href="http://wa.me/+5513992024705" target="_blank" rel="noopener noreferrer" class="contact-item" role="listitem" aria-label="WhatsApp contact number">
+						<img src="whatsapp.png" alt="" aria-hidden="true"/>
+						<span>+55 13 9 992024705</span>
+					</a>
+					<a href="https://www.behance.net/vifeflo" target="_blank" rel="noopener noreferrer" class="contact-item" role="listitem" aria-label="Behance portfolio">
+						<img src="behance.png" alt="" aria-hidden="true" style="width:18px;height:18px;vertical-align:middle;margin-right:4px;"/>
+						/vifeflo
+					</a>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
