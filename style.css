@@ -136,7 +136,7 @@ main{
     position: relative;
     z-index: 9999;
     width: 100%;
-    padding: 40px;
+    padding: 40px 0;
 }
 
 .nav {
@@ -1034,6 +1034,7 @@ h1 {
 .carousel.focused::after {
     display: none !important;
 }
+
 
 
 
