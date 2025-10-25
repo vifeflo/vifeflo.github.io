@@ -81,6 +81,7 @@ main{
     margin: -40px -40px 80px -40px;
     width: calc(100% + 80px);
     overflow: visible;
+	padding: 0 40px;
 }
 
 .hero-video {
@@ -1033,6 +1034,7 @@ h1 {
 .carousel.focused::after {
     display: none !important;
 }
+
 
 
 
