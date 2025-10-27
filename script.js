@@ -129,3 +129,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+    // Animated counters for achievements stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                const suffix = entry.target.getAttribute('data-suffix') || '';
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        entry.target.textContent = Math.floor(current) + suffix;
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        entry.target.textContent = target + suffix;
+                    }
+                };
+                
+                updateCounter();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    statNumbers.forEach(number => {
+        counterObserver.observe(number);
+    });

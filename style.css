@@ -3,8 +3,8 @@
 	--text: #1b1b1b;
 	--muted: #666;
 	--accent: #1b1b1b;
-	--accent-hover: #444444;
-	--text-hover: #444444;
+	--accent-hover: #00D89F;
+	--text-hover: #00D89F;
 	--container: 1300px;
 }
 
@@ -12,6 +12,7 @@
 html{
 	height:100%;
 	scroll-behavior: smooth;
+    scroll-padding-top: 40px ;
 }
 body{
 	height:100%;
@@ -79,9 +80,9 @@ main{
     flex-direction: column;
     justify-content: flex-start;
     margin: -40px -40px 80px -40px;
+    padding: 0 40px;
     width: calc(100% + 80px);
     overflow: visible;
-	padding: 0 40px;
 }
 
 .hero-video {
@@ -134,7 +135,7 @@ main{
 
 .site-header {
     position: relative;
-    z-index: 9999;
+    z-index: 999;
     width: 100%;
     padding: 40px 0;
 }
@@ -156,8 +157,8 @@ main{
 .nav-left a {
     color: var(--text);
     text-decoration: none;
-    font-size: 18px;
-    font-family: 'Nunito', sans-serif;
+    font-size: 1.125rem;
+    font-family: 'Manrope', sans-serif;
     transition: color 0.2s ease;
 }
 
@@ -169,14 +170,19 @@ main{
 .nav-right a {
     color: var(--text);
     text-decoration: none;
-    font-size: 18px;
-    font-family: 'Nunito', sans-serif;
+    font-size: 1.125rem;
+    font-family: 'Manrope', sans-serif;
     transition: color 0.2s ease;
+}
+
+.nav-right a img {
+    width: 20px !important;
+    height: 20px !important;
 }
 
 .nav-left a:hover,
 .nav-right a:hover {
-    color: var(--text-hover);
+    color: #00D89F;
 }
 .hero-inner {
     position: relative;
@@ -188,12 +194,14 @@ main{
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
+    padding: 0;
 }
 .hero-left {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 20px;
+    max-width: 520px;
 }
 .eyebrow {
     color: var(--text);
@@ -202,6 +210,13 @@ main{
     font-family: 'Manrope', sans-serif;
     font-weight: normal;
 }
+
+.hero-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 h1 {
     margin: 0;
     font-size: 40px;
@@ -221,6 +236,7 @@ h1 {
 
 .hero-ctas {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 0;
     position: relative;
@@ -244,14 +260,15 @@ h1 {
     color: #fff;
 }
 .btn.primary:hover {
-    background: var(--accent-hover);
+    background: #00D89F;
 }
 .btn.ghost {
     background: transparent;
     border-color: #696969;
 }
 .btn.ghost:hover {
-    background: var(--accent-hover);
+    background: #00D89F;
+    border-color: #00D89F;
     color: #fff;
 }
 .btn img {
@@ -287,7 +304,7 @@ h1 {
     background: var(--bg);
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
-    min-width: 206.17px;
+    width: 100%;
     padding: 8px 0;
     opacity: 0;
     visibility: hidden;
@@ -324,11 +341,11 @@ h1 {
 }
 
 .resume-menu-item:hover {
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(2, 223, 162, 0.1);
 }
 
 .resume-menu-item:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid #00D89F;
     outline-offset: -2px;
     background: rgba(0, 0, 0, 0.04);
 }
@@ -353,7 +370,7 @@ h1 {
     margin-top: 40px;
 }
 .tech-icons {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: start;
     align-items: center;
@@ -416,6 +433,76 @@ h1 {
     height: auto;
     display: block;
     border-radius: 8px;
+}
+
+/* Companies Carousel */
+.companies-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.carousel-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 32px 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+.companies-carousel::before,
+.companies-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.companies-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+}
+
+.companies-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 80px;
+    animation: scroll-left 25s linear infinite;
+    width: fit-content;
+}
+
+.company-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.company-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Section headers */
@@ -530,6 +617,10 @@ h1 {
   margin: 0 0 16px;
 }
 
+.timeline-right .description p strong {
+  font-size: 18px;
+}
+
 .timeline-right .description strong {
   font-weight: 500;
 }
@@ -555,6 +646,43 @@ h1 {
 
 .timeline-right .description ul li:last-child {
   margin-bottom: 0;
+}
+
+/* Achievements Stats */
+.achievements-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: left;
+    padding: 24px;
+}
+
+.stat-number {
+    font-size: 56px;
+    font-weight: 700;
+    color: #00D89F;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .achievements-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 48px;
+    }
 }
 
 /* Work */
@@ -655,7 +783,7 @@ h1 {
 }
 
 .project-link:hover {
-    color: var(--accent-hover);
+    color: #00D89F;
 }
 
 .tags {
@@ -691,35 +819,42 @@ h1 {
 }
 
 /* Contact */
-.contact{display:flex;justify-content:space-between;padding-bottom: 80px;}
-.contact-left{max-width:714px;}
-.contact-left p{font-size:1.125rem}
+.contact{display:flex;justify-content:space-between;padding-bottom: 40px;flex-wrap:wrap;gap:32px;}
+.contact-left{max-width:714px;display:flex;flex-direction:column;gap:8px;}
+.contact-left h2{margin:0;}
+.contact-left p{font-size:1.125rem;margin:0;}
+.contact-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: fit-content;
+}
 .contact-right{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-left: 40px;
-    border-left: 1px solid rgba(0,0,0,0.03);
     width: fit-content;
 }
 .contact-item{
-    display:flex;
-    gap:8px;
-    align-items:center;
     font-size:1.125rem;
     text-decoration: none;
     color: var(--text);
-    max-width: 100%;
-}
-.contact-item span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 .contact-item:hover {
-    color: var(--text-hover);
+    color: #00D89F;
 }
-.contact-item img{width:20px;height:20px;flex-shrink:0}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+}
+.footer p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text);
+    opacity: 0.7;
+}
 
 .site-footer{padding:0;text-align:center;color:var(--muted)}
 
@@ -745,6 +880,10 @@ h1 {
     transition: all 0.3s ease;
 }
 
+.menu-toggle:hover span {
+    background-color: #00D89F;
+}
+
 .menu-toggle span:first-child {
     top: 0;
 }
@@ -752,6 +891,7 @@ h1 {
 .menu-toggle span:nth-child(2) {
     top: 50%;
     transform: translateY(-50%);
+    width: 75%;
 }
 
 .menu-toggle span:last-child {
@@ -857,17 +997,21 @@ h1 {
     color: var(--text);
     text-decoration: none;
     font-size: 24px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Manrope', sans-serif;
     transition: color 0.2s ease;
     width: fit-content;
 }
 
 .mobile-nav a:hover {
-    color: var(--text-hover);
+    color: #00D89F;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
+
+    .companies-carousel {
+        margin-top: 0;
+    }
 
     .timeline .timeline-item:last-child .timeline-left .vertical-line{
     margin-bottom: 0;
@@ -900,7 +1044,7 @@ h1 {
         min-height: 100vh;
         height: auto;
         justify-content: center;
-        margin-top: -120px;
+        transform: translateY(-120px);
     }
 
     /* About section mobile styles */
@@ -943,12 +1087,9 @@ h1 {
     }
 
     .timeline {
-        gap: 14px;
+        gap: 60px;
     }
 
-    .timeline-right {
-    gap: 80px;
-    }
 
     .timeline-item {
         display: flex;
@@ -1001,8 +1142,6 @@ h1 {
 
     .contact-right {
         padding-left: 0;
-        border-left: none;
-        padding-top: 40px;
     }
 }
 
@@ -1034,8 +1173,3 @@ h1 {
 .carousel.focused::after {
     display: none !important;
 }
-
-
-
-
-
