@@ -826,13 +826,13 @@ h1 {
 .contact-nav{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     width: fit-content;
 }
 .contact-right{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     width: fit-content;
 }
 .contact-item{
@@ -1177,4 +1177,5 @@ h1 {
 .carousel.focused::after {
     display: none !important;
 }
+
 
