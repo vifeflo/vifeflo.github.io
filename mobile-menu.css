@@ -45,6 +45,10 @@
     transform: translateY(-11px) rotate(-45deg);
 }
 
+.menu-toggle:hover {
+    transform: rotate(-3deg);
+}
+
 .mobile-menu {
     display: none;
     position: fixed;
@@ -82,14 +86,16 @@
 .mobile-nav a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 1.125rem;
-    font-family: 'Manrope', sans-serif;
+    font-size: 1.375rem;
+    font-family: 'Delicious Handrawn', cursive;
+    font-weight: 400;
     transition: all 0.2s ease;
     width: fit-content;
 }
 
 .mobile-nav a:hover {
     color: #d0d0d0;
+    transform: rotate(2deg);
 }
 
 @media (max-width: 900px) {

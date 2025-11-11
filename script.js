@@ -33,12 +33,30 @@ document.addEventListener('DOMContentLoaded', () => {
     menuOverlay.addEventListener('click', closeMenu);
 
     // Close menu when clicking on a link
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', closeMenu);
+    document.querySelectorAll('.mobile-nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                closeMenu();
+                
+                // Wait for menu to close before scrolling
+                setTimeout(() => {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const targetPosition = target.offsetTop - 80; // Account for header
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
     });
 
     // Scroll reveal animations
-    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *');
+    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -77,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const otherMenu = otherDropdown.querySelector('.resume-menu');
                     otherToggle.setAttribute('aria-expanded', 'false');
                     otherMenu.classList.remove('active');
+                    otherMenu.classList.remove('align-right');
                 }
             });
             
@@ -84,9 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.setAttribute('aria-expanded', !isExpanded);
             menu.classList.toggle('active');
             
-            // Focus first menu item when opening
+            // Dynamic alignment based on position
             if (!isExpanded) {
+                // Check if dropdown would overflow to the right
+                const dropdownRect = dropdown.getBoundingClientRect();
+                const menuWidth = 200; // min-width from CSS
+                const viewportWidth = window.innerWidth;
+                const rightSpace = viewportWidth - dropdownRect.right;
+                
+                // If there's not enough space on the right, align to the right
+                if (rightSpace < menuWidth) {
+                    menu.classList.add('align-right');
+                } else {
+                    menu.classList.remove('align-right');
+                }
+                
                 setTimeout(() => menuItems[0]?.focus(), 100);
+            } else {
+                menu.classList.remove('align-right');
             }
         });
         
@@ -95,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!dropdown.contains(e.target)) {
                 toggle.setAttribute('aria-expanded', 'false');
                 menu.classList.remove('active');
+                menu.classList.remove('align-right');
             }
         });
         
@@ -110,10 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (e.key === 'Escape') {
                     toggle.setAttribute('aria-expanded', 'false');
                     menu.classList.remove('active');
+                    menu.classList.remove('align-right');
                     toggle.focus();
                 } else if (e.key === 'Tab' && !e.shiftKey && index === menuItems.length - 1) {
                     toggle.setAttribute('aria-expanded', 'false');
                     menu.classList.remove('active');
+                    menu.classList.remove('align-right');
                 }
             });
             
@@ -126,6 +163,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     menu.classList.remove('active');
                 }, 100);
             });
+        });
+    });
+
+    // Recalculate dropdown alignment on window resize
+    window.addEventListener('resize', () => {
+        resumeDropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.resume-toggle');
+            const menu = dropdown.querySelector('.resume-menu');
+            
+            if (menu.classList.contains('active')) {
+                const dropdownRect = dropdown.getBoundingClientRect();
+                const menuWidth = 200; // min-width from CSS
+                const viewportWidth = window.innerWidth;
+                const rightSpace = viewportWidth - dropdownRect.right;
+                
+                if (rightSpace < menuWidth) {
+                    menu.classList.add('align-right');
+                } else {
+                    menu.classList.remove('align-right');
+                }
+            }
         });
     });
 });
@@ -199,6 +257,28 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 item.classList.remove('active');
                 yearElement.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('.nav-left a[href^="#"], .contact-item[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            console.log('Clicked:', href); // Debug log
+            
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                console.log('Target found:', target); // Debug log
+                
+                if (target) {
+                    const targetPosition = target.offsetTop - 80; // Account for header
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
