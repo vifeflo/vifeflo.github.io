@@ -162,3 +162,44 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach(number => {
         counterObserver.observe(number);
     });
+
+    // Certification Accordion - Optimized
+    const certCards = document.querySelectorAll('.certification-card');
+    
+    certCards.forEach(card => {
+        const header = card.querySelector('.cert-header');
+        
+        header.addEventListener('click', () => {
+            const isActive = card.classList.contains('active');
+            
+            // Simply toggle current card
+            if (!isActive) {
+                card.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+            } else {
+                card.classList.remove('active');
+                header.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // Experience Timeline Accordion
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach(item => {
+        const yearElement = item.querySelector('.year');
+        
+        yearElement.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+                yearElement.setAttribute('aria-expanded', 'true');
+            } else {
+                item.classList.remove('active');
+                yearElement.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
