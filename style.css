@@ -10,10 +10,19 @@
 }
 
 *{box-sizing:border-box}
+
+/* Prevent horizontal scroll on mobile */
+*, 
+*:before, 
+*:after {
+    max-width: 100%;
+}
 html{
 	height:100%;
 	scroll-behavior: smooth;
 	scroll-padding-top: 80px;
+	/* Prevent horizontal scroll */
+	overflow-x: hidden;
 }
 body{
 	height:100%;
@@ -30,6 +39,8 @@ body{
     overflow-x: hidden;
     /* Prevent layout shift when hiding scroll: always show vertical scrollbar */
     overflow-y: scroll;
+    /* Prevent horizontal scroll on mobile */
+    max-width: 100%;
 }
 main{
   display: flex;
@@ -139,12 +150,10 @@ main{
     width: 100%;
     padding: 12px 40px;
     background: var(--accent);
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    left: 0;
+    right: 0;
     top: 0;
+    box-sizing: border-box;
 }
 
 .nav {
@@ -323,12 +332,10 @@ h1 {
 .resume-menu {
     position: absolute;
     top: 0px;
-    right: 0;
     background: var(--bg);
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
     width: fit-content;
-    padding: 8px 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(0px);
@@ -340,6 +347,8 @@ h1 {
     opacity: 1;
     visibility: visible;
     transform: translateY(46px);
+    width: fit-content !important;
+    max-width: fit-content !important;
 }
 
 .resume-menu-header {
@@ -484,6 +493,11 @@ h1 {
     padding: 20px 0;
     margin-top: 0;
     z-index: -1;
+    /* Improve performance on mobile */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .carousel-title {
@@ -519,8 +533,11 @@ h1 {
 .carousel-track {
     display: flex;
     gap: 80px;
-    animation: scroll-left 25s linear infinite;
+    animation: scroll-left 20s linear infinite;
     width: fit-content;
+    /* Improve performance */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 .company-logo {
@@ -545,6 +562,19 @@ h1 {
     }
     100% {
         transform: translateX(-50%);
+    }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+        animation: scroll-left 40s linear infinite;
+    }
+    
+    @media (max-width: 900px) {
+        .carousel-track {
+            animation: scroll-left 30s linear infinite;
+        }
     }
 }
 
@@ -1046,8 +1076,19 @@ h1 {
 /* Contact */
 .contact {
 	background: var(--accent);
-	width: 100vw;
+	width: 100%;
 	padding: 80px 0;
+	margin-left: calc(-1 * (100vw - 100%) / 2);
+	margin-right: calc(-1 * (100vw - 100%) / 2);
+	box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .contact {
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+    }
 }
 
 .contact > .container {
@@ -1105,7 +1146,7 @@ h1 {
 /* Footer */
 .copyright {
     text-align: center;
-    width: 100vw;
+    width: 100%;
     margin: 40px 0 0 0;
     font-size: 0.875rem;
     color: #FFFFFF;
@@ -1195,7 +1236,7 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: rgba(0,0,0,0.12);
     z-index: 19;
@@ -1218,23 +1259,6 @@ h1 {
 }
 
 /* Overlay para fundo ao abrir menu hamburguer */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.12);
-    z-index: 19;
-    transition: opacity 0.3s cubic-bezier(.4,0,.2,1);
-    opacity: 0;
-}
-.menu-overlay.active {
-    display: block;
-    opacity: 1;
-}
-
 .hero-inner.menu-open {
     z-index: 1;
 }
@@ -1248,16 +1272,16 @@ h1 {
 }
 
 .mobile-nav a {
-    color: var(--text);
+    color: #FFFFFF;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 1.125rem;
     font-family: 'Manrope', sans-serif;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
     width: fit-content;
 }
 
 .mobile-nav a:hover {
-    color: var(--text-hover);
+    color: #d0d0d0;
 }
 
 /* Responsive */
@@ -1277,7 +1301,28 @@ h1 {
     }
 
 	.carousel-track {
-        animation: scroll-left 15s linear infinite;
+        animation: scroll-left 8s linear infinite;
+        /* Improve performance on mobile */
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* Further optimize for very small/slow devices */
+    @media (max-width: 480px) {
+        .carousel-track {
+            animation: scroll-left 6s linear infinite;
+            gap: 60px;
+        }
+        
+        .company-logo {
+            height: 40px;
+            max-height: 40px;
+        }
+        
+        .companies-carousel::before,
+        .companies-carousel::after {
+            width: 80px;
+        }
     }
 
     .timeline .timeline-item:last-child .timeline-left .vertical-line{
@@ -1287,6 +1332,10 @@ h1 {
     body{
         padding-left: 20px;
         padding-right: 20px;
+        /* Ensure no horizontal overflow */
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
     }
 
     .nav-left, 
@@ -1297,6 +1346,15 @@ h1 {
     .menu-toggle {
         display: block;
         margin-left: auto;
+    }
+
+    /* Ensure header doesn't cause horizontal overflow */
+    .site-header {
+        padding: 12px 20px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0;
     }
 
     .mobile-menu {
@@ -1315,7 +1373,7 @@ h1 {
     }
 
     .hero-profile-pic {
-        height: 400px;
+        height: 300px;
         order: -1;
         align-self: center;
     }
@@ -1415,6 +1473,28 @@ h1 {
 
 /* Additional mobile adjustments for smaller screens */
 @media (max-width: 480px) {
+    /* Ensure all elements stay within viewport */
+    *, *:before, *:after {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Reduce body padding on very small screens */
+    body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .site-header {
+        padding: 12px 16px;
+    }
+
+    .contact {
+        margin-left: -16px;
+        margin-right: -16px;
+        width: calc(100% + 32px);
+    }
+
     .timeline-item {
         gap: 12px;
     }
