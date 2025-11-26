@@ -595,6 +595,42 @@ h1 {
 .about-text strong {
     font-weight: 500;
 }
+.about-text h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+.tools-icons {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.tool-item img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+.tool-item:hover img {
+    transform: scale(1.1);
+}
+.tool-name {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+}
 .about-image {
     flex-shrink: 0;
 }
@@ -614,6 +650,15 @@ h1 {
 
 .hero-carousel.visible {
     opacity: 1;
+}
+
+.companies-title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    line-height: normal;
 }
 
 /* Companies Carousel */
@@ -1191,6 +1236,10 @@ h1 {
 
 .work-card:nth-child(3) {
     transform: rotate(-0.2deg);
+}
+
+.work-card:nth-child(4) {
+    transform: rotate(0.3deg);
 }
 
 .work-card:hover {
