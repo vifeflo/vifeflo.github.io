@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lenis smooth scroll
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Make lenis globally accessible for anchor links
+    window.lenis = lenis;
+
     // Mobile Menu
     const menuButton = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -40,23 +62,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 closeMenu();
                 
-                // Wait for menu to close before scrolling
+                // Wait for menu to close before scrolling with Lenis
                 setTimeout(() => {
                     const target = document.querySelector(href);
-                    if (target) {
-                        const targetPosition = target.offsetTop - 80; // Account for header
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
+                    if (target && window.lenis) {
+                        window.lenis.scrollTo(target, { offset: -80 });
                     }
                 }, 100);
             }
         });
     });
 
+    // Handle all anchor links with Lenis
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#' && !this.closest('.mobile-nav')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target && window.lenis) {
+                    window.lenis.scrollTo(target, { offset: -80 });
+                }
+            }
+        });
+    });
+
     // Scroll reveal animations
-    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel');
+    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel, .studyin-hero-container, .studyin-hero-top, .studyin-hero-bottom > *, .studyin-problem, .studyin-interviews, .studyin-persona, .studyin-development, .studyin-card, .studyin-showcase, .studyin-showcase-image');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -66,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -120px 0px'
     });
 
     fadeElements.forEach(element => {
@@ -282,4 +314,385 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+
+    // Image zoom functionality
+    const zoomableImages = document.querySelectorAll('.studyin-showcase-image, .studyin-hero-image:not(.no-zoom)');
+    const allZoomableImages = Array.from(zoomableImages);
+    
+    // Image captions mapping
+    const imageCaptions = {
+        'StudyIn showcase light.png': "StudyIn's showcase (light mode)",
+        'StudyIn%20showcase%20light.png': "StudyIn's showcase (light mode)",
+        'StudyIn showcase dark.png': "StudyIn's showcase (dark mode)",
+        'StudyIn%20showcase%20dark.png': "StudyIn's showcase (dark mode)",
+        'studyin-hero.png': "StudyIn",
+        'Studyin thumbnail.png': "StudyIn",
+        'Studyin%20thumbnail.png': "StudyIn"
+    };
+    
+    const getImageCaption = (src) => {
+        const filename = decodeURIComponent(src.split('/').pop());
+        return imageCaptions[filename] || imageCaptions[src.split('/').pop()] || filename;
+    };
+    
+    zoomableImages.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        
+        img.addEventListener('click', () => {
+            let currentIndex = index;
+            let isFullSize = false;
+            let isDragging = false;
+            let hasDragged = false;
+            let startX, startY, scrollLeft, scrollTop;
+            
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.classList.add('image-zoom-overlay');
+            
+            // Create image container for scrolling
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('image-zoom-container');
+            
+            // Create zoomed image
+            const zoomedImg = document.createElement('img');
+            zoomedImg.src = img.src;
+            zoomedImg.alt = img.alt;
+            zoomedImg.classList.add('image-zoom-content');
+            
+            // Create close button
+            const closeBtn = document.createElement('button');
+            closeBtn.classList.add('image-zoom-close');
+            closeBtn.innerHTML = '&times;';
+            closeBtn.setAttribute('aria-label', 'Close zoom');
+            
+            // Create navigation buttons
+            const prevBtn = document.createElement('button');
+            prevBtn.classList.add('image-zoom-nav', 'image-zoom-prev');
+            prevBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            prevBtn.setAttribute('aria-label', 'Previous image');
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.classList.add('image-zoom-nav', 'image-zoom-next');
+            nextBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            nextBtn.setAttribute('aria-label', 'Next image');
+            
+            // Create zoom hint
+            const zoomHint = document.createElement('div');
+            zoomHint.classList.add('image-zoom-hint');
+            zoomHint.textContent = 'Scroll to zoom • Click image to view full size';
+            
+            // Create image caption
+            const imageCaption = document.createElement('div');
+            imageCaption.classList.add('image-zoom-caption');
+            imageCaption.textContent = getImageCaption(img.src);
+            
+            imageContainer.appendChild(zoomedImg);
+            overlay.appendChild(imageContainer);
+            overlay.appendChild(closeBtn);
+            overlay.appendChild(zoomHint);
+            overlay.appendChild(imageCaption);
+            
+            // Only show nav buttons if there are multiple images
+            if (allZoomableImages.length > 1) {
+                overlay.appendChild(prevBtn);
+                overlay.appendChild(nextBtn);
+            }
+            
+            document.body.appendChild(overlay);
+            document.body.style.overflow = 'hidden';
+            
+            // Update navigation visibility and caption
+            const updateNavVisibility = () => {
+                if (allZoomableImages.length > 1) {
+                    prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+                    nextBtn.style.display = currentIndex < allZoomableImages.length - 1 ? 'flex' : 'none';
+                }
+            };
+            updateNavVisibility();
+            
+            // Store original image dimensions and zoom state
+            let originalWidth = 0;
+            let originalHeight = 0;
+            let zoomLevel = 0; // 0 = fit mode, then 0.25 to 4 for actual zoom levels
+            const minZoom = 0.25;
+            const maxZoom = 4;
+            const zoomStep = 0.15;
+            
+            zoomedImg.onload = () => {
+                originalWidth = zoomedImg.naturalWidth;
+                originalHeight = zoomedImg.naturalHeight;
+            };
+            
+            // Apply zoom using width/height
+            const applyZoom = (level, centerScroll = false) => {
+                zoomLevel = level;
+                
+                if (level === 0) {
+                    // Reset to fit mode
+                    zoomedImg.style.width = '';
+                    zoomedImg.style.height = '';
+                    overlay.classList.remove('full-size');
+                    isFullSize = false;
+                    imageContainer.scrollTop = 0;
+                    imageContainer.scrollLeft = 0;
+                    zoomHint.textContent = 'Scroll to zoom • Click image to view full size';
+                } else {
+                    // Apply zoom as actual dimensions
+                    const newWidth = originalWidth * level;
+                    const newHeight = originalHeight * level;
+                    zoomedImg.style.width = newWidth + 'px';
+                    zoomedImg.style.height = newHeight + 'px';
+                    overlay.classList.add('full-size');
+                    isFullSize = true;
+                    
+                    if (level >= 1) {
+                        zoomHint.textContent = `Zoom: ${Math.round(level * 100)}% • Scroll to zoom • Drag to pan`;
+                    } else {
+                        zoomHint.textContent = `Zoom: ${Math.round(level * 100)}% • Scroll to zoom`;
+                    }
+                    
+                    // Center the scroll position on first zoom
+                    if (centerScroll) {
+                        setTimeout(() => {
+                            const scrollX = (imageContainer.scrollWidth - imageContainer.clientWidth) / 2;
+                            const scrollY = (imageContainer.scrollHeight - imageContainer.clientHeight) / 2;
+                            imageContainer.scrollLeft = Math.max(0, scrollX);
+                            imageContainer.scrollTop = Math.max(0, scrollY);
+                        }, 10);
+                    }
+                }
+            };
+            
+            // Navigate to image
+            const navigateToImage = (newIndex) => {
+                if (newIndex >= 0 && newIndex < allZoomableImages.length) {
+                    currentIndex = newIndex;
+                    zoomedImg.src = allZoomableImages[currentIndex].src;
+                    zoomedImg.alt = allZoomableImages[currentIndex].alt;
+                    imageCaption.textContent = getImageCaption(allZoomableImages[currentIndex].src);
+                    updateNavVisibility();
+                    
+                    // Reset zoom state when navigating
+                    applyZoom(0);
+                }
+            };
+            
+            // Drag to pan functionality
+            let dragStartTime = 0;
+            
+            const handleMouseDown = (e) => {
+                if (!isFullSize) return;
+                e.preventDefault();
+                isDragging = true;
+                hasDragged = false;
+                dragStartTime = Date.now();
+                imageContainer.classList.add('dragging');
+                startX = e.pageX;
+                startY = e.pageY;
+                scrollLeft = imageContainer.scrollLeft;
+                scrollTop = imageContainer.scrollTop;
+            };
+            
+            const handleMouseUp = () => {
+                if (isDragging) {
+                    isDragging = false;
+                    imageContainer.classList.remove('dragging');
+                }
+            };
+            
+            const handleMouseMove = (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const dx = e.pageX - startX;
+                const dy = e.pageY - startY;
+                
+                // Only count as drag if moved more than 5px
+                if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+                    hasDragged = true;
+                }
+                
+                imageContainer.scrollLeft = scrollLeft - dx;
+                imageContainer.scrollTop = scrollTop - dy;
+            };
+            
+            imageContainer.addEventListener('mousedown', handleMouseDown);
+            document.addEventListener('mouseup', handleMouseUp);
+            document.addEventListener('mousemove', handleMouseMove);
+            
+            // Touch drag support
+            const handleTouchStart = (e) => {
+                if (!isFullSize) return;
+                isDragging = true;
+                hasDragged = false;
+                dragStartTime = Date.now();
+                startX = e.touches[0].pageX;
+                startY = e.touches[0].pageY;
+                scrollLeft = imageContainer.scrollLeft;
+                scrollTop = imageContainer.scrollTop;
+            };
+            
+            const handleTouchEnd = () => {
+                isDragging = false;
+            };
+            
+            const handleTouchMove = (e) => {
+                if (!isDragging) return;
+                const dx = e.touches[0].pageX - startX;
+                const dy = e.touches[0].pageY - startY;
+                
+                if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+                    hasDragged = true;
+                }
+                
+                imageContainer.scrollLeft = scrollLeft - dx;
+                imageContainer.scrollTop = scrollTop - dy;
+            };
+            
+            imageContainer.addEventListener('touchstart', handleTouchStart);
+            imageContainer.addEventListener('touchend', handleTouchEnd);
+            imageContainer.addEventListener('touchmove', handleTouchMove);
+            
+            // Zoom with mouse wheel
+            const handleWheel = (e) => {
+                e.preventDefault();
+                
+                // Wait for image to load before zooming
+                if (originalWidth === 0) {
+                    originalWidth = zoomedImg.naturalWidth || zoomedImg.width;
+                    originalHeight = zoomedImg.naturalHeight || zoomedImg.height;
+                }
+                
+                // Store current scroll ratios to maintain position
+                const scrollRatioX = imageContainer.scrollWidth > imageContainer.clientWidth 
+                    ? imageContainer.scrollLeft / (imageContainer.scrollWidth - imageContainer.clientWidth) 
+                    : 0.5;
+                const scrollRatioY = imageContainer.scrollHeight > imageContainer.clientHeight 
+                    ? imageContainer.scrollTop / (imageContainer.scrollHeight - imageContainer.clientHeight) 
+                    : 0.5;
+                
+                let newZoom;
+                const isZoomingIn = e.deltaY < 0;
+                
+                if (zoomLevel === 0) {
+                    // From fit mode, go to 50% first
+                    newZoom = minZoom;
+                } else {
+                    // Calculate new zoom
+                    const delta = isZoomingIn ? zoomStep : -zoomStep;
+                    newZoom = Math.max(minZoom, Math.min(maxZoom, zoomLevel + delta));
+                    
+                    // If zooming out below minZoom, go back to fit mode
+                    if (!isZoomingIn && zoomLevel <= minZoom) {
+                        newZoom = 0;
+                    }
+                }
+                
+                if (newZoom !== zoomLevel) {
+                    const isFirstZoom = zoomLevel === 0;
+                    applyZoom(newZoom, isFirstZoom);
+                    
+                    // Restore scroll position after zoom (if not first zoom and not fit mode)
+                    if (!isFirstZoom && newZoom > 0) {
+                        setTimeout(() => {
+                            const newScrollX = scrollRatioX * (imageContainer.scrollWidth - imageContainer.clientWidth);
+                            const newScrollY = scrollRatioY * (imageContainer.scrollHeight - imageContainer.clientHeight);
+                            imageContainer.scrollLeft = Math.max(0, newScrollX);
+                            imageContainer.scrollTop = Math.max(0, newScrollY);
+                        }, 10);
+                    }
+                }
+            };
+            
+            overlay.addEventListener('wheel', handleWheel, { passive: false });
+            
+            // Toggle full size on image click
+            zoomedImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Don't toggle if we just finished dragging
+                if (hasDragged) {
+                    hasDragged = false;
+                    return;
+                }
+                
+                // Ensure we have dimensions
+                if (originalWidth === 0) {
+                    originalWidth = zoomedImg.naturalWidth || zoomedImg.width;
+                    originalHeight = zoomedImg.naturalHeight || zoomedImg.height;
+                }
+                
+                if (zoomLevel !== 0) {
+                    // Reset to fit mode
+                    applyZoom(0);
+                } else {
+                    // Zoom to 100% (real size)
+                    applyZoom(1, true);
+                }
+            });
+            
+            // Navigation button events
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navigateToImage(currentIndex - 1);
+            });
+            
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navigateToImage(currentIndex + 1);
+            });
+            
+            // Trigger animation
+            requestAnimationFrame(() => {
+                overlay.classList.add('active');
+            });
+            
+            // Close function
+            const closeOverlay = () => {
+                overlay.classList.remove('active');
+                // Clean up event listeners
+                document.removeEventListener('mouseup', handleMouseUp);
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('keydown', handleKeydown);
+                setTimeout(() => {
+                    overlay.remove();
+                    document.body.style.overflow = '';
+                }, 300);
+            };
+            
+            // Close on overlay click (not on image or buttons)
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target === closeBtn) {
+                    closeOverlay();
+                }
+            });
+            
+            // Close on container click (clicking outside the image)
+            imageContainer.addEventListener('click', (e) => {
+                if (e.target === imageContainer) {
+                    closeOverlay();
+                }
+            });
+            
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeOverlay();
+            });
+            
+            // Keyboard navigation
+            const handleKeydown = (e) => {
+                if (e.key === 'Escape') {
+                    closeOverlay();
+                    document.removeEventListener('keydown', handleKeydown);
+                } else if (e.key === 'ArrowLeft') {
+                    navigateToImage(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateToImage(currentIndex + 1);
+                }
+            };
+            document.addEventListener('keydown', handleKeydown);
+        });
+    });
+
+
+
 

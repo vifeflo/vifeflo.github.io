@@ -1,0 +1,539 @@
+/* StudyIn Project Page Styles */
+
+/* Inline Links */
+.inline-link {
+	color: var(--accent);
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom-color 0.2s ease;
+}
+
+.inline-link:hover {
+	border-bottom-color: var(--accent);
+}
+
+/* StudyIn Sections */
+.studyin-problem,
+.studyin-persona,
+.studyin-interviews,
+.studyin-development {
+	padding: 80px 0;
+    border-top: 1px solid #d4d4d4;
+}
+
+.studyin-container {
+	max-width: 1300px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.studyin-section-title {
+	font-size: 42px;
+	font-weight: 400;
+	color: var(--accent);
+	font-family: 'Delicious Handrawn', cursive;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+.studyin-section-title .section-icon {
+	width: 42px;
+	height: 42px;
+	object-fit: contain;
+}
+
+.studyin-card {
+	background: white;
+	border-radius: 0;
+	border: 2px solid var(--accent);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.04);
+	padding: 32px;
+	transition: transform 0.2s ease-out;
+	will-change: transform;
+}
+
+.studyin-problem .studyin-card {
+	transform: rotate(-0.4deg);
+}
+
+.studyin-interviews .studyin-card {
+	transform: rotate(0.6deg);
+}
+
+.studyin-persona .studyin-card {
+	transform: rotate(-0.3deg);
+}
+
+.studyin-development .studyin-card {
+	transform: rotate(0.5deg);
+}
+
+.studyin-card:hover {
+	transform: rotate(0deg) translateY(-4px) scale(1.02);
+}
+
+.studyin-card h2 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-bottom: 18px;
+	font-size: 42px;
+	font-weight: 400;
+	color: var(--accent);
+	font-family: 'Delicious Handrawn', cursive;
+}
+
+.studyin-card h3 {
+	font-size: 20px;
+	font-weight: 600;
+    margin-bottom: 18px;
+	color: var(--text);
+	font-family: 'Manrope', sans-serif;
+}
+
+.studyin-card p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: 18px;
+    font-size: 18px;
+	font-size: 1.125rem;
+	color: var(--text);
+	font-family: 'Manrope', sans-serif;
+}
+
+/* Research Card Layout */
+.research-header {
+	display: flex;
+	gap: 32px;
+	align-items: center;
+	margin-bottom: 0;
+}
+
+.research-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-shrink: 0;
+}
+
+.stat-number {
+	font-size: 64px;
+	font-weight: 700;
+	color: var(--accent);
+	line-height: 1;
+	font-family: 'Manrope', sans-serif;
+}
+
+.stat-label {
+	font-size: 16px;
+	color: var(--text);
+	font-family: 'Manrope', sans-serif;
+	margin-top: 4px;
+}
+
+.research-description {
+	flex: 1;
+}
+
+.research-description p {
+	margin: 0;
+}
+
+.research-divider {
+	border: none;
+	border-top: 1px solid #d4d4d4;
+	margin: 24px 0;
+}
+
+.frustrations-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px 32px;
+	margin-top: 16px;
+}
+
+.frustrations-grid p {
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.research-header {
+		flex-direction: column;
+		gap: 24px;
+	}
+	
+	.stat-number {
+		font-size: 48px;
+	}
+	
+	.frustrations-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Persona Card Layout */
+.persona-top {
+	display: flex;
+	gap: 32px;
+	align-items: flex-start;
+	margin-bottom: 24px;
+}
+
+.persona-image {
+	width: 300px;
+	height: auto;
+	border-radius: 8px;
+	flex-shrink: 0;
+	display: block;
+}
+
+.persona-info {
+	flex: 1;
+}
+
+.persona-info p:last-child {
+	margin-bottom: 0;
+}
+
+.persona-divider {
+	border: none;
+	border-top: 1px solid #d4d4d4;
+	margin: 24px 0;
+}
+
+.persona-columns {
+	display: flex;
+	gap: 32px;
+}
+
+.persona-column {
+	flex: 1;
+}
+
+.persona-column h3 {
+	margin-top: 0;
+}
+
+.persona-column p:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+	.persona-top {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.persona-image {
+		width: 200px;
+	}
+	
+	.persona-columns {
+		flex-direction: column;
+		gap: 24px;
+	}
+}
+
+/* Hero Section */
+.studyin-hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	overflow: visible;
+}
+
+.studyin-hero-container {
+	max-width: 1300px;
+	width: 100%;
+	margin: 0 auto;
+    margin-top:80px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding: 0;
+    margin-bottom: 80px
+}
+
+.studyin-hero-top {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.studyin-hero-image {
+	width: 100%;
+	max-width: 1300px;
+	height: auto;
+	border-radius: 12px;
+	display: block;
+	cursor: zoom-in;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.studyin-hero-image:hover {
+	transform: scale(1.01);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.studyin-hero-image.no-zoom {
+	cursor: default;
+}
+
+.studyin-hero-bottom {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: left;
+}
+
+.studyin-hero-title-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.studyin-hero h1 {
+	font-size: 80px;
+	color: var(--accent);
+	line-height: 1.2;
+	font-family: 'Delicious Handrawn', cursive;
+	font-weight: 400;
+	margin: 0;
+}
+
+.studyin-hero-lead {
+	font-size: 20px;
+	color: var(--text);
+	font-family: 'Manrope', sans-serif;
+	font-weight: normal;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* StudyIn Work Tags */
+.studyin-hero .work-tags span {
+	font-size: 16px;
+	padding: 6px 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.studyin-hero h1 {
+		font-size: 3rem;
+	}
+
+	.studyin-hero-lead {
+		font-size: 1rem;
+	}
+
+	.studyin-problem,
+	.studyin-persona,
+	.studyin-interviews,
+	.studyin-development {
+		padding: 60px 0;
+	}
+
+	.studyin-card {
+		padding: 24px;
+	}
+
+	.studyin-card h2 {
+		font-size: 1.75rem;
+	}
+
+	.studyin-card h3 {
+		font-size: 1.25rem;
+	}
+
+	.studyin-card p {
+		font-size: 1rem;
+	}
+}
+
+/* Showcase Images */
+.studyin-showcase {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	margin-top: 24px;
+}
+
+.studyin-showcase-image {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	cursor: zoom-in;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.studyin-showcase-image:hover {
+	transform: scale(1.01);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Zoom Overlay */
+.image-zoom-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.9);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.image-zoom-overlay.active {
+	opacity: 1;
+}
+
+.image-zoom-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.image-zoom-overlay.full-size .image-zoom-container {
+	overflow: auto;
+	display: block;
+	padding: 20px;
+}
+
+.image-zoom-content {
+	max-width: 90%;
+	max-height: 90%;
+	object-fit: contain;
+	border-radius: 8px;
+	transition: width 0.2s ease, height 0.2s ease;
+	cursor: zoom-in;
+	flex-shrink: 0;
+}
+
+.image-zoom-overlay.full-size .image-zoom-content {
+	max-width: none;
+	max-height: none;
+	cursor: grab;
+	border-radius: 0;
+	display: block;
+	margin: auto;
+}
+
+.image-zoom-overlay.full-size .image-zoom-container.dragging {
+	cursor: grabbing;
+}
+
+.image-zoom-overlay.full-size .image-zoom-container.dragging .image-zoom-content {
+	cursor: grabbing;
+}
+
+.image-zoom-close {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 48px;
+	height: 48px;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: none;
+	border-radius: 50%;
+	color: white;
+	font-size: 32px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background 0.2s ease;
+	z-index: 10001;
+}
+
+.image-zoom-close:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+/* Navigation Buttons */
+.image-zoom-nav {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 56px;
+	height: 56px;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: none;
+	border-radius: 50%;
+	color: white;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background 0.2s ease, transform 0.2s ease;
+	z-index: 10001;
+}
+
+.image-zoom-nav:hover {
+	background: rgba(0, 0, 0, 0.8);
+	transform: translateY(-50%) scale(1.1);
+}
+
+.image-zoom-prev {
+	left: 20px;
+}
+
+.image-zoom-next {
+	right: 20px;
+}
+
+/* Zoom Hint */
+.image-zoom-hint {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	color: white;
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-family: 'Manrope', sans-serif;
+	font-size: 14px;
+	z-index: 10001;
+	pointer-events: none;
+}
+
+/* Image Caption */
+.image-zoom-caption {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-family: 'Manrope', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	z-index: 10001;
+	pointer-events: none;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
