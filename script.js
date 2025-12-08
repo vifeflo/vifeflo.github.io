@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll reveal animations
-    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel, .studyin-hero-container, .studyin-hero-top, .studyin-hero-bottom > *, .studyin-problem, .studyin-interviews, .studyin-persona, .studyin-development, .studyin-card, .studyin-showcase, .studyin-showcase-image');
+    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel, .studyin-hero-container, .studyin-hero-top, .studyin-hero-bottom > *, .studyin-problem, .studyin-interviews, .studyin-persona, .studyin-development > .studyin-section-title, .studyin-development > .studyin-card, .key-feature');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Image zoom functionality
-    const zoomableImages = document.querySelectorAll('.studyin-showcase-image, .studyin-hero-image:not(.no-zoom)');
+    const zoomableImages = document.querySelectorAll('.studyin-showcase-image, .studyin-hero-image:not(.no-zoom), .key-feature-image, .key-feature-showcase-image');
     const allZoomableImages = Array.from(zoomableImages);
     
     // Image captions mapping
@@ -328,7 +328,17 @@ document.addEventListener('DOMContentLoaded', () => {
         'StudyIn%20showcase%20dark.png': "StudyIn's showcase (dark mode)",
         'studyin-hero.png': "StudyIn",
         'Studyin thumbnail.png': "StudyIn",
-        'Studyin%20thumbnail.png': "StudyIn"
+        'Studyin%20thumbnail.png': "StudyIn",
+        'Flexible onboarding.png': "Flexible onboarding",
+        'Flexible%20onboarding.png': "Flexible onboarding",
+        'Home screen.png': "Home screen",
+        'Home%20screen.png': "Home screen",
+        'Grades.png': "Grades",
+        'Schedule.png': "Schedule",
+        'News.png': "News",
+        'Profile.png': "Profile",
+        'Real-time notifications.png': "Real-time notifications",
+        'Real-time%20notifications.png': "Real-time notifications"
     };
     
     const getImageCaption = (src) => {
