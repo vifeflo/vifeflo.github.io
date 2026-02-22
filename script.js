@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll reveal animations
-    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel, .studyin-hero-container, .studyin-hero-top, .studyin-hero-bottom > *, .studyin-problem, .studyin-interviews, .studyin-persona, .studyin-development > .studyin-section-title, .studyin-development > .studyin-card, .key-feature');
+    const fadeElements = document.querySelectorAll('.about, .about-inner > *, .experience, .exp-head, .timeline-item, .work-head, .projects-grid .project-card, .contact, .contact-left > *, .contact-right > *, .hero-carousel, .studyin-hero-container, .studyin-hero-top, .studyin-hero-bottom > *, .studyin-problem, .studyin-interviews, .studyin-persona, .studyin-development > .studyin-section-title, .studyin-development > .studyin-card, .key-feature, .uikit-hero-container, .uikit-hero-top, .uikit-hero-bottom > *, .uikit-section, .uikit-card, .brand-card, .token-card, .category-card, .states-group, .flow-item');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Image zoom functionality
-    const zoomableImages = document.querySelectorAll('.studyin-showcase-image, .studyin-hero-image:not(.no-zoom), .key-feature-image, .key-feature-showcase-image');
+    const zoomableImages = document.querySelectorAll('.studyin-showcase-image, .studyin-hero-image:not(.no-zoom), .key-feature-image, .key-feature-showcase-image, .uikit-hero-image, .brand-image, .tokens-image, .tokens-feature-image, .accessibility-image, .responsive-image, .category-image, .states-image, .flow-image, .flow-feature-image, .component-showcase-image');
     const allZoomableImages = Array.from(zoomableImages);
     
     // Image captions mapping
@@ -338,12 +338,41 @@ document.addEventListener('DOMContentLoaded', () => {
         'News.png': "News",
         'Profile.png': "Profile",
         'Real-time notifications.png': "Real-time notifications",
-        'Real-time%20notifications.png': "Real-time notifications"
+        'Real-time%20notifications.png': "Real-time notifications",
+        // Basic UI Kit captions
+        'basic-thumbnail.png': "Basic UI Kit",
+        'Indigo.png': "Indigo",
+        'Magenta.png': "Magenta",
+        'Moss.png': "Moss",
+        'Orange.png': "Orange",
+        'Colors.png': "Colors",
+        'Colors light.png': "Colors (Light Mode)",
+        'Colors%20light.png': "Colors (Light Mode)",
+        'Colors dark.png': "Colors (Dark Mode)",
+        'Colors%20dark.png': "Colors (Dark Mode)",
+        'Light.png': "Light Mode",
+        'Dark.png': "Dark Mode",
+        'Desktop.png': "Desktop",
+        'Tablet.png': "Tablet",
+        'Mobile.png': "Mobile",
+        'Components and variations.png': "Components and variations",
+        'Components%20and%20variations.png': "Components and variations",
+        'Products.png': "Products",
+        'New product.png': "New product",
+        'New%20product.png': "New product",
+        'Product added.png': "Product added",
+        'Product%20added.png': "Product added",
+        'Product info.png': "Product info",
+        'Product%20info.png': "Product info"
     };
     
     const getImageCaption = (src) => {
         const filename = decodeURIComponent(src.split('/').pop());
-        return imageCaptions[filename] || imageCaptions[src.split('/').pop()] || filename;
+        // Remove .png extension from caption if not in mapping
+        const captionFromMap = imageCaptions[filename] || imageCaptions[src.split('/').pop()];
+        if (captionFromMap) return captionFromMap;
+        // Fallback: remove extension and format filename
+        return filename.replace(/\.(png|jpg|jpeg|gif|webp)$/i, '').replace(/%20/g, ' ');
     };
     
     zoomableImages.forEach((img, index) => {
