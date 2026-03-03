@@ -146,14 +146,19 @@
     }
 
     .footer-content { grid-template-columns: 1fr; gap: 20px; }
+
+    .footer-contact {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .footer-copyright {
+        text-align: center !important;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .footer-contact { flex-direction: column; align-items: flex-start; }
-    
-    .footer-copyright {
-        text-align: center;
-    }
 }
 
 /* Copyright */
