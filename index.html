@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicius Florencio - UI&UX Designer</title>
+    <link rel="icon" type="image/png" href="https://www.figma.com/api/mcp/asset/70c865fb-303d-4611-9594-359e956508a4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Shader -->
+    <iframe class="hero-shader" src="data:text/html;base64,PGh0bWw+CiAgICAgICAgPGhlYWQ+CiAgICAgICAgICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CiAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgIGh0bWwsIGJvZHl7CiAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgIGJvcmRlcjogMDsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vdW5wa2cuY29tL21lZGlhLXNoYWRlckBsYXRlc3QvbWVkaWEtc2hhZGVyLmpzIj48L3NjcmlwdD4KICAgIDxtZWRpYS1zaGFkZXIKICAgICAgICB3aWR0aD0iMTAwJSIgCiAgICAgICAgaGVpZ2h0PSIxMDAlIgogICAgICAgIGZyYWdtZW50LXNoYWRlcj0nI3ZlcnNpb24gMzAwIGVzCiAgICBwcmVjaXNpb24gaGlnaHAgZmxvYXQ7CiAgICBvdXQgdmVjNCBnbEZyYWdDb2xvcjsKICAgIHVuaWZvcm0gdmVjMiB1X3Jlc29sdXRpb247CnVuaWZvcm0gZmxvYXQgdV90aW1lOwp1bmlmb3JtIHZlYzQgdV9iYWNrZ3JvdW5kOwp1bmlmb3JtIHZlYzMgdV9jb2xvcjsKdW5pZm9ybSBmbG9hdCB1X3NwZWVkOwp1bmlmb3JtIGZsb2F0IHVfZGV0YWlsOwptYXQyIG0oZmxvYXQgYSkgewogICAgZmxvYXQgYz1jb3MoYSksIHM9c2luKGEpOwogICAgcmV0dXJuIG1hdDIoYywtcyxzLGMpOwp9CiNpZm5kZWYgRk5DX1JHQjJMVU1BCiNkZWZpbmUgRk5DX1JHQjJMVU1BCmZsb2F0IHJnYjJsdW1hKGluIHZlYzMgY29sb3IpIHsKICAgIHJldHVybiBkb3QoY29sb3IsIHZlYzMoMC4yOTksIDAuNTg3LCAwLjExNCkpOwp9CmZsb2F0IHJnYjJsdW1hKGluIHZlYzQgY29sb3IpIHsKICAgIHJldHVybiByZ2IybHVtYShjb2xvci5yZ2IpOwp9CiNlbmRpZgojaWZuZGVmIEZOQ19MVU1BCiNkZWZpbmUgRk5DX0xVTUEKZmxvYXQgbHVtYShmbG9hdCB2KSB7IHJldHVybiB2OyB9CmZsb2F0IGx1bWEoaW4gdmVjMyB2KSB7IHJldHVybiByZ2IybHVtYSh2KTsgfQpmbG9hdCBsdW1hKGluIHZlYzQgdikgeyByZXR1cm4gcmdiMmx1bWEodi5yZ2IpOyB9CiNlbmRpZgpmbG9hdCBtYXAodmVjMyBwKSB7CiAgICBmbG9hdCB0ID0gdV90aW1lICogdV9zcGVlZDsKICAgIHAueHogKj0gbSh0ICogMC40KTtwLnh5Kj0gbSh0ICogMC4xKTsKICAgIHZlYzMgcSA9IHAgKiAyLjAgKyB0OwogICAgcmV0dXJuIGxlbmd0aChwK3ZlYzMoc2luKCh0KnVfc3BlZWQpICogMC4xKSkpICogbG9nKGxlbmd0aChwKSArIDAuOSkgKyBjb3MocS54ICsgc2luKHEueiArIGNvcyhxLnkpKSkgKiAwLjUgLSAxLjA7Cn0Kdm9pZCBtYWluKCkgewogICAgdmVjMiBhID0gZ2xfRnJhZ0Nvb3JkLnh5IC8gdV9yZXNvbHV0aW9uLnggLSB2ZWMyKDAuNSwgMC41KTsKICAgIHZlYzMgY2wgPSB2ZWMzKDAuMCk7CiAgICBmbG9hdCBkID0gMi41OwogICAgZm9yIChmbG9hdCBpID0gMC47IGkgPD0gKDEuICsgMjAuICogdV9kZXRhaWwpOyBpKyspIHsKICAgICAgICB2ZWMzIHAgPSB2ZWMzKDAsIDAsIDQuMCkgKyBub3JtYWxpemUodmVjMyhhLCAtMS4wKSkgKiBkOwogICAgICAgIGZsb2F0IHJ6ID0gbWFwKHApOwogICAgICAgIGZsb2F0IGYgPSAgY2xhbXAoKHJ6IC0gbWFwKHAgKyAwLjEpKSAqIDAuNSwgLTAuMSwgMS4wKTsKICAgICAgICB2ZWMzIGwgPSB2ZWMzKDAuMSwgMC4zLCAwLjQpICsgdmVjMyg1LjAsIDIuNSwgMy4wKSAqIGY7CiAgICAgICAgY2wgPSBjbCAqIGwgKyBzbW9vdGhzdGVwKDIuNSwgMC4wLCByeikgKiAwLjYgKiBsOwogICAgICAgIGQgKz0gbWluKHJ6LCAxLjApOwogICAgfQogICAgdmVjNCBjb2xvciA9IHZlYzQobWluKHVfY29sb3IsIGNsKSwxLjApOwogICAgY29sb3IuciA9IG1heCh1X2JhY2tncm91bmQucixjb2xvci5yKTsKICAgIGNvbG9yLmcgPSBtYXgodV9iYWNrZ3JvdW5kLmcsY29sb3IuZyk7CiAgICBjb2xvci5iID0gbWF4KHVfYmFja2dyb3VuZC5iLGNvbG9yLmIpOwogICAgZ2xGcmFnQ29sb3IgPSBjb2xvcjsKfScKICAgICAgICB1bmlmb3Jtcz0neyJ1X2JhY2tncm91bmQiOlswLDAsMCwxXSwidV9jb2xvciI6WzAuMzEzNzI1NDkwMTk2MDc4NCwwLDFdLCJ1X3NwZWVkIjowLjQsInVfZGV0YWlsIjowfSc+CiAgICA8L21lZGlhLXNoYWRlcj4KICAgICAgICA8L2hlYWQ+CiAgICAgICAgPGJvZHk+PC9ib2R5PgogICAgICAgIDwvaHRtbD4=" scrolling="no"></iframe>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero" id="home">
+            <!-- Navigation -->
+            <nav class="nav">
+                <div class="nav-links">
+                    <a class="nav-item" href="#home">Home</a>
+                    <div class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false">
+                            My work
+                            <div class="nav-icon">
+                                <img src="CaretDown.svg" alt="caret" class="icon-img">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="basic.html" class="dropdown-item">Basic UI Kit v2.0</a>
+                            <a href="studyin.html" class="dropdown-item">StudyIn</a>
+                            <a href="#" class="dropdown-item" target="_blank" rel="noopener noreferrer">design.ly</a>
+                        </div>
+                    </div>
+                    <a class="nav-item" href="#about">About me</a>
+                    <a class="nav-item" href="#experience">Experience</a>
+                    <a class="nav-item" href="#certifications">Certifications</a>
+                    <a class="nav-item" href="#contact">Contact</a>
+                </div>
+                <div class="nav-right">
+                    <div class="cv-dropdown cv-dropdown-nav">
+                        <button class="nav-cv-btn cv-dropdown-toggle">
+                            Full CV
+                            <div class="nav-icon">
+                                <img src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">English <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">Portuguese <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                        <div class="nav-icon">
+                            <img src="ArrowSquareIn.svg" alt="open" class="icon-img">
+                        </div>
+                    </a>
+                </div>
+                <!-- Mobile menu button (shown at tablet breakpoint) -->
+                <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open menu">
+                    <!-- inline TextAlignLeft svg so it inherits color -->
+                    <svg class="mobile-icon" width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 8H27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 13H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 18H27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
+                    <a href="#home" class="mobile-dropdown-item">Home</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false">My work
+                            <!-- inline caret down SVG (matches navbar) -->
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="basic.html" class="mobile-submenu-item">Basic UI Kit v2.0</a>
+                            <a href="studyin.html" class="mobile-submenu-item">StudyIn</a>
+                            <a href="#" class="mobile-submenu-item">design.ly</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="mobile-dropdown-item">About me</a>
+                    <a href="#experience" class="mobile-dropdown-item">Experience</a>
+                    <a href="#certifications" class="mobile-dropdown-item">Certifications</a>
+                    <a href="#contact" class="mobile-dropdown-item">Contact</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false">Full CV
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">English <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">Portuguese <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
+                </div>
+            </nav>
+
+            <!-- Hero Text -->
+            <div class="hero-text reveal">
+                <div class="hero-header">
+                    <div class="profile-pic">
+                        <img src="https://www.figma.com/api/mcp/asset/70c865fb-303d-4611-9594-359e956508a4" alt="Vinicius Florencio">
+                        <span class="online-badge"></span>
+                    </div>
+                    <p class="hero-name">Vinicius Florencio</p>
+                </div>
+                <h1>UI&UX Designer</h1>
+                <p>Based in Brazil with 2+ years of experience in developing user-centered solutions, MVPs and intuitive and responsive SaaS interfaces</p>
+            </div>
+
+            <!-- Companies -->
+            <div class="companies reveal">
+                <div class="companies-title">Companies I helped</div>
+                <div class="companies-logos">
+                    <div class="companies-track">
+                        <img src="mosten-logo.png" alt="Mosten" class="company-logo">
+                        <img src="edenred.png" alt="Edenred" class="company-logo">
+                        <img src="csn.png" alt="CSN" class="company-logo">
+                        <img src="movecta.png" alt="Movecta" class="company-logo">
+                        <img src="ecoporto.png" alt="Ecoporto" class="company-logo">
+                        <img src="dix.png" alt="DIX" class="company-logo">
+                        <img src="obralean.png" alt="Obralean" class="company-logo">
+                        <img src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo">
+
+                        <!-- duplicate for seamless infinite scroll -->
+                        <img src="mosten-logo.png" alt="Mosten" class="company-logo">
+                        <img src="edenred.png" alt="Edenred" class="company-logo">
+                        <img src="csn.png" alt="CSN" class="company-logo">
+                        <img src="movecta.png" alt="Movecta" class="company-logo">
+                        <img src="ecoporto.png" alt="Ecoporto" class="company-logo">
+                        <img src="dix.png" alt="DIX" class="company-logo">
+                        <img src="obralean.png" alt="Obralean" class="company-logo">
+                        <img src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Work Section -->
+        <div class="section reveal" id="my-work">
+            <div class="section-title">
+                <h2>My work</h2>
+            </div>
+            <div class="cards-grid">
+                <a href="basic.html" class="card card-full reveal" data-tooltip="see-project">
+                    <div class="card-image">
+                        <img src="https://www.figma.com/api/mcp/asset/6d508e78-cc20-4f5d-8d7d-43c990d23cc5" alt="Basic UI Kit v2.0">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Library</span>
+                            <span class="tag">Components</span>
+                        </div>
+                        <div class="card-title">
+                            <h3>Basic UI Kit v2.0</h3>
+                        </div>
+                        <p class="card-description">An scalable open design toolkit created for the community</p>
+                    </div>
+                </a>
+
+                <a href="studyin.html" class="card reveal" data-tooltip="see-project">
+                    <div class="card-image">
+                        <img src="https://www.figma.com/api/mcp/asset/fdb41ee8-5377-48f9-b314-b0d81df5d574" alt="StudyIn">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">MVP</span>
+                            <span class="tag">College</span>
+                        </div>
+                        <div class="card-title">
+                            <h3>StudyIn</h3>
+                        </div>
+                        <p class="card-description">A study on mobile systems and components</p>
+                    </div>
+                </a>
+
+                <div class="card reveal" data-tooltip="under-construction">
+                    <div class="card-image">
+                        <img src="https://www.figma.com/api/mcp/asset/22ce7a45-e3b5-4573-802f-8482161e31c8" alt="Designy.ly">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">Landing page</span>
+                        </div>
+                        <div class="card-title">
+                            <h3>Designy.ly</h3>
+                        </div>
+                        <p class="card-description">A mobile landing page created for a fictional design company</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="section reveal" id="about">
+            <div class="about-header">
+                <div class="section-title">
+                    <div class="profile-pic">
+                        <img src="https://www.figma.com/api/mcp/asset/70c865fb-303d-4611-9594-359e956508a4" alt="Vinicius Florencio">
+                        <span class="online-badge"></span>
+                    </div>
+                    <h2>About me</h2>
+                </div>
+                <p class="about-description">I am a UI/UX Designer with over 2+ years of experience developing large-scale logistics solutions. I have contributed to the ideation and creation of port and airport software used across Brazil and internationally</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <div class="skill-icon">
+                            <img src="FigmaLogo.svg" alt="figma" class="icon-img skill-img">
+                        </div>
+                        <h3>Prototyping</h3>
+                    </div>
+                    <p class="skill-description">Vast experience in prototyping complex end-to-end solutions, from initial wireframes to large-scale high-fidelity designs on Figma</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <div class="skill-icon">
+                            <img src="MagnifyingGlass.svg" alt="search" class="icon-img skill-img">
+                        </div>
+                        <h3>Research</h3>
+                    </div>
+                    <p class="skill-description">Conduct interviews with clients and end users to analyze problems and identify solutions, using platforms such as Maze for research and validation</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <div class="skill-icon">
+                            <img src="CirclesThree.svg" alt="circles" class="icon-img skill-img">
+                        </div>
+                        <h3>Design system</h3>
+                    </div>
+                    <p class="skill-description">I create design systems with standardized components, accessibility best practices, and clear documentation for efficient handoff</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <div class="skill-icon">
+                            <img src="ChalkboardTeacher.svg" alt="teacher" class="icon-img skill-img">
+                        </div>
+                        <h3>Mentoring</h3>
+                    </div>
+                    <p class="skill-description">Mentoring junior designers, leading agile rituals, and managing backlog to foster team growth and delivery excellence</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section reveal" id="experience">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="experience-header">
+                    <div class="experience-tags">
+                        <span class="tag">Dec 2025 - present</span>
+                        <span class="tag">São Paulo - remote</span>
+                    </div>
+                    <h3 class="experience-position">Volunteer UX Designer</h3>
+                    <div class="experience-company">
+                        <img src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo-small">
+                        <a href="https://movimentofuturo.org/" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Movimento Futuro
+                            <img src="ArrowSquareIn.svg" alt="external" class="icon-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="experience-list">
+                    <ul>
+                        <li>Refactoring the NGO's landing page to improve usability and visual consistency</li>
+                        <li>Creating responsive and reusable UI components for scalable design implementation</li>
+                        <li>Writing technical documentation to maintain and evolve the organization's design system</li>
+                        <li>Conducting technical handoff to the development team to ensure design-to-code alignment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="experience-header">
+                    <div class="experience-tags">
+                        <span class="tag">Mar 2024 - present</span>
+                        <span class="tag">Santos - hybrid</span>
+                    </div>
+                    <h3 class="experience-position">Product Designer</h3>
+                    <div class="experience-company">
+                        <img src="mosten-logo.png" alt="Mosten" class="company-logo-small">
+                        <a href="https://mosten.com/" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Mosten
+                            <img src="ArrowSquareIn.svg" alt="external" class="icon-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="experience-stats">
+                    <div class="stat-item">
+                        <h4 data-count="3">0</h4>
+                        <p>major clients acquired in a year through MVP designing</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 data-count="20" data-suffix="%">0%</h4>
+                        <p>faster prototyping through workflow standardization</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 data-count="100" data-suffix="%">0%</h4>
+                        <p>design system adoption across new projects</p>
+                    </div>
+                </div>
+                <div class="experience-list">
+                    <ul>
+                        <li>Created wireframes and prototypes of low and high fidelity for different stages of the design process</li>
+                        <li>Designed clean, intuitive interfaces that improved user experience and met client needs</li>
+                        <li>Conducted quantitative and qualitative user research to understand user behavior and guide design decisions</li>
+                        <li>Ran usability tests to validate ideas and improve product performance</li>
+                        <li>Worked with design thinking and the double diamond framework to structure the design process</li>
+                        <li>Used Nielsen's heuristics to ensure designs were accessible and easy to use</li>
+                        <li>Built scalable interface components with atomic design, maintaining consistency across products</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="experience-header">
+                    <div class="experience-tags">
+                        <span class="tag">Jan 2024 - Mar 2024</span>
+                        <span class="tag">Santos - hybrid</span>
+                    </div>
+                    <h3 class="experience-position">WordPress Intern</h3>
+                    <div class="experience-company">
+                        <img src="mosten-logo.png" alt="Mosten" class="company-logo-small">
+                        <a href="https://mosten.com/" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Mosten
+                            <img src="ArrowSquareIn.svg" alt="external" class="icon-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="experience-list">
+                    <ul>
+                        <li>One of the main responsible for developing the company's homepage</li>
+                        <li>Contributed to the development of agile and dynamic projects in a team</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section reveal" id="certifications">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="cert-column">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <img src="https://www.figma.com/api/mcp/asset/cad5b3eb-dd20-4a5d-a460-61ea756e307a" alt="Google" class="cert-logo">
+                            <h3>Google</h3>
+                        </div>
+                        <div class="cert-year">
+                            <span class="cert-year-tag">2025</span>
+                            <ul>
+                                <li><a href="https://coursera.org/share/31cd5393d0a6ca63544388c2069782b5" target="_blank" rel="noopener noreferrer">Build Wireframes and Low-Fidelity Prototypes</a></li>
+                                <li><a href="https://coursera.org/share/8f3b5198aad4789d4499065aeb531680" target="_blank" rel="noopener noreferrer">Conduct UX Research and Test Early Concepts</a></li>
+                                <li><a href="https://coursera.org/share/b99c50403f5a6e14e2dc2f7f3dad0f66" target="_blank" rel="noopener noreferrer">Foundations of User Experience (UX) Design</a></li>
+                                <li><a href="https://coursera.org/share/42bc96c0ab0bee7c222b4040e18a72eb" target="_blank" rel="noopener noreferrer">Start the UX Design Process: Empathize, Define, and Ideate</a></li>
+                            </ul>
+                        </div>
+                        <div class="cert-year">
+                            <span class="cert-year-tag">2022</span>
+                            <ul>
+                                <li><a href="https://www.coursera.org/account/accomplishments/verify/XKAVMDC4GAG9" target="_blank" rel="noopener noreferrer">Foundations of Project Management</a></li>
+                                <li><a href="https://www.coursera.org/account/accomplishments/certificate/5E5PRV9AEUJB" target="_blank" rel="noopener noreferrer">Project Initiation: Starting a Successful Project</a></li>
+                                <li><a href="https://www.coursera.org/account/accomplishments/certificate/GNYFDS5M4HLY" target="_blank" rel="noopener noreferrer">Project Planning: Putting It All Together</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <img src="https://www.figma.com/api/mcp/asset/7b9ef6ac-485d-4e72-9beb-ab7b73e47b73" alt="Fundação Bradesco" class="cert-logo">
+                            <h3>Fundação Bradesco</h3>
+                        </div>
+                        <div class="cert-year">
+                            <span class="cert-year-tag">2022</span>
+                            <ul>
+                                <li>Object-Oriented Development Using Python</li>
+                                <li>Introduction to Data Analysis – Microsoft Power BI</li>
+                                <li>Introduction to Object-Oriented Programming (OOP)</li>
+                                <li>Python Programming – Basic</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <h3>Others</h3>
+                        </div>
+                        <div class="cert-year">
+                            <span class="cert-year-tag">2022</span>
+                            <ul>
+                                <li>AZ-900 Microsoft Azure Fundamentals - Fundação FAT</li>
+                                <li>EF SET English Certificate – Score 78/100 (C2 Proficient) - EF SET</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-column">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <img src="https://www.figma.com/api/mcp/asset/e789ad3a-5924-466a-ba77-e6ad9616f403" alt="Alura" class="cert-logo">
+                            <h3>Alura</h3>
+                        </div>
+                        <div class="cert-year">
+                            <span class="cert-year-tag">2024</span>
+                            <ul>
+                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/git-github-compartilhando-colaborando-projetos" target="_blank" rel="noopener noreferrer">Git and GitHub: Sharing and Collaborating on Projects</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/wordpress-crie-sites-elementor-figma" target="_blank" rel="noopener noreferrer">WordPress: Build Websites with Elementor and Figma</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/wordpress-responsividade-efeitos-visuais-plugins" target="_blank" rel="noopener noreferrer">WordPress: Integrating Responsiveness, Visual Effects, and Exploring Plugins</a></li>
+                            </ul>
+                        </div>
+                        <div class="cert-year">
+                            <span class="cert-year-tag">2023</span>
+                            <ul>
+                                <li><a href="https://cursos.alura.com.br/degree/certificate/6fad05a6-428f-4802-814a-b504798fe110" target="_blank" rel="noopener noreferrer">HTML and CSS From Scratch: Web Project Training Program</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/55a2b96e-d74c-446f-b1ae-df4dd0dc9984?lang=pt_BR" target="_blank" rel="noopener noreferrer">Microsoft SQL Server 2022: Introduction to SQL</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/4dafe42f-d74d-4dd6-a95d-66c4b19f444b" target="_blank" rel="noopener noreferrer">Power BI Desktop: Building My First Dashboard</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/28ec5aa1-4956-4018-8b3c-fe5a2101cfae" target="_blank" rel="noopener noreferrer">C Programming: Advanced Concepts</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/f4d18c10-77bc-445c-a1dc-dddae4295636" target="_blank" rel="noopener noreferrer">C Programming: Introduction to the Language of Languages</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/bootstrap5-landing-page-responsiva/certificate" target="_blank" rel="noopener noreferrer">Bootstrap 5: Build a Responsive Landing Page</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/cores-design-teoria-pratica" target="_blank" rel="noopener noreferrer">Color Theory for Design: Concepts and Practice</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/design-visual-aplicando-tecnicas-composicao/certificate" target="_blank" rel="noopener noreferrer">Visual Design: Applying Composition Techniques</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/design-entenda-conheca-area" target="_blank" rel="noopener noreferrer">Visual Design: Strategies to Plan and Build Your Portfolio</a></li>
+                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/design-entenda-conheca-area" target="_blank" rel="noopener noreferrer">Design: Understanding the Field</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/figma-componentes-auto-layout-mascaras/certificate" target="_blank" rel="noopener noreferrer">Figma: Components, Auto Layout, and Masks</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/figma-conhecendo-ferramenta/certificate" target="_blank" rel="noopener noreferrer">Figma: Getting Started</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/grids-organizar-conteudo-visual/certificate" target="_blank" rel="noopener noreferrer">Grids: Organizing Visual Content</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/tipografia-conceitos-pratica/certificate" target="_blank" rel="noopener noreferrer">Typography: Concepts and Practice</a></li>
+                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/ui-design-experiencia-app-ui-patterns/certificate" target="_blank" rel="noopener noreferrer">UI Design: Improving App Experience with UI Patterns</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer" id="contact">
+            <div class="footer-divider"></div>
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <div class="footer-profile">
+                        <div class="profile-pic">
+                            <img src="https://www.figma.com/api/mcp/asset/70c865fb-303d-4611-9594-359e956508a4" alt="Vinicius Florencio">
+                            <span class="online-badge"></span>
+                        </div>
+                        <div class="footer-profile-text">
+                            <p class="footer-profile-name">Vinicius Florencio</p>
+                            <p class="footer-profile-role">UI&UX Designer</p>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="footer-nav-item" target="_blank" rel="noopener noreferrer">
+                            <img src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                            /viniciusferreiraflorencio
+                        </a>
+                        <a href="mailto:viniciusferreiraflorencio@live.com" class="footer-nav-item">
+                            <img src="At.svg" alt="email" class="icon-img footer-img">
+                            viniciusferreiraflorencio@live.com
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <a href="#home" class="footer-nav-item">Home</a>
+                    <a href="#my-work" class="footer-nav-item">My work</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#about" class="footer-nav-item">About me</a>
+                    <a href="#experience" class="footer-nav-item">Experience</a>
+                </div>
+                <div class="footer-col">
+                    <a href="#certifications" class="footer-nav-item">Certifications</a>
+                </div>
+            </div>
+            <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

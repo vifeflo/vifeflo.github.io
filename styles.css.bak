@@ -1,0 +1,1208 @@
+/* ═══════════════════════════════════════════════════════════════
+   PORTFOLIO — Vinicius Florencio
+   ───────────────────────────────────────────────────────────────
+   Table of Contents:
+    0.  Reset & Base
+    1.  Shared Patterns (glass surfaces, hover, icons)
+    2.  Layout (container, hero wrapper, sections)
+    3.  Navigation — Desktop
+    4.  Navigation — Dropdowns (My Work + CV)
+    5.  Navigation — Mobile
+    6.  Hero Section (text, profile pic, badge)
+    7.  Companies Carousel
+    8.  Buttons & Tags
+    9.  Cards (My Work)
+   10.  About Me & Skills
+   11.  Experience
+   12.  Certifications
+   13.  Footer
+   14.  Animations & Scroll Reveal
+   15.  Responsive — Tablet  (≤ 1024px)
+   16.  Responsive — Mobile  (≤ 768px)
+   17.  Responsive — Small   (≤ 500px)
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ─── 0. RESET & BASE ──────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #121212;
+    color: #faf9f6;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+/* ─── 1. SHARED PATTERNS ───────────────────────────────────────── */
+
+/* Glass card surface — project cards, experience cards, cert cards */
+.card,
+.experience-card,
+.cert-card {
+    background: rgba(23, 23, 23, 0.70);
+    border-radius: 36px;
+    padding: 24px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Glass panel — navbar, dropdown menus, mobile menu & button */
+.nav,
+.dropdown-menu,
+.cv-dropdown-menu,
+.mobile-dropdown-menu,
+.mobile-menu-btn {
+    background: rgba(23, 23, 23, 0.70);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Shared interactive hover highlight */
+.nav-item:not(.dropdown):hover,
+.dropdown-toggle:hover,
+.dropdown-item:hover,
+.cv-dropdown-item:hover,
+.nav-cv-btn:hover,
+.footer-nav-item:hover,
+.footer-link:hover,
+.mobile-dropdown-item:hover,
+.mobile-submenu-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Unified 14 × 14 icon sizing */
+.icon-img,
+.skill-img,
+.footer-img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    color: #FAF9F6;
+}
+
+/* Background shader iframe */
+.hero-shader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 1024px;
+    border: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+/* ─── 2. LAYOUT ────────────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    align-items: center;
+    padding: 120px 40px 40px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 1128px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    padding-top: 200px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.section-title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+
+/* ─── 3. NAVIGATION — DESKTOP ──────────────────────────────────── */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    width: min(1128px, calc(100% - 80px));
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-item {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    transition: background 0.25s ease, opacity 0.3s ease;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* ─── 4. NAVIGATION — DROPDOWNS ────────────────────────────────── */
+
+/* --- My Work dropdown --- */
+
+.nav .dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    min-width: 220px;
+    border-radius: 12px;
+    padding: 8px 6px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+}
+
+.dropdown.open .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 12px;
+    color: #faf9f6;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Caret rotation when open */
+.dropdown-toggle .icon-img {
+    transition: transform 0.18s ease;
+    transform-origin: center;
+}
+
+.dropdown.open .dropdown-toggle .icon-img {
+    transform: rotate(180deg);
+}
+
+/* --- CV dropdown (nav + inline section buttons) --- */
+
+.cv-dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.cv-dropdown-toggle {
+    cursor: pointer;
+}
+
+.cv-caret {
+    transition: transform 0.18s ease;
+    transform-origin: center;
+}
+
+.cv-dropdown.open .cv-caret {
+    transform: rotate(180deg);
+}
+
+.cv-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 160px;
+    border-radius: 12px;
+    padding: 8px 6px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+}
+
+.cv-dropdown.open .cv-dropdown-menu {
+    display: flex;
+}
+
+.cv-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: #faf9f6;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Nav CV button — matches other nav items */
+.nav-cv-btn {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background 0.25s ease;
+}
+
+
+/* ─── 5. NAVIGATION — MOBILE ──────────────────────────────────── */
+
+/* Hidden by default on desktop; shown via media queries */
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 9999px;
+    cursor: pointer;
+    color: #FAF9F6;
+}
+
+.mobile-menu-btn .mobile-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    color: #FAF9F6;
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    min-width: 220px;
+    border-radius: 12px;
+    padding: 8px;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 119;
+}
+
+.mobile-dropdown-menu.open {
+    display: flex;
+}
+
+.mobile-dropdown-item {
+    position: relative;
+    color: #faf9f6;
+    padding: 10px 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.mobile-has-submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-submenu-toggle {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.submenu-caret-img {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #FAF9F6;
+    transition: transform 0.18s ease;
+    transform-origin: center;
+}
+
+.mobile-submenu-toggle.open .submenu-caret-img {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.25s ease, opacity 0.2s ease, margin 0.25s ease;
+    margin-top: 0;
+    padding-left: 16px;
+}
+
+.mobile-submenu.open {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 4px;
+}
+
+.mobile-submenu-item {
+    padding: 8px 12px;
+    color: rgba(250, 249, 246, 0.7);
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.mobile-submenu-item:hover {
+    color: #faf9f6;
+}
+
+
+/* ─── 6. HERO SECTION ──────────────────────────────────────────── */
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    overflow: visible;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.online-badge {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    border: 2px solid #1c1c1c;
+    z-index: 2;
+}
+
+.hero-name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(250, 249, 246, 0.9);
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+
+/* ─── 7. COMPANIES CAROUSEL ────────────────────────────────────── */
+
+.companies {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.companies-title {
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.companies-logos {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+    padding: 0 0 10px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 88px, black calc(100% - 88px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 88px, black calc(100% - 88px), transparent 100%);
+}
+
+.companies-track {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    width: max-content;
+    animation: companies-scroll 28s linear infinite;
+}
+
+@keyframes companies-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.company-logo {
+    height: 42px;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Carousel logos: white by default, restore color on hover */
+.companies-track .company-logo {
+    filter: grayscale(100%) brightness(0) invert(1);
+    opacity: 0.7;
+    transition: filter 0.28s ease, opacity 0.28s ease, transform 0.28s ease;
+}
+
+.companies-track .company-logo:hover {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* Small company logos (experience) + cert logos keep original color */
+.company-logo-small {
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+}
+
+.company-logo-small,
+.cert-logo {
+    filter: none;
+}
+
+/* Alura logo exception — keep white */
+img[alt="Alura"] {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ─── 8. BUTTONS & TAGS ───────────────────────────────────────── */
+
+.btn {
+    background: #242424;
+    border: none;
+    border-radius: 9999px;
+    gap: 4px;
+    padding: 4px 12px;
+    color: #faf9f6;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    margin: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn:hover {
+    background: #333333;
+}
+
+.btn-icon {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Tag / pill — shared base for .tag and .cert-year-tag */
+.tag,
+.cert-year-tag {
+    background: #242424;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.tag {
+    font-weight: 400;
+}
+
+.cert-year-tag {
+    flex-shrink: 0;
+}
+
+/* Card arrow button */
+.card-title-btn {
+    background: #242424;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.card-title-btn svg {
+    width: 14px;
+    height: 14px;
+    color: #FAF9F6;
+}
+
+
+/* ─── 9. CARDS (My Work) ───────────────────────────────────────── */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.card:hover {
+    background: rgb(32, 32, 32);
+}
+
+.card-full {
+    grid-column: 1 / -1;
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #242424;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.card-title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card-title h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.card-description {
+    font-size: 16px;
+    color: rgba(250, 249, 246, 0.8);
+}
+
+
+/* ─── 10. ABOUT ME & SKILLS ───────────────────────────────────── */
+
+.about-header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.about-title-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.about-title-row h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.about-description {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-title {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.skill-icon {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.skill-title h3 {
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.skill-description {
+    font-size: 13px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.5;
+}
+
+
+/* ─── 11. EXPERIENCE ───────────────────────────────────────────── */
+
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.experience-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.experience-position {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.experience-company {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.company-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.experience-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.stat-item h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.stat-item p {
+    font-size: 13px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.4;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-list ul {
+    list-style: disc;
+    padding-left: 21px;
+    color: rgba(250, 249, 246, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.experience-list li {
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+/* ─── 12. CERTIFICATIONS ───────────────────────────────────────── */
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+    align-items: start;
+}
+
+.cert-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: left;
+}
+
+.cert-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.cert-logo {
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+}
+
+.cert-header h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.cert-year {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.cert-year ul {
+    list-style: disc;
+    padding-left: 21px;
+    color: rgba(250, 249, 246, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cert-year li {
+    padding: 0;
+    line-height: 1.6;
+}
+
+.cert-year li a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.cert-year li a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+
+/* ─── 13. FOOTER ───────────────────────────────────────────────── */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(250, 249, 246, 0.1), transparent);
+    width: 100%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    height: fit-content;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-contact h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.footer-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-profile-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-profile-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FAF9F6;
+}
+
+.footer-profile-role {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(250, 249, 246, 0.8);
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.4;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-nav-item {
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.25s ease, opacity 0.3s ease;
+    padding: 6px 8px;
+    border-radius: 8px;
+    display: inline-flex;
+    width: fit-content;
+}
+
+.footer-link {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    color: #faf9f6;
+    transition: background 0.25s ease, opacity 0.3s ease;
+    padding: 6px 8px;
+    border-radius: 8px;
+    width: auto;
+    align-self: start;
+}
+
+.footer-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Reset link decoration on footer items */
+.footer-nav-item,
+.footer-nav-item:link,
+.footer-nav-item:visited,
+.footer-link,
+.footer-link:link,
+.footer-link:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ─── 14. ANIMATIONS & SCROLL REVEAL ──────────────────────────── */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ─── 15. RESPONSIVE — TABLET (≤ 1024px) ──────────────────────── */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 200px 16px 16px 16px;
+    }
+
+    .hero,
+    .section,
+    .footer {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .skills-grid        { grid-template-columns: repeat(2, 1fr); }
+    .cards-grid          { grid-template-columns: 1fr; }
+    .certifications-grid { grid-template-columns: 1fr; }
+    .experience-stats    { grid-template-columns: repeat(2, 1fr); }
+    .footer-content      { grid-template-columns: 1fr; gap: 20px; }
+
+    /* Hide desktop nav elements, show mobile menu */
+    .nav-links            { display: none; }
+    .nav-right            { display: none; }
+    .nav > .footer-link   { display: none; }
+    .mobile-menu-btn      { display: flex; right: auto; }
+    .mobile-dropdown-menu { right: auto; }
+
+    .nav {
+        background: transparent !important;
+        border: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+    }
+}
+
+
+/* ─── 16. RESPONSIVE — MOBILE (≤ 768px) ───────────────────────── */
+
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 36px; }
+    .hero-text p  { font-size: 16px; }
+
+    .companies {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .companies-logos {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .section-title {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .skills-grid      { grid-template-columns: 1fr; }
+    .experience-stats { grid-template-columns: 1fr; }
+
+    .footer-contact { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* ─── 17. RESPONSIVE — SMALL (≤ 500px) ────────────────────────── */
+
+@media (max-width: 500px) {
+    .section-title {
+        flex-wrap: wrap;
+    }
+
+    .section-title > h2 {
+        width: 100%;
+    }
+
+    .about-header .section-title h2 {
+        width: 100%;
+    }
+}

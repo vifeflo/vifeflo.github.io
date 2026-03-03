@@ -1,0 +1,402 @@
+/* ═══════════════════════════════════════════════════════════════
+   INDEX — Portfolio Home
+   ───────────────────────────────────────────────────────────────
+    1.  Hero Section (text, header, name)
+    2.  Companies Carousel
+    3.  About Me & Skills
+    4.  Experience
+    5.  Certifications
+    6.  Responsive — Index
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ─── 1. HERO SECTION ──────────────────────────────────────────── */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 1128px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    padding-top: 200px;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(250, 249, 246, 0.9);
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+
+/* ─── 2. COMPANIES CAROUSEL ────────────────────────────────────── */
+
+.companies {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.companies-title {
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.companies-logos {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+    padding: 0 0 10px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 88px, black calc(100% - 88px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 88px, black calc(100% - 88px), transparent 100%);
+}
+
+.companies-track {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    width: max-content;
+    animation: companies-scroll 28s linear infinite;
+}
+
+@keyframes companies-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.company-logo {
+    height: 42px;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Carousel logos: white by default, restore color on hover */
+.companies-track .company-logo {
+    filter: grayscale(100%) brightness(0) invert(1);
+    opacity: 0.7;
+    transition: filter 0.28s ease, opacity 0.28s ease, transform 0.28s ease;
+}
+
+.companies-track .company-logo:hover {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* Small company logos (experience) + cert logos keep original color */
+.company-logo-small {
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+}
+
+.company-logo-small,
+.cert-logo {
+    filter: none;
+}
+
+/* Alura logo exception — keep white */
+img[alt="Alura"] {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ─── 3. ABOUT ME & SKILLS ────────────────────────────────────── */
+
+.about-header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.about-title-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.about-title-row h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.about-description {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-title {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.skill-icon {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.skill-title h3 {
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.skill-description {
+    font-size: 13px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.5;
+}
+
+
+/* ─── 4. EXPERIENCE ────────────────────────────────────────────── */
+
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.experience-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.experience-position {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.experience-company {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.company-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.experience-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.stat-item h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.stat-item p {
+    font-size: 13px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.4;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-list ul {
+    list-style: disc;
+    padding-left: 21px;
+    color: rgba(250, 249, 246, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.experience-list li {
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+/* ─── 5. CERTIFICATIONS ───────────────────────────────────────── */
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+    align-items: start;
+}
+
+.cert-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: left;
+}
+
+.cert-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.cert-logo {
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+}
+
+.cert-header h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.cert-year {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.cert-year ul {
+    list-style: disc;
+    padding-left: 21px;
+    color: rgba(250, 249, 246, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cert-year li {
+    padding: 0;
+    line-height: 1.6;
+}
+
+.cert-year li a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.cert-year li a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+
+/* ─── 6. RESPONSIVE — INDEX ───────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .hero {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .skills-grid        { grid-template-columns: repeat(2, 1fr); }
+    .certifications-grid { grid-template-columns: 1fr; }
+    .experience-stats    { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 36px; }
+    .hero-text p  { font-size: 16px; }
+
+    .companies {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .companies-logos {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .skills-grid      { grid-template-columns: 1fr; }
+    .experience-stats { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+    .about-header .section-title h2 {
+        width: 100%;
+    }
+}

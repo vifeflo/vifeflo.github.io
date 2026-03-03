@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════════════════════════
+   BASIC UI KIT — Project Page
+   ───────────────────────────────────────────────────────────────
+    1.  Project Hero
+    2.  Section Description
+    3.  Image Showcase (full-width, 2-col, 3-col)
+    4.  Stat Counter
+    5.  Accessibility Tags
+    6.  Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ─── 1. PROJECT HERO ──────────────────────────────────────────── */
+
+.project-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 1128px;
+    position: relative;
+    z-index: 10;
+}
+
+.project-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.project-hero-content h1 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.project-hero-content p {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(250, 249, 246, 0.9);
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+.project-hero-image {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #242424;
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ─── 2. SECTION DESCRIPTION ───────────────────────────────────── */
+
+.section-description {
+    font-size: 16px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+    max-width: 720px;
+}
+
+
+/* ─── 3. IMAGE SHOWCASE ───────────────────────────────────────── */
+
+/* Full-width image block */
+.showcase-image {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #242424;
+}
+
+.showcase-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2-column image grid */
+.showcase-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+/* 3-column image grid (responsive showcase) */
+.showcase-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+.showcase-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.showcase-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    display: block;
+    background: #242424;
+}
+
+.showcase-item .caption {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(250, 249, 246, 0.8);
+    text-align: center;
+}
+
+
+/* ─── 4. STAT COUNTER ──────────────────────────────────────────── */
+
+.stat-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.stat-hero h4 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.stat-hero .stat-label {
+    font-size: 16px;
+    color: rgba(250, 249, 246, 0.8);
+}
+
+
+/* ─── 5. ACCESSIBILITY TAGS ───────────────────────────────────── */
+
+.tags-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+
+/* ─── 6. RESPONSIVE ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .project-hero {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-hero-content h1 { font-size: 36px; }
+    .project-hero-content p  { font-size: 16px; }
+
+    .showcase-grid-3 { grid-template-columns: 1fr; }
+    .showcase-grid-2 { grid-template-columns: 1fr; }
+
+    .stat-hero h4 { font-size: 36px; }
+}

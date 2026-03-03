@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic UI Kit — Vinicius Florencio</title>
+    <link rel="icon" type="image/png" href="https://www.figma.com/api/mcp/asset/70c865fb-303d-4611-9594-359e956508a4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="lightbox.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Project Hero -->
+        <div class="project-hero">
+            <!-- Navigation -->
+            <nav class="nav">
+                <div class="nav-links">
+                    <a class="nav-item" href="index.html">Home</a>
+                    <div class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false">
+                            My work
+                            <div class="nav-icon">
+                                <img src="CaretDown.svg" alt="caret" class="icon-img">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="basic.html" class="dropdown-item">Basic UI Kit v2.0</a>
+                            <a href="studyin.html" class="dropdown-item">StudyIn</a>
+                            <a href="#" class="dropdown-item" target="_blank" rel="noopener noreferrer">design.ly</a>
+                        </div>
+                    </div>
+                    <a class="nav-item" href="index.html#about">About me</a>
+                    <a class="nav-item" href="index.html#experience">Experience</a>
+                    <a class="nav-item" href="index.html#certifications">Certifications</a>
+                    <a class="nav-item" href="index.html#contact">Contact</a>
+                </div>
+                <div class="nav-right">
+                    <div class="cv-dropdown cv-dropdown-nav">
+                        <button class="nav-cv-btn cv-dropdown-toggle">
+                            Full CV
+                            <div class="nav-icon">
+                                <img src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">English <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">Portuguese <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                        <div class="nav-icon">
+                            <img src="ArrowSquareIn.svg" alt="open" class="icon-img">
+                        </div>
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open menu">
+                    <svg class="mobile-icon" width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 8H27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 13H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 18H27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
+                    <a href="index.html" class="mobile-dropdown-item">Home</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false">My work
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="basic.html" class="mobile-submenu-item">Basic UI Kit v2.0</a>
+                            <a href="studyin.html" class="mobile-submenu-item">StudyIn</a>
+                            <a href="#" class="mobile-submenu-item">design.ly</a>
+                        </div>
+                    </div>
+                    <a href="index.html#about" class="mobile-dropdown-item">About me</a>
+                    <a href="index.html#experience" class="mobile-dropdown-item">Experience</a>
+                    <a href="index.html#certifications" class="mobile-dropdown-item">Certifications</a>
+                    <a href="index.html#contact" class="mobile-dropdown-item">Contact</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false">Full CV
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">English <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">Portuguese <img src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
+                </div>
+            </nav>
+
+            <!-- Hero Content -->
+            <div class="project-hero-content reveal">
+                <div class="card-tags">
+                    <span class="tag"><img src="FigmaLogo.svg" alt="Figma" class="icon-img"> Figma</span>
+                    <span class="tag">Components</span>
+                    <span class="tag">Library</span>
+                </div>
+                <h1>Basic UI Kit</h1>
+                <p>A scalable multi-brand UI Kit with accessibility at its core.</p>
+                <a class="btn" href="https://www.figma.com/design/Xt2cx6cDTSzyo2q5nw04oj/Basic-UI-Kit-2?node-id=1-3&t=pILmFvXhstWs9sFg-1" target="_blank" rel="noopener noreferrer">
+                    See project on Figma
+                    <img src="ArrowSquareIn.svg" alt="open" class="icon-img">
+                </a>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="project-hero-image reveal">
+                <img src="images/basic/Basic.png" alt="Basic UI Kit" class="lightbox-trigger">
+            </div>
+        </div>
+
+        <!-- Multi-Brand System -->
+        <div class="section reveal" id="multi-brand">
+            <div class="section-title">
+                <h2>Multi-Brand System</h2>
+            </div>
+            <p class="section-description">This isn't just another UI Kit. It's a flexible multi-brand system built to support multiple brands from a single source of truth. Each brand maintains its unique identity while sharing the same component architecture.</p>
+            <div class="cards-grid">
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Indigo.png" alt="Indigo components" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Indigo</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Magenta.png" alt="Magenta components" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Magenta</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Moss.png" alt="Moss components" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Moss</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Orange.png" alt="Orange components" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Orange</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Tokens -->
+        <div class="section reveal" id="design-tokens">
+            <div class="section-title">
+                <h2>Design Tokens</h2>
+            </div>
+            <p class="section-description">Token-based system ensuring consistency and scalability. Every design decision is stored as a reusable token, making updates seamless across the entire system.</p>
+            <div class="card card-full reveal">
+                <div class="card-image">
+                    <img src="images/basic/Colors.png" alt="Color tokens" class="lightbox-trigger">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Colors</h3>
+                    </div>
+                    <p class="card-description">Primary, secondary, and semantic colors with light & dark variants. All color combinations are tested for accessibility compliance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessibility & Dark Mode -->
+        <div class="section reveal" id="accessibility">
+            <div class="section-title">
+                <h2>Accessibility & Dark Mode</h2>
+            </div>
+            <p class="section-description">Built with WCAG guidelines in mind. Every color combination is tested for contrast ratios, and both light and dark modes are designed to be equally accessible.</p>
+            <div class="tags-row">
+                <span class="tag">WCAG 2.1 AA</span>
+                <span class="tag">Accessible Colors</span>
+                <span class="tag">Dark Mode Ready</span>
+            </div>
+            <div class="showcase-grid-2">
+                <div class="showcase-item reveal">
+                    <img src="images/basic/Light.png" alt="Light mode interface" class="lightbox-trigger">
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="images/basic/Dark.png" alt="Dark mode interface" class="lightbox-trigger">
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Grid System -->
+        <div class="section reveal" id="responsive-grid">
+            <div class="section-title">
+                <h2>Responsive Grid System</h2>
+            </div>
+            <p class="section-description">A flexible grid system designed for real-world applications. Components adapt seamlessly from desktop to mobile, maintaining visual harmony across all breakpoints.</p>
+            <div class="showcase-grid-3">
+                <div class="showcase-item reveal">
+                    <img src="images/basic/Desktop.png" alt="Desktop view" class="lightbox-trigger">
+                    <span class="caption">Desktop</span>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="images/basic/Tablet.png" alt="Tablet view" class="lightbox-trigger">
+                    <span class="caption">Tablet</span>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="images/basic/Mobile.png" alt="Mobile view" class="lightbox-trigger">
+                    <span class="caption">Mobile</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Component Library -->
+        <div class="section reveal" id="components">
+            <div class="section-title">
+                <h2>Component Library</h2>
+            </div>
+            <div class="stat-hero">
+                <h4 data-count="150">0</h4>
+                <span class="stat-label">components designed for scalability</span>
+            </div>
+            <p class="section-description">Attention to detail sets this UI Kit apart. Every component includes comprehensive states and variations to handle real-world scenarios.</p>
+            <div class="showcase-image reveal">
+                <img src="images/basic/Components%20and%20variations.png" alt="Component states and variations" class="lightbox-trigger">
+            </div>
+        </div>
+
+        <!-- User Flows -->
+        <div class="section reveal" id="user-flows">
+            <div class="section-title">
+                <h2>User Flows</h2>
+            </div>
+            <p class="section-description">See how the UI Kit translates into real product experiences. These flows demonstrate practical applications of the component library.</p>
+            <div class="cards-grid">
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Products.png" alt="Products list view" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Products</h3>
+                        </div>
+                        <p class="card-description">The products screen displays all registered items with key information like price, category, and sales performance.</p>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/New%20product.png" alt="New product form" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>New product</h3>
+                        </div>
+                        <p class="card-description">Adding a new product is simple with a clean form that includes all necessary fields: name, model, manufacturer, category, price, photos, and specifications.</p>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Product%20added.png" alt="Product added confirmation" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Product added</h3>
+                        </div>
+                        <p class="card-description">After successfully adding a product, users receive a confirmation notification with a quick link to view the newly created item.</p>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="card-image">
+                        <img src="images/basic/Product%20info.png" alt="Product info details" class="lightbox-trigger">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h3>Product info</h3>
+                        </div>
+                        <p class="card-description">The product detail view shows all information including multiple photos, specifications, and an edit option for quick updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer" id="contact">
+            <div class="footer-divider"></div>
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <div class="footer-profile">
+                        <div class="profile-pic">
+                            <img src="https://www.figma.com/api/mcp/asset/70c865fb-303d-4611-9594-359e956508a4" alt="Vinicius Florencio">
+                            <span class="online-badge"></span>
+                        </div>
+                        <div class="footer-profile-text">
+                            <p class="footer-profile-name">Vinicius Florencio</p>
+                            <p class="footer-profile-role">UI&UX Designer</p>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="footer-nav-item" target="_blank" rel="noopener noreferrer">
+                            <img src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                            /viniciusferreiraflorencio
+                        </a>
+                        <a href="mailto:viniciusferreiraflorencio@live.com" class="footer-nav-item">
+                            <img src="At.svg" alt="email" class="icon-img footer-img">
+                            viniciusferreiraflorencio@live.com
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <a href="index.html" class="footer-nav-item">Home</a>
+                    <a href="index.html#my-work" class="footer-nav-item">My work</a>
+                </div>
+                <div class="footer-col">
+                    <a href="index.html#about" class="footer-nav-item">About me</a>
+                    <a href="index.html#experience" class="footer-nav-item">Experience</a>
+                </div>
+                <div class="footer-col">
+                    <a href="index.html#certifications" class="footer-nav-item">Certifications</a>
+                </div>
+            </div>
+            <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="lightbox.js"></script>
+</body>
+</html>

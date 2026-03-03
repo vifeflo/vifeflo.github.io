@@ -1,0 +1,379 @@
+/* ═══════════════════════════════════════════════════════════════
+   SHARED — Base, Patterns, Layout, Components
+   ───────────────────────────────────────────────────────────────
+    0.  Reset & Base
+    1.  Shared Patterns (glass surfaces, icons)
+    2.  Layout (container, sections)
+    3.  Profile Pic & Badge
+    4.  Buttons & Tags
+    5.  Cards
+    6.  Animations & Scroll Reveal
+    7.  Responsive — Shared
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ─── 0. RESET & BASE ──────────────────────────────────────────── */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #121212;
+    color: #faf9f6;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+/* ─── 1. SHARED PATTERNS ───────────────────────────────────────── */
+
+/* Glass card surface — project cards, experience cards, cert cards */
+.card,
+.experience-card,
+.cert-card {
+    background: rgba(23, 23, 23, 0.70);
+    border-radius: 36px;
+    padding: 24px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Unified 14 × 14 icon sizing */
+.icon-img,
+.skill-img,
+.footer-img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    color: #FAF9F6;
+}
+
+/* Background shader iframe */
+.hero-shader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 1024px;
+    border: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+/* ─── 2. LAYOUT ────────────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    align-items: center;
+    padding: 120px 40px 40px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.section-title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+
+/* ─── 3. PROFILE PIC & BADGE ──────────────────────────────────── */
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    overflow: visible;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.online-badge {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    border: 2px solid #1c1c1c;
+    z-index: 2;
+}
+
+
+/* ─── 4. BUTTONS & TAGS ───────────────────────────────────────── */
+
+.btn {
+    background: #242424;
+    border: none;
+    border-radius: 9999px;
+    gap: 4px;
+    padding: 4px 12px;
+    color: #faf9f6;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    margin: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn:hover {
+    background: #333333;
+}
+
+.btn-icon {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Tag / pill — shared base for .tag and .cert-year-tag */
+.tag,
+.cert-year-tag {
+    background: #242424;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.tag {
+    font-weight: 400;
+}
+
+.cert-year-tag {
+    flex-shrink: 0;
+}
+
+/* Card arrow button */
+.card-title-btn {
+    background: #242424;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.card-title-btn svg {
+    width: 14px;
+    height: 14px;
+    color: #FAF9F6;
+}
+
+
+/* ─── 5. CARDS ─────────────────────────────────────────────────── */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.card:hover {
+    background: rgb(32, 32, 32);
+}
+
+.card-full {
+    grid-column: 1 / -1;
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #242424;
+}
+
+.card-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.card-title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card-title h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.card-description {
+    font-size: 16px;
+    color: rgba(250, 249, 246, 0.8);
+}
+
+/* Card hover tooltip (body-level element positioned by JS) */
+#card-tip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #242424;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FAF9F6;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 0.18s ease;
+}
+
+#card-tip.visible {
+    opacity: 1;
+}
+
+#card-tip .tooltip-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+#card-tip .tooltip-icon-warning {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ─── 6. ANIMATIONS & SCROLL REVEAL ──────────────────────────── */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ─── 7. RESPONSIVE — SHARED ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 200px 16px 16px 16px;
+    }
+
+    .section {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .cards-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 500px) {
+    .section-title {
+        flex-wrap: wrap;
+    }
+
+    .section-title > h2 {
+        width: 100%;
+    }
+}

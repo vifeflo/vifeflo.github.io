@@ -1,0 +1,343 @@
+/* ═══════════════════════════════════════════════════════════════
+   STUDYIN — Case Study Page
+   ───────────────────────────────────────────────────────────────
+    1.  Project Hero (image-top variant)
+    2.  Section Description & Cards
+    3.  Research Stats
+    4.  Frustrations Grid
+    5.  Persona
+    6.  Key Features
+    7.  Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ─── 1. PROJECT HERO (image-top) ──────────────────────────────── */
+
+.project-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 1128px;
+    position: relative;
+    z-index: 10;
+}
+
+.project-hero-top {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #242424;
+}
+
+.project-hero-top img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-hero-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.project-hero-bottom h1 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.project-hero-lead {
+    font-size: 16px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+    max-width: 720px;
+}
+
+
+/* ─── 2. SECTION DESCRIPTION & CARDS ──────────────────────────── */
+
+.studyin-section-title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -20px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.studyin-card {
+    background: rgba(23, 23, 23, 0.70);
+    border-radius: 36px;
+    padding: 24px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.studyin-card p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+.studyin-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+
+/* ─── 3. RESEARCH STATS ───────────────────────────────────────── */
+
+.research-header {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.research-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-number {
+    font-size: 56px;
+    font-weight: 600;
+    color: #FAF9F6;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+}
+
+.research-description p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+.research-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ─── 4. FRUSTRATIONS GRID ─────────────────────────────────────── */
+
+.frustrations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+}
+
+.frustrations-grid p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+.frustrations-grid p strong {
+    color: #FAF9F6;
+}
+
+
+/* ─── 5. PERSONA ───────────────────────────────────────────────── */
+
+.persona-top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.persona-image {
+    width: 200px;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.persona-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.persona-info p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+.persona-info p strong {
+    color: #FAF9F6;
+}
+
+.persona-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.persona-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.persona-column h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.persona-column p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+
+/* ─── 6. KEY FEATURES ──────────────────────────────────────────── */
+
+.key-features {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.key-feature {
+    background: rgba(23, 23, 23, 0.70);
+    border-radius: 36px;
+    padding: 24px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.key-feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    display: block;
+}
+
+.key-feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.key-feature-content h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.key-feature-content p {
+    font-size: 14px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+}
+
+/* Full-width feature (Modern look) */
+.key-feature-full {
+    grid-template-columns: 1fr;
+}
+
+.key-feature-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.key-feature-showcase-image {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    display: block;
+}
+
+/* Inline link style */
+.inline-link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.inline-link:hover {
+    opacity: 0.7;
+}
+
+
+/* ─── 7. RESPONSIVE ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .project-hero {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .key-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .research-header {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .research-description {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-hero-bottom h1 {
+        font-size: 36px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .frustrations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .persona-top {
+        grid-template-columns: 1fr;
+    }
+
+    .persona-image {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .persona-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .key-feature-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .research-header {
+        grid-template-columns: 1fr;
+    }
+}
