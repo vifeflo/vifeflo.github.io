@@ -117,7 +117,7 @@
 
 .lightbox-image-wrap.zoomed {
     cursor: grab;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .lightbox-image-wrap.zoomed:active {

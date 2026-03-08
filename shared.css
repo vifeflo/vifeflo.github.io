@@ -26,6 +26,11 @@ a, a:link, a:visited {
     cursor: pointer;
 }
 
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: #121212;
