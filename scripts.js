@@ -435,8 +435,7 @@ window.addEventListener('resize', () => {
 
 (function () {
     const STORAGE_KEY = 'vf-lang';
-    const STORAGE_SOURCE_KEY = 'vf-lang-source';
-    const DEFAULT_LANG = 'en';
+    const DEFAULT_LANG = 'pt-BR';
 
     function resolveLanguage(lang) {
         if (!lang) return null;
@@ -445,19 +444,6 @@ window.addEventListener('resize', () => {
         const normalized = String(lang).toLowerCase();
         if (normalized.startsWith('pt')) return 'pt-BR';
         if (normalized.startsWith('en')) return 'en';
-
-        return null;
-    }
-
-    function getBrowserPreferredLanguage() {
-        const preferred = Array.isArray(navigator.languages) && navigator.languages.length
-            ? navigator.languages
-            : [navigator.language, navigator.userLanguage];
-
-        for (const lang of preferred) {
-            const resolved = resolveLanguage(lang);
-            if (resolved) return resolved;
-        }
 
         return null;
     }
@@ -519,7 +505,6 @@ window.addEventListener('resize', () => {
         if (persist) {
             try {
                 localStorage.setItem(STORAGE_KEY, resolvedLang);
-                localStorage.setItem(STORAGE_SOURCE_KEY, source);
             } catch (e) {}
         }
     }
@@ -534,16 +519,12 @@ window.addEventListener('resize', () => {
         });
     });
 
-    /* Apply saved language, otherwise browser preference */
-    const savedSource = (function () {
-        try { return localStorage.getItem(STORAGE_SOURCE_KEY); } catch (e) { return null; }
-    })();
+    /* Apply saved language, otherwise default Portuguese */
     const savedRaw = (function () {
         try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
     })();
-    const saved = savedSource === 'manual' ? resolveLanguage(savedRaw) : null;
-    const browserPreferred = getBrowserPreferredLanguage();
-    const initialLang = saved || browserPreferred || DEFAULT_LANG;
+    const saved = resolveLanguage(savedRaw);
+    const initialLang = saved || DEFAULT_LANG;
 
     applyLang(initialLang, { persist: !!saved });
 })();
