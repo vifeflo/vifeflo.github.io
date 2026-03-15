@@ -448,6 +448,19 @@ window.addEventListener('resize', () => {
         return null;
     }
 
+    function getBrowserPreferredLanguage() {
+        const preferred = Array.isArray(navigator.languages) && navigator.languages.length
+            ? navigator.languages
+            : [navigator.language, navigator.userLanguage];
+
+        for (const lang of preferred) {
+            const resolved = resolveLanguage(lang);
+            if (resolved) return resolved;
+        }
+
+        return null;
+    }
+
     /**
      * Update the first non-empty text node of an element.
      * Works for plain text elements AND elements that contain icon children.
@@ -519,12 +532,13 @@ window.addEventListener('resize', () => {
         });
     });
 
-    /* Apply saved language, otherwise default Portuguese */
+    /* Apply saved language, otherwise browser preference */
     const savedRaw = (function () {
         try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
     })();
     const saved = resolveLanguage(savedRaw);
-    const initialLang = saved || DEFAULT_LANG;
+    const browserPreferred = getBrowserPreferredLanguage();
+    const initialLang = saved || browserPreferred || DEFAULT_LANG;
 
     applyLang(initialLang, { persist: !!saved });
 })();
