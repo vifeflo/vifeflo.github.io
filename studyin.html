@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-i18n-page-title="studyin.page-title">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyIn — Vinicius Florencio</title>
-    <link rel="icon" type="image/png" href="profile-pic.png">
+    <meta name="description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="StudyIn — Vinicius Florencio">
+    <meta property="og:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:image" content="embedd.jpeg">
+    <meta property="og:image:alt" content="Prévia do portfólio de Vinicius Florencio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StudyIn — Vinicius Florencio">
+    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta name="twitter:image" content="embedd.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-round.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-round-small.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="nav.css">
@@ -20,10 +31,10 @@
             <!-- Navigation -->
             <nav class="nav">
                 <div class="nav-links">
-                    <a class="nav-item" href="index.html">Home</a>
+                    <a class="nav-item" href="index.html" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
-                        <button class="dropdown-toggle" aria-expanded="false">
-                            My work
+                        <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.my-work">
+                            Projetos
                             <div class="nav-icon">
                                 <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img">
                             </div>
@@ -31,25 +42,45 @@
                         <div class="dropdown-menu" role="menu">
                             <a href="basic.html" class="dropdown-item">Basic UI Kit v2.0</a>
                             <a href="studyin.html" class="dropdown-item">StudyIn</a>
-                            <a href="#" class="dropdown-item" target="_blank" rel="noopener noreferrer">design.ly</a>
+                            <a href="portal.html" class="dropdown-item" data-i18n="nav.case.selfservice">Portal de autoatendimento</a>
+                            <a href="#" class="dropdown-item" data-tooltip="under-construction" target="_blank" rel="noopener noreferrer">design.ly</a>
                         </div>
                     </div>
-                    <a class="nav-item" href="index.html#about">About me</a>
-                    <a class="nav-item" href="index.html#experience">Experience</a>
-                    <a class="nav-item" href="index.html#certifications">Certifications</a>
-                    <a class="nav-item" href="index.html#contact">Contact</a>
+                    <a class="nav-item" href="index.html#about" data-i18n="nav.about">Sobre</a>
+                    <a class="nav-item" href="index.html#experience" data-i18n="nav.experience">Experiência</a>
+                    <a class="nav-item" href="index.html#certifications" data-i18n="nav.certifications">Certificações</a>
+                    <a class="nav-item" href="index.html#contact" data-i18n="nav.contact">Contato</a>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
-                        <button class="nav-cv-btn cv-dropdown-toggle">
-                            Full CV
+                        <button class="nav-cv-btn cv-dropdown-toggle" data-i18n="nav.language">
+                            <img draggable="false" src="usa.png" alt="English" class="language-flag" data-current-language-flag>
+                            Idioma
                             <div class="nav-icon">
                                 <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
                             </div>
                         </button>
                         <div class="cv-dropdown-menu">
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">Portuguese <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <button type="button" class="cv-dropdown-item lang-dropdown-item" data-language="pt-BR">
+                                <img draggable="false" src="brazil.png" alt="Português" class="language-flag">
+                                Português
+                            </button>
+                            <button type="button" class="cv-dropdown-item lang-dropdown-item" data-language="en">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag">
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cv-dropdown cv-dropdown-nav">
+                            <button class="nav-cv-btn cv-dropdown-toggle" data-i18n="nav.full-cv">
+                                CV Completo
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="brazil.png" alt="Português" class="language-flag"> Português <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
@@ -69,9 +100,9 @@
                     </svg>
                 </button>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
-                    <a href="index.html" class="mobile-dropdown-item">Home</a>
+                    <a href="index.html" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
-                        <button class="mobile-submenu-toggle" aria-expanded="false">My work
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.my-work">Projetos
                             <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
                             </svg>
@@ -79,22 +110,44 @@
                         <div class="mobile-submenu" role="menu">
                             <a href="basic.html" class="mobile-submenu-item">Basic UI Kit v2.0</a>
                             <a href="studyin.html" class="mobile-submenu-item">StudyIn</a>
-                            <a href="#" class="mobile-submenu-item">design.ly</a>
+                            <a href="portal.html" class="mobile-submenu-item" data-i18n="nav.case.selfservice">Portal de autoatendimento</a>
+                            <a href="#" class="mobile-submenu-item" data-tooltip="under-construction">design.ly</a>
                         </div>
                     </div>
-                    <a href="index.html#about" class="mobile-dropdown-item">About me</a>
-                    <a href="index.html#experience" class="mobile-dropdown-item">Experience</a>
-                    <a href="index.html#certifications" class="mobile-dropdown-item">Certifications</a>
-                    <a href="index.html#contact" class="mobile-dropdown-item">Contact</a>
+                    <a href="index.html#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
+                    <a href="index.html#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
+                    <a href="index.html#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
+                    <a href="index.html#contact" class="mobile-dropdown-item" data-i18n="nav.contact">Contato</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
-                        <button class="mobile-submenu-toggle" aria-expanded="false">Full CV
+                        <button class="mobile-submenu-toggle" aria-expanded="false">
+                            <span class="mobile-language-label">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag" data-current-language-flag>
+                                <span data-i18n="nav.language">Idioma</span>
+                            </span>
                             <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
                             </svg>
                         </button>
                         <div class="mobile-submenu" role="menu">
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">Portuguese <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <button type="button" class="mobile-submenu-item mobile-language-item" data-language="pt-BR">
+                                <img draggable="false" src="brazil.png" alt="Português" class="language-flag">
+                                Português
+                            </button>
+                            <button type="button" class="mobile-submenu-item mobile-language-item" data-language="en">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag">
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.full-cv">CV Completo
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="brazil.png" alt="Português" class="language-flag"> Português <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
@@ -109,99 +162,87 @@
             <!-- Hero Text (bottom) -->
             <div class="project-hero-bottom reveal">
                 <div class="card-tags">
-                    <span class="tag">Mobile</span>
-                    <span class="tag">MVP</span>
-                    <span class="tag">College</span>
+                    <span class="tag" data-i18n="tag.mobile">Mobile</span>
+                    <span class="tag" data-i18n="tag.mvp">MVP</span>
+                    <span class="tag" data-i18n="tag.college">Faculdade</span>
                 </div>
                 <h1>StudyIn</h1>
-                <p class="project-hero-lead">StudyIn is a MVP developed during my college years. It was designed to centralize and simplify access to essential academic resources and information for students. It also provides a single platform where users can easily access features like personalized schedules, news, real-time grades and more.</p>
-                <p class="project-hero-lead">With its intuitive design, StudyIn aims to streamline the academic experience, reducing the need to switch between multiple platforms and ensuring that students have everything they need at their fingertips.</p>
+                <p class="project-hero-lead" data-i18n="studyin.hero.lead1">StudyIn é um MVP desenvolvido durante minha graduação. Foi projetado para centralizar e simplificar o acesso a recursos e informações acadêmicas essenciais para estudantes. Também oferece uma única plataforma onde os usuários podem acessar facilmente funcionalidades como cronogramas personalizados, notícias, notas em tempo real e muito mais.</p>
+                <p class="project-hero-lead" data-i18n="studyin.hero.lead2">Com seu design intuitivo, o StudyIn visa otimizar a experiência acadêmica, reduzindo a necessidade de alternar entre múltiplas plataformas e garantindo que os estudantes tenham tudo o que precisam na ponta dos dedos.</p>
             </div>
         </div>
 
         <!-- Main Problem -->
         <div class="section reveal" id="problem">
-            <h2 class="studyin-section-title">Main problem</h2>
-            <div class="studyin-card">
-                <p>The primary issue identified during the interview process was the lack of a centralized app or website that organizes all essential academic information, such as grades, classes, and more.</p>
-                <p>Another significant issue was the slow speed of existing systems and the absence of a user-friendly, intuitive design, which made decision-making and the user experience difficult.</p>
-                <p>Therefore, StudyIn's main goal is to centralize all necessary student information into a single app that is intuitive and easy to navigate.</p>
+            <h2 class="studyin-section-title" data-i18n="studyin.problem.title">Problema principal</h2>
+            <div class="studyin-plain">
+                <p data-i18n="studyin.problem.p1">O principal problema identificado durante o processo de entrevistas foi a falta de um aplicativo ou site centralizado que organize todas as informações acadêmicas essenciais, como notas, aulas e muito mais.</p>
+                <p data-i18n="studyin.problem.p2">Outro problema significativo foi a lentidão dos sistemas existentes e a ausência de um design intuitivo e amigável, o que dificultava a tomada de decisões e a experiência do usuário.</p>
+                <p data-i18n="studyin.problem.p3">Portanto, o principal objetivo do StudyIn é centralizar todas as informações necessárias para os estudantes em um único aplicativo que seja intuitivo e fácil de navegar.</p>
             </div>
         </div>
 
         <!-- Research -->
         <div class="section reveal" id="research">
-            <h2 class="studyin-section-title">Research</h2>
-            <div class="studyin-card">
-                <div class="research-header">
-                    <div class="research-stat">
-                        <span class="stat-number" data-count="5">0</span>
-                        <span class="stat-label">Interviews conducted</span>
-                    </div>
-                    <div class="research-stat">
-                        <span class="stat-number" data-count="6">0</span>
-                        <span class="stat-label">Frustrations identified</span>
-                    </div>
-                    <div class="research-description">
-                        <p>During the research phase I conducted interviews with college friends to understand their experiences and challenges related to accessing academic information. The findings revealed that they all shared similar pain points.</p>
-                    </div>
+            <h2 class="studyin-section-title" data-i18n="studyin.research.title">Pesquisa</h2>
+            <p class="studyin-plain-text" data-i18n="studyin.research.desc">Durante a fase de pesquisa, realizei entrevistas com amigos da faculdade para entender suas experiências e desafios relacionados ao acesso a informações acadêmicas. Os resultados revelaram que todos compartilhavam pontos problemáticos semelhantes.</p>
+            <div class="research-stats-row">
+                <div class="research-stat">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label" data-i18n="studyin.research.stat1">entrevistas realizadas</span>
                 </div>
-
-                <hr class="research-divider">
-
-                <h3>Key frustrations identified</h3>
-                <div class="frustrations-grid">
-                    <p><strong>•</strong> Struggles keeping track of grades across different platforms</p>
-                    <p><strong>•</strong> Slow loading times of college's existing website</p>
-                    <p><strong>•</strong> Important announcements buried in emails</p>
-                    <p><strong>•</strong> Confusion over where to find course schedules</p>
-                    <p><strong>•</strong> Lack of organization for tracking assignments</p>
-                    <p><strong>•</strong> Outdated and difficult-to-navigate interfaces in the current system</p>
+                <div class="research-stat">
+                    <span class="stat-number" data-count="6">0</span>
+                    <span class="stat-label" data-i18n="studyin.research.stat2">frustrações identificadas</span>
                 </div>
-
-                <hr class="research-divider">
-
-                <p><strong>Conclusion:</strong> There is a clear need for a centralized solution that can streamline the academic experience.</p>
             </div>
+            <h3 class="studyin-subhead" data-i18n="studyin.research.h3">Principais frustrações identificadas</h3>
+            <div class="frustrations-cards-grid">
+                <div class="studyin-card"><p data-i18n="studyin.research.f1">Dificuldade em acompanhar notas em diferentes plataformas</p></div>
+                <div class="studyin-card"><p data-i18n="studyin.research.f2">Tempo de carregamento lento do site existente da faculdade</p></div>
+                <div class="studyin-card"><p data-i18n="studyin.research.f3">Avisos importantes enterrados em e-mails</p></div>
+                <div class="studyin-card"><p data-i18n="studyin.research.f4">Confusão sobre onde encontrar os horários das disciplinas</p></div>
+                <div class="studyin-card"><p data-i18n="studyin.research.f5">Falta de organização para acompanhar tarefas</p></div>
+                <div class="studyin-card"><p data-i18n="studyin.research.f6">Interfaces desatualizadas e difíceis de navegar no sistema atual</p></div>
+            </div>
+            <p class="studyin-plain-text"><strong data-i18n="studyin.research.conc-label">Conclusão:</strong> <span data-i18n="studyin.research.conc-text">Há uma necessidade clara de uma solução centralizada que possa simplificar a experiência acadêmica.</span></p>
         </div>
 
         <!-- Persona -->
         <div class="section reveal" id="persona">
-            <h2 class="studyin-section-title">Persona</h2>
+            <h2 class="studyin-section-title" data-i18n="studyin.persona.title">Persona</h2>
             <div class="studyin-card">
-                <div class="persona-top">
-                    <img draggable="false" src="images/studyin/Persona.png" alt="João - Persona" class="persona-image lightbox-trigger">
-                    <div class="persona-info">
-                        <p>João is a disciplined student who values quick and organized access to academic content.</p>
-                        <p>He is motivated to keep his grades up but often gets lost among the multiple platforms and systems needed to check grades, attendance, assignments, and other important college information.<br><br>Although he is tech-savvy, he feels frustrated with slow and unintuitive systems that complicate simple tasks.</p>
-                        <p><strong>• Age:</strong> 25 years</p>
-                        <p><strong>• Occupation:</strong> Software Engineering Student</p>
-                        <p><strong>• Education:</strong> Full-time undergraduate</p>
-                        <p><strong>• Favorite Technology:</strong> Smartphone (frequent use for daily tasks)</p>
+                <div class="persona-header">
+                    <img draggable="false" src="images/studyin/Persona.png" alt="João - Persona" class="persona-avatar">
+                    <div class="persona-meta">
+                        <p><strong data-i18n="studyin.persona.age-label">• Idade:</strong> <span data-i18n="studyin.persona.age-val">25 anos</span></p>
+                        <p><strong data-i18n="studyin.persona.occ-label">• Ocupação:</strong> <span data-i18n="studyin.persona.occ-val">Estudante de Engenharia de Software</span></p>
+                        <p><strong data-i18n="studyin.persona.edu-label">• Educação:</strong> <span data-i18n="studyin.persona.edu-val">Graduação em período integral</span></p>
+                        <p><strong data-i18n="studyin.persona.tech-label">• Tecnologia favorita:</strong> <span data-i18n="studyin.persona.tech-val">Smartphone (uso frequente para tarefas do dia a dia)</span></p>
                     </div>
                 </div>
-                <hr class="persona-divider">
-                <div class="persona-columns">
-                    <div class="persona-column">
-                        <h3>Goals and needs</h3>
-                        <p>• Access all academic information (grades, assignments, exams, news) in one place</p>
-                        <p>• Use an intuitive, fast interface that makes navigation easier and saves time</p>
-                        <p>• Receive important notifications directly on his phone, without needing to switch between multiple platforms</p>
-                    </div>
-                    <div class="persona-column">
-                        <h3>Frustrations</h3>
-                        <p>• Wasted time navigating various systems to find information on grades and attendance</p>
-                        <p>• Slow, confusing college systems that make data viewing difficult and disrupt his routine</p>
-                    </div>
+            </div>
+            <div class="persona-cards-row">
+                <div class="studyin-card">
+                    <h3 data-i18n="studyin.persona.goals-title">Objetivos e necessidades</h3>
+                    <p data-i18n="studyin.persona.goal1">• Acessar todas as informações acadêmicas (notas, tarefas, provas, notícias) em um só lugar</p>
+                    <p data-i18n="studyin.persona.goal2">• Usar uma interface intuitiva e rápida que facilite a navegação e economize tempo</p>
+                    <p data-i18n="studyin.persona.goal3">• Receber notificações importantes diretamente no celular, sem precisar alternar entre múltiplas plataformas</p>
+                </div>
+                <div class="studyin-card">
+                    <h3 data-i18n="studyin.persona.frust-title">Frustrações</h3>
+                    <p data-i18n="studyin.persona.frust1">• Tempo desperdiçado navegando em vários sistemas para encontrar informações sobre notas e frequência</p>
+                    <p data-i18n="studyin.persona.frust2">• Sistemas universitários lentos e confusos que dificultam a visualização de dados e atrapalham sua rotina</p>
                 </div>
             </div>
         </div>
 
         <!-- Development -->
         <div class="section reveal" id="development">
-            <h2 class="studyin-section-title">Development</h2>
-            <div class="studyin-card">
-                <p>With all the insights gathered from the research and with the persona in mind, I developed an MVP for StudyIn designed to address the key challenges students face in their daily academic routine.<br><br>The solution focuses on simplifying access to essential information, improving organization, and enhancing overall communication between students and the institution. This initial version lays the foundation for a more intuitive, efficient, and student-centered experience.</p>
+            <h2 class="studyin-section-title" data-i18n="studyin.dev.title">Desenvolvimento</h2>
+            <div class="studyin-plain">
+                <p data-i18n="studyin.dev.desc">Com todos os insights coletados na pesquisa e com a persona em mente, desenvolvi um MVP para o StudyIn projetado para abordar os principais desafios que os estudantes enfrentam em sua rotina acadêmica diária.</p>
+                <p data-i18n="studyin.dev.desc2">A solução se concentra em simplificar o acesso a informações essenciais, melhorar a organização e aprimorar a comunicação geral entre estudantes e a instituição. Esta versão inicial estabelece a base para uma experiência mais intuitiva, eficiente e centrada no estudante.</p>
             </div>
 
             <!-- Key Features -->
@@ -209,63 +250,63 @@
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Flexible%20onboarding.png" alt="Flexible onboarding" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>Flexible onboarding</h3>
-                        <p>Users can sign up with a simplified form or instantly create an account using their social network profiles.</p>
+                        <h3 data-i18n="studyin.feat.onboard-title">Onboarding flexível</h3>
+                        <p data-i18n="studyin.feat.onboard-desc">Os usuários podem se cadastrar com um formulário simplificado ou criar uma conta instantaneamente usando seus perfis de redes sociais.</p>
                     </div>
                 </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Home%20screen.png" alt="Home screen" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>Home screen</h3>
-                        <p>The initial screen provides a clear overview of the schedule and the latest news, allowing students to access their upcoming classes and important announcements at a glance.</p>
+                        <h3 data-i18n="studyin.feat.home-title">Tela inicial</h3>
+                        <p data-i18n="studyin.feat.home-desc">A tela inicial fornece uma visão clara da agenda e das últimas notícias, permitindo que os estudantes acessem suas próximas aulas e avisos importantes de um só lugar.</p>
                     </div>
                 </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Grades.png" alt="Grades" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>Grades</h3>
-                        <p>Users can view individual grades for each subject, track their progress over time, and access feedback from instructors.</p>
+                        <h3 data-i18n="studyin.feat.grades-title">Notas</h3>
+                        <p data-i18n="studyin.feat.grades-desc">Os usuários podem visualizar notas individuais por disciplina, acompanhar seu progresso ao longo do tempo e acessar feedbacks dos professores.</p>
                     </div>
                 </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Schedule.png" alt="Calendar" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>Calendar</h3>
-                        <p>The calendar features upcoming classes in a clear and organized way, showing the class name, time, and duration. Students can also confirm attendance in advance and view any notes or announcements from the professor.</p>
+                        <h3 data-i18n="studyin.feat.cal-title">Calendário</h3>
+                        <p data-i18n="studyin.feat.cal-desc">O calendário exibe as próximas aulas de forma clara e organizada, mostrando o nome da disciplina, horário e duração. Os estudantes também podem confirmar presença com antecedência e visualizar notas ou avisos do professor.</p>
                     </div>
                 </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/News.png" alt="News" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>News</h3>
-                        <p>Users can now access and share the latest college news within the app, eliminating the need to open the university's website.</p>
+                        <h3 data-i18n="studyin.feat.news-title">Notícias</h3>
+                        <p data-i18n="studyin.feat.news-desc">Os usuários podem agora acessar e compartilhar as últimas notícias da faculdade dentro do aplicativo, eliminando a necessidade de abrir o site da universidade.</p>
                     </div>
                 </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Profile.png" alt="Profile" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>Profile</h3>
-                        <p>Users can view and update their personal information within the app without needing to contact the institution.</p>
+                        <h3 data-i18n="studyin.feat.profile-title">Perfil</h3>
+                        <p data-i18n="studyin.feat.profile-desc">Os usuários podem visualizar e atualizar suas informações pessoais dentro do aplicativo sem precisar entrar em contato com a instituição.</p>
                     </div>
                 </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Real-time%20notifications.png" alt="Real-time notifications" class="key-feature-image lightbox-trigger">
                     <div class="key-feature-content">
-                        <h3>Real-time notifications</h3>
-                        <p>Alerts for upcoming deadlines, class schedules, and significant updates ensure that students never miss critical information.</p>
+                        <h3 data-i18n="studyin.feat.notif-title">Notificações em tempo real</h3>
+                        <p data-i18n="studyin.feat.notif-desc">Alertas para prazos próximos, horários de aulas e atualizações importantes garantem que os estudantes nunca percam informações críticas.</p>
                     </div>
                 </div>
 
                 <div class="key-feature key-feature-full reveal">
                     <div class="key-feature-content">
-                        <h3>Modern look</h3>
-                        <p>Unlike the current system used by students StudyIn features a modern and minimalist layout using the latest version of the <a href="basic.html" class="inline-link">Basic UI Kit</a>. In addition to being accessible the system also offers light and dark mode variants for greater customization.</p>
+                        <h3 data-i18n="studyin.feat.look-title">Visual moderno</h3>
+                        <p><span data-i18n="studyin.feat.look-desc1">Ao contrário do sistema atual utilizado pelos estudantes, o StudyIn apresenta um layout moderno e minimalista usando a versão mais recente do  </span><a href="basic.html" class="inline-link">Basic UI Kit</a><span data-i18n="studyin.feat.look-desc2">. Além de ser acessível, o sistema também oferece variantes de modo claro e escuro para maior personalização.</span></p>
                     </div>
                     <div class="key-feature-showcase">
                         <img draggable="false" src="images/studyin/StudyIn%20showcase%20light.png" alt="StudyIn light mode" class="key-feature-showcase-image lightbox-trigger">
@@ -287,7 +328,7 @@
                         </div>
                         <div class="footer-profile-text">
                             <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role">UI&UX Designer</p>
+                            <p class="footer-profile-role" data-i18n="footer.role">Designer UI&UX</p>
                         </div>
                     </div>
                     <div class="footer-links">
@@ -302,22 +343,25 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <a href="index.html" class="footer-nav-item">Home</a>
-                    <a href="index.html#my-work" class="footer-nav-item">My work</a>
+                    <a href="index.html" class="footer-nav-item" data-i18n="nav.home">Home</a>
+                    <a href="index.html#my-work" class="footer-nav-item" data-i18n="nav.my-work">Projetos</a>
                 </div>
                 <div class="footer-col">
-                    <a href="index.html#about" class="footer-nav-item">About me</a>
-                    <a href="index.html#experience" class="footer-nav-item">Experience</a>
+                    <a href="index.html#about" class="footer-nav-item" data-i18n="nav.about">Sobre</a>
+                    <a href="index.html#experience" class="footer-nav-item" data-i18n="nav.experience">Experiência</a>
                 </div>
                 <div class="footer-col">
-                    <a href="index.html#certifications" class="footer-nav-item">Certifications</a>
+                    <a href="index.html#certifications" class="footer-nav-item" data-i18n="nav.certifications">Certificações</a>
                 </div>
             </div>
             <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="scripts.js"></script>
     <script src="lightbox.js"></script>
 </body>
 </html>
+
+

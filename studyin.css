@@ -65,9 +65,31 @@
     gap: 12px;
     align-items: center;
     width: 100%;
-    margin-bottom: -20px;
     font-size: 32px;
     font-weight: 500;
+}
+
+/* ─── PLAIN SECTIONS (fora de card, gap 16px) ─────────────────── */
+
+.studyin-plain {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.studyin-plain p,
+.studyin-plain-text {
+    font-size: 16px;
+    color: rgba(250, 249, 246, 0.8);
+    line-height: 1.6;
+    max-width: 720px;
+}
+
+.studyin-subhead {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FAF9F6;
 }
 
 .studyin-card {
@@ -79,8 +101,9 @@
     border: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     width: 100%;
+    height: fit-content;
 }
 
 .studyin-card p {
@@ -92,27 +115,31 @@
 .studyin-card h3 {
     font-size: 18px;
     font-weight: 600;
-    margin-top: 8px;
 }
 
 
 /* ─── 3. RESEARCH STATS ───────────────────────────────────────── */
 
-.research-header {
+.research-stats-row {
     display: grid;
-    grid-template-columns: auto auto 1fr;
-    gap: 24px;
-    align-items: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
 }
 
 .research-stat {
+    background: rgba(250, 249, 246, 0.04);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
 }
 
+
 .stat-number {
-    font-size: 56px;
+    font-size: 48px;
+    line-height: 1;
     font-weight: 600;
     color: #FAF9F6;
 }
@@ -122,91 +149,59 @@
     color: rgba(250, 249, 246, 0.8);
 }
 
-.research-description p {
-    font-size: 14px;
-    color: rgba(250, 249, 246, 0.8);
-    line-height: 1.6;
-}
 
-.research-divider {
-    border: none;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.08);
-}
+/* ─── 4. FRUSTRATIONS CARDS GRID ──────────────────────────────── */
 
-
-/* ─── 4. FRUSTRATIONS GRID ─────────────────────────────────────── */
-
-.frustrations-grid {
+.frustrations-cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px 24px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 32px;
 }
 
-.frustrations-grid p {
-    font-size: 14px;
-    color: rgba(250, 249, 246, 0.8);
-    line-height: 1.6;
-}
-
-.frustrations-grid p strong {
-    color: #FAF9F6;
+.frustrations-cards-grid .studyin-card,
+.persona-cards-row .studyin-card {
+    border-radius: 20px;
 }
 
 
 /* ─── 5. PERSONA ───────────────────────────────────────────────── */
 
-.persona-top {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 24px;
-    align-items: start;
+.persona-header {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
 }
 
-.persona-image {
-    width: 200px;
-    border-radius: 24px;
+.persona-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
-.persona-info {
+.persona-meta {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
-.persona-info p {
+.persona-meta p {
     font-size: 14px;
     color: rgba(250, 249, 246, 0.8);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-.persona-info p strong {
+.persona-meta p strong {
     color: #FAF9F6;
 }
 
-.persona-divider {
-    border: none;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.persona-columns {
+.persona-cards-row {
     display: grid;
+    gap: 32px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.persona-column h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.persona-column p {
-    font-size: 14px;
-    color: rgba(250, 249, 246, 0.8);
-    line-height: 1.6;
 }
 
 
@@ -297,14 +292,6 @@
     .key-feature {
         grid-template-columns: 1fr;
     }
-
-    .research-header {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .research-description {
-        grid-column: 1 / -1;
-    }
 }
 
 @media (max-width: 768px) {
@@ -316,28 +303,19 @@
         font-size: 36px;
     }
 
-    .frustrations-grid {
+    .research-stats-row {
         grid-template-columns: 1fr;
     }
 
-    .persona-top {
+    .frustrations-cards-grid {
         grid-template-columns: 1fr;
     }
 
-    .persona-image {
-        width: 100%;
-        max-width: 200px;
-    }
-
-    .persona-columns {
+    .persona-cards-row {
         grid-template-columns: 1fr;
     }
 
     .key-feature-showcase {
-        grid-template-columns: 1fr;
-    }
-
-    .research-header {
         grid-template-columns: 1fr;
     }
 }

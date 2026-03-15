@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-i18n-page-title="basic.page-title">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic UI Kit — Vinicius Florencio</title>
-    <link rel="icon" type="image/png" href="profile-pic.png">
+    <meta name="description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Basic UI Kit — Vinicius Florencio">
+    <meta property="og:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:image" content="embedd.jpeg">
+    <meta property="og:image:alt" content="Prévia do portfólio de Vinicius Florencio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Basic UI Kit — Vinicius Florencio">
+    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta name="twitter:image" content="embedd.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-round.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-round-small.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="nav.css">
@@ -20,10 +31,10 @@
             <!-- Navigation -->
             <nav class="nav">
                 <div class="nav-links">
-                    <a class="nav-item" href="index.html">Home</a>
+                    <a class="nav-item" href="index.html" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
-                        <button class="dropdown-toggle" aria-expanded="false">
-                            My work
+                        <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.my-work">
+                            Projetos
                             <div class="nav-icon">
                                 <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img">
                             </div>
@@ -31,25 +42,45 @@
                         <div class="dropdown-menu" role="menu">
                             <a href="basic.html" class="dropdown-item">Basic UI Kit v2.0</a>
                             <a href="studyin.html" class="dropdown-item">StudyIn</a>
-                            <a href="#" class="dropdown-item" target="_blank" rel="noopener noreferrer">design.ly</a>
+                            <a href="portal.html" class="dropdown-item" data-i18n="nav.case.selfservice">Portal de autoatendimento</a>
+                            <a href="#" class="dropdown-item" data-tooltip="under-construction" target="_blank" rel="noopener noreferrer">design.ly</a>
                         </div>
                     </div>
-                    <a class="nav-item" href="index.html#about">About me</a>
-                    <a class="nav-item" href="index.html#experience">Experience</a>
-                    <a class="nav-item" href="index.html#certifications">Certifications</a>
-                    <a class="nav-item" href="index.html#contact">Contact</a>
+                    <a class="nav-item" href="index.html#about" data-i18n="nav.about">Sobre</a>
+                    <a class="nav-item" href="index.html#experience" data-i18n="nav.experience">Experiência</a>
+                    <a class="nav-item" href="index.html#certifications" data-i18n="nav.certifications">Certificações</a>
+                    <a class="nav-item" href="index.html#contact" data-i18n="nav.contact">Contato</a>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
-                        <button class="nav-cv-btn cv-dropdown-toggle">
-                            Full CV
+                        <button class="nav-cv-btn cv-dropdown-toggle" data-i18n="nav.language">
+                            <img draggable="false" src="usa.png" alt="English" class="language-flag" data-current-language-flag>
+                            Idioma
                             <div class="nav-icon">
                                 <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
                             </div>
                         </button>
                         <div class="cv-dropdown-menu">
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">Portuguese <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <button type="button" class="cv-dropdown-item lang-dropdown-item" data-language="pt-BR">
+                                <img draggable="false" src="brazil.png" alt="Português" class="language-flag">
+                                Português
+                            </button>
+                            <button type="button" class="cv-dropdown-item lang-dropdown-item" data-language="en">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag">
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cv-dropdown cv-dropdown-nav">
+                        <button class="nav-cv-btn cv-dropdown-toggle" data-i18n="nav.full-cv">
+                            CV Completo
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="brazil.png" alt="Português" class="language-flag"> Português <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
@@ -69,9 +100,9 @@
                     </svg>
                 </button>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
-                    <a href="index.html" class="mobile-dropdown-item">Home</a>
+                    <a href="index.html" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
-                        <button class="mobile-submenu-toggle" aria-expanded="false">My work
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.my-work">Projetos
                             <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
                             </svg>
@@ -79,22 +110,44 @@
                         <div class="mobile-submenu" role="menu">
                             <a href="basic.html" class="mobile-submenu-item">Basic UI Kit v2.0</a>
                             <a href="studyin.html" class="mobile-submenu-item">StudyIn</a>
-                            <a href="#" class="mobile-submenu-item">design.ly</a>
+                            <a href="portal.html" class="mobile-submenu-item" data-i18n="nav.case.selfservice">Portal de autoatendimento</a>
+                            <a href="#" class="mobile-submenu-item" data-tooltip="under-construction">design.ly</a>
                         </div>
                     </div>
-                    <a href="index.html#about" class="mobile-dropdown-item">About me</a>
-                    <a href="index.html#experience" class="mobile-dropdown-item">Experience</a>
-                    <a href="index.html#certifications" class="mobile-dropdown-item">Certifications</a>
-                    <a href="index.html#contact" class="mobile-dropdown-item">Contact</a>
+                    <a href="index.html#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
+                    <a href="index.html#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
+                    <a href="index.html#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
+                    <a href="index.html#contact" class="mobile-dropdown-item" data-i18n="nav.contact">Contato</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
-                        <button class="mobile-submenu-toggle" aria-expanded="false">Full CV
+                        <button class="mobile-submenu-toggle" aria-expanded="false">
+                            <span class="mobile-language-label">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag" data-current-language-flag>
+                                <span data-i18n="nav.language">Idioma</span>
+                            </span>
                             <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
                             </svg>
                         </button>
                         <div class="mobile-submenu" role="menu">
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
-                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer">Portuguese <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <button type="button" class="mobile-submenu-item mobile-language-item" data-language="pt-BR">
+                                <img draggable="false" src="brazil.png" alt="Português" class="language-flag">
+                                Português
+                            </button>
+                            <button type="button" class="mobile-submenu-item mobile-language-item" data-language="en">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag">
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.full-cv">CV Completo
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="brazil.png" alt="Português" class="language-flag"> Português <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
@@ -104,14 +157,14 @@
             <!-- Hero Content -->
             <div class="project-hero-content reveal">
                 <div class="card-tags">
-                    <span class="tag"><img draggable="false" src="FigmaLogo.svg" alt="Figma" class="icon-img"> Figma</span>
-                    <span class="tag">Components</span>
-                    <span class="tag">Library</span>
+                    <span class="tag" data-i18n="tag.figma"><img draggable="false" src="FigmaLogo.svg" alt="Figma" class="icon-img"> Figma</span>
+                    <span class="tag" data-i18n="tag.components">Componentes</span>
+                    <span class="tag" data-i18n="tag.library">Biblioteca</span>
                 </div>
                 <h1>Basic UI Kit</h1>
-                <p>A scalable multi-brand UI Kit with accessibility at its core.</p>
-                <a class="btn" href="https://www.figma.com/design/Xt2cx6cDTSzyo2q5nw04oj/Basic-UI-Kit-2?node-id=1-3&t=pILmFvXhstWs9sFg-1" target="_blank" rel="noopener noreferrer">
-                    See project on Figma
+                <p data-i18n="basic.hero.desc">Um UI Kit multi-marca escalável com acessibilidade em seu núcleo.</p>
+                <a class="btn" href="https://www.figma.com/design/Xt2cx6cDTSzyo2q5nw04oj/Basic-UI-Kit-2?node-id=1-3&t=pILmFvXhstWs9sFg-1" target="_blank" rel="noopener noreferrer" data-i18n="basic.btn.figma">
+                    Ver projeto no Figma
                     <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img">
                 </a>
             </div>
@@ -125,9 +178,9 @@
         <!-- Multi-Brand System -->
         <div class="section reveal" id="multi-brand">
             <div class="section-title">
-                <h2>Multi-Brand System</h2>
+                <h2 data-i18n="basic.multi-brand.title">Sistema multi-marca</h2>
             </div>
-            <p class="section-description">This isn't just another UI Kit. It's a flexible multi-brand system built to support multiple brands from a single source of truth. Each brand maintains its unique identity while sharing the same component architecture.</p>
+            <p class="section-description" data-i18n="basic.multi-brand.desc">Esse não é mais um UI Kit. É um sistema multi-marcas flexível criado a partir de uma única fonte de verdade. Cada marca mantém sua identidade única enquanto compartilha a mesma arquitetura de componentes.</p>
             <div class="cards-grid">
                 <div class="card reveal">
                     <div class="card-image">
@@ -175,18 +228,18 @@
         <!-- Design Tokens -->
         <div class="section reveal" id="design-tokens">
             <div class="section-title">
-                <h2>Design Tokens</h2>
+                <h2 data-i18n="basic.tokens.title">Design tokens</h2>
             </div>
-            <p class="section-description">Token-based system ensuring consistency and scalability. Every design decision is stored as a reusable token, making updates seamless across the entire system.</p>
+            <p class="section-description" data-i18n="basic.tokens.desc">Sistema baseado em tokens garantindo consistência e escalabilidade. Cada decisão de design é armazenada como um token reutilizável, tornando as atualizações perfeitas em todo o sistema.</p>
             <div class="card card-full reveal">
                 <div class="card-image">
                     <img draggable="false" src="images/basic/Colors.png" alt="Color tokens" class="lightbox-trigger">
                 </div>
                 <div class="card-content">
                     <div class="card-title">
-                        <h3>Colors</h3>
+                        <h3 data-i18n="basic.colors.title">Cores</h3>
                     </div>
-                    <p class="card-description">Primary, secondary, and semantic colors with light & dark variants. All color combinations are tested for accessibility compliance.</p>
+                        <p class="card-description" data-i18n="basic.colors.desc">Cores primárias, secundárias e semânticas com variantes claro e escuro. Todas as combinações de cores são testadas para conformidade com acessibilidade.</p>
                 </div>
             </div>
         </div>
@@ -194,13 +247,13 @@
         <!-- Accessibility & Dark Mode -->
         <div class="section reveal" id="accessibility">
             <div class="section-title">
-                <h2>Accessibility & Dark Mode</h2>
+                <h2 data-i18n="basic.accessibility.title">Acessibilidade & modo escuro</h2>
             </div>
-            <p class="section-description">Built with WCAG guidelines in mind. Every color combination is tested for contrast ratios, and both light and dark modes are designed to be equally accessible.</p>
+            <p class="section-description" data-i18n="basic.accessibility.desc">Construído com as diretrizes WCAG em mente. Cada combinação de cores é testada para proporções de contraste, e ambos os modos claro e escuro são projetados para serem igualmente acessíveis.</p>
             <div class="tags-row">
-                <span class="tag">WCAG 2.1 AA</span>
-                <span class="tag">Accessible Colors</span>
-                <span class="tag">Dark Mode Ready</span>
+                <span class="tag" data-i18n="tag.wcag">WCAG 2.1 AA</span>
+                <span class="tag" data-i18n="tag.accessible-colors">Cores acessíveis</span>
+                <span class="tag" data-i18n="tag.dark-mode-ready">Pronto para modo escuro</span>
             </div>
             <div class="showcase-grid-2">
                 <div class="showcase-item reveal">
@@ -215,21 +268,21 @@
         <!-- Responsive Grid System -->
         <div class="section reveal" id="responsive-grid">
             <div class="section-title">
-                <h2>Responsive Grid System</h2>
+                <h2 data-i18n="basic.grid.title">Sistema de grid responsivo</h2>
             </div>
-            <p class="section-description">A flexible grid system designed for real-world applications. Components adapt seamlessly from desktop to mobile, maintaining visual harmony across all breakpoints.</p>
+            <p class="section-description" data-i18n="basic.grid.desc">Um sistema de grid flexível projetado para aplicações do mundo real. Os componentes se adaptam perfeitamente do desktop ao mobile, mantendo harmonia visual em todos os breakpoints.</p>
             <div class="showcase-grid-3">
                 <div class="showcase-item reveal">
                     <img draggable="false" src="images/basic/Desktop.png" alt="Desktop view" class="lightbox-trigger">
-                    <span class="caption">Desktop</span>
+                    <span class="caption" data-i18n="basic.grid.caption.desktop">Desktop</span>
                 </div>
                 <div class="showcase-item reveal">
                     <img draggable="false" src="images/basic/Tablet.png" alt="Tablet view" class="lightbox-trigger">
-                    <span class="caption">Tablet</span>
+                    <span class="caption" data-i18n="basic.grid.caption.tablet">Tablet</span>
                 </div>
                 <div class="showcase-item reveal">
                     <img draggable="false" src="images/basic/Mobile.png" alt="Mobile view" class="lightbox-trigger">
-                    <span class="caption">Mobile</span>
+                    <span class="caption" data-i18n="basic.grid.caption.mobile">Mobile</span>
                 </div>
             </div>
         </div>
@@ -237,13 +290,13 @@
         <!-- Component Library -->
         <div class="section reveal" id="components">
             <div class="section-title">
-                <h2>Component Library</h2>
+                <h2 data-i18n="basic.components.title">Biblioteca de componentes</h2>
             </div>
             <div class="stat-hero">
-                <h4 data-count="150">0</h4>
-                <span class="stat-label">components designed for scalability</span>
+                <h4 data-count="36">0</h4>
+                <span class="stat-label" data-i18n="basic.components.stat-label">componentes projetados para escalabilidade</span>
             </div>
-            <p class="section-description">Attention to detail sets this UI Kit apart. Every component includes comprehensive states and variations to handle real-world scenarios.</p>
+            <p class="section-description" data-i18n="basic.components.desc">A atenção aos detalhes diferencia este UI Kit. Cada componente inclui estados e variações abrangentes para lidar com cenários do mundo real.</p>
             <div class="showcase-image reveal">
                 <img draggable="false" src="images/basic/Components%20and%20variations.png" alt="Component states and variations" class="lightbox-trigger">
             </div>
@@ -252,9 +305,9 @@
         <!-- User Flows -->
         <div class="section reveal" id="user-flows">
             <div class="section-title">
-                <h2>User Flows</h2>
+                <h2 data-i18n="basic.flows.title">Fluxos de usuário</h2>
             </div>
-            <p class="section-description">See how the UI Kit translates into real product experiences. These flows demonstrate practical applications of the component library.</p>
+            <p class="section-description" data-i18n="basic.flows.desc">Veja como o UI Kit se traduz em experiências reais de produto. Estes fluxos demonstram aplicações práticas da biblioteca de componentes.</p>
             <div class="cards-grid">
                 <div class="card reveal">
                     <div class="card-image">
@@ -262,9 +315,9 @@
                     </div>
                     <div class="card-content">
                         <div class="card-title">
-                            <h3>Products</h3>
+                            <h3 data-i18n="basic.flows.products-title">Produtos</h3>
                         </div>
-                        <p class="card-description">The products screen displays all registered items with key information like price, category, and sales performance.</p>
+                        <p class="card-description" data-i18n="basic.flows.products-desc">A tela de produtos exibe todos os itens cadastrados com informações importantes como preço, categoria e desempenho de vendas.</p>
                     </div>
                 </div>
                 <div class="card reveal">
@@ -273,9 +326,9 @@
                     </div>
                     <div class="card-content">
                         <div class="card-title">
-                            <h3>New product</h3>
+                            <h3 data-i18n="basic.flows.new-prod-title">Novo produto</h3>
                         </div>
-                        <p class="card-description">Adding a new product is simple with a clean form that includes all necessary fields: name, model, manufacturer, category, price, photos, and specifications.</p>
+                        <p class="card-description" data-i18n="basic.flows.new-prod-desc">Adicionar um novo produto é simples com um formulário limpo que inclui todos os campos necessários: nome, modelo, fabricante, categoria, preço, fotos e especificações.</p>
                     </div>
                 </div>
                 <div class="card reveal">
@@ -284,9 +337,9 @@
                     </div>
                     <div class="card-content">
                         <div class="card-title">
-                            <h3>Product added</h3>
+                            <h3 data-i18n="basic.flows.added-title">Produto adicionado</h3>
                         </div>
-                        <p class="card-description">After successfully adding a product, users receive a confirmation notification with a quick link to view the newly created item.</p>
+                        <p class="card-description" data-i18n="basic.flows.added-desc">Após adicionar um produto com sucesso, os usuários recebem uma notificação de confirmação com um link rápido para visualizar o item recém-criado.</p>
                     </div>
                 </div>
                 <div class="card reveal">
@@ -295,9 +348,9 @@
                     </div>
                     <div class="card-content">
                         <div class="card-title">
-                            <h3>Product info</h3>
+                            <h3 data-i18n="basic.flows.info-title">Informações do produto</h3>
                         </div>
-                        <p class="card-description">The product detail view shows all information including multiple photos, specifications, and an edit option for quick updates.</p>
+                        <p class="card-description" data-i18n="basic.flows.info-desc">A visualização detalhada do produto exibe todas as informações, incluindo múltiplas fotos, especificações e uma opção de edição para atualizações rápidas.</p>
                     </div>
                 </div>
             </div>
@@ -315,7 +368,7 @@
                         </div>
                         <div class="footer-profile-text">
                             <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role">UI&UX Designer</p>
+                            <p class="footer-profile-role" data-i18n="footer.role">Designer UI&UX</p>
                         </div>
                     </div>
                     <div class="footer-links">
@@ -330,22 +383,25 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <a href="index.html" class="footer-nav-item">Home</a>
-                    <a href="index.html#my-work" class="footer-nav-item">My work</a>
+                    <a href="index.html" class="footer-nav-item" data-i18n="nav.home">Home</a>
+                    <a href="index.html#my-work" class="footer-nav-item" data-i18n="nav.my-work">Projetos</a>
                 </div>
                 <div class="footer-col">
-                    <a href="index.html#about" class="footer-nav-item">About me</a>
-                    <a href="index.html#experience" class="footer-nav-item">Experience</a>
+                    <a href="index.html#about" class="footer-nav-item" data-i18n="nav.about">Sobre</a>
+                    <a href="index.html#experience" class="footer-nav-item" data-i18n="nav.experience">Experiência</a>
                 </div>
                 <div class="footer-col">
-                    <a href="index.html#certifications" class="footer-nav-item">Certifications</a>
+                    <a href="index.html#certifications" class="footer-nav-item" data-i18n="nav.certifications">Certificações</a>
                 </div>
             </div>
             <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="scripts.js"></script>
     <script src="lightbox.js"></script>
 </body>
 </html>
+
+

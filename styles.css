@@ -3,7 +3,7 @@
    ───────────────────────────────────────────────────────────────
     1.  Hero Section (text, header, name)
     2.  Companies Carousel
-    3.  About Me & Skills
+    3.  About & Skills
     4.  Experience
     5.  Certifications
     6.  Responsive — Index
@@ -131,7 +131,7 @@ img[alt="Alura"] {
 }
 
 
-/* ─── 3. ABOUT ME & SKILLS ────────────────────────────────────── */
+/* ─── 3. ABOUT & SKILLS ───────────────────────────────────────── */
 
 .about-header {
     display: flex;

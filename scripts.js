@@ -4,7 +4,7 @@
    Table of Contents:
     0.  Utilities (easing, smooth scroll, floating menus)
     1.  Smooth Scroll Navigation
-    2.  Floating Dropdown — My Work
+    2.  Floating Dropdown — Projects
     3.  CV Dropdown — Nav + Sections
     4.  Mobile Menu & Submenus
     5.  Inertial Wheel Scroll
@@ -18,6 +18,9 @@
 
 /* Shared close functions — assigned by each section, called in §8 */
 let closeAllDropdowns, closeAllCv, closeMobileMenu;
+
+/* i18n tooltip hook — assigned by Card Tooltip section, used in §9 */
+let applyTooltipLang;
 
 
 /* ─── 0. UTILITIES ─────────────────────────────────────────────── */
@@ -47,7 +50,8 @@ function positionFixed(toggle, menu, gap) {
         position : 'fixed',
         left     : r.left + 'px',
         top      : (r.bottom + gap) + 'px',
-        minWidth : Math.max(menu.offsetWidth, r.width) + 'px'
+        width    : 'fit-content',
+        minWidth : 'fit-content'
     });
 }
 
@@ -101,10 +105,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-/* ─── 2. FLOATING DROPDOWN — MY WORK ───────────────────────────── */
+/* ─── 2. FLOATING DROPDOWN — PROJECTS ──────────────────────────── */
 
 (function () {
-    const GAP = 14;
+    const GAP = 16;
     let _idCounter = 0;
 
     function findMenu(dd) {
@@ -142,7 +146,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const dd = toggle.closest('.dropdown');
         toggle.addEventListener('click', e => {
             e.stopPropagation();
-            dd.classList.contains('open') ? close(dd) : open(dd);
+            if (!dd) return;
+            const wasOpen = dd.classList.contains('open');
+            closeAllDropdowns?.();
+            closeAllCv?.();
+            if (!wasOpen) open(dd);
         });
     });
 })();
@@ -151,27 +159,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ─── 3. CV DROPDOWN — NAV + SECTIONS ──────────────────────────── */
 
 (function () {
-    const NAV_GAP  = 16;
-    const navDd    = document.querySelector('.cv-dropdown-nav');
-    const navToggle = navDd?.querySelector('.cv-dropdown-toggle');
-    const navMenu   = navDd?.querySelector('.cv-dropdown-menu');
+    const NAV_GAP = 16;
+    let _idCounter = 0;
 
-    function openNav() {
-        if (!navDd || !navMenu) return;
-        navDd.classList.add('open');
-        showFloating(navToggle, navMenu, NAV_GAP);
-        trackFloating(navToggle, navMenu, NAV_GAP);
+    function findMenu(dd) {
+        if (!dd.dataset.cvId) dd.dataset.cvId = 'cv-' + (++_idCounter);
+        const id = dd.dataset.cvId;
+        return dd.querySelector('.cv-dropdown-menu')
+            || document.querySelector('.cv-dropdown-menu[data-owner="' + id + '"]');
     }
 
-    function closeNav() {
-        if (!navDd) return;
-        navDd.classList.remove('open');
-        hideFloating(navMenu);
+    function openNav(dd) {
+        if (!dd) return;
+        const toggle = dd.querySelector('.cv-dropdown-toggle');
+        const menu   = findMenu(dd);
+        if (!toggle || !menu) return;
+
+        dd.classList.add('open');
+        if (!menu.dataset.owner) menu.dataset.owner = dd.dataset.cvId;
+
+        showFloating(toggle, menu, NAV_GAP);
+        trackFloating(toggle, menu, NAV_GAP);
+    }
+
+    function closeNav(dd) {
+        if (!dd) return;
+        const menu = findMenu(dd);
+        dd.classList.remove('open');
+        hideFloating(menu);
     }
 
     function closeAll() {
-        document.querySelectorAll('.cv-dropdown.open').forEach(d =>
-            d === navDd ? closeNav() : d.classList.remove('open')
+        document.querySelectorAll('.cv-dropdown.open').forEach(dd =>
+            dd.classList.contains('cv-dropdown-nav') ? closeNav(dd) : dd.classList.remove('open')
         );
     }
 
@@ -182,9 +202,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         btn.addEventListener('click', function (e) {
             e.stopPropagation();
             const dd      = this.closest('.cv-dropdown');
+            if (!dd) return;
             const wasOpen = dd.classList.contains('open');
+            closeAllDropdowns?.();
             closeAll();
-            if (!wasOpen) dd === navDd ? openNav() : dd.classList.add('open');
+            if (!wasOpen) {
+                dd.classList.contains('cv-dropdown-nav') ? openNav(dd) : dd.classList.add('open');
+            }
         });
     });
 
@@ -242,13 +266,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 
-    /* Submenu toggles (My Work, Full CV, etc.) */
+    /* Submenu toggles (Projects, Full CV, etc.) */
     menu.querySelectorAll('.mobile-submenu-toggle').forEach(toggle => {
         const sub = toggle.closest('.mobile-has-submenu')?.querySelector('.mobile-submenu');
         if (!sub) return;
         toggle.addEventListener('click', e => {
             e.stopPropagation();
-            const open = sub.classList.toggle('open');
+            const shouldOpen = !sub.classList.contains('open');
+            closeSubmenus();
+            const open = shouldOpen;
+            sub.classList.toggle('open', open);
             toggle.classList.toggle('open', open);
             toggle.setAttribute('aria-expanded', String(open));
         });
@@ -343,13 +370,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ─── 8. GLOBAL EVENT HANDLERS ─────────────────────────────────── */
 
-/* Outside click — close My Work + CV dropdowns */
+/* Outside click — close Projects + CV dropdowns */
 document.addEventListener('click', e => {
     if (!e.target.closest('.dropdown')) closeAllDropdowns?.();
     closeAllCv?.();
 });
 
-/* Escape — close My Work dropdown */
+/* Escape — close Projects dropdown */
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeAllDropdowns?.();
 });
@@ -376,23 +403,149 @@ window.addEventListener('resize', () => {
         'under-construction': '<img src="Warning.svg" alt="" class="tooltip-icon tooltip-icon-warning"> Under construction'
     };
 
-    var activeCard = null;
+    /* Expose for §9 language switcher */
+    applyTooltipLang = function (dict) {
+        if (dict['tooltip.see-project'])
+            templates['see-project'] = dict['tooltip.see-project'] + ' <img src="ArrowRight.svg" alt="" class="tooltip-icon">';
+        if (dict['tooltip.under-construction'])
+            templates['under-construction'] = '<img src="Warning.svg" alt="" class="tooltip-icon tooltip-icon-warning"> ' + dict['tooltip.under-construction'];
+    };
+
+    var activeTarget = null;
 
     document.addEventListener('mousemove', function (e) {
-        var card = e.target.closest('.card[data-tooltip]');
-        if (card) {
-            if (card !== activeCard) {
-                activeCard = card;
-                tip.innerHTML = templates[card.dataset.tooltip] || '';
+        var target = e.target.closest('.card[data-tooltip], .dropdown-item[data-tooltip], .mobile-submenu-item[data-tooltip]');
+        if (target) {
+            if (target !== activeTarget) {
+                activeTarget = target;
+                tip.innerHTML = templates[target.dataset.tooltip] || '';
             }
             tip.style.left = (e.clientX + 12) + 'px';
             tip.style.top  = (e.clientY + 12) + 'px';
             tip.classList.add('visible');
-        } else if (activeCard) {
-            activeCard = null;
+        } else if (activeTarget) {
+            activeTarget = null;
             tip.classList.remove('visible');
         }
     });
+})();
+
+
+/* ─── 9. LANGUAGE SWITCHER (i18n) ──────────────────────────────── */
+
+(function () {
+    const STORAGE_KEY = 'vf-lang';
+    const STORAGE_SOURCE_KEY = 'vf-lang-source';
+    const DEFAULT_LANG = 'en';
+
+    function resolveLanguage(lang) {
+        if (!lang) return null;
+        if (window.TRANSLATIONS?.[lang]) return lang;
+
+        const normalized = String(lang).toLowerCase();
+        if (normalized.startsWith('pt')) return 'pt-BR';
+        if (normalized.startsWith('en')) return 'en';
+
+        return null;
+    }
+
+    function getBrowserPreferredLanguage() {
+        const preferred = Array.isArray(navigator.languages) && navigator.languages.length
+            ? navigator.languages
+            : [navigator.language, navigator.userLanguage];
+
+        for (const lang of preferred) {
+            const resolved = resolveLanguage(lang);
+            if (resolved) return resolved;
+        }
+
+        return null;
+    }
+
+    /**
+     * Update the first non-empty text node of an element.
+     * Works for plain text elements AND elements that contain icon children.
+     */
+    function setText(el, val) {
+        if (el.childElementCount === 0) {
+            el.textContent = val;
+        } else {
+            for (const node of el.childNodes) {
+                if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                    const lead  = node.textContent.match(/^\s*/)[0];
+                    const trail = node.textContent.match(/\s*$/)[0];
+                    node.textContent = lead + val.trim() + trail;
+                    return;
+                }
+            }
+        }
+    }
+
+    function getCurrentLanguageFlag(lang) {
+        return lang === 'pt-BR'
+            ? { src: 'brazil.png', alt: 'Português' }
+            : { src: 'usa.png', alt: 'English' };
+    }
+
+    function applyLang(lang, { persist = true, source = 'manual' } = {}) {
+        const resolvedLang = resolveLanguage(lang) || DEFAULT_LANG;
+        const dict = window.TRANSLATIONS?.[resolvedLang];
+        if (!dict) return;
+
+        /* Update <html lang> attribute */
+        document.documentElement.lang = resolvedLang;
+
+        /* Translate all tagged elements */
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const val = dict[el.dataset.i18n];
+            if (val !== undefined) setText(el, val);
+        });
+
+        /* Update page <title> */
+        const titleKey = document.documentElement.dataset.i18nPageTitle;
+        if (titleKey && dict[titleKey]) document.title = dict[titleKey];
+
+        /* Update card tooltips */
+        applyTooltipLang?.(dict);
+
+        /* Update current language flags in nav/mobile toggles */
+        const flag = getCurrentLanguageFlag(resolvedLang);
+        document.querySelectorAll('[data-current-language-flag]').forEach(img => {
+            img.setAttribute('src', flag.src);
+            img.setAttribute('alt', flag.alt);
+        });
+
+        /* Persist choice */
+        if (persist) {
+            try {
+                localStorage.setItem(STORAGE_KEY, resolvedLang);
+                localStorage.setItem(STORAGE_SOURCE_KEY, source);
+            } catch (e) {}
+        }
+    }
+
+    /* Listen to all [data-language] buttons directly (desktop + mobile) */
+    document.querySelectorAll('[data-language]').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            applyLang(this.dataset.language, { persist: true, source: 'manual' });
+            closeAllCv?.();
+            closeMobileMenu?.();
+        });
+    });
+
+    /* Apply saved language, otherwise browser preference */
+    const savedSource = (function () {
+        try { return localStorage.getItem(STORAGE_SOURCE_KEY); } catch (e) { return null; }
+    })();
+    const savedRaw = (function () {
+        try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+    })();
+    const saved = savedSource === 'manual' ? resolveLanguage(savedRaw) : null;
+    const browserPreferred = getBrowserPreferredLanguage();
+    const initialLang = saved || browserPreferred || DEFAULT_LANG;
+
+    applyLang(initialLang, { persist: !!saved });
 })();
 
 })();

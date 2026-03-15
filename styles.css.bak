@@ -6,13 +6,13 @@
     1.  Shared Patterns (glass surfaces, hover, icons)
     2.  Layout (container, hero wrapper, sections)
     3.  Navigation — Desktop
-    4.  Navigation — Dropdowns (My Work + CV)
+    4.  Navigation — Dropdowns (Projects + CV)
     5.  Navigation — Mobile
     6.  Hero Section (text, profile pic, badge)
     7.  Companies Carousel
     8.  Buttons & Tags
-    9.  Cards (My Work)
-   10.  About Me & Skills
+    9.  Cards (Projects)
+    10.  About & Skills
    11.  Experience
    12.  Certifications
    13.  Footer
@@ -214,7 +214,7 @@ body {
 
 /* ─── 4. NAVIGATION — DROPDOWNS ────────────────────────────────── */
 
-/* --- My Work dropdown --- */
+/* --- Projects dropdown --- */
 
 .nav .dropdown {
     position: relative;
@@ -686,7 +686,7 @@ img[alt="Alura"] {
 }
 
 
-/* ─── 9. CARDS (My Work) ───────────────────────────────────────── */
+/* ─── 9. CARDS (Projects) ──────────────────────────────────────── */
 
 .cards-grid {
     display: grid;
@@ -755,7 +755,7 @@ img[alt="Alura"] {
 }
 
 
-/* ─── 10. ABOUT ME & SKILLS ───────────────────────────────────── */
+/* ─── 10. ABOUT & SKILLS ───────────────────────────────────────── */
 
 .about-header {
     display: flex;

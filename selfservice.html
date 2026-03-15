@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-i18n-page-title="selfservice.page-title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de autoatendimento — Vinicius Florencio</title>
+    <meta name="description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portal de autoatendimento — Vinicius Florencio">
+    <meta property="og:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:image" content="embedd.jpeg">
+    <meta property="og:image:alt" content="Prévia do portfólio de Vinicius Florencio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portal de autoatendimento — Vinicius Florencio">
+    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta name="twitter:image" content="embedd.jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-round.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-round-small.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="selfservice.css">
+    <link rel="stylesheet" href="lightbox.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="project-hero">
+            <nav class="nav">
+                <div class="nav-links">
+                    <a class="nav-item" href="index.html" data-i18n="nav.home">Home</a>
+                    <div class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.my-work">
+                            Projetos
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="basic.html" class="dropdown-item">Basic UI Kit v2.0</a>
+                            <a href="studyin.html" class="dropdown-item">StudyIn</a>
+                            <a href="portal.html" class="dropdown-item" data-i18n="nav.case.selfservice">Portal de autoatendimento</a>
+                            <a href="#" class="dropdown-item" data-tooltip="under-construction" target="_blank" rel="noopener noreferrer">design.ly</a>
+                        </div>
+                    </div>
+                    <a class="nav-item" href="index.html#about" data-i18n="nav.about">Sobre</a>
+                    <a class="nav-item" href="index.html#experience" data-i18n="nav.experience">Experiência</a>
+                    <a class="nav-item" href="index.html#certifications" data-i18n="nav.certifications">Certificações</a>
+                    <a class="nav-item" href="index.html#contact" data-i18n="nav.contact">Contato</a>
+                </div>
+                <div class="nav-right">
+                    <div class="cv-dropdown cv-dropdown-nav">
+                        <button class="nav-cv-btn cv-dropdown-toggle" data-i18n="nav.language">
+                            <img draggable="false" src="usa.png" alt="English" class="language-flag" data-current-language-flag>
+                            Idioma
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <button type="button" class="cv-dropdown-item lang-dropdown-item" data-language="pt-BR">
+                                <img draggable="false" src="brazil.png" alt="Português" class="language-flag">
+                                Português
+                            </button>
+                            <button type="button" class="cv-dropdown-item lang-dropdown-item" data-language="en">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag">
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cv-dropdown cv-dropdown-nav">
+                        <button class="nav-cv-btn cv-dropdown-toggle" data-i18n="nav.full-cv">
+                            CV Completo
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="brazil.png" alt="Português" class="language-flag"> Português <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                        <div class="nav-icon">
+                            <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img">
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open menu">
+                    <svg class="mobile-icon" width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 8H27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 13H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 18H27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
+                    <a href="index.html" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.my-work">Projetos
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="basic.html" class="mobile-submenu-item">Basic UI Kit v2.0</a>
+                            <a href="studyin.html" class="mobile-submenu-item">StudyIn</a>
+                            <a href="portal.html" class="mobile-submenu-item" data-i18n="nav.case.selfservice">Portal de autoatendimento</a>
+                            <a href="#" class="mobile-submenu-item" data-tooltip="under-construction">design.ly</a>
+                        </div>
+                    </div>
+                    <a href="index.html#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
+                    <a href="index.html#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
+                    <a href="index.html#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
+                    <a href="index.html#contact" class="mobile-dropdown-item" data-i18n="nav.contact">Contato</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false">
+                            <span class="mobile-language-label">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag" data-current-language-flag>
+                                <span data-i18n="nav.language">Idioma</span>
+                            </span>
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <button type="button" class="mobile-submenu-item mobile-language-item" data-language="pt-BR">
+                                <img draggable="false" src="brazil.png" alt="Português" class="language-flag">
+                                Português
+                            </button>
+                            <button type="button" class="mobile-submenu-item mobile-language-item" data-language="en">
+                                <img draggable="false" src="usa.png" alt="English" class="language-flag">
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.full-cv">CV Completo
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=Acffn7" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="brazil.png" alt="Português" class="language-flag"> Português <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                            <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
+                </div>
+            </nav>
+
+            <div class="project-hero-top reveal">
+                <img draggable="false" src="images/portal/Portal%20thumbnail%20card.png" alt="Portal de autoatendimento" class="lightbox-trigger" data-lightbox-caption="Portal de autoatendimento">
+            </div>
+
+            <div class="hero-intro reveal">
+                <div class="card-tags">
+                    <span class="tag" data-i18n="selfservice.hero.tag1">UX Research</span>
+                    <span class="tag" data-i18n="selfservice.hero.tag2">Redesign</span>
+                    <span class="tag" data-i18n="selfservice.hero.tag3">Prototipação</span>
+                </div>
+                <h1 data-i18n="selfservice.hero.title">Portal de autoatendimento</h1>
+                <p class="hero-subtitle section-copy" data-i18n="selfservice.overview.desc1">Este case apresenta toda a jornada de discovery, entrevistas, desenvolvimento e testes do redesign de um portal de autoatendimento logístico, criado para facilitar as operações portuárias dos clientes de um terminal logístico.</p>
+                <ul class="hero-meta">
+                    <li data-i18n="selfservice.overview.i1">Duração do projeto: 5 meses</li>
+                    <li data-i18n="selfservice.overview.i2">Mais de 3.200 horas de projeto</li>
+                    <li data-i18n="selfservice.overview.i3">2 frentes de atuação: negócios e design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section reveal" id="my-role">
+            <h2 class="section-head" data-i18n="selfservice.role.title">Meu papel</h2>
+            <p class="section-copy" data-i18n="selfservice.role.desc">Como designer de produto fui um dos responsáveis pela condução de entrevistas, análise de dados e geração de insights com auxílio de inteligência artificial, criação de protótipos navegáveis de alta fidelidade e condução de testes de usabilidade com usuários finais.</p>
+        </div>
+
+        <div class="section reveal" id="challenge">
+            <h2 class="section-head" data-i18n="selfservice.challenge.title">Desafio</h2>
+            <p class="section-copy" data-i18n="selfservice.challenge.desc1">Os principais desafios do projeto foram reformular a experiência do cliente dentro do portal de autoatendimento logístico e reduzir a alta dependência de ferramentas externas como telefones e e-mails para contato com o operador do terminal.</p>
+            <blockquote class="section-copy" data-i18n="selfservice.challenge.quote">“O portal do cliente atual não oferece uma boa usabilidade e carece de funcionalidades relevantes.”</blockquote>
+        </div>
+
+        <div class="section reveal" id="benchmarking">
+            <h2 class="section-head" data-i18n="selfservice.bench.title">Benchmarking</h2>
+            <p class="section-copy" data-i18n="selfservice.bench.desc">De início realizamos um benchmarking competitivo para mapear funcionalidades percebidas em portais similares utilizados pelos usuários. Parte dos portais analisados entrou como sugestão do time interno.</p>
+            <div class="panel table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="selfservice.bench.h1">Funcionalidade competitiva</th>
+                            <th data-i18n="selfservice.bench.h2">Boas práticas percebidas</th>
+                            <th data-i18n="selfservice.bench.h3">Gaps identificados</th>
+                            <th data-i18n="selfservice.bench.h4">Insights para o futuro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="selfservice.bench.r1.c1">Agendamento</td>
+                            <td data-i18n="selfservice.bench.r1.c2">Centralização no portal</td>
+                            <td data-i18n="selfservice.bench.r1.c3">Rigidez no fluxo</td>
+                            <td data-i18n="selfservice.bench.r1.c4">Flexibilizar alterações</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.bench.r2.c1">Faturamento</td>
+                            <td data-i18n="selfservice.bench.r2.c2">Pagamento digital</td>
+                            <td data-i18n="selfservice.bench.r2.c3">Baixa clareza</td>
+                            <td data-i18n="selfservice.bench.r2.c4">Mais transparência</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.bench.r3.c1">Tracking de cargas</td>
+                            <td data-i18n="selfservice.bench.r3.c2">Timeline clara</td>
+                            <td data-i18n="selfservice.bench.r3.c3">Falta de alertas</td>
+                            <td data-i18n="selfservice.bench.r3.c4">Notificações proativas</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.bench.r4.c1">Documentos</td>
+                            <td data-i18n="selfservice.bench.r4.c2">Fluxo único</td>
+                            <td data-i18n="selfservice.bench.r4.c3">Pendências invisíveis</td>
+                            <td data-i18n="selfservice.bench.r4.c4">Visibilidade clara</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.bench.r5.c1">Comunicação</td>
+                            <td data-i18n="selfservice.bench.r5.c2">Registros formais</td>
+                            <td data-i18n="selfservice.bench.r5.c3">Excesso de e-mails</td>
+                            <td data-i18n="selfservice.bench.r5.c4">Possibilidade de chat integrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section reveal" id="execution">
+            <h2 class="section-head" data-i18n="selfservice.exec.title">Pesquisa com usuários</h2>
+            <p class="section-copy" data-i18n="selfservice.exec.desc1">Depois do estudo inicial iniciamos a fase de pesquisa com usuários para entender a experiência atual como um todo, investigar a jornada e identificar frustrações e pontos de melhoria.</p>
+            <h3 class="section-subhead" data-i18n="selfservice.exec.method">Metodologia</h3>
+            <div class="stats-row">
+                <div class="stat-block">
+                    <span class="stat-number" data-count="14">0</span>
+                    <span class="stat-label" data-i18n="selfservice.exec.stat1">entrevistas qualitativas com usuários</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label" data-i18n="selfservice.exec.stat2">rodas de entrevistas com o time interno</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section reveal" id="discoveries-affinity">
+            <h2 class="section-head" data-i18n="selfservice.discovery.affinity.title">Mapa de afinidade</h2>
+            <p class="section-copy" data-i18n="selfservice.discovery.affinity.desc">Após a primeira rodada de entrevista, com um grande volume de dados, pudemos montar um mapa de afinidade que gerou evidências sólidas dos principais pontos de dor dos usuários.</p>
+            <div class="discovery-grid">
+                <div class="discovery-column">
+                    <h3 data-i18n="selfservice.discovery.affinity.c1.t">Falta de visibilidade de status</h3>
+                    <ul class="bullet-list">
+                        <li data-i18n="selfservice.discovery.affinity.c1.i1">A carga está liberada?</li>
+                        <li data-i18n="selfservice.discovery.affinity.c1.i2">Existe algum bloqueio? Por quê?</li>
+                        <li data-i18n="selfservice.discovery.affinity.c1.i3">Em qual etapa está o processo?</li>
+                        <li data-i18n="selfservice.discovery.affinity.c1.i4">Qual caminho o usuário percorre?</li>
+                    </ul>
+                    <blockquote data-i18n="selfservice.discovery.affinity.q1">“Ficamos o tempo inteiro às cegas.”</blockquote>
+                </div>
+                <div class="discovery-column">
+                    <h3 data-i18n="selfservice.discovery.affinity.c2.t">Comunicação complexa e reativa</h3>
+                    <ul class="bullet-list">
+                        <li data-i18n="selfservice.discovery.affinity.c2.i1">Informações críticas chegam tarde</li>
+                        <li data-i18n="selfservice.discovery.affinity.c2.i2">Falta de alertas automáticos</li>
+                        <li data-i18n="selfservice.discovery.affinity.c2.i3">Excesso de e-mails</li>
+                    </ul>
+                    <blockquote data-i18n="selfservice.discovery.affinity.q2">“Eu recebo cerca de 60 e-mails por dia.”</blockquote>
+                </div>
+                <div class="discovery-column">
+                    <h3 data-i18n="selfservice.discovery.affinity.c3.t">Informações fragmentadas</h3>
+                    <ul class="bullet-list">
+                        <li data-i18n="selfservice.discovery.affinity.c3.i1">Relatórios pouco legíveis</li>
+                        <li data-i18n="selfservice.discovery.affinity.c3.i2">Falta de visão consolidada</li>
+                        <li data-i18n="selfservice.discovery.affinity.c3.i3">Dificuldade de tomada de decisão</li>
+                    </ul>
+                    <blockquote data-i18n="selfservice.discovery.affinity.q3">“O portal não tem uma tela central que una tudo.”</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="section reveal" id="discoveries-heuristic">
+            <h2 class="section-head" data-i18n="selfservice.discovery.heur.title">Avaliação heurística</h2>
+            <p class="section-copy" data-i18n="selfservice.discovery.heur.desc">Em seguida iniciamos a nossa avaliação heurística onde identificamos falhas na aplicação das heurísticas de Nielsen que geravam um grande impacto na experiência dos usuários no sistema:</p>
+            <div class="panel table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="selfservice.discovery.heur.h1">Heurística</th>
+                            <th data-i18n="selfservice.discovery.heur.h2">Problema identificado</th>
+                            <th data-i18n="selfservice.discovery.heur.h3">Evidência</th>
+                            <th data-i18n="selfservice.discovery.heur.h4">Impacto</th>
+                            <th data-i18n="selfservice.discovery.heur.h5">Severidade</th>
+                            <th data-i18n="selfservice.discovery.heur.h6">Oportunidade de melhoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="selfservice.discovery.heur.r1.c1">Visibilidade do status do sistema</td>
+                            <td data-i18n="selfservice.discovery.heur.r1.c2">Falta de clareza sobre bloqueios e liberações</td>
+                            <td data-i18n="selfservice.discovery.heur.r1.c3">Status sem indicar motivo ou próxima ação</td>
+                            <td data-i18n="selfservice.discovery.heur.r1.c4">Usuários precisam recorrer a e-mails ou telefone</td>
+                            <td data-i18n="selfservice.discovery.heur.r1.c5">Alta</td>
+                            <td data-i18n="selfservice.discovery.heur.r1.c6">Exibir motivo do bloqueio, etapa atual e ação necessária diretamente no portal</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.discovery.heur.r2.c1">Visibilidade do status do sistema</td>
+                            <td data-i18n="selfservice.discovery.heur.r2.c2">Pendências documentais pouco visíveis</td>
+                            <td data-i18n="selfservice.discovery.heur.r2.c3">Documentos pendentes não são destacados visualmente</td>
+                            <td data-i18n="selfservice.discovery.heur.r2.c4">Atrasos operacionais e retrabalho</td>
+                            <td data-i18n="selfservice.discovery.heur.r2.c5">Alta</td>
+                            <td data-i18n="selfservice.discovery.heur.r2.c6">Criar destaque visual para pendências e priorização por criticidade</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.discovery.heur.r3.c1">Reconhecimento em vez de memorização</td>
+                            <td data-i18n="selfservice.discovery.heur.r3.c2">Uso excessivo de ícones sem rótulos</td>
+                            <td data-i18n="selfservice.discovery.heur.r3.c3">Filtros e ações representados apenas por ícones</td>
+                            <td data-i18n="selfservice.discovery.heur.r3.c4">Usuários não entendem rapidamente o que cada ação faz</td>
+                            <td data-i18n="selfservice.discovery.heur.r3.c5">Média</td>
+                            <td data-i18n="selfservice.discovery.heur.r3.c6">Adicionar rótulos textuais ou tooltips explicativos</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="selfservice.discovery.heur.r4.c1">Consistência e padrões</td>
+                            <td data-i18n="selfservice.discovery.heur.r4.c2">Ações primárias apresentadas como links</td>
+                            <td data-i18n="selfservice.discovery.heur.r4.c3">Ações importantes aparecem como texto simples</td>
+                            <td data-i18n="selfservice.discovery.heur.r4.c4">Usuários não reconhecem ações principais</td>
+                            <td data-i18n="selfservice.discovery.heur.r4.c5">Média</td>
+                            <td data-i18n="selfservice.discovery.heur.r4.c6">Padronizar ações primárias como botões</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section reveal" id="solution">
+            <h2 class="section-head" data-i18n="selfservice.solution.title">Prototipação</h2>
+            <p class="section-copy" data-i18n="selfservice.solution.desc1">Com os dados limpos e insights consolidados iniciamos a fase de prototipação, gerando artefatos palpáveis que traduziram o trabalho da equipe de design em uma experiência interativa que abrange cerca de 20 fluxos de trabalho.</p>
+            <h3 class="section-subhead" data-i18n="selfservice.solution.subtitle">Objetivos</h3>
+            <div class="objectives-grid">
+                <div class="point-card"><p data-i18n="selfservice.solution.i1">Redução de retrabalho operacional</p></div>
+                <div class="point-card"><p data-i18n="selfservice.solution.i2">Maior previsibilidade para os usuários</p></div>
+                <div class="point-card"><p data-i18n="selfservice.solution.i3">Visibilidade e clareza</p></div>
+                <div class="point-card"><p data-i18n="selfservice.solution.i4">Acompanhamento contínuo da operação</p></div>
+                <div class="point-card"><p data-i18n="selfservice.solution.i5">Comunicação proativa</p></div>
+            </div>
+            <h3 class="section-subhead" data-i18n="selfservice.solution.flows">Exemplos de fluxos</h3>
+            <div class="solution-screens" aria-label="Protótipos do portal">
+                <figure class="showcase-item">
+                    <img draggable="false" src="images/portal/Login.png" alt="Login" class="solution-screen lightbox-trigger" data-lightbox-caption="Login">
+                </figure>
+                <figure class="showcase-item">
+                    <img draggable="false" src="images/portal/Home.png" alt="Home" class="solution-screen lightbox-trigger" data-lightbox-caption="Home">
+                </figure>
+                <figure class="showcase-item">
+                    <img draggable="false" src="images/portal/Movimenta%C3%A7%C3%A3o.png" alt="Acompanhamento de carga" class="solution-screen lightbox-trigger" data-lightbox-caption="Acompanhamento de carga">
+                </figure>
+                <figure class="showcase-item">
+                    <img draggable="false" src="images/portal/Agendamentos.png" alt="Agendamentos" class="solution-screen lightbox-trigger" data-lightbox-caption="Agendamentos">
+                </figure>
+            </div>
+        </div>
+
+        <div class="section reveal" id="usability-tests">
+            <h2 class="section-head" data-i18n="selfservice.tests.title">Testes de usabilidade</h2>
+            <p class="section-copy" data-i18n="selfservice.tests.desc">Por fim realizamos uma nova rodada de entrevistas com testes moderados para validar se a solução abordou os problemas da fase exploratória e identificar novos pontos de melhoria.</p>
+            <div class="points-grid">
+                <div class="point-card">
+                    <span class="point-number">1.</span>
+                    <p data-i18n="selfservice.tests.i1">Forte interesse por tracking implementado</p>
+                </div>
+                <div class="point-card">
+                    <span class="point-number">2.</span>
+                    <p data-i18n="selfservice.tests.i2">Forte interesse por relatórios personalizáveis implementados</p>
+                </div>
+                <div class="point-card">
+                    <span class="point-number">3.</span>
+                    <p data-i18n="selfservice.tests.i3">Interesse em notificações configuráveis e em tempo real</p>
+                </div>
+                <div class="point-card">
+                    <span class="point-number">4.</span>
+                    <p data-i18n="selfservice.tests.i4">Desejo de flexibilidade e facilidade de agendamento</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" id="contact">
+            <div class="footer-divider"></div>
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <div class="footer-profile">
+                        <div class="profile-pic">
+                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
+                            <span class="online-badge"></span>
+                        </div>
+                        <div class="footer-profile-text">
+                            <p class="footer-profile-name">Vinicius Florencio</p>
+                            <p class="footer-profile-role" data-i18n="footer.role">Designer UI&UX</p>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="footer-nav-item" target="_blank" rel="noopener noreferrer">
+                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                            /viniciusferreiraflorencio
+                        </a>
+                        <a href="mailto:viniciusferreiraflorencio@live.com" class="footer-nav-item">
+                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                            viniciusferreiraflorencio@live.com
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <a href="index.html" class="footer-nav-item" data-i18n="nav.home">Home</a>
+                    <a href="index.html#my-work" class="footer-nav-item" data-i18n="nav.my-work">Projetos</a>
+                </div>
+                <div class="footer-col">
+                    <a href="index.html#about" class="footer-nav-item" data-i18n="nav.about">Sobre</a>
+                    <a href="index.html#experience" class="footer-nav-item" data-i18n="nav.experience">Experiência</a>
+                </div>
+                <div class="footer-col">
+                    <a href="index.html#certifications" class="footer-nav-item" data-i18n="nav.certifications">Certificações</a>
+                </div>
+            </div>
+            <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="scripts.js"></script>
+    <script src="lightbox.js"></script>
+</body>
+</html>
+
+

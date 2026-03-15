@@ -78,6 +78,60 @@
         }
     }
 
+    function getTrimmedText(el) {
+        if (!el) return '';
+        return (el.textContent || '').trim();
+    }
+
+    function getLightboxCaption(el) {
+        if (!el) return '';
+
+        const explicitCaption = (el.dataset.lightboxCaption || '').trim();
+        if (explicitCaption) return explicitCaption;
+
+        const lookupSelectors = [
+            '.caption',
+            '.card-title h3',
+            '.key-feature-content h3',
+            '.section-title h2',
+            '.studyin-section-title',
+            '.section-head',
+            '.hero-card h1',
+            '.project-hero-content h1',
+            '.project-hero-bottom h1',
+            'h1'
+        ];
+
+        const containerSelectors = [
+            '.showcase-item',
+            '.key-feature',
+            '.card',
+            '.card-full',
+            '.showcase-image',
+            '.project-hero-image',
+            '.project-hero-top',
+            '.hero-card',
+            '.section',
+            '.project-hero'
+        ];
+
+        for (const containerSelector of containerSelectors) {
+            const container = el.closest(containerSelector);
+            if (!container) continue;
+
+            for (const lookupSelector of lookupSelectors) {
+                const found = container.querySelector(lookupSelector);
+                const text = getTrimmedText(found);
+                if (text) return text;
+            }
+        }
+
+        const alt = (el.alt || '').trim();
+        if (alt) return alt;
+
+        return getImageName(el.src);
+    }
+
     function updateArrows() {
         prevBtn.classList.toggle('hidden', current <= 0);
         nextBtn.classList.toggle('hidden', current >= images.length - 1);
@@ -117,7 +171,7 @@
         const entry = images[current];
         img.src = entry.src;
         img.alt = entry.alt || '';
-        caption.textContent = getImageName(entry.src);
+        caption.textContent = entry.caption || entry.alt || getImageName(entry.src);
         resetZoom();
         updateArrows();
         overlay.classList.add('active');
@@ -199,7 +253,11 @@
         if (!trigger) return;
         /* Collect all trigger images in DOM order */
         images = Array.from(document.querySelectorAll('.lightbox-trigger')).map(function (el) {
-            return { src: el.src, alt: el.alt };
+            return {
+                src: el.src,
+                alt: el.alt,
+                caption: getLightboxCaption(el)
+            };
         });
         const idx = images.findIndex(function (item) { return item.src === trigger.src; });
         show(idx >= 0 ? idx : 0);
