@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic UI Kit — Vinicius Florencio</title>
-    <meta name="description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta name="description" content="Portfólio de Vinicius Florencio, UX/UI Designer.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Basic UI Kit — Vinicius Florencio">
-    <meta property="og:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:description" content="Portfólio de Vinicius Florencio, UX/UI Designer.">
     <meta property="og:image" content="embedd.jpeg">
     <meta property="og:image:alt" content="Prévia do portfólio de Vinicius Florencio">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Basic UI Kit — Vinicius Florencio">
-    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UX/UI Designer.">
     <meta name="twitter:image" content="embedd.jpeg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-round.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-round-small.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="footer.css">
@@ -31,6 +30,28 @@
             <!-- Navigation -->
             <nav class="nav">
                 <div class="nav-links">
+                    <div class="cv-dropdown cv-dropdown-nav nav-profile">
+                        <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn" aria-expanded="false" aria-label="Abrir contato">
+                            <div class="profile-pic nav-profile-pic">
+                                <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
+                                <span class="online-badge"></span>
+                            </div>
+                            <span class="nav-profile-name">Vinicius Florencio</span>
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
+                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                                /viniciusferreiraflorencio
+                            </a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
+                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                                viniciusferreiraflorencio@live.com
+                            </a>
+                        </div>
+                    </div>
                     <a class="nav-item" href="index.html" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
                         <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.my-work">
@@ -49,7 +70,6 @@
                     <a class="nav-item" href="index.html#about" data-i18n="nav.about">Sobre</a>
                     <a class="nav-item" href="index.html#experience" data-i18n="nav.experience">Experiência</a>
                     <a class="nav-item" href="index.html#certifications" data-i18n="nav.certifications">Certificações</a>
-                    <a class="nav-item" href="index.html#contact" data-i18n="nav.contact">Contato</a>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
@@ -83,12 +103,6 @@
                             <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                        <div class="nav-icon">
-                            <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img">
-                        </div>
-                    </a>
                 </div>
                 <!-- Mobile menu button -->
                 <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open menu">
@@ -99,6 +113,28 @@
                         <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
+                <div class="cv-dropdown cv-dropdown-nav mobile-profile-dropdown">
+                    <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn mobile-profile-btn" aria-expanded="false" aria-label="Abrir contato">
+                        <div class="profile-pic nav-profile-pic">
+                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
+                            <span class="online-badge"></span>
+                        </div>
+                        <span class="nav-profile-name">Vinicius Florencio</span>
+                        <div class="nav-icon">
+                            <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                        </div>
+                    </button>
+                    <div class="cv-dropdown-menu">
+                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
+                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                            /viniciusferreiraflorencio
+                        </a>
+                        <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
+                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                            viniciusferreiraflorencio@live.com
+                        </a>
+                    </div>
+                </div>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
                     <a href="index.html" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
@@ -117,7 +153,6 @@
                     <a href="index.html#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
                     <a href="index.html#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
                     <a href="index.html#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
-                    <a href="index.html#contact" class="mobile-dropdown-item" data-i18n="nav.contact">Contato</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
                         <button class="mobile-submenu-toggle" aria-expanded="false">
                             <span class="mobile-language-label">
@@ -150,7 +185,6 @@
                             <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
                 </div>
             </nav>
 
@@ -368,7 +402,7 @@
                         </div>
                         <div class="footer-profile-text">
                             <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role" data-i18n="footer.role">Designer UI&UX</p>
+                            <p class="footer-profile-role" data-i18n="footer.role">UX/UI Designer</p>
                         </div>
                     </div>
                     <div class="footer-links">

@@ -84,7 +84,6 @@ function trackFloating(toggle, menu, gap) {
     window.addEventListener('scroll', fn, { passive: true });
 }
 
-
 /* ─── 1. SMOOTH SCROLL NAVIGATION ──────────────────────────────── */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -175,6 +174,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const menu   = findMenu(dd);
         if (!toggle || !menu) return;
 
+        if (dd.classList.contains('mobile-profile-dropdown')) {
+            closeMobileMenu?.();
+            dd.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+            if (menu.dataset.floating) {
+                dd.appendChild(menu);
+                delete menu.dataset.floating;
+            }
+            Object.assign(menu.style, {
+                display: '',
+                position: '',
+                left: '',
+                top: '',
+                width: '',
+                minWidth: ''
+            });
+            return;
+        }
+
         dd.classList.add('open');
         if (!menu.dataset.owner) menu.dataset.owner = dd.dataset.cvId;
 
@@ -185,8 +203,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     function closeNav(dd) {
         if (!dd) return;
         const menu = findMenu(dd);
+        const toggle = dd.querySelector('.cv-dropdown-toggle');
         dd.classList.remove('open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
         hideFloating(menu);
+        if (dd.classList.contains('mobile-profile-dropdown') && menu) {
+            menu.style.display = '';
+        }
     }
 
     function closeAll() {
@@ -255,6 +278,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     btn.addEventListener('click', e => {
         e.stopPropagation();
+        closeAllCv?.();
         const open = menu.classList.toggle('open');
         btn.setAttribute('aria-expanded', String(open));
         menu.setAttribute('aria-hidden', String(!open));
@@ -498,6 +522,11 @@ window.addEventListener('resize', () => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const val = dict[el.dataset.i18n];
             if (val !== undefined) setText(el, val);
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const val = dict[el.dataset.i18nHtml];
+            if (val !== undefined) el.innerHTML = val;
         });
 
         /* Update page <title> */

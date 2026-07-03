@@ -8,7 +8,8 @@
 .dropdown-menu,
 .cv-dropdown-menu,
 .mobile-dropdown-menu,
-.mobile-menu-btn {
+.mobile-menu-btn,
+.mobile-profile-btn {
     background: rgba(23, 23, 23, 0.70);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -49,6 +50,38 @@
     gap: 12px;
     align-items: center;
     height: 32px;
+}
+
+.nav-profile {
+    display: inline-flex;
+    margin-right: 4px;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.nav-profile-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.nav-profile-btn {
+    gap: 6px;
+}
+
+.nav-profile-pic {
+    width: 14px;
+    height: 14px;
+    background: transparent;
+}
+
+.nav-profile-pic .online-badge {
+    width: 5px;
+    height: 5px;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #1c1c1c;
+    animation: none;
 }
 
 .nav-right {
@@ -246,6 +279,26 @@
     transition: background 0.25s ease;
 }
 
+.mobile-profile-dropdown {
+    display: none;
+}
+
+.mobile-profile-btn {
+    height: 42px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(23, 23, 23, 0.70);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-profile-dropdown .nav-cv-btn:hover {
+    background: rgba(23, 23, 23, 0.70);
+}
+
 
 /* ─── MOBILE ───────────────────────────────────────────────────── */
 
@@ -386,6 +439,23 @@
     .nav-links            { display: none; }
     .nav-right            { display: none; }
     .nav > .footer-link   { display: none; }
+    .mobile-profile-dropdown {
+        display: inline-flex;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 121;
+        height: 42px;
+    }
+
+    .mobile-profile-dropdown .cv-dropdown-menu {
+        position: fixed;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .mobile-menu-btn      { display: flex; right: auto; }
     .mobile-dropdown-menu { right: auto; }
 

@@ -11,7 +11,7 @@ window.TRANSLATIONS = {
   'en': {
 
     /* ── Page titles ── */
-    'index.page-title'   : 'Vinicius Florencio - UI&UX Designer',
+    'index.page-title'   : 'Vinicius Florencio - UX/UI Designer',
     'basic.page-title'   : 'Basic UI Kit — Vinicius Florencio',
     'studyin.page-title' : 'StudyIn — Vinicius Florencio',
     'selfservice.page-title': 'Self-service portal — Vinicius Florencio',
@@ -28,7 +28,7 @@ window.TRANSLATIONS = {
     'nav.case.selfservice': 'Self-service portal',
 
     /* ── Shared footer ── */
-    'footer.role'        : 'UI&UX Designer',
+    'footer.role'        : 'UX/UI Designer',
 
     /* ── Shared tags ── */
     'tag.figma'              : 'Figma',
@@ -49,8 +49,8 @@ window.TRANSLATIONS = {
     /* ══════════════ index.html ══════════════ */
 
     /* Hero */
-    'index.hero.title' : 'UI&UX Designer',
-    'index.hero.desc'  : 'Based in Brazil with 2+ years of experience in developing user-centered solutions, MVPs and intuitive and responsive SaaS interfaces',
+    'index.hero.title' : 'UX/UI Designer',
+    'index.hero.desc'  : '2+ years developing creative and accessible user-centered solutions',
     'index.companies'  : 'Companies I helped',
 
     /* Projects cards */
@@ -61,7 +61,9 @@ window.TRANSLATIONS = {
     'index.work.designly-desc' : 'A mobile landing page created for a fictional design company',
 
     /* About */
-    'index.about.desc'              : 'I am a UI/UX Designer with over 2+ years of experience developing large-scale logistics solutions. I have contributed to the ideation and creation of port and airport software used across Brazil and internationally',
+    'index.about.desc'              : 'Product Designer with over two years of experience developing B2B digital products, specializing in user research, usability testing, Design Systems, wireframing, responsive high-fidelity prototyping, accessibility (WCAG 2.2), and mentoring interns.',
+    'index.about.additional'        : 'Self-taught, I achieved English fluency through independent study, enabling me to collaborate in international environments and stay current with design best practices.',
+    'index.about.available'         : 'Available for projects',
     'index.about.prototyping'       : 'Prototyping',
     'index.about.prototyping-desc'  : 'Vast experience in prototyping complex end-to-end solutions, from initial wireframes to large-scale high-fidelity designs on Figma',
     'index.about.research'          : 'Research',
@@ -72,35 +74,38 @@ window.TRANSLATIONS = {
     'index.about.mentoring-desc'    : 'Mentoring junior designers, leading agile rituals, and managing backlog to foster team growth and delivery excellence',
 
     /* Experience — Volunteer */
-    'index.exp.v-date'     : 'Dec 2025 - present',
+    'index.exp.v-date'     : '12/2025 - Present',
     'index.exp.v-location' : 'São Paulo - remote',
-    'index.exp.v-title'    : 'Volunteer UX Designer',
-    'index.exp.v-li1'      : 'Refactoring the NGO\'s landing page to improve usability and visual consistency',
-    'index.exp.v-li2'      : 'Creating responsive and reusable UI components for scalable design implementation',
-    'index.exp.v-li3'      : 'Writing technical documentation to maintain and evolve the organization\'s design system',
+    'index.exp.v-title'    : 'Volunteer UX/UI Designer',
+    'index.exp.v-li1'      : 'Redesigned the platform homepage with a focus on usability and accessibility.',
+    'index.exp.v-li2'      : 'Created and maintained the organization\'s Design System.',
+    'index.exp.v-li3'      : 'Produced technical documentation and developer handoff.',
     'index.exp.v-li4'      : 'Conducting technical handoff to the development team to ensure design-to-code alignment',
 
     /* Experience — Product Designer */
     'index.exp.pd-date'     : 'Mar 2024 - Mar 2026',
     'index.exp.pd-location' : 'Santos - hybrid',
-    'index.exp.pd-title'    : 'Product Designer',
+    'index.exp.pd-title'    : 'Junior Product Designer',
     'index.exp.pd-stat1'    : 'major clients acquired in a year through MVP designing',
     'index.exp.pd-stat2'    : 'faster prototyping through workflow standardization',
     'index.exp.pd-stat3'    : 'design system adoption across new projects',
-    'index.exp.pd-li1'      : 'Created wireframes and prototypes of low and high fidelity for different stages of the design process',
-    'index.exp.pd-li2'      : 'Designed clean, intuitive interfaces that improved user experience and met client needs',
-    'index.exp.pd-li3'      : 'Conducted quantitative and qualitative user research to understand user behavior and guide design decisions',
-    'index.exp.pd-li4'      : 'Ran usability tests to validate ideas and improve product performance',
-    'index.exp.pd-li5'      : 'Worked with design thinking and the double diamond framework to structure the design process',
-    'index.exp.pd-li6'      : 'Used Nielsen\'s heuristics to ensure designs were accessible and easy to use',
-    'index.exp.pd-li7'      : 'Built scalable interface components with atomic design, maintaining consistency across products',
+    'index.exp.pd-li1'      : 'Created low- and high-fidelity interactive wireframes and prototypes using <strong>Figma</strong>.',
+    'index.exp.pd-li2'      : 'Conducted user interviews, research, and usability tests with <strong>Maze</strong> to validate digital solutions.',
+    'index.exp.pd-li3'      : 'Supported functional requirements through <strong>Design Thinking</strong> and <strong>User-Centered Design</strong>.',
+    'index.exp.pd-li4'      : 'Applied <strong>generative AI</strong> to accelerate discovery, insight generation, affinity mapping, benchmarking, heatmap analysis, information architecture, and technical documentation.',
+    'index.exp.pd-li5'      : 'Contributed to the corporate Design System, <strong>reducing by 20%</strong> prototyping time with over <strong>50 documented components</strong> ready for production.',
+    'index.exp.pd-li6'      : 'Produced technical documentation, maintained the Design System in <strong>Zeroheight</strong>, and performed developer handoff.',
+    'index.exp.pd-li7'      : 'Managed backlogs with <strong>Azure DevOps</strong> (<strong>Boards, Kanban, and Wiki</strong>) and conducted SCRUM ceremonies.',
+    'index.exp.pd-li8'      : 'Developed MVPs that helped acquire <strong>three major logistics clients</strong>.',
+    'index.exp.pd-li9'      : '<strong>Mentored</strong> and technically supported interns in the <strong>Mosten 2024 Training Program</strong>.',
 
     /* Experience — WordPress Intern */
-    'index.exp.wp-date'     : 'Jan 2024 - Mar 2024',
+    'index.exp.wp-date'     : '01/2024 - 02/2024',
     'index.exp.wp-location' : 'Santos - hybrid',
     'index.exp.wp-title'    : 'WordPress Intern',
-    'index.exp.wp-li1'      : 'One of the main responsible for developing the company\'s homepage',
-    'index.exp.wp-li2'      : 'Contributed to the development of agile and dynamic projects in a team',
+    'index.exp.wp-li1'      : 'Developed and maintained <strong>WordPress</strong> pages using <strong>Elementor</strong>.',
+    'index.exp.wp-li2'      : 'Implemented responsive interface improvements with <strong>HTML</strong>, <strong>CSS</strong>, <strong>PHP</strong>, and <strong>JavaScript</strong>.',
+    'index.exp.wp-li3'      : 'Assisted in implementing layouts and UI components.',
 
     /* Certifications — Bradesco (non-linked) */
     'index.cert.bradesco-1' : 'Object-Oriented Development Using Python',
@@ -127,6 +132,7 @@ window.TRANSLATIONS = {
     'index.cert.alura-16' : 'Grids: Organizing Visual Content',
     'index.cert.alura-17' : 'Typography: Concepts and Practice',
     'index.cert.alura-18' : 'UI Design: Improving App Experience with UI Patterns',
+    'index.cert.others-title': 'Other',
 
     /* ══════════════ basic.html ══════════════ */
 
@@ -364,7 +370,7 @@ window.TRANSLATIONS = {
   'pt-BR': {
 
     /* ── Page titles ── */
-    'index.page-title'   : 'Vinicius Florencio - UI&UX Designer',
+    'index.page-title'   : 'Vinicius Florencio - UX/UI Designer',
     'basic.page-title'   : 'Basic UI Kit — Vinicius Florencio',
     'studyin.page-title' : 'StudyIn — Vinicius Florencio',
     'selfservice.page-title': 'Portal de autoatendimento — Vinicius Florencio',
@@ -381,7 +387,7 @@ window.TRANSLATIONS = {
     'nav.case.selfservice': 'Portal de autoatendimento',
 
     /* ── Shared footer ── */
-    'footer.role'        : 'Designer UI&UX',
+    'footer.role'        : 'UX/UI Designer',
 
     /* ── Shared tags ── */
     'tag.figma'              : 'Figma',
@@ -402,8 +408,8 @@ window.TRANSLATIONS = {
     /* ══════════════ index.html ══════════════ */
 
     /* Hero */
-    'index.hero.title' : 'UI&UX Designer',
-    'index.hero.desc'  : 'Com mais de 2 anos de experiência no desenvolvimento de soluções centradas no usuário, MVPs e interfaces SaaS intuitivas e responsivas',
+    'index.hero.title' : 'UX/UI Designer',
+    'index.hero.desc'  : '2+ anos desenvolvendo soluções criativas e acessíveis centradas no usuário',
     'index.companies'  : 'Empresas que eu ajudei',
 
     /* Projects cards */
@@ -414,7 +420,9 @@ window.TRANSLATIONS = {
     'index.work.designly-desc' : 'Uma landing page mobile criada para uma empresa fictícia de design',
 
     /* About */
-    'index.about.desc'              : 'Sou um UI/UX Designer com mais de 2 anos de experiência desenvolvendo soluções logísticas de grande escala. Contribuí para a ideação e criação de softwares portuários e aeroportuários utilizados em todo o Brasil e internacionalmente',
+    'index.about.desc'              : 'Product Designer com 2 anos de experiência no desenvolvimento de produtos digitais B2B, especializado em pesquisas com usuários, testes de usabilidade, Design Systems, wireframing, prototipação responsiva de alta fidelidade, acessibilidade (WCAG 2.2) e mentoria de estagiários.',
+    'index.about.additional'        : 'Autodidata, desenvolvi fluência em inglês, o que me permite colaborar em ambientes internacionais e acompanhar as melhores práticas de design.',
+    'index.about.available'         : 'Disponível para projetos',
     'index.about.prototyping'       : 'Prototipagem',
     'index.about.prototyping-desc'  : 'Tenho vasta experiência em prototipagem de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma',
     'index.about.research'          : 'Pesquisa',
@@ -425,35 +433,37 @@ window.TRANSLATIONS = {
     'index.about.mentoring-desc'    : 'Mentoreio designers juniores, conduzo rituais ágeis e gerencio backlog para promover o crescimento do time e a excelência nas entregas',
 
     /* Experience — Volunteer */
-    'index.exp.v-date'     : 'Dez 2025 - atual',
+    'index.exp.v-date'     : '12/2025 - Atual',
     'index.exp.v-location' : 'São Paulo - remoto',
-    'index.exp.v-title'    : 'UX Designer Voluntário',
-    'index.exp.v-li1'      : 'Refatoração da landing page da ONG para melhorar a usabilidade e consistência visual',
-    'index.exp.v-li2'      : 'Criação de componentes de UI responsivos e reutilizáveis para implementação de design escalável',
-    'index.exp.v-li3'      : 'Criação de documentação técnica para manutenção e evolução do design system da organização',
-    'index.exp.v-li4'      : 'Realizo handoff técnico com a equipe de desenvolvimento para garantir alinhamento entre design e código',
+    'index.exp.v-title'    : 'UX/UI Designer Voluntário',
+    'index.exp.v-li1'      : 'Redesenho da página inicial da plataforma com foco em usabilidade e acessibilidade digital.',
+    'index.exp.v-li2'      : 'Criação e manutenção do Design System institucional.',
+    'index.exp.v-li3'      : 'Documentação técnica e handoff para a equipe de desenvolvimento.',
 
     /* Experience — Product Designer */
-    'index.exp.pd-date'     : 'Mar 2024 - Mar 2026',
+    'index.exp.pd-date'     : '03/2024 - 03/2026',
     'index.exp.pd-location' : 'Santos - híbrido',
-    'index.exp.pd-title'    : 'Designer de Produto',
+    'index.exp.pd-title'    : 'Product Designer Jr.',
     'index.exp.pd-stat1'    : 'clientes grandes conquistados em um ano através do design de MVPs',
     'index.exp.pd-stat2'    : 'de aceleração na prototipagem através da padronização do fluxo de trabalho',
     'index.exp.pd-stat3'    : 'de adoção do design system em novos projetos',
-    'index.exp.pd-li1'      : 'Criei wireframes e protótipos de baixa e alta fidelidade para diferentes etapas do processo de design',
-    'index.exp.pd-li2'      : 'Projetei interfaces limpas e intuitivas que melhoraram a experiência do usuário e atenderam às necessidades dos clientes',
-    'index.exp.pd-li3'      : 'Conduzi pesquisas quantitativas e qualitativas com usuários para entender o comportamento dos usuários e orientar decisões de design',
-    'index.exp.pd-li4'      : 'Realizei testes de usabilidade para validar ideias e melhorar o desempenho do produto',
-    'index.exp.pd-li5'      : 'Trabalhei com design thinking e o framework double diamond para estruturar o processo de design',
-    'index.exp.pd-li6'      : 'Utilizei as heurísticas de Nielsen para garantir que os designs fossem acessíveis e fáceis de usar',
-    'index.exp.pd-li7'      : 'Construí componentes de interface escaláveis com atomic design, mantendo consistência entre produtos',
+    'index.exp.pd-li1'      : 'Criação de wireframes e protótipos interativos de baixa e alta fidelidade utilizando <strong>Figma</strong>.',
+    'index.exp.pd-li2'      : 'Condução de entrevistas, pesquisas e testes de usabilidade no <strong>Maze</strong> para validação de soluções digitais.',
+    'index.exp.pd-li3'      : 'Apoio à definição de requisitos funcionais por meio de <strong>Design Thinking</strong> e <strong>User-Centered Design</strong>.',
+    'index.exp.pd-li4'      : 'Aplicação de <strong>IA generativa</strong> na aceleração de atividades, incluindo discovery, geração de insights, mapas de afinidade, benchmarking, análise de heatmaps, arquitetura de informação e documentação técnica.',
+    'index.exp.pd-li5'      : 'Participação na criação e evolução do Design System corporativo, <strong>reduzindo em 20%</strong> o tempo médio de prototipação de novos produtos com mais de <strong>50 componentes</strong> funcionais e documentados.',
+    'index.exp.pd-li6'      : 'Criação de documentação técnica, hospedagem e manutenção do Design System no <strong>Zeroheight</strong> e realização de handoff para equipes de desenvolvimento.',
+    'index.exp.pd-li7'      : 'Gestão do backlog com <strong>Azure DevOps</strong> (<strong>Boards, Kanban e Wiki</strong>) e condução de cerimônias Scrum.',
+    'index.exp.pd-li8'      : 'Desenvolvimento de MVPs que contribuíram para a <strong>conquista de 3 grandes clientes logísticos</strong>.',
+    'index.exp.pd-li9'      : '<strong>Mentoria</strong> e acompanhamento técnico de designers estagiários do <strong>Programa de Formação Mosten 2024</strong>.',
 
     /* Experience — WordPress Intern */
-    'index.exp.wp-date'     : 'Jan 2024 - Mar 2024',
+    'index.exp.wp-date'     : '01/2024 - 02/2024',
     'index.exp.wp-location' : 'Santos - híbrido',
     'index.exp.wp-title'    : 'Estagiário WordPress',
-    'index.exp.wp-li1'      : 'Um dos principais responsáveis pelo desenvolvimento da homepage da empresa',
-    'index.exp.wp-li2'      : 'Contribuí com o desenvolvimento de projetos ágeis e dinâmicos em equipe',
+    'index.exp.wp-li1'      : 'Desenvolvimento e manutenção de páginas em <strong>WordPress</strong> utilizando <strong>Elementor</strong>.',
+    'index.exp.wp-li2'      : 'Implementação de ajustes em <strong>HTML</strong>, <strong>CSS</strong>, <strong>PHP</strong> e <strong>JavaScript</strong> para interfaces responsivas.',
+    'index.exp.wp-li3'      : 'Suporte na implementação de layouts e componentes visuais.',
 
     /* Certifications — Bradesco (non-linked) */
     'index.cert.bradesco-1' : 'Desenvolvimento Orientado a Objetos Utilizando a Linguagem Python',
@@ -480,6 +490,7 @@ window.TRANSLATIONS = {
     'index.cert.alura-16' : 'Grids: como organizar o conteúdo visual',
     'index.cert.alura-17' : 'Tipografia: conceitos e prática',
     'index.cert.alura-18' : 'UI Design: melhorando a experiência de um app com UI Patterns',
+    'index.cert.others-title': 'Outros',
 
     /* ══════════════ basic.html ══════════════ */
 

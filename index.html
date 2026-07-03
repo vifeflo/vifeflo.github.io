@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinicius Florencio - UI&UX Designer</title>
-    <meta name="description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <title>Vinicius Florencio - UX/UI Designer</title>
+    <meta name="description" content="Portfólio de Vinicius Florencio, UX/UI Designer.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Vinicius Florencio - UI&UX Designer">
-    <meta property="og:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta property="og:title" content="Vinicius Florencio - UX/UI Designer">
+    <meta property="og:description" content="Portfólio de Vinicius Florencio, UX/UI Designer.">
     <meta property="og:image" content="embedd.jpeg">
     <meta property="og:image:alt" content="Prévia do portfólio de Vinicius Florencio">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vinicius Florencio - UI&UX Designer">
-    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UI&UX Designer.">
+    <meta name="twitter:title" content="Vinicius Florencio - UX/UI Designer">
+    <meta name="twitter:description" content="Portfólio de Vinicius Florencio, UX/UI Designer.">
     <meta name="twitter:image" content="embedd.jpeg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-round.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-round-small.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="footer.css">
@@ -32,6 +31,28 @@
             <!-- Navigation -->
             <nav class="nav">
                 <div class="nav-links">
+                    <div class="cv-dropdown cv-dropdown-nav nav-profile">
+                        <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn" aria-expanded="false" aria-label="Abrir contato">
+                            <div class="profile-pic nav-profile-pic">
+                                <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
+                                <span class="online-badge"></span>
+                            </div>
+                            <span class="nav-profile-name">Vinicius Florencio</span>
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                            </div>
+                        </button>
+                        <div class="cv-dropdown-menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
+                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                                /viniciusferreiraflorencio
+                            </a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
+                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                                viniciusferreiraflorencio@live.com
+                            </a>
+                        </div>
+                    </div>
                     <a class="nav-item" href="#home" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
                         <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.my-work">
@@ -50,7 +71,6 @@
                     <a class="nav-item" href="#about" data-i18n="nav.about">Sobre</a>
                     <a class="nav-item" href="#experience" data-i18n="nav.experience">Experiência</a>
                     <a class="nav-item" href="#certifications" data-i18n="nav.certifications">Certificações</a>
-                    <a class="nav-item" href="#contact" data-i18n="nav.contact">Contato</a>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
@@ -84,12 +104,6 @@
                             <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="nav-item footer-link" target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                        <div class="nav-icon">
-                            <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img">
-                        </div>
-                    </a>
                 </div>
                 <!-- Mobile menu button (shown at tablet breakpoint) -->
                 <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open menu">
@@ -101,6 +115,28 @@
                         <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
+                <div class="cv-dropdown cv-dropdown-nav mobile-profile-dropdown">
+                    <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn mobile-profile-btn" aria-expanded="false" aria-label="Abrir contato">
+                        <div class="profile-pic nav-profile-pic">
+                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
+                            <span class="online-badge"></span>
+                        </div>
+                        <span class="nav-profile-name">Vinicius Florencio</span>
+                        <div class="nav-icon">
+                            <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
+                        </div>
+                    </button>
+                    <div class="cv-dropdown-menu">
+                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
+                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                            /viniciusferreiraflorencio
+                        </a>
+                        <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
+                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                            viniciusferreiraflorencio@live.com
+                        </a>
+                    </div>
+                </div>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
                     <a href="#home" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
@@ -120,7 +156,6 @@
                     <a href="#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
                     <a href="#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
                     <a href="#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
-                    <a href="#contact" class="mobile-dropdown-item" data-i18n="nav.contact">Contato</a>
                     <div class="mobile-dropdown-item mobile-has-submenu">
                         <button class="mobile-submenu-toggle" aria-expanded="false">
                             <span class="mobile-language-label">
@@ -153,7 +188,6 @@
                             <a href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQD3xCti8qHZIIA2hDkAAAAAARvRwZiitH84DDwATsmH_1U?e=hQ1hj8" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="usa.png" alt="English" class="language-flag"> English <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img"></a>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-dropdown-item" target="_blank" rel="noopener noreferrer">LinkedIn <img draggable="false" src="ArrowSquareIn.svg" alt="open" class="icon-img footer-img"></a>
                 </div>
             </nav>
 
@@ -166,35 +200,8 @@
                     </div>
                     <p class="hero-name">Vinicius Florencio</p>
                 </div>
-                <h1 data-i18n="index.hero.title">UI&UX Designer</h1>
-                <p data-i18n="index.hero.desc">Com mais de 2 anos de experiência no desenvolvimento de soluções centradas no usuário, MVPs e interfaces SaaS intuitivas e responsivas</p>
-            </div>
-
-            <!-- Companies -->
-            <div class="companies reveal">
-                <div class="companies-title" data-i18n="index.companies">Empresas que eu ajudei</div>
-                <div class="companies-logos">
-                    <div class="companies-track">
-                        <img draggable="false" src="mosten-logo.png" alt="Mosten" class="company-logo">
-                        <img draggable="false" src="edenred.png" alt="Edenred" class="company-logo">
-                        <img draggable="false" src="csn.png" alt="CSN" class="company-logo">
-                        <img draggable="false" src="movecta.png" alt="Movecta" class="company-logo">
-                        <img draggable="false" src="ecoporto.png" alt="Ecoporto" class="company-logo">
-                        <img draggable="false" src="dix.png" alt="DIX" class="company-logo">
-                        <img draggable="false" src="obralean.png" alt="Obralean" class="company-logo">
-                        <img draggable="false" src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo">
-
-                        <!-- duplicate for seamless infinite scroll -->
-                        <img draggable="false" src="mosten-logo.png" alt="Mosten" class="company-logo">
-                        <img draggable="false" src="edenred.png" alt="Edenred" class="company-logo">
-                        <img draggable="false" src="csn.png" alt="CSN" class="company-logo">
-                        <img draggable="false" src="movecta.png" alt="Movecta" class="company-logo">
-                        <img draggable="false" src="ecoporto.png" alt="Ecoporto" class="company-logo">
-                        <img draggable="false" src="dix.png" alt="DIX" class="company-logo">
-                        <img draggable="false" src="obralean.png" alt="Obralean" class="company-logo">
-                        <img draggable="false" src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo">
-                    </div>
-                </div>
+                <h1 data-i18n="index.hero.title">UX/UI Designer</h1>
+                <p data-i18n="index.hero.desc">2+ anos desenvolvendo soluções criativas e acessíveis centradas no usuário</p>
             </div>
         </div>
 
@@ -274,62 +281,80 @@
         </div>
 
         <!-- About Section -->
+        <div class="section-divider"></div>
         <div class="section reveal" id="about">
-            <div class="about-header">
-                <div class="section-title">
-                    <div class="profile-pic">
-                        <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                        <span class="online-badge"></span>
-                    </div>
-                    <h2 data-i18n="nav.about">Sobre</h2>
-                </div>
-                <p class="about-description" data-i18n="index.about.desc">Sou um UI/UX Designer com mais de 2 anos de experiência desenvolvendo soluções logísticas de grande escala. Contribuí para a ideação e criação de softwares portuários e aeroportuários utilizados em todo o Brasil e internacionalmente</p>
+            <div class="section-title">
+                <h2 data-i18n="nav.about">Sobre</h2>
             </div>
+            <div class="about-header">
+                <div class="about-text">
+                    <p class="about-description" data-i18n="index.about.desc">Product Designer com 2 anos de experiência no desenvolvimento de produtos digitais B2B, especializado em pesquisas com usuários, testes de usabilidade, Design Systems, wireframing, prototipação responsiva de alta fidelidade, acessibilidade (WCAG 2.2) e mentoria de estagiários.</p>
 
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-title">
-                        <div class="skill-icon">
-                            <img draggable="false" src="FigmaLogo.svg" alt="figma" class="icon-img skill-img">
-                        </div>
-                        <h3 data-i18n="index.about.prototyping">Prototipagem</h3>
+                    <p class="about-description about-additional" data-i18n="index.about.additional">Autodidata, desenvolvi fluência em inglês, o que me permite colaborar em ambientes internacionais e acompanhar as melhores práticas de design.</p>
+
+                    <p class="about-availability" data-i18n="index.about.available">
+                        <span class="about-status-dot" aria-hidden="true"></span>
+                        Disponível para projetos
+                    </p>
+
+                    <div class="about-links">
+                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="footer-nav-item" target="_blank" rel="noopener noreferrer">
+                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                            /viniciusferreiraflorencio
+                        </a>
+                        <a href="mailto:viniciusferreiraflorencio@live.com" class="footer-nav-item">
+                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                            viniciusferreiraflorencio@live.com
+                        </a>
                     </div>
-                    <p class="skill-description" data-i18n="index.about.prototyping-desc">Tenho vasta experiência em prototipagem de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma</p>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-title">
-                        <div class="skill-icon">
-                            <img draggable="false" src="MagnifyingGlass.svg" alt="search" class="icon-img skill-img">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-title">
+                            <div class="skill-icon">
+                                <img draggable="false" src="FigmaLogo.svg" alt="figma" class="icon-img skill-img">
+                            </div>
+                            <h3 data-i18n="index.about.prototyping">Prototipagem</h3>
                         </div>
-                        <h3 data-i18n="index.about.research">Pesquisa</h3>
+                        <p class="skill-description" data-i18n="index.about.prototyping-desc">Tenho vasta experiência em prototipagem de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma</p>
                     </div>
-                    <p class="skill-description" data-i18n="index.about.research-desc">Realizo entrevistas com clientes e usuários finais para analisar problemas e identificar soluções, utilizando plataformas como Maze para pesquisa e validação</p>
-                </div>
 
-                <div class="skill-card">
-                    <div class="skill-title">
-                        <div class="skill-icon">
-                            <img draggable="false" src="CirclesThree.svg" alt="circles" class="icon-img skill-img">
+                    <div class="skill-card">
+                        <div class="skill-title">
+                            <div class="skill-icon">
+                                <img draggable="false" src="MagnifyingGlass.svg" alt="search" class="icon-img skill-img">
+                            </div>
+                            <h3 data-i18n="index.about.research">Pesquisa</h3>
                         </div>
-                        <h3 data-i18n="index.about.design-system">Design system</h3>
+                        <p class="skill-description" data-i18n="index.about.research-desc">Realizo entrevistas com clientes e usuários finais para analisar problemas e identificar soluções, utilizando plataformas como Maze para pesquisa e validação</p>
                     </div>
-                    <p class="skill-description" data-i18n="index.about.design-system-desc">Crio design systems com componentes padronizados, boas práticas de acessibilidade e documentação clara para um handoff eficiente</p>
-                </div>
 
-                <div class="skill-card">
-                    <div class="skill-title">
-                        <div class="skill-icon">
-                            <img draggable="false" src="ChalkboardTeacher.svg" alt="teacher" class="icon-img skill-img">
+                    <div class="skill-card">
+                        <div class="skill-title">
+                            <div class="skill-icon">
+                                <img draggable="false" src="CirclesThree.svg" alt="circles" class="icon-img skill-img">
+                            </div>
+                            <h3 data-i18n="index.about.design-system">Design system</h3>
                         </div>
-                        <h3 data-i18n="index.about.mentoring">Mentoria</h3>
+                        <p class="skill-description" data-i18n="index.about.design-system-desc">Crio design systems com componentes padronizados, boas práticas de acessibilidade e documentação clara para um handoff eficiente</p>
                     </div>
-                    <p class="skill-description" data-i18n="index.about.mentoring-desc">Mentoreio designers juniores, conduzo rituais ágeis e gerencio backlog para promover o crescimento do time e a excelência nas entregas</p>
+
+                    <div class="skill-card">
+                        <div class="skill-title">
+                            <div class="skill-icon">
+                                <img draggable="false" src="ChalkboardTeacher.svg" alt="teacher" class="icon-img skill-img">
+                            </div>
+                            <h3 data-i18n="index.about.mentoring">Mentoria</h3>
+                        </div>
+                        <p class="skill-description" data-i18n="index.about.mentoring-desc">Mentoreio designers juniores, conduzo rituais ágeis e gerencio backlog para promover o crescimento do time e a excelência nas entregas</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Experience Section -->
+        <div class="section-divider"></div>
         <div class="section reveal" id="experience">
             <div class="section-title">
                 <h2 data-i18n="nav.experience">Experiência</h2>
@@ -338,35 +363,31 @@
             <div class="experience-card reveal">
                 <div class="experience-header">
                     <div class="experience-tags">
-                        <span class="tag" data-i18n="index.exp.v-date">Dez 2025 - atual</span>
-                        <span class="tag" data-i18n="index.exp.v-location">São Paulo - remoto</span>
-                    </div>
-                    <h3 class="experience-position" data-i18n="index.exp.v-title">UX Designer Voluntário</h3>
-                    <div class="experience-company">
-                        <img draggable="false" src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo-small">
-                        <a href="https://movimentofuturo.org/" class="footer-link" target="_blank" rel="noopener noreferrer">
-                            Movimento Futuro
-                            <img draggable="false" src="ArrowSquareIn.svg" alt="external" class="icon-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="experience-list">
-                    <ul>
-                        <li data-i18n="index.exp.v-li1">Refatoração da landing page da ONG para melhorar a usabilidade e consistência visual</li>
-                        <li data-i18n="index.exp.v-li2">Criação de componentes de UI responsivos e reutilizáveis para implementação de design escalável</li>
-                        <li data-i18n="index.exp.v-li3">Criação de documentação técnica para manutenção e evolução do design system da organização</li>
-                        <li data-i18n="index.exp.v-li4">Realizo handoff técnico com a equipe de desenvolvimento para garantir alinhamento entre design e código</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-card reveal">
-                <div class="experience-header">
-                    <div class="experience-tags">
-                        <span class="tag" data-i18n="index.exp.pd-date">Mar 2024 - Mar 2026</span>
+                        <span class="tag" data-i18n="index.exp.pd-date">03/2024 - 03/2026</span>
                         <span class="tag" data-i18n="index.exp.pd-location">Santos - híbrido</span>
                     </div>
-                    <h3 class="experience-position" data-i18n="index.exp.pd-title">Designer de Produto</h3>
+                    <div class="experience-skills">
+                        <span class="tag">Figma</span>
+                        <span class="tag">UX Research</span>
+                        <span class="tag">Design System</span>
+                        <span class="tag">Wireframing</span>
+                        <span class="tag">Usability Testing</span>
+                        <span class="tag">Maze</span>
+                        <span class="tag">FigJam</span>
+                        <span class="tag">Figma Make</span>
+                        <span class="tag">Zeroheight</span>
+                        <span class="tag">WCAG 2.2</span>
+                        <span class="tag">Mobile</span>
+                        <span class="tag">Miro</span>
+                        <span class="tag">Azure DevOps</span>
+                        <span class="tag">Notion</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3 class="experience-position" data-i18n="index.exp.pd-title">Product Designer Jr.</h3>
                     <div class="experience-company">
                         <img draggable="false" src="mosten-logo.png" alt="Mosten" class="company-logo-small">
                         <a href="https://mosten.com/" class="footer-link" target="_blank" rel="noopener noreferrer">
@@ -375,38 +396,52 @@
                         </a>
                     </div>
                 </div>
-                <div class="experience-stats">
-                    <div class="stat-item">
-                        <h4 data-count="3">0</h4>
-                        <p data-i18n="index.exp.pd-stat1">clientes grandes conquistados em um ano através do design de MVPs</p>
+                <div class="experience-body">
+                    <div class="experience-stats">
+                        <div class="stat-item">
+                            <h4 data-count="3">0</h4>
+                            <p data-i18n="index.exp.pd-stat1">clientes grandes conquistados em um ano através do design de MVPs</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 data-count="20" data-suffix="%">0%</h4>
+                            <p data-i18n="index.exp.pd-stat2">de aceleração na prototipagem através da padronização do fluxo de trabalho</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 data-count="100" data-suffix="%">0%</h4>
+                            <p data-i18n="index.exp.pd-stat3">de adoção do design system em novos projetos</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h4 data-count="20" data-suffix="%">0%</h4>
-                        <p data-i18n="index.exp.pd-stat2">de aceleração na prototipagem através da padronização do fluxo de trabalho</p>
+                    <div class="experience-list">
+                        <ul>
+                            <li data-i18n-html="index.exp.pd-li1">Criação de wireframes e protótipos interativos de baixa e alta fidelidade utilizando <strong>Figma</strong>.</li>
+                            <li data-i18n-html="index.exp.pd-li2">Condução de entrevistas, pesquisas e testes de usabilidade no <strong>Maze</strong> para validação de soluções digitais.</li>
+                            <li data-i18n-html="index.exp.pd-li3">Apoio à definição de requisitos funcionais por meio de <strong>Design Thinking</strong> e <strong>User-Centered Design</strong>.</li>
+                            <li data-i18n-html="index.exp.pd-li4">Aplicação de <strong>IA generativa</strong> na aceleração de atividades, incluindo discovery, geração de insights, mapas de afinidade, benchmarking, análise de heatmaps, arquitetura de informação e documentação técnica.</li>
+                            <li data-i18n-html="index.exp.pd-li5">Participação na criação e evolução do Design System corporativo, <strong>reduzindo em 20%</strong> o tempo médio de prototipação de novos produtos com mais de <strong>50 componentes</strong> funcionais e documentados.</li>
+                            <li data-i18n-html="index.exp.pd-li6">Criação de documentação técnica, hospedagem e manutenção do Design System no <strong>Zeroheight</strong> e realização de handoff para equipes de desenvolvimento.</li>
+                            <li data-i18n-html="index.exp.pd-li7">Gestão do backlog com <strong>Azure DevOps</strong> (<strong>Boards, Kanban e Wiki</strong>) e condução de cerimônias Scrum.</li>
+                            <li data-i18n-html="index.exp.pd-li8">Desenvolvimento de MVPs que contribuíram para a <strong>conquista de 3 grandes clientes logísticos</strong>.</li>
+                            <li data-i18n-html="index.exp.pd-li9"><strong>Mentoria</strong> e acompanhamento técnico de designers estagiários do <strong>Programa de Formação Mosten 2024</strong>.</li>
+                        </ul>
                     </div>
-                    <div class="stat-item">
-                        <h4 data-count="100" data-suffix="%">0%</h4>
-                        <p data-i18n="index.exp.pd-stat3">de adoção do design system em novos projetos</p>
-                    </div>
-                </div>
-                <div class="experience-list">
-                    <ul>
-                        <li data-i18n="index.exp.pd-li1">Criei wireframes e protótipos de baixa e alta fidelidade para diferentes etapas do processo de design</li>
-                        <li data-i18n="index.exp.pd-li2">Projetei interfaces limpas e intuitivas que melhoraram a experiência do usuário e atenderam às necessidades dos clientes</li>
-                        <li data-i18n="index.exp.pd-li3">Conduzi pesquisas quantitativas e qualitativas com usuários para entender o comportamento dos usuários e orientar decisões de design</li>
-                        <li data-i18n="index.exp.pd-li4">Realizei testes de usabilidade para validar ideias e melhorar o desempenho do produto</li>
-                        <li data-i18n="index.exp.pd-li5">Trabalhei com design thinking e o framework double diamond para estruturar o processo de design</li>
-                        <li data-i18n="index.exp.pd-li6">Utilizei as heurísticas de Nielsen para garantir que os designs fossem acessíveis e fáceis de usar</li>
-                        <li data-i18n="index.exp.pd-li7">Construí componentes de interface escaláveis com atomic design, mantendo consistência entre produtos</li>
-                    </ul>
                 </div>
             </div>
 
             <div class="experience-card reveal">
                 <div class="experience-header">
                     <div class="experience-tags">
-                        <span class="tag" data-i18n="index.exp.wp-date">Jan 2024 - Mar 2024</span>
+                        <span class="tag" data-i18n="index.exp.wp-date">01/2024 - 02/2024</span>
                         <span class="tag" data-i18n="index.exp.wp-location">Santos - híbrido</span>
+                    </div>
+                    <div class="experience-skills">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">Elementor</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Docker</span>
                     </div>
                     <h3 class="experience-position" data-i18n="index.exp.wp-title">Estagiário WordPress</h3>
                     <div class="experience-company">
@@ -419,109 +454,126 @@
                 </div>
                 <div class="experience-list">
                     <ul>
-                        <li data-i18n="index.exp.wp-li1">Um dos principais responsáveis pelo desenvolvimento da homepage da empresa</li>
-                        <li data-i18n="index.exp.wp-li2">Contribuí com o desenvolvimento de projetos ágeis e dinâmicos em equipe</li>
+                        <li data-i18n-html="index.exp.wp-li1">Desenvolvimento e manutenção de páginas em <strong>WordPress</strong> utilizando <strong>Elementor</strong>.</li>
+                        <li data-i18n-html="index.exp.wp-li2">Implementação de ajustes em <strong>HTML</strong>, <strong>CSS</strong>, <strong>PHP</strong> e <strong>JavaScript</strong> para interfaces responsivas.</li>
+                        <li data-i18n-html="index.exp.wp-li3">Suporte na implementação de layouts e componentes visuais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="experience-header">
+                    <h3 class="experience-position" data-i18n="index.exp.v-title">UX/UI Designer Voluntário</h3>
+                    <div class="experience-company">
+                        <img draggable="false" src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo-small">
+                        <a href="https://movimentofuturo.org/" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Movimento Futuro
+                            <img draggable="false" src="ArrowSquareIn.svg" alt="external" class="icon-img">
+                        </a>
+                    </div>
+                    <div class="experience-skills">
+                        <span class="tag">UX Research</span>
+                        <span class="tag">Usability Testing</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">FigJam</span>
+                        <span class="tag">Zeroheight</span>
+                        <span class="tag">WCAG 2.2</span>
+                        <span class="tag">Slack</span>
+                    </div>
+                    <div class="experience-tags">
+                        <span class="tag" data-i18n="index.exp.v-date">12/2025 - Atual</span>
+                        <span class="tag" data-i18n="index.exp.v-location">São Paulo - remoto</span>
+                    </div>
+                </div>
+                <div class="experience-list">
+                    <ul>
+                        <li data-i18n="index.exp.v-li1">Redesenho da página inicial da plataforma com foco em usabilidade e acessibilidade digital.</li>
+                        <li data-i18n="index.exp.v-li2">Criação e manutenção do Design System institucional.</li>
+                        <li data-i18n="index.exp.v-li3">Documentação técnica e handoff para a equipe de desenvolvimento.</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Certifications Section -->
+        <div class="section-divider"></div>
         <div class="section reveal" id="certifications">
             <div class="section-title">
                 <h2 data-i18n="nav.certifications">Certificações</h2>
             </div>
 
             <div class="certifications-grid">
-                <div class="cert-column">
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <img draggable="false" src="cert-google.png" alt="Google" class="cert-logo">
-                            <h3>Google</h3>
-                        </div>
-                        <div class="cert-year">
-                            <span class="cert-year-tag">2025</span>
-                            <ul>
-                                <li><a href="https://coursera.org/share/31cd5393d0a6ca63544388c2069782b5" target="_blank" rel="noopener noreferrer">Build Wireframes and Low-Fidelity Prototypes</a></li>
-                                <li><a href="https://coursera.org/share/8f3b5198aad4789d4499065aeb531680" target="_blank" rel="noopener noreferrer">Conduct UX Research and Test Early Concepts</a></li>
-                                <li><a href="https://coursera.org/share/b99c50403f5a6e14e2dc2f7f3dad0f66" target="_blank" rel="noopener noreferrer">Foundations of User Experience (UX) Design</a></li>
-                                <li><a href="https://coursera.org/share/42bc96c0ab0bee7c222b4040e18a72eb" target="_blank" rel="noopener noreferrer">Start the UX Design Process: Empathize, Define, and Ideate</a></li>
-                            </ul>
-                        </div>
-                        <div class="cert-year">
-                            <span class="cert-year-tag">2022</span>
-                            <ul>
-                                <li><a href="https://www.coursera.org/account/accomplishments/verify/XKAVMDC4GAG9" target="_blank" rel="noopener noreferrer">Foundations of Project Management</a></li>
-                                <li><a href="https://www.coursera.org/account/accomplishments/certificate/5E5PRV9AEUJB" target="_blank" rel="noopener noreferrer">Project Initiation: Starting a Successful Project</a></li>
-                                <li><a href="https://www.coursera.org/account/accomplishments/certificate/GNYFDS5M4HLY" target="_blank" rel="noopener noreferrer">Project Planning: Putting It All Together</a></li>
-                            </ul>
-                        </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <img draggable="false" src="cert-google.png" alt="Google" class="cert-logo">
+                        <span class="tag">Google</span>
                     </div>
-
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <img draggable="false" src="cert-bradesco.png" alt="Fundação Bradesco" class="cert-logo">
-                            <h3>Fundação Bradesco</h3>
-                        </div>
-                        <div class="cert-year">
-                            <span class="cert-year-tag">2022</span>
-                            <ul>
-                                <li data-i18n="index.cert.bradesco-1">Desenvolvimento Orientado a Objetos Utilizando a Linguagem Python</li>
-                                <li data-i18n="index.cert.bradesco-2">Introdução à Análise de Dados – Microsoft Power BI</li>
-                                <li data-i18n="index.cert.bradesco-3">Introdução à Programação Orientada a Objetos (POO)</li>
-                                <li data-i18n="index.cert.bradesco-4">Linguagem de Programação Python – Básico</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <h3>Others</h3>
-                        </div>
-                        <div class="cert-year">
-                            <span class="cert-year-tag">2022</span>
-                            <ul>
-                                <li>AZ-900 Microsoft Azure Fundamentals - Fundação FAT</li>
-                                <li>EF SET English Certificate – Score 78/100 (C2 Proficient) - EF SET</li>
-                            </ul>
-                        </div>
+                    <div class="cert-year">
+                        <ul>
+                            <li><a href="https://coursera.org/share/31cd5393d0a6ca63544388c2069782b5" target="_blank" rel="noopener noreferrer">Build Wireframes and Low-Fidelity Prototypes</a></li>
+                            <li><a href="https://coursera.org/share/8f3b5198aad4789d4499065aeb531680" target="_blank" rel="noopener noreferrer">Conduct UX Research and Test Early Concepts</a></li>
+                            <li><a href="https://coursera.org/share/b99c50403f5a6e14e2dc2f7f3dad0f66" target="_blank" rel="noopener noreferrer">Foundations of User Experience (UX) Design</a></li>
+                            <li><a class="cert-tight" href="https://coursera.org/share/42bc96c0ab0bee7c222b4040e18a72eb" target="_blank" rel="noopener noreferrer">Start the UX Design Process: Empathize, Define, and Ideate</a></li>
+                            <li><a href="https://www.coursera.org/account/accomplishments/verify/XKAVMDC4GAG9" target="_blank" rel="noopener noreferrer">Foundations of Project Management</a></li>
+                            <li><a href="https://www.coursera.org/account/accomplishments/certificate/5E5PRV9AEUJB" target="_blank" rel="noopener noreferrer">Project Initiation: Starting a Successful Project</a></li>
+                            <li><a href="https://www.coursera.org/account/accomplishments/certificate/GNYFDS5M4HLY" target="_blank" rel="noopener noreferrer">Project Planning: Putting It All Together</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="cert-column">
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <img draggable="false" src="cert-alura.png" alt="Alura" class="cert-logo">
-                            <h3>Alura</h3>
-                        </div>
-                        <div class="cert-year">
-                            <span class="cert-year-tag">2024</span>
-                            <ul>
-                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/git-github-compartilhando-colaborando-projetos" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-1">Git e GitHub: compartilhando e colaborando em projetos</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/wordpress-crie-sites-elementor-figma" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-2">WordPress: crie sites com Elementor e Figma</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/wordpress-responsividade-efeitos-visuais-plugins" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-3">WordPress: integrando responsividade, efeitos visuais e explorando plugins</a></li>
-                            </ul>
-                        </div>
-                        <div class="cert-year">
-                            <span class="cert-year-tag">2023</span>
-                            <ul>
-                                <li><a href="https://cursos.alura.com.br/degree/certificate/6fad05a6-428f-4802-814a-b504798fe110" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-4">Formação A partir do zero: HTML e CSS para projetos web</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/55a2b96e-d74c-446f-b1ae-df4dd0dc9984?lang=pt_BR" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-5">Microsoft SQL Server 2022: conhecendo SQL</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/4dafe42f-d74d-4dd6-a95d-66c4b19f444b" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-6">Power BI Desktop: Construindo meu primeiro Dashboard</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/28ec5aa1-4956-4018-8b3c-fe5a2101cfae" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-7">C: Avançando na Linguagem</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/f4d18c10-77bc-445c-a1dc-dddae4295636" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-8">C: Conhecendo a Linguagem das Linguagens</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/bootstrap5-landing-page-responsiva/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-9">Bootstrap 5: crie uma landing page responsiva</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/cores-design-teoria-pratica" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-10">Cores no design: teoria e prática</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/design-visual-aplicando-tecnicas-composicao/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-11">Design Visual: aplicando técnicas de composição</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/design-entenda-conheca-area" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-12">Design Visual: estratégias para planejar e construir seu portfólio</a></li>
-                                <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/design-entenda-conheca-area" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-13">Design: entenda e conheça a área</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/figma-componentes-auto-layout-mascaras/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-14">Figma: componentes, auto layout e máscaras</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/figma-conhecendo-ferramenta/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-15">Figma: conhecendo a ferramenta</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/grids-organizar-conteudo-visual/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-16">Grids: como organizar o conteúdo visual</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/tipografia-conceitos-pratica/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-17">Tipografia: conceitos e prática</a></li>
-                                <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/ui-design-experiencia-app-ui-patterns/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-18">UI Design: melhorando a experiência de um app com UI Patterns</a></li>
-                            </ul>
-                        </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <img draggable="false" src="cert-bradesco.png" alt="Fundação Bradesco" class="cert-logo">
+                        <span class="tag">Fundação Bradesco</span>
+                    </div>
+                    <div class="cert-year cert-year-block">
+                        <ul>
+                            <li data-i18n="index.cert.bradesco-1">Desenvolvimento Orientado a Objetos Utilizando a Linguagem Python</li>
+                            <li data-i18n="index.cert.bradesco-2">Introdução à Análise de Dados – Microsoft Power BI</li>
+                            <li data-i18n="index.cert.bradesco-3">Introdução à Programação Orientada a Objetos (POO)</li>
+                            <li data-i18n="index.cert.bradesco-4">Linguagem de Programação Python – Básico</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <img draggable="false" src="cert-alura.png" alt="Alura" class="cert-logo">
+                        <span class="tag">Alura</span>
+                    </div>
+                    <div class="cert-year">
+                        <ul>
+                            <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/git-github-compartilhando-colaborando-projetos" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-1">Git e GitHub: compartilhando e colaborando em projetos</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/wordpress-crie-sites-elementor-figma" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-2">WordPress: crie sites com Elementor e Figma</a></li>
+                            <li><a class="cert-tight" href="https://cursos.alura.com.br/certificate/vinicius-florencio/wordpress-responsividade-efeitos-visuais-plugins" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-3">WordPress: integrando responsividade, efeitos visuais e explorando plugins</a></li>
+                            <li><a href="https://cursos.alura.com.br/degree/certificate/6fad05a6-428f-4802-814a-b504798fe110" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-4">Formação A partir do zero: HTML e CSS para projetos web</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/55a2b96e-d74c-446f-b1ae-df4dd0dc9984?lang=pt_BR" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-5">Microsoft SQL Server 2022: conhecendo SQL</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/4dafe42f-d74d-4dd6-a95d-66c4b19f444b" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-6">Power BI Desktop: Construindo meu primeiro Dashboard</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/28ec5aa1-4956-4018-8b3c-fe5a2101cfae" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-7">C: Avançando na Linguagem</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/f4d18c10-77bc-445c-a1dc-dddae4295636" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-8">C: Conhecendo a Linguagem das Linguagens</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/bootstrap5-landing-page-responsiva/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-9">Bootstrap 5: crie uma landing page responsiva</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/cores-design-teoria-pratica" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-10">Cores no design: teoria e prática</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/design-visual-aplicando-tecnicas-composicao/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-11">Design Visual: aplicando técnicas de composição</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/design-entenda-conheca-area" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-12">Design Visual: estratégias para planejar e construir seu portfólio</a></li>
+                            <li><a href="https://cursos.alura.com.br/certificate/vinicius-florencio/design-entenda-conheca-area" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-13">Design: entenda e conheça a área</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/figma-componentes-auto-layout-mascaras/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-14">Figma: componentes, auto layout e máscaras</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/figma-conhecendo-ferramenta/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-15">Figma: conhecendo a ferramenta</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/grids-organizar-conteudo-visual/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-16">Grids: como organizar o conteúdo visual</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/tipografia-conceitos-pratica/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-17">Tipografia: conceitos e prática</a></li>
+                            <li><a href="https://cursos.alura.com.br/user/vinicius-florencio/course/ui-design-experiencia-app-ui-patterns/certificate" target="_blank" rel="noopener noreferrer" data-i18n="index.cert.alura-18">UI Design: melhorando a experiência de um app com UI Patterns</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <span class="tag" data-i18n="index.cert.others-title">Others</span>
+                    </div>
+                    <div class="cert-year cert-year-block">
+                        <ul>
+                            <li>AZ-900 Microsoft Azure Fundamentals - Fundação FAT</li>
+                            <li>EF SET English Certificate – Score 78/100 (C2 Proficient) - EF SET</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -539,7 +591,7 @@
                         </div>
                         <div class="footer-profile-text">
                             <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role" data-i18n="footer.role">Designer UI&UX</p>
+                            <p class="footer-profile-role" data-i18n="footer.role">UX/UI Designer</p>
                         </div>
                     </div>
                     <div class="footer-links">
