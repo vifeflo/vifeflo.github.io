@@ -30,27 +30,11 @@
             <!-- Navigation -->
             <nav class="nav">
                 <div class="nav-links">
-                    <div class="cv-dropdown cv-dropdown-nav nav-profile">
-                        <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn" aria-expanded="false" aria-label="Abrir contato">
-                            <div class="profile-pic nav-profile-pic">
-                                <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                                <span class="online-badge"></span>
-                            </div>
-                            <span class="nav-profile-name">Vinicius Florencio</span>
-                            <div class="nav-icon">
-                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
-                            </div>
-                        </button>
-                        <div class="cv-dropdown-menu">
-                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
-                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
-                                /viniciusferreiraflorencio
-                            </a>
-                            <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
-                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
-                                viniciusferreiraflorencio@live.com
-                            </a>
+                    <div class="nav-item nav-profile nav-profile-static">
+                        <div class="profile-pic nav-profile-pic">
+                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
                         </div>
+                        <span class="nav-profile-name">Vinicius Florencio</span>
                     </div>
                     <a class="nav-item" href="index.html" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
@@ -67,9 +51,24 @@
                             <a href="#" class="dropdown-item" data-tooltip="under-construction" target="_blank" rel="noopener noreferrer">design.ly</a>
                         </div>
                     </div>
-                    <a class="nav-item" href="index.html#about" data-i18n="nav.about">Sobre</a>
-                    <a class="nav-item" href="index.html#experience" data-i18n="nav.experience">Experiência</a>
-                    <a class="nav-item" href="index.html#certifications" data-i18n="nav.certifications">Certificações</a>
+                    <div class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.contact">
+                            Contatos
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                                /viniciusferreiraflorencio
+                            </a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="dropdown-item">
+                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                                viniciusferreiraflorencio@live.com
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
@@ -113,27 +112,11 @@
                         <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <div class="cv-dropdown cv-dropdown-nav mobile-profile-dropdown">
-                    <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn mobile-profile-btn" aria-expanded="false" aria-label="Abrir contato">
-                        <div class="profile-pic nav-profile-pic">
-                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                            <span class="online-badge"></span>
-                        </div>
-                        <span class="nav-profile-name">Vinicius Florencio</span>
-                        <div class="nav-icon">
-                            <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
-                        </div>
-                    </button>
-                    <div class="cv-dropdown-menu">
-                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
-                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
-                            /viniciusferreiraflorencio
-                        </a>
-                        <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
-                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
-                            viniciusferreiraflorencio@live.com
-                        </a>
+                <div class="nav-cv-btn nav-profile-btn mobile-profile-btn mobile-profile-static" aria-label="Perfil">
+                    <div class="profile-pic nav-profile-pic">
+                        <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
                     </div>
+                    <span class="nav-profile-name">Vinicius Florencio</span>
                 </div>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
                     <a href="index.html" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
@@ -150,9 +133,17 @@
                             <a href="#" class="mobile-submenu-item" data-tooltip="under-construction">design.ly</a>
                         </div>
                     </div>
-                    <a href="index.html#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
-                    <a href="index.html#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
-                    <a href="index.html#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.contact">Contatos
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">/viniciusferreiraflorencio</a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="mobile-submenu-item"><img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">viniciusferreiraflorencio@live.com</a>
+                        </div>
+                    </div>
                     <div class="mobile-dropdown-item mobile-has-submenu">
                         <button class="mobile-submenu-toggle" aria-expanded="false">
                             <span class="mobile-language-label">
@@ -206,88 +197,103 @@
             </div>
         </div>
 
+        <div class="section-divider"></div>
+
         <!-- Main Problem -->
         <div class="section reveal" id="problem">
             <h2 class="studyin-section-title" data-i18n="studyin.problem.title">Problema principal</h2>
-            <div class="studyin-plain">
-                <p data-i18n="studyin.problem.p1">O principal problema identificado durante o processo de entrevistas foi a falta de um aplicativo ou site centralizado que organize todas as informações acadêmicas essenciais, como notas, aulas e muito mais.</p>
-                <p data-i18n="studyin.problem.p2">Outro problema significativo foi a lentidão dos sistemas existentes e a ausência de um design intuitivo e amigável, o que dificultava a tomada de decisões e a experiência do usuário.</p>
-                <p data-i18n="studyin.problem.p3">Portanto, o principal objetivo do StudyIn é centralizar todas as informações necessárias para os estudantes em um único aplicativo que seja intuitivo e fácil de navegar.</p>
+            <div class="section-content-column">
+                <div class="studyin-plain">
+                    <p data-i18n="studyin.problem.p1">O principal problema identificado durante o processo de entrevistas foi a falta de um aplicativo ou site centralizado que organize todas as informações acadêmicas essenciais, como notas, aulas e muito mais.</p>
+                    <p data-i18n="studyin.problem.p2">Outro problema significativo foi a lentidão dos sistemas existentes e a ausência de um design intuitivo e amigável, o que dificultava a tomada de decisões e a experiência do usuário.</p>
+                    <p data-i18n="studyin.problem.p3">Portanto, o principal objetivo do StudyIn é centralizar todas as informações necessárias para os estudantes em um único aplicativo que seja intuitivo e fácil de navegar.</p>
+                </div>
             </div>
         </div>
+
+        <div class="section-divider"></div>
 
         <!-- Research -->
         <div class="section reveal" id="research">
             <h2 class="studyin-section-title" data-i18n="studyin.research.title">Pesquisa</h2>
-            <p class="studyin-plain-text" data-i18n="studyin.research.desc">Durante a fase de pesquisa, realizei entrevistas com amigos da faculdade para entender suas experiências e desafios relacionados ao acesso a informações acadêmicas. Os resultados revelaram que todos compartilhavam pontos problemáticos semelhantes.</p>
-            <div class="research-stats-row">
-                <div class="research-stat">
-                    <span class="stat-number" data-count="5">0</span>
-                    <span class="stat-label" data-i18n="studyin.research.stat1">entrevistas realizadas</span>
+            <div class="section-content-column">
+                <p class="studyin-plain-text" data-i18n="studyin.research.desc">Durante a fase de pesquisa, realizei entrevistas com amigos da faculdade para entender suas experiências e desafios relacionados ao acesso a informações acadêmicas. Os resultados revelaram que todos compartilhavam pontos problemáticos semelhantes.</p>
+                <div class="research-stats-row">
+                    <div class="research-stat">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label" data-i18n="studyin.research.stat1">entrevistas realizadas</span>
+                    </div>
+                    <div class="research-stat">
+                        <span class="stat-number" data-count="6">0</span>
+                        <span class="stat-label" data-i18n="studyin.research.stat2">frustrações identificadas</span>
+                    </div>
                 </div>
-                <div class="research-stat">
-                    <span class="stat-number" data-count="6">0</span>
-                    <span class="stat-label" data-i18n="studyin.research.stat2">frustrações identificadas</span>
+                <h3 class="studyin-subhead" data-i18n="studyin.research.h3">Principais frustrações identificadas</h3>
+                <div class="frustrations-cards-grid">
+                    <div class="studyin-card"><p data-i18n="studyin.research.f1">Dificuldade em acompanhar notas em diferentes plataformas</p></div>
+                    <div class="studyin-card"><p data-i18n="studyin.research.f2">Tempo de carregamento lento do site existente da faculdade</p></div>
+                    <div class="studyin-card"><p data-i18n="studyin.research.f3">Avisos importantes enterrados em e-mails</p></div>
+                    <div class="studyin-card"><p data-i18n="studyin.research.f4">Confusão sobre onde encontrar os horários das disciplinas</p></div>
+                    <div class="studyin-card"><p data-i18n="studyin.research.f5">Falta de organização para acompanhar tarefas</p></div>
+                    <div class="studyin-card"><p data-i18n="studyin.research.f6">Interfaces desatualizadas e difíceis de navegar no sistema atual</p></div>
                 </div>
+                <p class="studyin-plain-text"><strong data-i18n="studyin.research.conc-label">Conclusão:</strong> <span data-i18n="studyin.research.conc-text">Há uma necessidade clara de uma solução centralizada que possa simplificar a experiência acadêmica.</span></p>
             </div>
-            <h3 class="studyin-subhead" data-i18n="studyin.research.h3">Principais frustrações identificadas</h3>
-            <div class="frustrations-cards-grid">
-                <div class="studyin-card"><p data-i18n="studyin.research.f1">Dificuldade em acompanhar notas em diferentes plataformas</p></div>
-                <div class="studyin-card"><p data-i18n="studyin.research.f2">Tempo de carregamento lento do site existente da faculdade</p></div>
-                <div class="studyin-card"><p data-i18n="studyin.research.f3">Avisos importantes enterrados em e-mails</p></div>
-                <div class="studyin-card"><p data-i18n="studyin.research.f4">Confusão sobre onde encontrar os horários das disciplinas</p></div>
-                <div class="studyin-card"><p data-i18n="studyin.research.f5">Falta de organização para acompanhar tarefas</p></div>
-                <div class="studyin-card"><p data-i18n="studyin.research.f6">Interfaces desatualizadas e difíceis de navegar no sistema atual</p></div>
-            </div>
-            <p class="studyin-plain-text"><strong data-i18n="studyin.research.conc-label">Conclusão:</strong> <span data-i18n="studyin.research.conc-text">Há uma necessidade clara de uma solução centralizada que possa simplificar a experiência acadêmica.</span></p>
         </div>
+
+        <div class="section-divider"></div>
 
         <!-- Persona -->
         <div class="section reveal" id="persona">
             <h2 class="studyin-section-title" data-i18n="studyin.persona.title">Persona</h2>
-            <div class="studyin-card">
-                <div class="persona-header">
-                    <img draggable="false" src="images/studyin/Persona.png" alt="João - Persona" class="persona-avatar">
-                    <div class="persona-meta">
-                        <p><strong data-i18n="studyin.persona.age-label">• Idade:</strong> <span data-i18n="studyin.persona.age-val">25 anos</span></p>
-                        <p><strong data-i18n="studyin.persona.occ-label">• Ocupação:</strong> <span data-i18n="studyin.persona.occ-val">Estudante de Engenharia de Software</span></p>
-                        <p><strong data-i18n="studyin.persona.edu-label">• Educação:</strong> <span data-i18n="studyin.persona.edu-val">Graduação em período integral</span></p>
-                        <p><strong data-i18n="studyin.persona.tech-label">• Tecnologia favorita:</strong> <span data-i18n="studyin.persona.tech-val">Smartphone (uso frequente para tarefas do dia a dia)</span></p>
+            <div class="section-content-column">
+                <div class="studyin-card">
+                    <div class="persona-header">
+                        <img draggable="false" src="images/studyin/Persona.png" alt="João - Persona" class="persona-avatar">
+                        <div class="persona-meta">
+                            <p><strong data-i18n="studyin.persona.age-label">• Idade:</strong> <span data-i18n="studyin.persona.age-val">25 anos</span></p>
+                            <p><strong data-i18n="studyin.persona.occ-label">• Ocupação:</strong> <span data-i18n="studyin.persona.occ-val">Estudante de Engenharia de Software</span></p>
+                            <p><strong data-i18n="studyin.persona.edu-label">• Educação:</strong> <span data-i18n="studyin.persona.edu-val">Graduação em período integral</span></p>
+                            <p><strong data-i18n="studyin.persona.tech-label">• Tecnologia favorita:</strong> <span data-i18n="studyin.persona.tech-val">Smartphone (uso frequente para tarefas do dia a dia)</span></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="persona-cards-row">
-                <div class="studyin-card">
-                    <h3 data-i18n="studyin.persona.goals-title">Objetivos e necessidades</h3>
-                    <p data-i18n="studyin.persona.goal1">• Acessar todas as informações acadêmicas (notas, tarefas, provas, notícias) em um só lugar</p>
-                    <p data-i18n="studyin.persona.goal2">• Usar uma interface intuitiva e rápida que facilite a navegação e economize tempo</p>
-                    <p data-i18n="studyin.persona.goal3">• Receber notificações importantes diretamente no celular, sem precisar alternar entre múltiplas plataformas</p>
-                </div>
-                <div class="studyin-card">
-                    <h3 data-i18n="studyin.persona.frust-title">Frustrações</h3>
-                    <p data-i18n="studyin.persona.frust1">• Tempo desperdiçado navegando em vários sistemas para encontrar informações sobre notas e frequência</p>
-                    <p data-i18n="studyin.persona.frust2">• Sistemas universitários lentos e confusos que dificultam a visualização de dados e atrapalham sua rotina</p>
+                <div class="persona-cards-row">
+                    <div class="studyin-card">
+                        <h3 data-i18n="studyin.persona.goals-title">Objetivos e necessidades</h3>
+                        <p data-i18n="studyin.persona.goal1">• Acessar todas as informações acadêmicas (notas, tarefas, provas, notícias) em um só lugar</p>
+                        <p data-i18n="studyin.persona.goal2">• Usar uma interface intuitiva e rápida que facilite a navegação e economize tempo</p>
+                        <p data-i18n="studyin.persona.goal3">• Receber notificações importantes diretamente no celular, sem precisar alternar entre múltiplas plataformas</p>
+                    </div>
+                    <div class="studyin-card">
+                        <h3 data-i18n="studyin.persona.frust-title">Frustrações</h3>
+                        <p data-i18n="studyin.persona.frust1">• Tempo desperdiçado navegando em vários sistemas para encontrar informações sobre notas e frequência</p>
+                        <p data-i18n="studyin.persona.frust2">• Sistemas universitários lentos e confusos que dificultam a visualização de dados e atrapalham sua rotina</p>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <div class="section-divider"></div>
+
         <!-- Development -->
         <div class="section reveal" id="development">
             <h2 class="studyin-section-title" data-i18n="studyin.dev.title">Desenvolvimento</h2>
-            <div class="studyin-plain">
-                <p data-i18n="studyin.dev.desc">Com todos os insights coletados na pesquisa e com a persona em mente, desenvolvi um MVP para o StudyIn projetado para abordar os principais desafios que os estudantes enfrentam em sua rotina acadêmica diária.</p>
-                <p data-i18n="studyin.dev.desc2">A solução se concentra em simplificar o acesso a informações essenciais, melhorar a organização e aprimorar a comunicação geral entre estudantes e a instituição. Esta versão inicial estabelece a base para uma experiência mais intuitiva, eficiente e centrada no estudante.</p>
-            </div>
-
-            <!-- Key Features -->
-            <div class="key-features">
-                <div class="key-feature reveal">
-                    <img draggable="false" src="images/studyin/Flexible%20onboarding.png" alt="Flexible onboarding" class="key-feature-image lightbox-trigger">
-                    <div class="key-feature-content">
-                        <h3 data-i18n="studyin.feat.onboard-title">Onboarding flexível</h3>
-                        <p data-i18n="studyin.feat.onboard-desc">Os usuários podem se cadastrar com um formulário simplificado ou criar uma conta instantaneamente usando seus perfis de redes sociais.</p>
-                    </div>
+            <div class="section-content-column">
+                <div class="studyin-plain">
+                    <p data-i18n="studyin.dev.desc">Com todos os insights coletados na pesquisa e com a persona em mente, desenvolvi um MVP para o StudyIn projetado para abordar os principais desafios que os estudantes enfrentam em sua rotina acadêmica diária.</p>
+                    <p data-i18n="studyin.dev.desc2">A solução se concentra em simplificar o acesso a informações essenciais, melhorar a organização e aprimorar a comunicação geral entre estudantes e a instituição. Esta versão inicial estabelece a base para uma experiência mais intuitiva, eficiente e centrada no estudante.</p>
                 </div>
+
+                <!-- Key Features -->
+                <div class="key-features">
+                    <div class="key-feature reveal">
+                        <img draggable="false" src="images/studyin/Flexible%20onboarding.png" alt="Flexible onboarding" class="key-feature-image lightbox-trigger">
+                        <div class="key-feature-content">
+                            <h3 data-i18n="studyin.feat.onboard-title">Onboarding flexível</h3>
+                            <p data-i18n="studyin.feat.onboard-desc">Os usuários podem se cadastrar com um formulário simplificado ou criar uma conta instantaneamente usando seus perfis de redes sociais.</p>
+                        </div>
+                    </div>
 
                 <div class="key-feature reveal">
                     <img draggable="false" src="images/studyin/Home%20screen.png" alt="Home screen" class="key-feature-image lightbox-trigger">
@@ -337,14 +343,15 @@
                     </div>
                 </div>
 
-                <div class="key-feature key-feature-full reveal">
-                    <div class="key-feature-content">
-                        <h3 data-i18n="studyin.feat.look-title">Visual moderno</h3>
-                        <p><span data-i18n="studyin.feat.look-desc1">Ao contrário do sistema atual utilizado pelos estudantes, o StudyIn apresenta um layout moderno e minimalista usando a versão mais recente do  </span><a href="basic.html" class="inline-link">Basic UI Kit</a><span data-i18n="studyin.feat.look-desc2">. Além de ser acessível, o sistema também oferece variantes de modo claro e escuro para maior personalização.</span></p>
-                    </div>
-                    <div class="key-feature-showcase">
-                        <img draggable="false" src="images/studyin/StudyIn%20showcase%20light.png" alt="StudyIn light mode" class="key-feature-showcase-image lightbox-trigger">
-                        <img draggable="false" src="images/studyin/StudyIn%20showcase%20dark.png" alt="StudyIn dark mode" class="key-feature-showcase-image lightbox-trigger">
+                    <div class="key-feature key-feature-full reveal">
+                        <div class="key-feature-content">
+                            <h3 data-i18n="studyin.feat.look-title">Visual moderno</h3>
+                            <p><span data-i18n="studyin.feat.look-desc1">Ao contrário do sistema atual utilizado pelos estudantes, o StudyIn apresenta um layout moderno e minimalista usando a versão mais recente do  </span><a href="basic.html" class="inline-link">Basic UI Kit</a><span data-i18n="studyin.feat.look-desc2">. Além de ser acessível, o sistema também oferece variantes de modo claro e escuro para maior personalização.</span></p>
+                        </div>
+                        <div class="key-feature-showcase">
+                            <img draggable="false" src="images/studyin/StudyIn%20showcase%20light.png" alt="StudyIn light mode" class="key-feature-showcase-image lightbox-trigger">
+                            <img draggable="false" src="images/studyin/StudyIn%20showcase%20dark.png" alt="StudyIn dark mode" class="key-feature-showcase-image lightbox-trigger">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,11 +365,13 @@
                     <div class="footer-profile">
                         <div class="profile-pic">
                             <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                            <span class="online-badge"></span>
                         </div>
                         <div class="footer-profile-text">
-                            <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role" data-i18n="footer.role">UX/UI Designer</p>
+                            <p class="footer-profile-name">Vinicius Florencio - UX/UI Designer</p>
+                            <p class="footer-availability">
+                                <span class="availability-dot" aria-hidden="true"></span>
+                                Disponível para projetos
+                            </p>
                         </div>
                     </div>
                     <div class="footer-links">
@@ -375,17 +384,6 @@
                             viniciusferreiraflorencio@live.com
                         </a>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <a href="index.html" class="footer-nav-item" data-i18n="nav.home">Home</a>
-                    <a href="index.html#my-work" class="footer-nav-item" data-i18n="nav.my-work">Projetos</a>
-                </div>
-                <div class="footer-col">
-                    <a href="index.html#about" class="footer-nav-item" data-i18n="nav.about">Sobre</a>
-                    <a href="index.html#experience" class="footer-nav-item" data-i18n="nav.experience">Experiência</a>
-                </div>
-                <div class="footer-col">
-                    <a href="index.html#certifications" class="footer-nav-item" data-i18n="nav.certifications">Certificações</a>
                 </div>
             </div>
             <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>

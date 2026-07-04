@@ -31,27 +31,11 @@
             <!-- Navigation -->
             <nav class="nav">
                 <div class="nav-links">
-                    <div class="cv-dropdown cv-dropdown-nav nav-profile">
-                        <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn" aria-expanded="false" aria-label="Abrir contato">
-                            <div class="profile-pic nav-profile-pic">
-                                <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                                <span class="online-badge"></span>
-                            </div>
-                            <span class="nav-profile-name">Vinicius Florencio</span>
-                            <div class="nav-icon">
-                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
-                            </div>
-                        </button>
-                        <div class="cv-dropdown-menu">
-                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
-                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
-                                /viniciusferreiraflorencio
-                            </a>
-                            <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
-                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
-                                viniciusferreiraflorencio@live.com
-                            </a>
+                    <div class="nav-item nav-profile nav-profile-static">
+                        <div class="profile-pic nav-profile-pic">
+                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
                         </div>
+                        <span class="nav-profile-name">Vinicius Florencio</span>
                     </div>
                     <a class="nav-item" href="#home" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
@@ -68,9 +52,24 @@
                             <a href="#" class="dropdown-item" data-tooltip="under-construction" target="_blank" rel="noopener noreferrer">design.ly</a>
                         </div>
                     </div>
-                    <a class="nav-item" href="#about" data-i18n="nav.about">Sobre</a>
-                    <a class="nav-item" href="#experience" data-i18n="nav.experience">Experiência</a>
-                    <a class="nav-item" href="#certifications" data-i18n="nav.certifications">Certificações</a>
+                    <div class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.contact">
+                            Contatos
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                                /viniciusferreiraflorencio
+                            </a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="dropdown-item">
+                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                                viniciusferreiraflorencio@live.com
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
@@ -115,27 +114,11 @@
                         <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <div class="cv-dropdown cv-dropdown-nav mobile-profile-dropdown">
-                    <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn mobile-profile-btn" aria-expanded="false" aria-label="Abrir contato">
-                        <div class="profile-pic nav-profile-pic">
-                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                            <span class="online-badge"></span>
-                        </div>
-                        <span class="nav-profile-name">Vinicius Florencio</span>
-                        <div class="nav-icon">
-                            <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
-                        </div>
-                    </button>
-                    <div class="cv-dropdown-menu">
-                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
-                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
-                            /viniciusferreiraflorencio
-                        </a>
-                        <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
-                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
-                            viniciusferreiraflorencio@live.com
-                        </a>
+                <div class="nav-cv-btn nav-profile-btn mobile-profile-btn mobile-profile-static" aria-label="Perfil">
+                    <div class="profile-pic nav-profile-pic">
+                        <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
                     </div>
+                    <span class="nav-profile-name">Vinicius Florencio</span>
                 </div>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
                     <a href="#home" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
@@ -153,9 +136,17 @@
                             <a href="#" class="mobile-submenu-item" data-tooltip="under-construction">design.ly</a>
                         </div>
                     </div>
-                    <a href="#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
-                    <a href="#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
-                    <a href="#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.contact">Contatos
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">/viniciusferreiraflorencio</a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="mobile-submenu-item"><img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">viniciusferreiraflorencio@live.com</a>
+                        </div>
+                    </div>
                     <div class="mobile-dropdown-item mobile-has-submenu">
                         <button class="mobile-submenu-toggle" aria-expanded="false">
                             <span class="mobile-language-label">
@@ -196,11 +187,11 @@
                 <div class="hero-header">
                     <div class="profile-pic">
                         <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                        <span class="online-badge"></span>
                     </div>
                     <p class="hero-name">Vinicius Florencio</p>
                 </div>
-                <h1 data-i18n="index.hero.title">UX/UI Designer</h1>
+                <h1 data-i18n="index.hero.title">Product Designer
+UX/UI Designer</h1>
                 <p data-i18n="index.hero.desc">2+ anos desenvolvendo soluções criativas e acessíveis centradas no usuário</p>
             </div>
         </div>
@@ -283,11 +274,10 @@
         <!-- About Section -->
         <div class="section-divider"></div>
         <div class="section reveal" id="about">
-            <div class="section-title">
-                <h2 data-i18n="nav.about">Sobre</h2>
-            </div>
             <div class="about-header">
                 <div class="about-text">
+                    <h2 data-i18n="nav.about">Sobre</h2>
+
                     <p class="about-description" data-i18n="index.about.desc">Product Designer com 2 anos de experiência no desenvolvimento de produtos digitais B2B, especializado em pesquisas com usuários, testes de usabilidade, Design Systems, wireframing, prototipação responsiva de alta fidelidade, acessibilidade (WCAG 2.2) e mentoria de estagiários.</p>
 
                     <p class="about-description about-additional" data-i18n="index.about.additional">Autodidata, desenvolvi fluência em inglês, o que me permite colaborar em ambientes internacionais e acompanhar as melhores práticas de design.</p>
@@ -309,45 +299,50 @@
                     </div>
                 </div>
 
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-title">
-                            <div class="skill-icon">
-                                <img draggable="false" src="FigmaLogo.svg" alt="figma" class="icon-img skill-img">
-                            </div>
-                            <h3 data-i18n="index.about.prototyping">Prototipagem</h3>
-                        </div>
-                        <p class="skill-description" data-i18n="index.about.prototyping-desc">Tenho vasta experiência em prototipagem de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma</p>
-                    </div>
+                <div class="about-skills">
+                    <h3 class="about-skills-title" data-i18n="index.about.skills-title">Competências</h3>
 
-                    <div class="skill-card">
-                        <div class="skill-title">
-                            <div class="skill-icon">
-                                <img draggable="false" src="MagnifyingGlass.svg" alt="search" class="icon-img skill-img">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-title">
+                                <div class="skill-icon">
+                                    <img draggable="false" src="FigmaLogo.svg" alt="figma" class="icon-img skill-img">
+                                </div>
+                                <h3 data-i18n="index.about.prototyping">Prototipação</h3>
                             </div>
-                            <h3 data-i18n="index.about.research">Pesquisa</h3>
+                            <p class="skill-description" data-i18n="index.about.prototyping-desc">Tenho vasta experiência em prototipação de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma</p>
                         </div>
-                        <p class="skill-description" data-i18n="index.about.research-desc">Realizo entrevistas com clientes e usuários finais para analisar problemas e identificar soluções, utilizando plataformas como Maze para pesquisa e validação</p>
-                    </div>
 
-                    <div class="skill-card">
-                        <div class="skill-title">
-                            <div class="skill-icon">
-                                <img draggable="false" src="CirclesThree.svg" alt="circles" class="icon-img skill-img">
+                        <div class="skill-card">
+                            <div class="skill-title">
+                                <div class="skill-icon">
+                                    <img draggable="false" src="MagnifyingGlass.svg" alt="search" class="icon-img skill-img">
+                                </div>
+                                <h3 data-i18n="index.about.research">Pesquisa</h3>
                             </div>
-                            <h3 data-i18n="index.about.design-system">Design system</h3>
+                            <p class="skill-description" data-i18n="index.about.research-desc">Realizo entrevistas com clientes e usuários finais para analisar problemas e identificar soluções, utilizando plataformas como Maze para pesquisa e validação</p>
                         </div>
-                        <p class="skill-description" data-i18n="index.about.design-system-desc">Crio design systems com componentes padronizados, boas práticas de acessibilidade e documentação clara para um handoff eficiente</p>
-                    </div>
 
-                    <div class="skill-card">
-                        <div class="skill-title">
-                            <div class="skill-icon">
-                                <img draggable="false" src="ChalkboardTeacher.svg" alt="teacher" class="icon-img skill-img">
+                        <div class="skill-card">
+                            <div class="skill-title">
+                                <div class="skill-icon">
+                                    <img draggable="false" src="CirclesThree.svg" alt="circles" class="icon-img skill-img">
+                                </div>
+                                <h3 data-i18n="index.about.design-system">Design system</h3>
                             </div>
-                            <h3 data-i18n="index.about.mentoring">Mentoria</h3>
+                            <p class="skill-description" data-i18n="index.about.design-system-desc">Crio design systems com componentes padronizados, boas práticas de acessibilidade e documentação clara para um handoff eficiente</p>
                         </div>
-                        <p class="skill-description" data-i18n="index.about.mentoring-desc">Mentoreio designers juniores, conduzo rituais ágeis e gerencio backlog para promover o crescimento do time e a excelência nas entregas</p>
+
+                        <div class="skill-card">
+                            <div class="skill-title">
+                                <div class="skill-icon">
+                                    <img draggable="false" src="ChalkboardTeacher.svg" alt="teacher" class="icon-img skill-img">
+                                </div>
+                                <h3 data-i18n="index.about.mentoring">Mentoria</h3>
+                            </div>
+                            <p class="skill-description" data-i18n="index.about.mentoring-desc">Mentoreio designers juniores, conduzo rituais ágeis e gerencio backlog para promover o crescimento do time e a excelência nas entregas</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -356,9 +351,7 @@
         <!-- Experience Section -->
         <div class="section-divider"></div>
         <div class="section reveal" id="experience">
-            <div class="section-title">
-                <h2 data-i18n="nav.experience">Experiência</h2>
-            </div>
+            <h2 data-i18n="nav.experience">Experiência</h2>
 
             <div class="experience-card reveal">
                 <div class="experience-header">
@@ -404,7 +397,7 @@
                         </div>
                         <div class="stat-item">
                             <h4 data-count="20" data-suffix="%">0%</h4>
-                            <p data-i18n="index.exp.pd-stat2">de aceleração na prototipagem através da padronização do fluxo de trabalho</p>
+                            <p data-i18n="index.exp.pd-stat2">de aceleração na prototipação através da padronização do fluxo de trabalho</p>
                         </div>
                         <div class="stat-item">
                             <h4 data-count="100" data-suffix="%">0%</h4>
@@ -426,6 +419,8 @@
                     </div>
                 </div>
             </div>
+
+            <div class="section-divider"></div>
 
             <div class="experience-card reveal">
                 <div class="experience-header">
@@ -460,6 +455,8 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="section-divider"></div>
 
             <div class="experience-card reveal">
                 <div class="experience-header">
@@ -498,9 +495,7 @@
         <!-- Certifications Section -->
         <div class="section-divider"></div>
         <div class="section reveal" id="certifications">
-            <div class="section-title">
-                <h2 data-i18n="nav.certifications">Certificações</h2>
-            </div>
+            <h2 data-i18n="nav.certifications">Certificações</h2>
 
             <div class="certifications-grid">
                 <div class="cert-card">
@@ -587,11 +582,13 @@
                     <div class="footer-profile">
                         <div class="profile-pic">
                             <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                            <span class="online-badge"></span>
                         </div>
                         <div class="footer-profile-text">
-                            <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role" data-i18n="footer.role">UX/UI Designer</p>
+                            <p class="footer-profile-name">Vinicius Florencio - UX/UI Designer</p>
+                            <p class="footer-availability">
+                                <span class="availability-dot" aria-hidden="true"></span>
+                                Disponível para projetos
+                            </p>
                         </div>
                     </div>
                     <div class="footer-links">
@@ -604,17 +601,6 @@
                             viniciusferreiraflorencio@live.com
                         </a>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <a href="#home" class="footer-nav-item" data-i18n="nav.home">Home</a>
-                    <a href="#my-work" class="footer-nav-item" data-i18n="nav.my-work">Projetos</a>
-                </div>
-                <div class="footer-col">
-                    <a href="#about" class="footer-nav-item" data-i18n="nav.about">Sobre</a>
-                    <a href="#experience" class="footer-nav-item" data-i18n="nav.experience">Experiência</a>
-                </div>
-                <div class="footer-col">
-                    <a href="#certifications" class="footer-nav-item" data-i18n="nav.certifications">Certificações</a>
                 </div>
             </div>
             <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>

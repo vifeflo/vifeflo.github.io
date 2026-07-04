@@ -15,23 +15,21 @@
 .hero {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 60px;
-    align-items: center;
     width: 100%;
-    max-width: 1128px;
-    position: relative;
     z-index: 10;
     overflow: hidden;
-    padding-top: 200px;
-    padding-bottom: 100px;
+    height: 100vh;
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    align-items: center;
-    text-align: center;
+    gap: 12px;
+    align-items: start;
+    text-align: start;
+    width: 100%;
 }
 
 .hero-header {
@@ -48,13 +46,16 @@
 }
 
 .hero-text h1 {
-    font-size: 56px;
-    font-weight: 600;
+    font-size: clamp(56px, 10vw, 140px);
+    font-weight: 500;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 0.95;
 }
 
 .hero-text p {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     color: rgba(250, 249, 246, 0.9);
     max-width: 800px;
     line-height: 1.4;
@@ -72,12 +73,15 @@
 
 /* ─── 2. COMPANIES CAROUSEL ────────────────────────────────────── */
 
+#my-work .section-title {
+    margin-bottom: 0;
+}
+
 .companies {
     display: flex;
     gap: 32px;
     align-items: center;
     width: 100%;
-    max-width: 1128px;
 }
 
 .companies-title {
@@ -145,8 +149,8 @@ img[alt="Alura"] {
 
 .about-header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: .7fr 1fr;
+    gap: 40px;
     width: 100%;
     align-items: start;
 }
@@ -155,17 +159,6 @@ img[alt="Alura"] {
     display: flex;
     flex-direction: column;
     gap: 32px;
-}
-
-.about-title-row {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.about-title-row h2 {
-    font-size: 32px;
-    font-weight: 500;
 }
 
 .about-description {
@@ -200,10 +193,22 @@ img[alt="Alura"] {
     align-items: center;
 }
 
+.about-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.about-skills-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #faf9f6;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 24px;
     width: 100%;
 }
 
@@ -211,6 +216,12 @@ img[alt="Alura"] {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(23, 23, 23, 0.70);
+    border: 1px solid rgba(250, 249, 246, 0.08);
+    width: 100%;
+    min-width: 0;
 }
 
 .skill-title {
@@ -248,16 +259,19 @@ img[alt="Alura"] {
 
 /* ─── 4. EXPERIENCE ────────────────────────────────────────────── */
 
+#experience{
+    gap: 80px;
+}
+
 .experience-card {
     display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 24px;
+    grid-template-columns: .7fr 1fr;
+    gap: 40px;
     width: 100%;
     align-items: start;
     background: transparent;
     border: none;
     border-radius: 0;
-    padding: 80px 0;
 }
 
 .experience-skills {
@@ -269,10 +283,6 @@ img[alt="Alura"] {
 
 .experience-skills .tag {
     white-space: normal;
-}
-
-.experience-card + .experience-card {
-    border-top: 1px solid rgba(250, 249, 246, 0.08);
 }
 
 .experience-header {
@@ -325,10 +335,10 @@ img[alt="Alura"] {
 .stat-item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 22px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.04);
+    gap: 4px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(23, 23, 23, 0.70);
     border: 1px solid rgba(250, 249, 246, 0.08);
     width: 100%;
     min-width: 0;
@@ -410,19 +420,15 @@ img[alt="Alura"] {
 .cert-card {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     align-items: start;
     width: 100%;
-    padding: 0;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-}
-
-.cert-card + .cert-card {
-    border-top: none;
+    padding: 12px;
+    background: rgba(23, 23, 23, 0.70);
+    border: 1px solid rgba(250, 249, 246, 0.08);
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
 }
 
 .cert-header {
@@ -491,17 +497,14 @@ img[alt="Alura"] {
 /* ─── 6. RESPONSIVE — INDEX ───────────────────────────────────── */
 
 @media (max-width: 1024px) {
-    .hero {
-        max-width: 100%;
-        padding: 0 20px;
-    }
-
-    .about-header { grid-template-columns: 1fr; }
+    .about-header { grid-template-columns: 1fr; gap: 80px; }
     .skills-grid        { grid-template-columns: repeat(2, 1fr); }
     .certifications-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cert-card {
         gap: 12px;
     }
+    #experience { gap: 64px; }
+    .experience-card { padding: 64px 0; }
     .experience-stats    { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -511,7 +514,10 @@ img[alt="Alura"] {
         padding-bottom: 100px;
     }
 
-    .hero-text h1 { font-size: 36px; }
+    .hero-text h1 {
+        font-size: clamp(36px, 11vw, 64px);
+        line-height: 1;
+    }
     .hero-text p  { font-size: 16px; }
 
     .companies {
@@ -527,8 +533,13 @@ img[alt="Alura"] {
     .about-header { gap: 40px; }
     .skills-grid      { grid-template-columns: 1fr; }
     .certifications-grid { grid-template-columns: 1fr; }
-    .certifications-grid { gap: 80px; }
+    #experience { gap: 40px; }
+    .experience-card { padding: 40px 0; }
     .experience-stats { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+    #experience { gap: 32px; }
 }
 
 @media (max-width: 500px) {

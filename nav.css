@@ -10,7 +10,7 @@
 .mobile-dropdown-menu,
 .mobile-menu-btn,
 .mobile-profile-btn {
-    background: rgba(23, 23, 23, 0.70);
+    background: transparent;
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -35,11 +35,10 @@
     align-items: center;
     justify-content: space-between;
     height: 56px;
+    width: 100%;
     padding: 12px 24px;
-    border-radius: 999px;
-    width: min(1128px, calc(100% - 80px));
     position: fixed;
-    top: 24px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 60;
@@ -289,10 +288,24 @@
     justify-content: space-between;
     padding: 8px 12px;
     border-radius: 999px;
-    background: rgba(23, 23, 23, 0.70);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-profile-static {
+    display: none;
+    width: auto;
+    background: transparent !important;
+    border: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    cursor: default;
+    pointer-events: none;
+    padding: 0;
+    gap: 6px;
+    border-radius: 0;
 }
 
 .mobile-profile-dropdown .nav-cv-btn:hover {
@@ -309,12 +322,13 @@
     left: 0;
     z-index: 120;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 6px;
     padding: 8px;
-    border-radius: 9999px;
+    height: 56px;
     cursor: pointer;
     color: #FAF9F6;
+    width: 100%;
 }
 
 .mobile-menu-btn .mobile-icon {
@@ -327,10 +341,9 @@
 .mobile-dropdown-menu {
     display: none;
     position: fixed;
-    top: 48px;
+    top: 55px;
     left: 0;
-    min-width: 220px;
-    border-radius: 12px;
+    width: 100%;
     padding: 8px;
     flex-direction: column;
     gap: 6px;
@@ -364,7 +377,6 @@
     font-size: 14px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 8px;
     width: 100%;
     padding: 0;
@@ -447,6 +459,17 @@
         transform: translateX(-50%);
         z-index: 121;
         height: 42px;
+    }
+
+    .mobile-profile-static {
+        display: inline-flex;
+        position: fixed;
+        top: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 121;
+        height: 42px;
+        width: auto;
     }
 
     .mobile-profile-dropdown .cv-dropdown-menu {

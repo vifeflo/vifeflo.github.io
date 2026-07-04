@@ -371,13 +371,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     function animate(el) {
         const target = parseInt(el.dataset.count, 10);
+        const prefix = el.dataset.prefix || '';
         const suffix = el.dataset.suffix || '';
+        const useGrouping = el.dataset.grouping === 'true';
+        const locale = el.dataset.locale || 'en-US';
         const dur = 1400;
         const t0  = performance.now();
 
         (function step(now) {
             const p = Math.min((now - t0) / dur, 1);
-            el.textContent = Math.round((1 - (1 - p) * (1 - p)) * target) + suffix;
+            const value = Math.round((1 - (1 - p) * (1 - p)) * target);
+            const formatted = useGrouping ? value.toLocaleString(locale) : String(value);
+            el.textContent = prefix + formatted + suffix;
             if (p < 1) requestAnimationFrame(step);
         })(t0);
     }

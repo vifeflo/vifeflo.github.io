@@ -28,27 +28,11 @@
         <div class="project-hero">
             <nav class="nav">
                 <div class="nav-links">
-                    <div class="cv-dropdown cv-dropdown-nav nav-profile">
-                        <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn" aria-expanded="false" aria-label="Abrir contato">
-                            <div class="profile-pic nav-profile-pic">
-                                <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                                <span class="online-badge"></span>
-                            </div>
-                            <span class="nav-profile-name">Vinicius Florencio</span>
-                            <div class="nav-icon">
-                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
-                            </div>
-                        </button>
-                        <div class="cv-dropdown-menu">
-                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
-                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
-                                /viniciusferreiraflorencio
-                            </a>
-                            <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
-                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
-                                viniciusferreiraflorencio@live.com
-                            </a>
+                    <div class="nav-item nav-profile nav-profile-static">
+                        <div class="profile-pic nav-profile-pic">
+                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
                         </div>
+                        <span class="nav-profile-name">Vinicius Florencio</span>
                     </div>
                     <a class="nav-item" href="index.html" data-i18n="nav.home">Home</a>
                     <div class="nav-item dropdown">
@@ -65,9 +49,24 @@
                             <a href="#" class="dropdown-item" data-tooltip="under-construction" target="_blank" rel="noopener noreferrer">design.ly</a>
                         </div>
                     </div>
-                    <a class="nav-item" href="index.html#about" data-i18n="nav.about">Sobre</a>
-                    <a class="nav-item" href="index.html#experience" data-i18n="nav.experience">Experiência</a>
-                    <a class="nav-item" href="index.html#certifications" data-i18n="nav.certifications">Certificações</a>
+                    <div class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" data-i18n="nav.contact">
+                            Contatos
+                            <div class="nav-icon">
+                                <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
+                                /viniciusferreiraflorencio
+                            </a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="dropdown-item">
+                                <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
+                                viniciusferreiraflorencio@live.com
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-right">
                     <div class="cv-dropdown cv-dropdown-nav">
@@ -110,27 +109,11 @@
                         <path d="M5 23H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <div class="cv-dropdown cv-dropdown-nav mobile-profile-dropdown">
-                    <button class="nav-cv-btn cv-dropdown-toggle nav-profile-btn mobile-profile-btn" aria-expanded="false" aria-label="Abrir contato">
-                        <div class="profile-pic nav-profile-pic">
-                            <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                            <span class="online-badge"></span>
-                        </div>
-                        <span class="nav-profile-name">Vinicius Florencio</span>
-                        <div class="nav-icon">
-                            <img draggable="false" src="CaretDown.svg" alt="caret" class="icon-img cv-caret">
-                        </div>
-                    </button>
-                    <div class="cv-dropdown-menu">
-                        <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="cv-dropdown-item" target="_blank" rel="noopener noreferrer">
-                            <img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">
-                            /viniciusferreiraflorencio
-                        </a>
-                        <a href="mailto:viniciusferreiraflorencio@live.com" class="cv-dropdown-item">
-                            <img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">
-                            viniciusferreiraflorencio@live.com
-                        </a>
+                <div class="nav-cv-btn nav-profile-btn mobile-profile-btn mobile-profile-static" aria-label="Perfil">
+                    <div class="profile-pic nav-profile-pic">
+                        <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
                     </div>
+                    <span class="nav-profile-name">Vinicius Florencio</span>
                 </div>
                 <div class="mobile-dropdown-menu" role="menu" aria-hidden="true">
                     <a href="index.html" class="mobile-dropdown-item" data-i18n="nav.home">Home</a>
@@ -147,9 +130,17 @@
                             <a href="#" class="mobile-submenu-item" data-tooltip="under-construction">design.ly</a>
                         </div>
                     </div>
-                    <a href="index.html#about" class="mobile-dropdown-item" data-i18n="nav.about">Sobre</a>
-                    <a href="index.html#experience" class="mobile-dropdown-item" data-i18n="nav.experience">Experiência</a>
-                    <a href="index.html#certifications" class="mobile-dropdown-item" data-i18n="nav.certifications">Certificações</a>
+                    <div class="mobile-dropdown-item mobile-has-submenu">
+                        <button class="mobile-submenu-toggle" aria-expanded="false" data-i18n="nav.contact">Contatos
+                            <svg class="submenu-caret-img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.6845 5.55953L7.30953 9.93453C7.2689 9.97521 7.22065 10.0075 7.16754 10.0295C7.11442 10.0515 7.05749 10.0628 7 10.0628C6.9425 10.0628 6.88557 10.0515 6.83246 10.0295C6.77935 10.0075 6.7311 9.97521 6.69047 9.93453L2.31547 5.55953C2.23338 5.47744 2.18726 5.3661 2.18726 5.25C2.18726 5.1339 2.23338 5.02256 2.31547 4.94047C2.39756 4.85837 2.5089 4.81226 2.625 4.81226C2.7411 4.81226 2.85244 4.85837 2.93453 4.94047L7 9.00648L11.0655 4.94047C11.1061 4.89982 11.1544 4.86758 11.2075 4.84558C11.2606 4.82358 11.3175 4.81226 11.375 4.81226C11.4325 4.81226 11.4894 4.82358 11.5425 4.84558C11.5956 4.86758 11.6439 4.89982 11.6845 4.94047C11.7252 4.98112 11.7574 5.02937 11.7794 5.08248C11.8014 5.13559 11.8127 5.19251 11.8127 5.25C11.8127 5.30748 11.8014 5.36441 11.7794 5.41752C11.7574 5.47063 11.7252 5.51888 11.6845 5.55953Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-submenu" role="menu">
+                            <a href="https://www.linkedin.com/in/viniciusferreiraflorencio" class="mobile-submenu-item" target="_blank" rel="noopener noreferrer"><img draggable="false" src="LinkedIn.svg" alt="LinkedIn" class="icon-img footer-img">/viniciusferreiraflorencio</a>
+                            <a href="mailto:viniciusferreiraflorencio@live.com" class="mobile-submenu-item"><img draggable="false" src="At.svg" alt="email" class="icon-img footer-img">viniciusferreiraflorencio@live.com</a>
+                        </div>
+                    </div>
                     <div class="mobile-dropdown-item mobile-has-submenu">
                         <button class="mobile-submenu-toggle" aria-expanded="false">
                             <span class="mobile-language-label">
@@ -196,31 +187,53 @@
                     <span class="tag" data-i18n="selfservice.hero.tag3">Prototipação</span>
                 </div>
                 <h1 data-i18n="selfservice.hero.title">Portal de autoatendimento</h1>
-                <p class="hero-subtitle section-copy" data-i18n="selfservice.overview.desc1">Este case apresenta toda a jornada de discovery, entrevistas, desenvolvimento e testes do redesign de um portal de autoatendimento logístico, criado para facilitar as operações portuárias dos clientes de um terminal logístico.</p>
-                <ul class="hero-meta">
-                    <li data-i18n="selfservice.overview.i1">Duração do projeto: 5 meses</li>
-                    <li data-i18n="selfservice.overview.i2">Mais de 3.200 horas de projeto</li>
-                    <li data-i18n="selfservice.overview.i3">2 frentes de atuação: negócios e design</li>
-                </ul>
+                <div class="hero-overview">
+                    <p class="hero-subtitle section-copy" data-i18n="selfservice.overview.desc1">Este case apresenta toda a jornada de discovery, entrevistas, desenvolvimento e testes do redesign de um portal de autoatendimento logístico, criado para facilitar as operações portuárias dos clientes de um terminal logístico.</p>
+                    <ul class="hero-meta">
+                        <li class="hero-meta-card">
+                            <span class="hero-meta-number" data-count="5">5</span>
+                            <span class="hero-meta-label" data-i18n="selfservice.overview.metric1">meses de projeto</span>
+                        </li>
+                        <li class="hero-meta-card">
+                            <span class="hero-meta-number" data-count="3200" data-prefix="+" data-grouping="true" data-locale="pt-BR">+3.200</span>
+                            <span class="hero-meta-label" data-i18n="selfservice.overview.metric2">horas registradas</span>
+                        </li>
+                        <li class="hero-meta-card">
+                            <span class="hero-meta-number" data-count="2" data-suffix=" frentes">2 frentes</span>
+                            <span class="hero-meta-label" data-i18n="selfservice.overview.metric3">negócios e design</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
+        <div class="section-divider"></div>
+
         <div class="section reveal" id="my-role">
             <h2 class="section-head" data-i18n="selfservice.role.title">Meu papel</h2>
-            <p class="section-copy" data-i18n="selfservice.role.desc">Como designer de produto fui um dos responsáveis pela condução de entrevistas, análise de dados e geração de insights com auxílio de inteligência artificial, criação de protótipos navegáveis de alta fidelidade e condução de testes de usabilidade com usuários finais.</p>
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.role.desc">Como designer de produto fui um dos responsáveis pela condução de entrevistas, análise de dados e geração de insights com auxílio de inteligência artificial, criação de protótipos navegáveis de alta fidelidade e condução de testes de usabilidade com usuários finais.</p>
+            </div>
         </div>
+
+        <div class="section-divider"></div>
 
         <div class="section reveal" id="challenge">
             <h2 class="section-head" data-i18n="selfservice.challenge.title">Desafio</h2>
-            <p class="section-copy" data-i18n="selfservice.challenge.desc1">Os principais desafios do projeto foram reformular a experiência do cliente dentro do portal de autoatendimento logístico e reduzir a alta dependência de ferramentas externas como telefones e e-mails para contato com o operador do terminal.</p>
-            <blockquote class="section-copy" data-i18n="selfservice.challenge.quote">“O portal do cliente atual não oferece uma boa usabilidade e carece de funcionalidades relevantes.”</blockquote>
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.challenge.desc1">Os principais desafios do projeto foram reformular a experiência do cliente dentro do portal de autoatendimento logístico e reduzir a alta dependência de ferramentas externas como telefones e e-mails para contato com o operador do terminal.</p>
+                <blockquote class="section-copy" data-i18n="selfservice.challenge.quote">“O portal do cliente atual não oferece uma boa usabilidade e carece de funcionalidades relevantes.”</blockquote>
+            </div>
         </div>
+
+        <div class="section-divider"></div>
 
         <div class="section reveal" id="benchmarking">
             <h2 class="section-head" data-i18n="selfservice.bench.title">Benchmarking</h2>
-            <p class="section-copy" data-i18n="selfservice.bench.desc">De início realizamos um benchmarking competitivo para mapear funcionalidades percebidas em portais similares utilizados pelos usuários. Parte dos portais analisados entrou como sugestão do time interno.</p>
-            <div class="panel table-wrap">
-                <table class="data-table">
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.bench.desc">De início realizamos um benchmarking competitivo para mapear funcionalidades percebidas em portais similares utilizados pelos usuários. Parte dos portais analisados entrou como sugestão do time interno.</p>
+                <div class="panel table-wrap">
+                    <table class="data-table">
                     <thead>
                         <tr>
                             <th data-i18n="selfservice.bench.h1">Funcionalidade competitiva</th>
@@ -261,66 +274,78 @@
                             <td data-i18n="selfservice.bench.r5.c4">Possibilidade de chat integrado</td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
+
+        <div class="section-divider"></div>
 
         <div class="section reveal" id="execution">
             <h2 class="section-head" data-i18n="selfservice.exec.title">Pesquisa com usuários</h2>
-            <p class="section-copy" data-i18n="selfservice.exec.desc1">Depois do estudo inicial iniciamos a fase de pesquisa com usuários para entender a experiência atual como um todo, investigar a jornada e identificar frustrações e pontos de melhoria.</p>
-            <h3 class="section-subhead" data-i18n="selfservice.exec.method">Metodologia</h3>
-            <div class="stats-row">
-                <div class="stat-block">
-                    <span class="stat-number" data-count="14">0</span>
-                    <span class="stat-label" data-i18n="selfservice.exec.stat1">entrevistas qualitativas com usuários</span>
-                </div>
-                <div class="stat-block">
-                    <span class="stat-number" data-count="8">0</span>
-                    <span class="stat-label" data-i18n="selfservice.exec.stat2">rodas de entrevistas com o time interno</span>
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.exec.desc1">Depois do estudo inicial iniciamos a fase de pesquisa com usuários para entender a experiência atual como um todo, investigar a jornada e identificar frustrações e pontos de melhoria.</p>
+                <h3 class="section-subhead" data-i18n="selfservice.exec.method">Metodologia</h3>
+                <div class="stats-row">
+                    <div class="stat-block">
+                        <span class="stat-number" data-count="14">0</span>
+                        <span class="stat-label" data-i18n="selfservice.exec.stat1">entrevistas qualitativas com usuários</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-label" data-i18n="selfservice.exec.stat2">rodas de entrevistas com o time interno</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="section-divider"></div>
 
         <div class="section reveal" id="discoveries-affinity">
             <h2 class="section-head" data-i18n="selfservice.discovery.affinity.title">Mapa de afinidade</h2>
-            <p class="section-copy" data-i18n="selfservice.discovery.affinity.desc">Após a primeira rodada de entrevista, com um grande volume de dados, pudemos montar um mapa de afinidade que gerou evidências sólidas dos principais pontos de dor dos usuários.</p>
-            <div class="discovery-grid">
-                <div class="discovery-column">
-                    <h3 data-i18n="selfservice.discovery.affinity.c1.t">Falta de visibilidade de status</h3>
-                    <ul class="bullet-list">
-                        <li data-i18n="selfservice.discovery.affinity.c1.i1">A carga está liberada?</li>
-                        <li data-i18n="selfservice.discovery.affinity.c1.i2">Existe algum bloqueio? Por quê?</li>
-                        <li data-i18n="selfservice.discovery.affinity.c1.i3">Em qual etapa está o processo?</li>
-                        <li data-i18n="selfservice.discovery.affinity.c1.i4">Qual caminho o usuário percorre?</li>
-                    </ul>
-                    <blockquote data-i18n="selfservice.discovery.affinity.q1">“Ficamos o tempo inteiro às cegas.”</blockquote>
-                </div>
-                <div class="discovery-column">
-                    <h3 data-i18n="selfservice.discovery.affinity.c2.t">Comunicação complexa e reativa</h3>
-                    <ul class="bullet-list">
-                        <li data-i18n="selfservice.discovery.affinity.c2.i1">Informações críticas chegam tarde</li>
-                        <li data-i18n="selfservice.discovery.affinity.c2.i2">Falta de alertas automáticos</li>
-                        <li data-i18n="selfservice.discovery.affinity.c2.i3">Excesso de e-mails</li>
-                    </ul>
-                    <blockquote data-i18n="selfservice.discovery.affinity.q2">“Eu recebo cerca de 60 e-mails por dia.”</blockquote>
-                </div>
-                <div class="discovery-column">
-                    <h3 data-i18n="selfservice.discovery.affinity.c3.t">Informações fragmentadas</h3>
-                    <ul class="bullet-list">
-                        <li data-i18n="selfservice.discovery.affinity.c3.i1">Relatórios pouco legíveis</li>
-                        <li data-i18n="selfservice.discovery.affinity.c3.i2">Falta de visão consolidada</li>
-                        <li data-i18n="selfservice.discovery.affinity.c3.i3">Dificuldade de tomada de decisão</li>
-                    </ul>
-                    <blockquote data-i18n="selfservice.discovery.affinity.q3">“O portal não tem uma tela central que una tudo.”</blockquote>
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.discovery.affinity.desc">Após a primeira rodada de entrevista, com um grande volume de dados, pudemos montar um mapa de afinidade que gerou evidências sólidas dos principais pontos de dor dos usuários.</p>
+                <div class="discovery-grid">
+                    <div class="discovery-column">
+                        <h3 data-i18n="selfservice.discovery.affinity.c1.t">Falta de visibilidade de status</h3>
+                        <ul class="bullet-list">
+                            <li data-i18n="selfservice.discovery.affinity.c1.i1">A carga está liberada?</li>
+                            <li data-i18n="selfservice.discovery.affinity.c1.i2">Existe algum bloqueio? Por quê?</li>
+                            <li data-i18n="selfservice.discovery.affinity.c1.i3">Em qual etapa está o processo?</li>
+                            <li data-i18n="selfservice.discovery.affinity.c1.i4">Qual caminho o usuário percorre?</li>
+                        </ul>
+                        <blockquote data-i18n="selfservice.discovery.affinity.q1">“Ficamos o tempo inteiro às cegas.”</blockquote>
+                    </div>
+                    <div class="discovery-column">
+                        <h3 data-i18n="selfservice.discovery.affinity.c2.t">Comunicação complexa e reativa</h3>
+                        <ul class="bullet-list">
+                            <li data-i18n="selfservice.discovery.affinity.c2.i1">Informações críticas chegam tarde</li>
+                            <li data-i18n="selfservice.discovery.affinity.c2.i2">Falta de alertas automáticos</li>
+                            <li data-i18n="selfservice.discovery.affinity.c2.i3">Excesso de e-mails</li>
+                        </ul>
+                        <blockquote data-i18n="selfservice.discovery.affinity.q2">“Eu recebo cerca de 60 e-mails por dia.”</blockquote>
+                    </div>
+                    <div class="discovery-column">
+                        <h3 data-i18n="selfservice.discovery.affinity.c3.t">Informações fragmentadas</h3>
+                        <ul class="bullet-list">
+                            <li data-i18n="selfservice.discovery.affinity.c3.i1">Relatórios pouco legíveis</li>
+                            <li data-i18n="selfservice.discovery.affinity.c3.i2">Falta de visão consolidada</li>
+                            <li data-i18n="selfservice.discovery.affinity.c3.i3">Dificuldade de tomada de decisão</li>
+                        </ul>
+                        <blockquote data-i18n="selfservice.discovery.affinity.q3">“O portal não tem uma tela central que una tudo.”</blockquote>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <div class="section-divider"></div>
+
         <div class="section reveal" id="discoveries-heuristic">
             <h2 class="section-head" data-i18n="selfservice.discovery.heur.title">Avaliação heurística</h2>
-            <p class="section-copy" data-i18n="selfservice.discovery.heur.desc">Em seguida iniciamos a nossa avaliação heurística onde identificamos falhas na aplicação das heurísticas de Nielsen que geravam um grande impacto na experiência dos usuários no sistema:</p>
-            <div class="panel table-wrap">
-                <table class="data-table">
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.discovery.heur.desc">Em seguida iniciamos a nossa avaliação heurística onde identificamos falhas na aplicação das heurísticas de Nielsen que geravam um grande impacto na experiência dos usuários no sistema:</p>
+                <div class="panel table-wrap">
+                    <table class="data-table">
                     <thead>
                         <tr>
                             <th data-i18n="selfservice.discovery.heur.h1">Heurística</th>
@@ -365,57 +390,66 @@
                             <td data-i18n="selfservice.discovery.heur.r4.c6">Padronizar ações primárias como botões</td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
+
+        <div class="section-divider"></div>
 
         <div class="section reveal" id="solution">
             <h2 class="section-head" data-i18n="selfservice.solution.title">Prototipação</h2>
-            <p class="section-copy" data-i18n="selfservice.solution.desc1">Com os dados limpos e insights consolidados iniciamos a fase de prototipação, gerando artefatos palpáveis que traduziram o trabalho da equipe de design em uma experiência interativa que abrange cerca de 20 fluxos de trabalho.</p>
-            <h3 class="section-subhead" data-i18n="selfservice.solution.subtitle">Objetivos</h3>
-            <div class="objectives-grid">
-                <div class="point-card"><p data-i18n="selfservice.solution.i1">Redução de retrabalho operacional</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i2">Maior previsibilidade para os usuários</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i3">Visibilidade e clareza</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i4">Acompanhamento contínuo da operação</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i5">Comunicação proativa</p></div>
-            </div>
-            <h3 class="section-subhead" data-i18n="selfservice.solution.flows">Exemplos de fluxos</h3>
-            <div class="solution-screens" aria-label="Protótipos do portal">
-                <figure class="showcase-item">
-                    <img draggable="false" src="images/portal/Login.png" alt="Login" class="solution-screen lightbox-trigger" data-lightbox-caption="Login">
-                </figure>
-                <figure class="showcase-item">
-                    <img draggable="false" src="images/portal/Home.png" alt="Home" class="solution-screen lightbox-trigger" data-lightbox-caption="Home">
-                </figure>
-                <figure class="showcase-item">
-                    <img draggable="false" src="images/portal/Movimenta%C3%A7%C3%A3o.png" alt="Acompanhamento de carga" class="solution-screen lightbox-trigger" data-lightbox-caption="Acompanhamento de carga">
-                </figure>
-                <figure class="showcase-item">
-                    <img draggable="false" src="images/portal/Agendamentos.png" alt="Agendamentos" class="solution-screen lightbox-trigger" data-lightbox-caption="Agendamentos">
-                </figure>
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.solution.desc1">Com os dados limpos e insights consolidados iniciamos a fase de prototipação, gerando artefatos palpáveis que traduziram o trabalho da equipe de design em uma experiência interativa que abrange cerca de 20 fluxos de trabalho.</p>
+                <h3 class="section-subhead" data-i18n="selfservice.solution.subtitle">Objetivos</h3>
+                <div class="objectives-grid">
+                    <div class="point-card"><p data-i18n="selfservice.solution.i1">Redução de retrabalho operacional</p></div>
+                    <div class="point-card"><p data-i18n="selfservice.solution.i2">Maior previsibilidade para os usuários</p></div>
+                    <div class="point-card"><p data-i18n="selfservice.solution.i3">Visibilidade e clareza</p></div>
+                    <div class="point-card"><p data-i18n="selfservice.solution.i4">Acompanhamento contínuo da operação</p></div>
+                    <div class="point-card"><p data-i18n="selfservice.solution.i5">Comunicação proativa</p></div>
+                </div>
+                <h3 class="section-subhead" data-i18n="selfservice.solution.flows">Exemplos de fluxos</h3>
+                <div class="solution-screens" aria-label="Protótipos do portal">
+                    <figure class="showcase-item">
+                        <img draggable="false" src="images/portal/Login.png" alt="Login" class="solution-screen lightbox-trigger" data-lightbox-caption="Login">
+                    </figure>
+                    <figure class="showcase-item">
+                        <img draggable="false" src="images/portal/Home.png" alt="Home" class="solution-screen lightbox-trigger" data-lightbox-caption="Home">
+                    </figure>
+                    <figure class="showcase-item">
+                        <img draggable="false" src="images/portal/Movimenta%C3%A7%C3%A3o.png" alt="Acompanhamento de carga" class="solution-screen lightbox-trigger" data-lightbox-caption="Acompanhamento de carga">
+                    </figure>
+                    <figure class="showcase-item">
+                        <img draggable="false" src="images/portal/Agendamentos.png" alt="Agendamentos" class="solution-screen lightbox-trigger" data-lightbox-caption="Agendamentos">
+                    </figure>
+                </div>
             </div>
         </div>
 
+        <div class="section-divider"></div>
+
         <div class="section reveal" id="usability-tests">
             <h2 class="section-head" data-i18n="selfservice.tests.title">Testes de usabilidade</h2>
-            <p class="section-copy" data-i18n="selfservice.tests.desc">Por fim realizamos uma nova rodada de entrevistas com testes moderados para validar se a solução abordou os problemas da fase exploratória e identificar novos pontos de melhoria.</p>
-            <div class="points-grid">
-                <div class="point-card">
-                    <span class="point-number">1.</span>
-                    <p data-i18n="selfservice.tests.i1">Forte interesse por tracking implementado</p>
-                </div>
-                <div class="point-card">
-                    <span class="point-number">2.</span>
-                    <p data-i18n="selfservice.tests.i2">Forte interesse por relatórios personalizáveis implementados</p>
-                </div>
-                <div class="point-card">
-                    <span class="point-number">3.</span>
-                    <p data-i18n="selfservice.tests.i3">Interesse em notificações configuráveis e em tempo real</p>
-                </div>
-                <div class="point-card">
-                    <span class="point-number">4.</span>
-                    <p data-i18n="selfservice.tests.i4">Desejo de flexibilidade e facilidade de agendamento</p>
+            <div class="section-content-column">
+                <p class="section-copy" data-i18n="selfservice.tests.desc">Por fim realizamos uma nova rodada de entrevistas com testes moderados para validar se a solução abordou os problemas da fase exploratória e identificar novos pontos de melhoria.</p>
+                <div class="points-grid">
+                    <div class="point-card">
+                        <span class="point-number">1.</span>
+                        <p data-i18n="selfservice.tests.i1">Forte interesse por tracking implementado</p>
+                    </div>
+                    <div class="point-card">
+                        <span class="point-number">2.</span>
+                        <p data-i18n="selfservice.tests.i2">Forte interesse por relatórios personalizáveis implementados</p>
+                    </div>
+                    <div class="point-card">
+                        <span class="point-number">3.</span>
+                        <p data-i18n="selfservice.tests.i3">Interesse em notificações configuráveis e em tempo real</p>
+                    </div>
+                    <div class="point-card">
+                        <span class="point-number">4.</span>
+                        <p data-i18n="selfservice.tests.i4">Desejo de flexibilidade e facilidade de agendamento</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -427,11 +461,13 @@
                     <div class="footer-profile">
                         <div class="profile-pic">
                             <img draggable="false" src="profile-pic.png" alt="Vinicius Florencio">
-                            <span class="online-badge"></span>
                         </div>
                         <div class="footer-profile-text">
-                            <p class="footer-profile-name">Vinicius Florencio</p>
-                            <p class="footer-profile-role" data-i18n="footer.role">UX/UI Designer</p>
+                            <p class="footer-profile-name">Vinicius Florencio - UX/UI Designer</p>
+                            <p class="footer-availability">
+                                <span class="availability-dot" aria-hidden="true"></span>
+                                Disponível para projetos
+                            </p>
                         </div>
                     </div>
                     <div class="footer-links">
@@ -444,17 +480,6 @@
                             viniciusferreiraflorencio@live.com
                         </a>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <a href="index.html" class="footer-nav-item" data-i18n="nav.home">Home</a>
-                    <a href="index.html#my-work" class="footer-nav-item" data-i18n="nav.my-work">Projetos</a>
-                </div>
-                <div class="footer-col">
-                    <a href="index.html#about" class="footer-nav-item" data-i18n="nav.about">Sobre</a>
-                    <a href="index.html#experience" class="footer-nav-item" data-i18n="nav.experience">Experiência</a>
-                </div>
-                <div class="footer-col">
-                    <a href="index.html#certifications" class="footer-nav-item" data-i18n="nav.certifications">Certificações</a>
                 </div>
             </div>
             <p class="footer-copyright">Copyright © Vinicius Florencio, 2026</p>

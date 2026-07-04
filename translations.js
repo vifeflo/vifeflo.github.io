@@ -22,7 +22,7 @@ window.TRANSLATIONS = {
     'nav.about'          : 'About',
     'nav.experience'     : 'Experience',
     'nav.certifications' : 'Certifications',
-    'nav.contact'        : 'Contact',
+    'nav.contact'        : 'Contacts',
     'nav.language'       : 'Language',
     'nav.full-cv'        : 'Full CV',
     'nav.case.selfservice': 'Self-service portal',
@@ -49,7 +49,7 @@ window.TRANSLATIONS = {
     /* ══════════════ index.html ══════════════ */
 
     /* Hero */
-    'index.hero.title' : 'UX/UI Designer',
+    'index.hero.title' : 'Product &\nUX/UI Designer',
     'index.hero.desc'  : '2+ years developing creative and accessible user-centered solutions',
     'index.companies'  : 'Companies I helped',
 
@@ -137,6 +137,9 @@ window.TRANSLATIONS = {
     /* ══════════════ basic.html ══════════════ */
 
     'basic.hero.desc'             : 'A scalable multi-brand UI Kit with accessibility at its core.',
+    'basic.hero.metric.components': 'components',
+    'basic.hero.metric.themes'    : 'themes',
+    'basic.hero.metric.brands'    : 'brands',
     'basic.btn.figma'             : 'See project on Figma',
     'basic.multi-brand.title'     : 'Multi-Brand System',
     'basic.multi-brand.desc'      : 'This isn\'t just another UI Kit. It\'s a flexible multi-brand system built to support multiple brands from a single source of truth. Each brand maintains its unique identity while sharing the same component architecture.',
@@ -244,6 +247,9 @@ window.TRANSLATIONS = {
     'selfservice.overview.i1' : 'Project duration: 5 months',
     'selfservice.overview.i2' : 'More than 3,200 project hours',
     'selfservice.overview.i3' : '2 workstreams: business and design',
+    'selfservice.overview.metric1' : 'months of project',
+    'selfservice.overview.metric2' : 'hours logged',
+    'selfservice.overview.metric3' : 'business and design',
 
     'selfservice.role.title' : 'My role',
     'selfservice.role.desc' : 'As a product designer, I was one of the people responsible for leading interviews, analyzing data and generating insights with AI support, creating high-fidelity navigable prototypes, and running usability tests with end users.',
@@ -381,7 +387,7 @@ window.TRANSLATIONS = {
     'nav.about'          : 'Sobre',
     'nav.experience'     : 'Experiência',
     'nav.certifications' : 'Certificações',
-    'nav.contact'        : 'Contato',
+    'nav.contact'        : 'Contatos',
     'nav.language'       : 'Idioma',
     'nav.full-cv'        : 'CV Completo',
     'nav.case.selfservice': 'Portal de autoatendimento',
@@ -408,7 +414,7 @@ window.TRANSLATIONS = {
     /* ══════════════ index.html ══════════════ */
 
     /* Hero */
-    'index.hero.title' : 'UX/UI Designer',
+    'index.hero.title' : 'Product &\nUX/UI Designer',
     'index.hero.desc'  : '2+ anos desenvolvendo soluções criativas e acessíveis centradas no usuário',
     'index.companies'  : 'Empresas que eu ajudei',
 
@@ -423,8 +429,8 @@ window.TRANSLATIONS = {
     'index.about.desc'              : 'Product Designer com 2 anos de experiência no desenvolvimento de produtos digitais B2B, especializado em pesquisas com usuários, testes de usabilidade, Design Systems, wireframing, prototipação responsiva de alta fidelidade, acessibilidade (WCAG 2.2) e mentoria de estagiários.',
     'index.about.additional'        : 'Autodidata, desenvolvi fluência em inglês, o que me permite colaborar em ambientes internacionais e acompanhar as melhores práticas de design.',
     'index.about.available'         : 'Disponível para projetos',
-    'index.about.prototyping'       : 'Prototipagem',
-    'index.about.prototyping-desc'  : 'Tenho vasta experiência em prototipagem de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma',
+    'index.about.prototyping'       : 'Prototipação',
+    'index.about.prototyping-desc'  : 'Tenho vasta experiência em prototipação de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma',
     'index.about.research'          : 'Pesquisa',
     'index.about.research-desc'     : 'Realizo entrevistas com clientes e usuários finais para analisar problemas e identificar soluções, utilizando plataformas como Maze para pesquisa e validação',
     'index.about.design-system'     : 'Design system',
@@ -445,7 +451,7 @@ window.TRANSLATIONS = {
     'index.exp.pd-location' : 'Santos - híbrido',
     'index.exp.pd-title'    : 'Product Designer Jr.',
     'index.exp.pd-stat1'    : 'clientes grandes conquistados em um ano através do design de MVPs',
-    'index.exp.pd-stat2'    : 'de aceleração na prototipagem através da padronização do fluxo de trabalho',
+    'index.exp.pd-stat2'    : 'de aceleração na prototipação através da padronização do fluxo de trabalho',
     'index.exp.pd-stat3'    : 'de adoção do design system em novos projetos',
     'index.exp.pd-li1'      : 'Criação de wireframes e protótipos interativos de baixa e alta fidelidade utilizando <strong>Figma</strong>.',
     'index.exp.pd-li2'      : 'Condução de entrevistas, pesquisas e testes de usabilidade no <strong>Maze</strong> para validação de soluções digitais.',
@@ -495,6 +501,9 @@ window.TRANSLATIONS = {
     /* ══════════════ basic.html ══════════════ */
 
     'basic.hero.desc'             : 'Um UI Kit multi-marca escalável com acessibilidade em seu núcleo.',
+    'basic.hero.metric.components': 'componentes',
+    'basic.hero.metric.themes'    : 'temas',
+    'basic.hero.metric.brands'    : 'marcas',
     'basic.btn.figma'             : 'Ver projeto no Figma',
     'basic.multi-brand.title'     : 'Sistema multi-marca',
     'basic.multi-brand.desc'      : 'Esse não é mais um UI Kit. É um sistema multi-marcas flexível criado a partir de uma única fonte de verdade. Cada marca mantém sua identidade única enquanto compartilha a mesma arquitetura de componentes.',
@@ -602,6 +611,9 @@ window.TRANSLATIONS = {
     'selfservice.overview.i1' : 'Duração do projeto: 5 meses',
     'selfservice.overview.i2' : 'Mais de 3.200 horas de projeto',
     'selfservice.overview.i3' : '2 frentes de atuação: negócios e design',
+    'selfservice.overview.metric1' : 'meses de projeto',
+    'selfservice.overview.metric2' : 'horas registradas',
+    'selfservice.overview.metric3' : 'negócios e design',
 
     'selfservice.role.title' : 'Meu papel',
     'selfservice.role.desc' : 'Como designer de produto fui um dos responsáveis pela condução de entrevistas, análise de dados e geração de insights com auxílio de inteligência artificial, criação de protótipos navegáveis de alta fidelidade e condução de testes de usabilidade com usuários finais.',
