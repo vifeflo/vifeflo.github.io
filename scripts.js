@@ -350,12 +350,116 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ─── 6. SCROLL REVEAL ANIMATION ───────────────────────────────── */
 
 (function () {
+    const pathname = (window.location.pathname || '').toLowerCase();
+    const isHomePage = pathname.endsWith('/index.html') || pathname.endsWith('/') || pathname === '';
+
+    function isTitleElement(el) {
+        return el.matches('h1, h2, h3, h4, h5, h6, .section-title, .section-head, .studyin-section-title');
+    }
+
+    function makeStaggerItems(parent, orderState) {
+        const children = Array.from(parent.children).filter(child => {
+            if (isTitleElement(child)) return false;
+            if (child.hasAttribute('data-reveal-group')) return false;
+            return true;
+        });
+        children.forEach(child => {
+            const alreadyStaggered = child.classList.contains('reveal-stagger');
+            if (!child.classList.contains('reveal')) {
+                child.classList.add('reveal');
+            }
+            child.classList.add('reveal-stagger');
+            if (!alreadyStaggered && !child.dataset.revealOrder) {
+                child.dataset.revealOrder = String(orderState.value++);
+            }
+        });
+    }
+
+    function setupProjectSectionStagger() {
+        if (isHomePage) return;
+
+        const sections = document.querySelectorAll('.section.reveal');
+        sections.forEach((section, sectionIndex) => {
+            if (!section.dataset.revealGroup) {
+                const sectionId = section.id || String(sectionIndex + 1);
+                section.dataset.revealGroup = `project-section-${sectionId}`;
+            }
+
+            const orderState = { value: 0 };
+            makeStaggerItems(section, orderState);
+
+            const nestedContainers = Array.from(section.children).filter(child => !isTitleElement(child));
+            nestedContainers.forEach(container => {
+                if (container.children && container.children.length > 1) {
+                    makeStaggerItems(container, orderState);
+                }
+            });
+        });
+    }
+
+    setupProjectSectionStagger();
+
     const els = document.querySelectorAll('.reveal');
     if (!els.length) return;
+    const REVEAL_DELAY_MS = 380;
+    const REVEAL_STAGGER_STEP_MS = 150;
+    const REVEAL_STAGE_STEP_MS = 220;
+    const timers = new WeakMap();
+
+    function getRevealGroup(el) {
+        return el.closest('[data-reveal-group]') || el.parentElement;
+    }
+
+    function getRevealDelay(el) {
+        let delay = REVEAL_DELAY_MS;
+
+        if (el.classList.contains('reveal-stagger')) {
+            const explicitOrder = Number(el.dataset.revealOrder);
+            if (Number.isFinite(explicitOrder)) {
+                return delay + Math.max(0, explicitOrder) * REVEAL_STAGE_STEP_MS;
+            }
+
+            const group = getRevealGroup(el);
+            const items = group ? Array.from(group.querySelectorAll('.reveal-stagger')) : [];
+            const index = items.indexOf(el);
+            if (index >= 0) {
+                delay += index * REVEAL_STAGGER_STEP_MS;
+            }
+        }
+
+        return delay;
+    }
+
+    function shouldPersistVisible(el) {
+        if (el.closest('.hero, .project-hero')) return true;
+
+        if (el.classList.contains('section')) {
+            return Boolean(el.querySelector('h2, .section-title, .section-head, .studyin-section-title'));
+        }
+
+        return false;
+    }
 
     const obs = new IntersectionObserver(entries => {
         entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+            const pending = timers.get(e.target);
+            if (pending) {
+                clearTimeout(pending);
+                timers.delete(e.target);
+            }
+
+            if (e.isIntersecting) {
+                const delay = getRevealDelay(e.target);
+                const id = setTimeout(() => {
+                    e.target.classList.add('visible');
+                    timers.delete(e.target);
+                }, delay);
+                timers.set(e.target, id);
+            } else {
+                if (!shouldPersistVisible(e.target)) {
+                    e.target.classList.remove('visible');
+                }
+            }
         });
     }, { threshold: 0.12 });
 
@@ -368,6 +472,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 (function () {
     const counters = document.querySelectorAll('[data-count]');
     if (!counters.length) return;
+
+    function formatStartValue(el) {
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const useGrouping = el.dataset.grouping === 'true';
+        const locale = el.dataset.locale || 'en-US';
+        const base = useGrouping ? (0).toLocaleString(locale) : '0';
+        return prefix + base + suffix;
+    }
 
     function animate(el) {
         const target = parseInt(el.dataset.count, 10);
@@ -389,11 +502,192 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const obs = new IntersectionObserver(entries => {
         entries.forEach(e => {
-            if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+            if (e.isIntersecting) {
+                animate(e.target);
+            } else {
+                e.target.textContent = formatStartValue(e.target);
+            }
         });
     }, { threshold: 0.5 });
 
-    counters.forEach(el => obs.observe(el));
+    counters.forEach(el => {
+        el.textContent = formatStartValue(el);
+        obs.observe(el);
+    });
+})();
+
+
+/* ─── 7B. EXPERIENCE TAG COLLAPSE ─────────────────────────────── */
+
+(function () {
+    const groups = Array.from(document.querySelectorAll('.experience-skills'));
+    if (!groups.length) return;
+
+    const MOBILE_BREAKPOINT = 768;
+    const MAX_VISIBLE_ROWS = 3;
+
+    function getTags(group) {
+        return Array.from(group.querySelectorAll('.tag')).filter(el => !el.classList.contains('experience-tags-toggle'));
+    }
+
+    function setExpanded(group, toggle, expanded) {
+        group.dataset.expanded = expanded ? 'true' : 'false';
+        toggle.setAttribute('aria-expanded', String(expanded));
+        toggle.textContent = 'Mostrar menos';
+
+        getTags(group).forEach(tag => {
+            tag.classList.remove('experience-tag-hidden');
+        });
+    }
+
+    function setCollapsed(group, toggle) {
+        const tags = getTags(group);
+        const topValues = [];
+        let visibleCount = 0;
+
+        tags.forEach(tag => tag.classList.remove('experience-tag-hidden'));
+
+        const groupTop = group.getBoundingClientRect().top;
+
+        for (const tag of tags) {
+            const rowTop = Math.round(tag.getBoundingClientRect().top - groupTop);
+            if (!topValues.includes(rowTop)) topValues.push(rowTop);
+
+            if (topValues.length > MAX_VISIBLE_ROWS) {
+                tag.classList.add('experience-tag-hidden');
+            } else {
+                visibleCount += 1;
+            }
+        }
+
+        const hiddenCount = tags.length - visibleCount;
+        if (hiddenCount > 0) {
+            group.dataset.expanded = 'false';
+            toggle.hidden = false;
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Mostrar ' + hiddenCount + ' tags ocultas');
+            toggle.textContent = '+' + hiddenCount;
+        } else {
+            toggle.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = 'Mostrar menos';
+        }
+    }
+
+    function refreshGroup(group) {
+        let toggle = group.querySelector('.experience-tags-toggle');
+        if (!toggle) {
+            toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.className = 'experience-tags-toggle';
+            toggle.hidden = true;
+            toggle.addEventListener('click', () => {
+                const expanded = group.dataset.expanded === 'true';
+                if (expanded) {
+                    requestAnimationFrame(() => setCollapsed(group, toggle));
+                } else {
+                    setExpanded(group, toggle, true);
+                }
+            });
+            group.appendChild(toggle);
+        }
+
+        const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+        if (!isMobile) {
+            group.dataset.expanded = 'true';
+            toggle.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = 'Mostrar menos';
+            getTags(group).forEach(tag => tag.classList.remove('experience-tag-hidden'));
+            return;
+        }
+
+        const expanded = group.dataset.expanded === 'true';
+        if (expanded) {
+            setExpanded(group, toggle, true);
+        } else {
+            setCollapsed(group, toggle);
+        }
+    }
+
+    function refreshAll() {
+        groups.forEach(refreshGroup);
+    }
+
+    let raf = 0;
+    function scheduleRefresh() {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(refreshAll);
+    }
+
+    groups.forEach(group => {
+        group.dataset.expanded = 'false';
+    });
+
+    window.addEventListener('resize', scheduleRefresh, { passive: true });
+    window.addEventListener('orientationchange', scheduleRefresh);
+    scheduleRefresh();
+})();
+
+
+/* ─── 7C. STICKY TITLE DIVIDER STATE ─────────────────────────── */
+
+(function () {
+    const selectors = [
+        '#my-work .section-title',
+        '#about > h2',
+        '#experience > h2',
+        '#certifications > h2',
+        '.section .section-title',
+        '.section .section-head',
+        '.section .studyin-section-title'
+    ];
+
+    const stickyTitles = Array.from(new Set(
+        selectors.flatMap(selector => Array.from(document.querySelectorAll(selector)))
+    ));
+
+    if (!stickyTitles.length) return;
+
+    function getStickyTop() {
+        const raw = getComputedStyle(document.documentElement).getPropertyValue('--section-sticky-top');
+        const value = parseFloat(raw);
+        return Number.isFinite(value) ? value : 55;
+    }
+
+    function isPinned(titleEl, stickyTop) {
+        if (getComputedStyle(titleEl).position !== 'sticky') return false;
+
+        const section = titleEl.closest('.section');
+        if (!section) return false;
+
+        const titleRect = titleEl.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+
+        const atStickyTop = titleRect.top <= stickyTop + 0.5;
+        const sectionStarted = sectionRect.top < stickyTop;
+        const hasRoomToStick = sectionRect.bottom > stickyTop + titleRect.height;
+
+        return atStickyTop && sectionStarted && hasRoomToStick;
+    }
+
+    function updateState() {
+        const stickyTop = getStickyTop();
+        stickyTitles.forEach(titleEl => {
+            titleEl.classList.toggle('sticky-active', isPinned(titleEl, stickyTop));
+        });
+    }
+
+    let rafId = 0;
+    function scheduleUpdate() {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateState);
+    }
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    window.addEventListener('orientationchange', scheduleUpdate);
+    scheduleUpdate();
 })();
 
 
@@ -515,6 +809,88 @@ window.addEventListener('resize', () => {
             : { src: 'usa.png', alt: 'English' };
     }
 
+    let heroTitleTyped = false;
+    function typeHeroTitleOnLoad() {
+        if (heroTitleTyped) return;
+
+        const headerEl = document.querySelector('#home .hero-text .hero-header');
+        const titleEl = document.querySelector('#home .hero-text h1');
+        const descEl = document.querySelector('#home .hero-text > p');
+        if (!headerEl || !titleEl || !descEl) return;
+
+        const titleText = titleEl.textContent || '';
+        if (!titleText.trim()) return;
+
+        heroTitleTyped = true;
+
+        function prepareFadeUp(el) {
+            el.classList.remove('hero-fade-visible');
+            el.style.transition = 'opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1)';
+        }
+
+        function showFadeUp(el, delayMs) {
+            setTimeout(() => {
+                el.classList.add('hero-fade-visible');
+            }, delayMs);
+        }
+
+        function randomBetween(min, max) {
+            return Math.floor(min + Math.random() * (max - min + 1));
+        }
+
+        function getNaturalDelay(ch) {
+            if (ch === '\n') return randomBetween(150, 240);
+            if (ch === ' ') return randomBetween(18, 38);
+
+            let delay = randomBetween(28, 62);
+            if (/[.,!?;:]/.test(ch)) delay += randomBetween(110, 220);
+
+            if (Math.random() < 0.08) delay += randomBetween(70, 160);
+            return delay;
+        }
+
+        function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function typeText(el, text) {
+            el.textContent = '';
+            const chars = Array.from(text);
+            let i = 0;
+
+            return new Promise(resolve => {
+                (function step() {
+                    if (i >= chars.length) {
+                        resolve();
+                        return;
+                    }
+
+                    const ch = chars[i++];
+                    el.textContent += ch;
+                    setTimeout(step, getNaturalDelay(ch));
+                })();
+            });
+        }
+
+        // Reserve final height so the layout does not shift while typing.
+        titleEl.textContent = titleText;
+        const finalHeight = titleEl.offsetHeight;
+        if (finalHeight > 0) titleEl.style.minHeight = finalHeight + 'px';
+        titleEl.textContent = '';
+        titleEl.classList.add('hero-type-ready');
+
+        prepareFadeUp(headerEl);
+        prepareFadeUp(descEl);
+
+        (async function runTypingSequence() {
+            showFadeUp(headerEl, 420);
+            await wait(1250);
+            await typeText(titleEl, titleText);
+            await wait(520);
+            showFadeUp(descEl, 0);
+        })();
+    }
+
     function applyLang(lang, { persist = true, source = 'manual' } = {}) {
         const resolvedLang = resolveLanguage(lang) || DEFAULT_LANG;
         const dict = window.TRANSLATIONS?.[resolvedLang];
@@ -575,6 +951,7 @@ window.addEventListener('resize', () => {
     const initialLang = saved || browserPreferred || DEFAULT_LANG;
 
     applyLang(initialLang, { persist: !!saved });
+    typeHeroTitleOnLoad();
 })();
 
 })();

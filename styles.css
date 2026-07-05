@@ -53,12 +53,32 @@
     line-height: 0.95;
 }
 
+#home .hero-text h1 {
+    visibility: hidden;
+}
+
+#home .hero-text h1.hero-type-ready {
+    visibility: visible;
+}
+
 .hero-text p {
     font-size: 20px;
     font-weight: 500;
     color: rgba(250, 249, 246, 0.9);
     max-width: 800px;
     line-height: 1.4;
+}
+
+#home .hero-text .hero-header,
+#home .hero-text > p {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+#home .hero-text .hero-header.hero-fade-visible,
+#home .hero-text > p.hero-fade-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Prevent hero paragraph from breaking into multiple lines on wide (desktop) viewports */
@@ -75,6 +95,26 @@
 
 #my-work .section-title {
     margin-bottom: 0;
+}
+
+#my-work .card-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    pointer-events: none;
+    transition: max-height 0.22s ease, opacity 0.22s ease, margin-top 0.22s ease;
+}
+
+#my-work .card:hover .card-description,
+#my-work .card:focus-within .card-description {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 4px;
+}
+
+#my-work .card-full .card-image {
+    aspect-ratio: 21 / 6;
 }
 
 .companies {
@@ -196,11 +236,11 @@ img[alt="Alura"] {
 .about-skills {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
 }
 
 .about-skills-title {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 500;
     color: #faf9f6;
 }
@@ -263,6 +303,61 @@ img[alt="Alura"] {
     gap: 80px;
 }
 
+:root {
+    --section-sticky-top: 55px;
+}
+
+#my-work .section-title,
+#about > h2,
+#experience > h2,
+#certifications > h2 {
+    position: sticky;
+    top: var(--section-sticky-top);
+    z-index: 20;
+    isolation: isolate;
+    background: #121212;
+    width: 100%;
+    padding: 8px 0;
+}
+
+#my-work .section-title::before,
+#about > h2::before,
+#experience > h2::before,
+#certifications > h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(var(--section-sticky-top) * -1);
+    height: var(--section-sticky-top);
+    background: #121212;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#my-work .section-title::after,
+#about > h2::after,
+#experience > h2::after,
+#certifications > h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100vw;
+    transform: translateX(-50%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+}
+
+#my-work .section-title.sticky-active::after,
+#about > h2.sticky-active::after,
+#experience > h2.sticky-active::after,
+#certifications > h2.sticky-active::after {
+    opacity: 1;
+}
+
 .experience-card {
     display: grid;
     grid-template-columns: .7fr 1fr;
@@ -283,6 +378,28 @@ img[alt="Alura"] {
 
 .experience-skills .tag {
     white-space: normal;
+}
+
+.experience-tags-toggle {
+    border: none;
+    background: #faf9f6;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #242424;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.experience-tags-toggle:hover {
+    background: #e7e5e0;
+}
+
+.experience-tag-hidden {
+    display: none !important;
 }
 
 .experience-header {
@@ -386,6 +503,10 @@ img[alt="Alura"] {
 }
 
 @media (max-width: 768px) {
+    :root {
+        --section-sticky-top: 55px;
+    }
+
     .experience-card {
         display: flex;
         flex-direction: column;
@@ -497,6 +618,10 @@ img[alt="Alura"] {
 /* ─── 6. RESPONSIVE — INDEX ───────────────────────────────────── */
 
 @media (max-width: 1024px) {
+    #my-work .card-full .card-image {
+        aspect-ratio: 16 / 9;
+    }
+
     .about-header { grid-template-columns: 1fr; gap: 80px; }
     .skills-grid        { grid-template-columns: repeat(2, 1fr); }
     .certifications-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -509,9 +634,20 @@ img[alt="Alura"] {
 }
 
 @media (max-width: 768px) {
+    #my-work .card-description {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        margin-top: 4px;
+        pointer-events: auto;
+    }
+
     .hero {
+        height: 100vh;           /* fallback */
+        height: 100dvh;          /* exclui chrome do browser no mobile */
         padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: 40px;
+        overflow: hidden;
     }
 
     .hero-text h1 {
@@ -530,7 +666,7 @@ img[alt="Alura"] {
         justify-content: flex-start;
     }
 
-    .about-header { gap: 40px; }
+    .about-header { gap: 80px; }
     .skills-grid      { grid-template-columns: 1fr; }
     .certifications-grid { grid-template-columns: 1fr; }
     #experience { gap: 40px; }

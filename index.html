@@ -201,7 +201,7 @@ UX/UI Designer</h1>
             <div class="section-title">
                 <h2 data-i18n="nav.my-work">Projetos</h2>
             </div>
-            <div class="cards-grid">
+            <div class="cards-grid" data-reveal-group="projects-side-cards">
                 <a href="portal.html" class="card card-full reveal" data-tooltip="see-project">
                     <div class="card-image">
                         <img draggable="false" src="images/portal/Portal%20thumbnail%20card.png" alt="Portal de autoatendimento">
@@ -219,7 +219,7 @@ UX/UI Designer</h1>
                     </div>
                 </a>
 
-                <a href="studyin.html" class="card reveal" data-tooltip="see-project">
+                <a href="studyin.html" class="card reveal reveal-stagger" data-tooltip="see-project">
                     <div class="card-image">
                         <img draggable="false" src="card-studyin.png" alt="StudyIn">
                     </div>
@@ -236,7 +236,7 @@ UX/UI Designer</h1>
                     </div>
                 </a>
 
-                <a href="basic.html" class="card reveal" data-tooltip="see-project">
+                <a href="basic.html" class="card reveal reveal-stagger" data-tooltip="see-project">
                     <div class="card-image">
                         <img draggable="false" src="card-basic.png" alt="Basic UI Kit v2.0">
                     </div>
@@ -253,7 +253,7 @@ UX/UI Designer</h1>
                     </div>
                 </a>
 
-                <div class="card reveal" data-tooltip="under-construction">
+                <div class="card reveal reveal-stagger" data-tooltip="under-construction">
                     <div class="card-image">
                         <img draggable="false" src="card-designly.png" alt="Designy.ly">
                     </div>
@@ -274,10 +274,10 @@ UX/UI Designer</h1>
         <!-- About Section -->
         <div class="section-divider"></div>
         <div class="section reveal" id="about">
+            <h2 data-i18n="nav.about">Sobre</h2>
+
             <div class="about-header">
                 <div class="about-text">
-                    <h2 data-i18n="nav.about">Sobre</h2>
-
                     <p class="about-description" data-i18n="index.about.desc">Product Designer com 2 anos de experiência no desenvolvimento de produtos digitais B2B, especializado em pesquisas com usuários, testes de usabilidade, Design Systems, wireframing, prototipação responsiva de alta fidelidade, acessibilidade (WCAG 2.2) e mentoria de estagiários.</p>
 
                     <p class="about-description about-additional" data-i18n="index.about.additional">Autodidata, desenvolvi fluência em inglês, o que me permite colaborar em ambientes internacionais e acompanhar as melhores práticas de design.</p>
@@ -300,10 +300,8 @@ UX/UI Designer</h1>
                 </div>
 
                 <div class="about-skills">
-                    <h3 class="about-skills-title" data-i18n="index.about.skills-title">Competências</h3>
-
-                    <div class="skills-grid">
-                        <div class="skill-card">
+                    <div class="skills-grid" data-reveal-group="about-cards">
+                        <div class="skill-card reveal reveal-stagger">
                             <div class="skill-title">
                                 <div class="skill-icon">
                                     <img draggable="false" src="FigmaLogo.svg" alt="figma" class="icon-img skill-img">
@@ -313,7 +311,7 @@ UX/UI Designer</h1>
                             <p class="skill-description" data-i18n="index.about.prototyping-desc">Tenho vasta experiência em prototipação de soluções complexas de ponta a ponta, de wireframes iniciais a designs de alta fidelidade em larga escala no Figma</p>
                         </div>
 
-                        <div class="skill-card">
+                        <div class="skill-card reveal reveal-stagger">
                             <div class="skill-title">
                                 <div class="skill-icon">
                                     <img draggable="false" src="MagnifyingGlass.svg" alt="search" class="icon-img skill-img">
@@ -323,7 +321,7 @@ UX/UI Designer</h1>
                             <p class="skill-description" data-i18n="index.about.research-desc">Realizo entrevistas com clientes e usuários finais para analisar problemas e identificar soluções, utilizando plataformas como Maze para pesquisa e validação</p>
                         </div>
 
-                        <div class="skill-card">
+                        <div class="skill-card reveal reveal-stagger">
                             <div class="skill-title">
                                 <div class="skill-icon">
                                     <img draggable="false" src="CirclesThree.svg" alt="circles" class="icon-img skill-img">
@@ -333,7 +331,7 @@ UX/UI Designer</h1>
                             <p class="skill-description" data-i18n="index.about.design-system-desc">Crio design systems com componentes padronizados, boas práticas de acessibilidade e documentação clara para um handoff eficiente</p>
                         </div>
 
-                        <div class="skill-card">
+                        <div class="skill-card reveal reveal-stagger">
                             <div class="skill-title">
                                 <div class="skill-icon">
                                     <img draggable="false" src="ChalkboardTeacher.svg" alt="teacher" class="icon-img skill-img">
@@ -353,13 +351,13 @@ UX/UI Designer</h1>
         <div class="section reveal" id="experience">
             <h2 data-i18n="nav.experience">Experiência</h2>
 
-            <div class="experience-card reveal">
+            <div class="experience-card" data-reveal-group="experience">
                 <div class="experience-header">
-                    <div class="experience-tags">
+                    <div class="experience-tags reveal reveal-stagger" data-reveal-order="1">
                         <span class="tag" data-i18n="index.exp.pd-date">03/2024 - 03/2026</span>
                         <span class="tag" data-i18n="index.exp.pd-location">Santos - híbrido</span>
                     </div>
-                    <div class="experience-skills">
+                    <div class="experience-skills reveal reveal-stagger" data-reveal-order="1">
                         <span class="tag">Figma</span>
                         <span class="tag">UX Research</span>
                         <span class="tag">Design System</span>
@@ -380,8 +378,8 @@ UX/UI Designer</h1>
                         <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
                     </div>
-                    <h3 class="experience-position" data-i18n="index.exp.pd-title">Product Designer Jr.</h3>
-                    <div class="experience-company">
+                    <h3 class="experience-position reveal reveal-stagger" data-reveal-order="0" data-i18n="index.exp.pd-title">Product Designer Jr.</h3>
+                    <div class="experience-company reveal reveal-stagger" data-reveal-order="0">
                         <img draggable="false" src="mosten-logo.png" alt="Mosten" class="company-logo-small">
                         <a href="https://mosten.com/" class="footer-link" target="_blank" rel="noopener noreferrer">
                             Mosten
@@ -390,21 +388,21 @@ UX/UI Designer</h1>
                     </div>
                 </div>
                 <div class="experience-body">
-                    <div class="experience-stats">
-                        <div class="stat-item">
+                    <div class="experience-stats reveal" data-reveal-group="experience-bignumbers">
+                        <div class="stat-item reveal reveal-stagger">
                             <h4 data-count="3">0</h4>
                             <p data-i18n="index.exp.pd-stat1">clientes grandes conquistados em um ano através do design de MVPs</p>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item reveal reveal-stagger">
                             <h4 data-count="20" data-suffix="%">0%</h4>
                             <p data-i18n="index.exp.pd-stat2">de aceleração na prototipação através da padronização do fluxo de trabalho</p>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item reveal reveal-stagger">
                             <h4 data-count="100" data-suffix="%">0%</h4>
                             <p data-i18n="index.exp.pd-stat3">de adoção do design system em novos projetos</p>
                         </div>
                     </div>
-                    <div class="experience-list">
+                    <div class="experience-list reveal reveal-stagger" data-reveal-order="3">
                         <ul>
                             <li data-i18n-html="index.exp.pd-li1">Criação de wireframes e protótipos interativos de baixa e alta fidelidade utilizando <strong>Figma</strong>.</li>
                             <li data-i18n-html="index.exp.pd-li2">Condução de entrevistas, pesquisas e testes de usabilidade no <strong>Maze</strong> para validação de soluções digitais.</li>
@@ -422,13 +420,13 @@ UX/UI Designer</h1>
 
             <div class="section-divider"></div>
 
-            <div class="experience-card reveal">
+            <div class="experience-card" data-reveal-group="experience">
                 <div class="experience-header">
-                    <div class="experience-tags">
+                    <div class="experience-tags reveal reveal-stagger" data-reveal-order="1">
                         <span class="tag" data-i18n="index.exp.wp-date">01/2024 - 02/2024</span>
                         <span class="tag" data-i18n="index.exp.wp-location">Santos - híbrido</span>
                     </div>
-                    <div class="experience-skills">
+                    <div class="experience-skills reveal reveal-stagger" data-reveal-order="1">
                         <span class="tag">WordPress</span>
                         <span class="tag">Elementor</span>
                         <span class="tag">Figma</span>
@@ -438,8 +436,8 @@ UX/UI Designer</h1>
                         <span class="tag">CSS</span>
                         <span class="tag">Docker</span>
                     </div>
-                    <h3 class="experience-position" data-i18n="index.exp.wp-title">Estagiário WordPress</h3>
-                    <div class="experience-company">
+                    <h3 class="experience-position reveal reveal-stagger" data-reveal-order="0" data-i18n="index.exp.wp-title">Estagiário WordPress</h3>
+                    <div class="experience-company reveal reveal-stagger" data-reveal-order="0">
                         <img draggable="false" src="mosten-logo.png" alt="Mosten" class="company-logo-small">
                         <a href="https://mosten.com/" class="footer-link" target="_blank" rel="noopener noreferrer">
                             Mosten
@@ -447,7 +445,7 @@ UX/UI Designer</h1>
                         </a>
                     </div>
                 </div>
-                <div class="experience-list">
+                <div class="experience-list reveal reveal-stagger" data-reveal-order="3">
                     <ul>
                         <li data-i18n-html="index.exp.wp-li1">Desenvolvimento e manutenção de páginas em <strong>WordPress</strong> utilizando <strong>Elementor</strong>.</li>
                         <li data-i18n-html="index.exp.wp-li2">Implementação de ajustes em <strong>HTML</strong>, <strong>CSS</strong>, <strong>PHP</strong> e <strong>JavaScript</strong> para interfaces responsivas.</li>
@@ -458,17 +456,17 @@ UX/UI Designer</h1>
 
             <div class="section-divider"></div>
 
-            <div class="experience-card reveal">
+            <div class="experience-card" data-reveal-group="experience">
                 <div class="experience-header">
-                    <h3 class="experience-position" data-i18n="index.exp.v-title">UX/UI Designer Voluntário</h3>
-                    <div class="experience-company">
+                    <h3 class="experience-position reveal reveal-stagger" data-reveal-order="0" data-i18n="index.exp.v-title">UX/UI Designer Voluntário</h3>
+                    <div class="experience-company reveal reveal-stagger" data-reveal-order="0">
                         <img draggable="false" src="movimento-futuro.png" alt="Movimento Futuro" class="company-logo-small">
                         <a href="https://movimentofuturo.org/" class="footer-link" target="_blank" rel="noopener noreferrer">
                             Movimento Futuro
                             <img draggable="false" src="ArrowSquareIn.svg" alt="external" class="icon-img">
                         </a>
                     </div>
-                    <div class="experience-skills">
+                    <div class="experience-skills reveal reveal-stagger" data-reveal-order="1">
                         <span class="tag">UX Research</span>
                         <span class="tag">Usability Testing</span>
                         <span class="tag">Figma</span>
@@ -477,12 +475,12 @@ UX/UI Designer</h1>
                         <span class="tag">WCAG 2.2</span>
                         <span class="tag">Slack</span>
                     </div>
-                    <div class="experience-tags">
+                    <div class="experience-tags reveal reveal-stagger" data-reveal-order="1">
                         <span class="tag" data-i18n="index.exp.v-date">12/2025 - Atual</span>
                         <span class="tag" data-i18n="index.exp.v-location">São Paulo - remoto</span>
                     </div>
                 </div>
-                <div class="experience-list">
+                <div class="experience-list reveal reveal-stagger" data-reveal-order="3">
                     <ul>
                         <li data-i18n="index.exp.v-li1">Redesenho da página inicial da plataforma com foco em usabilidade e acessibilidade digital.</li>
                         <li data-i18n="index.exp.v-li2">Criação e manutenção do Design System institucional.</li>
@@ -497,8 +495,8 @@ UX/UI Designer</h1>
         <div class="section reveal" id="certifications">
             <h2 data-i18n="nav.certifications">Certificações</h2>
 
-            <div class="certifications-grid">
-                <div class="cert-card">
+            <div class="certifications-grid" data-reveal-group="certifications-cards">
+                <div class="cert-card reveal reveal-stagger">
                     <div class="cert-header">
                         <img draggable="false" src="cert-google.png" alt="Google" class="cert-logo">
                         <span class="tag">Google</span>
@@ -516,7 +514,7 @@ UX/UI Designer</h1>
                     </div>
                 </div>
 
-                <div class="cert-card">
+                <div class="cert-card reveal reveal-stagger">
                     <div class="cert-header">
                         <img draggable="false" src="cert-bradesco.png" alt="Fundação Bradesco" class="cert-logo">
                         <span class="tag">Fundação Bradesco</span>
@@ -531,7 +529,7 @@ UX/UI Designer</h1>
                     </div>
                 </div>
 
-                <div class="cert-card">
+                <div class="cert-card reveal reveal-stagger">
                     <div class="cert-header">
                         <img draggable="false" src="cert-alura.png" alt="Alura" class="cert-logo">
                         <span class="tag">Alura</span>
@@ -560,7 +558,7 @@ UX/UI Designer</h1>
                     </div>
                 </div>
 
-                <div class="cert-card">
+                <div class="cert-card reveal reveal-stagger">
                     <div class="cert-header">
                         <span class="tag" data-i18n="index.cert.others-title">Others</span>
                     </div>

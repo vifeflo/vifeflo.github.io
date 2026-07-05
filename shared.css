@@ -81,6 +81,16 @@ body {
     overflow-x: hidden;
 }
 
+::selection {
+    background: #ffffff;
+    color: #000000;
+}
+
+::-moz-selection {
+    background: #ffffff;
+    color: #000000;
+}
+
 
 /* ─── 1. SHARED PATTERNS ───────────────────────────────────────── */
 
@@ -112,7 +122,8 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 1024px;
+    height: 100vh;
+    height: 100dvh;
     border: 0;
     z-index: 0;
     pointer-events: none;
@@ -398,9 +409,11 @@ h2 {
 
 .section-divider {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(250, 249, 246, 0.1), transparent);
-    width: 100%;
-    margin: 40px 0;
+    background: rgba(255, 255, 255, 0.06);
+    width: 100vw;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: calc(50% - 50vw);
 }
 
 .reveal {
@@ -423,6 +436,10 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 24px 24px 24px;
+    }
+
     .section-title {
         gap: 8px;
         flex-wrap: wrap;

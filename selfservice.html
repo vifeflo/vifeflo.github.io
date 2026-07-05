@@ -258,14 +258,14 @@
 
         <div class="section reveal" id="execution">
             <h2 class="section-head" data-i18n="selfservice.exec.title">Pesquisa com usuários</h2>
-            <p class="section-copy" data-i18n="selfservice.exec.desc1">Depois do estudo inicial iniciamos a fase de pesquisa com usuários para entender a experiência atual como um todo, investigar a jornada e identificar frustrações e pontos de melhoria.</p>
+            <p class="section-copy reveal reveal-stagger" data-reveal-order="0" data-i18n="selfservice.exec.desc1">Depois do estudo inicial iniciamos a fase de pesquisa com usuários para entender a experiência atual como um todo, investigar a jornada e identificar frustrações e pontos de melhoria.</p>
             <h3 class="section-subhead" data-i18n="selfservice.exec.method">Metodologia</h3>
             <div class="stats-row">
-                <div class="stat-block">
+                <div class="stat-block reveal reveal-stagger" data-reveal-order="2">
                     <span class="stat-number" data-count="14">0</span>
                     <span class="stat-label" data-i18n="selfservice.exec.stat1">entrevistas qualitativas com usuários</span>
                 </div>
-                <div class="stat-block">
+                <div class="stat-block reveal reveal-stagger" data-reveal-order="3">
                     <span class="stat-number" data-count="8">0</span>
                     <span class="stat-label" data-i18n="selfservice.exec.stat2">rodas de entrevistas com o time interno</span>
                 </div>
@@ -275,8 +275,8 @@
         <div class="section reveal" id="discoveries-affinity">
             <h2 class="section-head" data-i18n="selfservice.discovery.affinity.title">Mapa de afinidade</h2>
             <p class="section-copy" data-i18n="selfservice.discovery.affinity.desc">Após a primeira rodada de entrevista, com um grande volume de dados, pudemos montar um mapa de afinidade que gerou evidências sólidas dos principais pontos de dor dos usuários.</p>
-            <div class="discovery-grid">
-                <div class="discovery-column">
+            <div class="discovery-grid" data-reveal-group="selfservice-affinity-cards">
+                <div class="discovery-column reveal reveal-stagger">
                     <h3 data-i18n="selfservice.discovery.affinity.c1.t">Falta de visibilidade de status</h3>
                     <ul class="bullet-list">
                         <li data-i18n="selfservice.discovery.affinity.c1.i1">A carga está liberada?</li>
@@ -286,7 +286,7 @@
                     </ul>
                     <blockquote data-i18n="selfservice.discovery.affinity.q1">“Ficamos o tempo inteiro às cegas.”</blockquote>
                 </div>
-                <div class="discovery-column">
+                <div class="discovery-column reveal reveal-stagger">
                     <h3 data-i18n="selfservice.discovery.affinity.c2.t">Comunicação complexa e reativa</h3>
                     <ul class="bullet-list">
                         <li data-i18n="selfservice.discovery.affinity.c2.i1">Informações críticas chegam tarde</li>
@@ -295,7 +295,7 @@
                     </ul>
                     <blockquote data-i18n="selfservice.discovery.affinity.q2">“Eu recebo cerca de 60 e-mails por dia.”</blockquote>
                 </div>
-                <div class="discovery-column">
+                <div class="discovery-column reveal reveal-stagger">
                     <h3 data-i18n="selfservice.discovery.affinity.c3.t">Informações fragmentadas</h3>
                     <ul class="bullet-list">
                         <li data-i18n="selfservice.discovery.affinity.c3.i1">Relatórios pouco legíveis</li>
@@ -364,25 +364,25 @@
             <h2 class="section-head" data-i18n="selfservice.solution.title">Prototipação</h2>
             <p class="section-copy" data-i18n="selfservice.solution.desc1">Com os dados limpos e insights consolidados iniciamos a fase de prototipação, gerando artefatos palpáveis que traduziram o trabalho da equipe de design em uma experiência interativa que abrange cerca de 20 fluxos de trabalho.</p>
             <h3 class="section-subhead" data-i18n="selfservice.solution.subtitle">Objetivos</h3>
-            <div class="objectives-grid">
-                <div class="point-card"><p data-i18n="selfservice.solution.i1">Redução de retrabalho operacional</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i2">Maior previsibilidade para os usuários</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i3">Visibilidade e clareza</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i4">Acompanhamento contínuo da operação</p></div>
-                <div class="point-card"><p data-i18n="selfservice.solution.i5">Comunicação proativa</p></div>
+            <div class="objectives-grid" data-reveal-group="selfservice-prototyping-cards">
+                <div class="point-card reveal reveal-stagger"><p data-i18n="selfservice.solution.i1">Redução de retrabalho operacional</p></div>
+                <div class="point-card reveal reveal-stagger"><p data-i18n="selfservice.solution.i2">Maior previsibilidade para os usuários</p></div>
+                <div class="point-card reveal reveal-stagger"><p data-i18n="selfservice.solution.i3">Visibilidade e clareza</p></div>
+                <div class="point-card reveal reveal-stagger"><p data-i18n="selfservice.solution.i4">Acompanhamento contínuo da operação</p></div>
+                <div class="point-card reveal reveal-stagger"><p data-i18n="selfservice.solution.i5">Comunicação proativa</p></div>
             </div>
             <h3 class="section-subhead" data-i18n="selfservice.solution.flows">Exemplos de fluxos</h3>
-            <div class="solution-screens" aria-label="Protótipos do portal">
-                <figure class="showcase-item">
+            <div class="solution-screens" data-reveal-group="selfservice-flow-examples" aria-label="Protótipos do portal">
+                <figure class="showcase-item reveal reveal-stagger">
                     <img draggable="false" src="images/portal/Login.png" alt="Login" class="solution-screen lightbox-trigger" data-lightbox-caption="Login">
                 </figure>
-                <figure class="showcase-item">
+                <figure class="showcase-item reveal reveal-stagger">
                     <img draggable="false" src="images/portal/Home.png" alt="Home" class="solution-screen lightbox-trigger" data-lightbox-caption="Home">
                 </figure>
-                <figure class="showcase-item">
+                <figure class="showcase-item reveal reveal-stagger">
                     <img draggable="false" src="images/portal/Movimenta%C3%A7%C3%A3o.png" alt="Acompanhamento de carga" class="solution-screen lightbox-trigger" data-lightbox-caption="Acompanhamento de carga">
                 </figure>
-                <figure class="showcase-item">
+                <figure class="showcase-item reveal reveal-stagger">
                     <img draggable="false" src="images/portal/Agendamentos.png" alt="Agendamentos" class="solution-screen lightbox-trigger" data-lightbox-caption="Agendamentos">
                 </figure>
             </div>
@@ -391,20 +391,20 @@
         <div class="section reveal" id="usability-tests">
             <h2 class="section-head" data-i18n="selfservice.tests.title">Testes de usabilidade</h2>
             <p class="section-copy" data-i18n="selfservice.tests.desc">Por fim realizamos uma nova rodada de entrevistas com testes moderados para validar se a solução abordou os problemas da fase exploratória e identificar novos pontos de melhoria.</p>
-            <div class="points-grid">
-                <div class="point-card">
+            <div class="points-grid" data-reveal-group="selfservice-usability-cards">
+                <div class="point-card reveal reveal-stagger">
                     <span class="point-number">1.</span>
                     <p data-i18n="selfservice.tests.i1">Forte interesse por tracking implementado</p>
                 </div>
-                <div class="point-card">
+                <div class="point-card reveal reveal-stagger">
                     <span class="point-number">2.</span>
                     <p data-i18n="selfservice.tests.i2">Forte interesse por relatórios personalizáveis implementados</p>
                 </div>
-                <div class="point-card">
+                <div class="point-card reveal reveal-stagger">
                     <span class="point-number">3.</span>
                     <p data-i18n="selfservice.tests.i3">Interesse em notificações configuráveis e em tempo real</p>
                 </div>
-                <div class="point-card">
+                <div class="point-card reveal reveal-stagger">
                     <span class="point-number">4.</span>
                     <p data-i18n="selfservice.tests.i4">Desejo de flexibilidade e facilidade de agendamento</p>
                 </div>
