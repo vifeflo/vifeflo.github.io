@@ -906,10 +906,10 @@ export default function Home({
               className="home-fade-item hero-links fade-in flex items-center gap-10 max-sm:flex-wrap max-sm:gap-x-6 max-sm:gap-y-3"
               style={{ animationDelay: "780ms" }}
             >
-              <ArrowLink href="https://www.linkedin.com">LINKEDIN</ArrowLink>
-              <ArrowLink href="mailto:vinicius@example.com">E-MAIL</ArrowLink>
-              <ArrowLink href="https://wa.me/">WHATSAPP</ArrowLink>
-              <ArrowLink href="#cv">CV</ArrowLink>
+              <ArrowLink href="https://www.linkedin.com/in/viniciusferreiraflorencio/">LINKEDIN</ArrowLink>
+              <ArrowLink href="mailto:viniciusferreiraflorencio@live.com">E-MAIL</ArrowLink>
+              <ArrowLink href="https://wa.me/5513992024705">WHATSAPP</ArrowLink>
+              <ArrowLink href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=jHMXmm">CV</ArrowLink>
             </div>
           </div>
 
