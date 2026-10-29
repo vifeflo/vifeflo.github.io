@@ -17,7 +17,7 @@ export default function Title({
         </p>
       )}
 
-      <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+      <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
         {children}
       </h2>
     </div>

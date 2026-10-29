@@ -746,7 +746,7 @@ function ElevationTheme({ mode }: { mode: "light" | "dark" }) {
 
   return (
     <div className="flex min-w-0 flex-col gap-6">
-      <h3 className="font-['Instrument_Serif:Regular'] text-2xl leading-none text-[#faf9f6]">
+      <h3 className="font-['Instrument_Serif'] text-2xl leading-none text-[#faf9f6]">
         {isLight ? "Modo claro" : "Modo escuro"}
       </h3>
 
@@ -832,7 +832,7 @@ function ResponsiveGridExample({ grid }: { grid: ResponsiveGridConfig }) {
   return (
     <div className="grid w-full grid-cols-8 items-start gap-x-6 max-md:grid-cols-1">
       <div className="col-span-3 flex min-w-0 flex-col items-start gap-3 max-md:col-span-1">
-        <h3 className="font-['Instrument_Serif:Regular'] text-2xl leading-none text-[#faf9f6]">
+        <h3 className="font-['Instrument_Serif'] text-2xl leading-none text-[#faf9f6]">
           {grid.name}
         </h3>
 
@@ -902,7 +902,7 @@ function ComponentDocumentation({
 }) {
   return (
     <article className="flex min-w-0 flex-col gap-6">
-      <h3 className="font-['Instrument_Serif:Regular'] text-2xl leading-none text-[#faf9f6]">
+      <h3 className="font-['Instrument_Serif'] text-2xl leading-none text-[#faf9f6]">
         {component.name}
       </h3>
 
@@ -1177,7 +1177,7 @@ export default function BasicUIKitProject({
                 BIBLIOTECA • COMPONENTES • FIGMA
               </p>
 
-              <h1 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+              <h1 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
                 Basic UI Kit v2.0
               </h1>
             </div>
@@ -1204,7 +1204,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-design-tokens"
             className="scroll-mt-32 flex flex-col gap-6"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Design tokens
             </h2>
 
@@ -1245,7 +1245,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-cores"
             className="scroll-mt-32 flex flex-col gap-6"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Cores
             </h2>
 
@@ -1263,7 +1263,7 @@ export default function BasicUIKitProject({
                 <Fragment key={palette.name}>
                   <div className="grid grid-cols-8 items-start gap-x-6 max-md:grid-cols-1">
                     <div className="palette-info col-span-3 flex flex-col gap-2 max-md:col-span-1">
-                      <h3 className="font-['Instrument_Serif:Regular'] text-2xl leading-none text-[#faf9f6]">
+                      <h3 className="font-['Instrument_Serif'] text-2xl leading-none text-[#faf9f6]">
                         {palette.name}
                       </h3>
 
@@ -1340,7 +1340,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-multi-marca"
             className="scroll-mt-32 flex flex-col gap-6"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Sistema multi-marca
             </h2>
 
@@ -1398,7 +1398,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-modo-escuro"
             className="scroll-mt-32 flex flex-col gap-6"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Modo escuro
             </h2>
 
@@ -1458,7 +1458,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-grid"
             className="scroll-mt-32 flex flex-col gap-6"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Grid responsivo
             </h2>
 
@@ -1501,7 +1501,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-elevacao"
             className="scroll-mt-32 flex flex-col gap-6"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Elevação
             </h2>
 
@@ -1539,7 +1539,7 @@ export default function BasicUIKitProject({
             id="basic-ui-kit-componentes"
             className="scroll-mt-32 flex flex-col gap-10"
           >
-            <h2 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+            <h2 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
               Componentes
             </h2>
 

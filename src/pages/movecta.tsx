@@ -164,7 +164,7 @@ export default function Movecta({
                 2025 • RESEARCH • LOGÍSTICA • B2B
               </p>
 
-              <h1 className="font-['Instrument_Serif:Regular'] text-[32px] leading-none text-[#faf9f6]">
+              <h1 className="font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6]">
                 Portal de Autoatendimento Movecta
               </h1>
             </div>

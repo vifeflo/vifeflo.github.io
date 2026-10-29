@@ -151,7 +151,7 @@ export default function Header({
         <button
           type="button"
           onClick={handleGoHome}
-          className="fade-in col-start-2 col-end-5 text-left font-['Instrument_Serif:Regular'] text-xl whitespace-nowrap text-[#faf9f6] transition-colors hover:text-[#faf9f6]"
+          className="fade-in col-start-2 col-end-5 text-left font-['Instrument_Serif'] text-xl whitespace-nowrap text-[#faf9f6] transition-colors hover:text-[#faf9f6]"
           style={{ animationDelay: "100ms" }}
         >
           Vinicius Florencio
@@ -284,8 +284,8 @@ export default function Header({
           {/* Overlay: fecha o menu ao clicar fora do painel */}
           <div
             className={`fixed inset-0 z-[2147483645] transition-[visibility,opacity] duration-300 md:hidden ${mobileOpen
-                ? "visible opacity-100"
-                : "invisible pointer-events-none opacity-0"
+              ? "visible opacity-100"
+              : "invisible pointer-events-none opacity-0"
               }`}
             aria-hidden={!mobileOpen}
           >
@@ -351,8 +351,8 @@ export default function Header({
 
                   <div
                     className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileSubmenu === "projects"
-                        ? "mt-5 grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
+                      ? "mt-5 grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                       }`}
                   >
                     <div className="overflow-hidden">
@@ -419,8 +419,8 @@ export default function Header({
 
                   <div
                     className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileSubmenu === "contacts"
-                        ? "mt-5 grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
+                      ? "mt-5 grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                       }`}
                   >
                     <div className="overflow-hidden">
@@ -446,8 +446,8 @@ export default function Header({
                             }
                             onClick={closeMobileMenu}
                             className={`py-4 transition-colors hover:text-[#faf9f6] ${index < contacts.length - 1
-                                ? "border-b border-[#333333]/70"
-                                : ""
+                              ? "border-b border-[#333333]/70"
+                              : ""
                               }`}
                           >
                             {contact.label} ↗
@@ -481,8 +481,8 @@ export default function Header({
 
                     <div
                       className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileSubmenu === "language"
-                          ? "mt-5 grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0"
+                        ? "mt-5 grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                         }`}
                     >
                       <div className="overflow-hidden">

@@ -288,7 +288,7 @@ function AboutContent({
       {/* Apresentação */}
       <section className="grid grid-cols-8 gap-6 max-md:flex max-md:flex-col-reverse">
         <div className="col-span-5 flex flex-col gap-6">
-          <h2 className="about-reveal scroll-reveal font-['Instrument_Serif:Regular'] text-[56px] leading-none text-[#faf9f6] max-md:text-5xl">
+          <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[56px] leading-none text-[#faf9f6] max-md:text-5xl">
             Vinicius Florencio
           </h2>
 
@@ -356,7 +356,7 @@ function AboutContent({
 
       {/* Competências, ferramentas e idiomas */}
       <section className="flex flex-col gap-10">
-        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif:Regular'] text-[32px] text-[#faf9f6]">
+        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Competências
         </h2>
 
@@ -500,7 +500,7 @@ function AboutContent({
 
       {/* Experiência */}
       <section className="flex flex-col gap-10">
-        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif:Regular'] text-[32px] text-[#faf9f6]">
+        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Experiência
         </h2>
 
@@ -551,7 +551,7 @@ function AboutContent({
 
       {/* Educação */}
       <section className="flex flex-col gap-10">
-        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif:Regular'] text-[32px] text-[#faf9f6]">
+        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Educação
         </h2>
 
@@ -580,7 +580,7 @@ function AboutContent({
 
       {/* Certificações */}
       <section className="flex flex-col gap-6">
-        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif:Regular'] text-[32px] text-[#faf9f6]">
+        <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Certificações
         </h2>
 
@@ -886,7 +886,7 @@ export default function Home({
               </p>
 
               <h1
-                className="home-fade-item hero-title fade-in font-['Instrument_Serif:Regular'] text-[80px] leading-none whitespace-nowrap text-[#faf9f6] max-lg:text-[clamp(3.2rem,6vw,5rem)] max-sm:text-5xl max-sm:whitespace-normal"
+                className="home-fade-item hero-title fade-in font-['Instrument_Serif'] text-[80px] leading-none whitespace-nowrap text-[#faf9f6] max-lg:text-[clamp(3.2rem,6vw,5rem)] max-sm:text-5xl max-sm:whitespace-normal"
                 style={{ animationDelay: "500ms" }}
               >
                 Vinicius Florencio

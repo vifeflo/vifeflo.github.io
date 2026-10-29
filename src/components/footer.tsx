@@ -36,7 +36,7 @@ export default function Footer({
           Estou disponível para projetos.
         </p>
 
-        <h2 className="font-['Instrument_Serif:Regular'] text-[64px] leading-none text-[#faf9f6] max-md:text-5xl">
+        <h2 className="font-['Instrument_Serif'] text-[64px] leading-none text-[#faf9f6] max-md:text-5xl">
           Vamos conversar?
         </h2>
       </div>
@@ -60,7 +60,7 @@ export default function Footer({
         ))}
       </div>
 
-      <p className="col-start-4 col-end-12 font-['Instrument_Serif:Regular'] text-white max-md:col-start-2">
+      <p className="col-start-4 col-end-12 font-['Instrument_Serif']text-white max-md:col-start-2">
         Copyright © Vinicius Florencio, 2026
       </p>
     </footer>
