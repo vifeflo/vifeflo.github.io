@@ -961,7 +961,7 @@ export default function Home({
         <div
           ref={homeHeroRef}
           id="inicio"
-          className="home-hero relative col-start-3 col-end-11 flex items-center justify-between max-lg:col-start-2 max-lg:col-end-12 max-md:flex-col-reverse max-md:gap-7"
+          className="home-hero relative col-start-3 col-end-11 flex items-center justify-between gap-10 max-lg:col-start-2 max-lg:col-end-12 max-md:flex-col-reverse"
         >
           <div className="flex w-[586px] min-w-0 flex-col gap-6 max-md:w-full">
             <div className="flex flex-col gap-3">
@@ -973,7 +973,7 @@ export default function Home({
               </p>
 
               <h1
-                className="home-fade-item hero-title fade-in font-['Instrument_Serif'] text-[80px] leading-none whitespace-nowrap text-[#faf9f6] max-lg:text-[clamp(3.2rem,6vw,5rem)] max-sm:text-5xl max-sm:whitespace-normal"
+                className="home-fade-item hero-title fade-in font-['Instrument_Serif'] text-[80px] leading-none text-[#faf9f6] max-lg:text-[clamp(3.2rem,6vw,5rem)] max-sm:text-5xl"
                 style={{ animationDelay: "500ms" }}
               >
                 Vinicius Florencio
