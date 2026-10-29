@@ -292,7 +292,7 @@ function AboutContent({
             Vinicius Florencio
           </h2>
 
-          <p className="about-reveal scroll-reveal font-['Satoshi_Variable:Regular'] text-base leading-[27px]">
+          <p className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
             Product Designer com 2 anos de experiência no desenvolvimento de
             produtos digitais B2B, especializado em pesquisas com usuários,
             testes de usabilidade, Design Systems, wireframing, prototipação
@@ -300,7 +300,7 @@ function AboutContent({
             de estagiários.
           </p>
 
-          <p className="about-reveal scroll-reveal font-['Satoshi_Variable:Regular'] text-base leading-[27px]">
+          <p className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
             Autodidata, desenvolvi fluência em inglês, o que me permite
             colaborar em ambientes internacionais e acompanhar as melhores
             práticas de design.
@@ -367,11 +367,11 @@ function AboutContent({
 
               <article className="grid grid-cols-8 gap-6 py-10 first:pt-0 last:pb-0 max-md:flex max-md:flex-col">
                 <div className="col-span-5 flex flex-col gap-3">
-                  <h3 className="about-reveal scroll-reveal font-['Satoshi_Variable:Regular'] text-xl text-[#faf9f6]">
+                  <h3 className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-xl text-[#faf9f6]">
                     {skill.title}
                   </h3>
 
-                  <p className="about-reveal scroll-reveal font-['Satoshi_Variable:Regular'] text-base leading-[27px]">
+                  <p className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
                     {skill.text}
                   </p>
                 </div>
@@ -893,7 +893,7 @@ export default function Home({
               </h1>
 
               <p
-                className="home-fade-item hero-description fade-in font-['Satoshi_Variable:Regular'] text-xl leading-[27px] text-[#c4c4c4] max-sm:text-lg max-sm:leading-6"
+                className="home-fade-item hero-description fade-in 	font-['Satoshi_Variable'] font-normal text-xl leading-[27px] text-[#c4c4c4] max-sm:text-lg max-sm:leading-6"
                 style={{ animationDelay: "640ms" }}
               >
                 Product Designer Jr., analista de sistemas, santista e
@@ -988,7 +988,7 @@ export default function Home({
 
           <section
             id="sobre"
-            className="scroll-mt-32 bg-[#1c1c1c] font-['Satoshi_Variable:Regular'] text-[#c4c4c4]"
+            className="scroll-mt-32 bg-[#1c1c1c] 	font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
           >
             <AboutContent
               portraitRef={aboutPortraitRef}

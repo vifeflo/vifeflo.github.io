@@ -40,7 +40,7 @@ export default function BenchmarkTable() {
                 <th
                   key={column}
                   scope="col"
-                  className={`border-b border-[#ababab]/40 bg-[#222222] px-4 py-4 font-['Satoshi_Variable:Regular'] font-medium leading-snug text-[#faf9f6] ${index === 0
+                  className={`border-b border-[#ababab]/40 bg-[#222222] px-4 py-4 	font-['Satoshi_Variable'] font-normal font-medium leading-snug text-[#faf9f6] ${index === 0
                       ? "sticky left-0 z-20 w-[190px] min-w-[190px] border-r border-[#ababab]/20 bg-[#222222]"
                       : "min-w-[134px]"
                     }`}
@@ -56,7 +56,7 @@ export default function BenchmarkTable() {
               <tr key={portal} className="transition-colors duration-200 hover:bg-[#ffffff]/[0.035]">
                 <th
                   scope="row"
-                  className="sticky left-0 z-10 border-b border-r border-[#ababab]/20 border-b-[#ababab]/30 bg-[#1c1c1c] px-4 py-4 text-left font-['Satoshi_Variable:Regular'] font-medium text-[#c4c4c4]"
+                  className="sticky left-0 z-10 border-b border-r border-[#ababab]/20 border-b-[#ababab]/30 bg-[#1c1c1c] px-4 py-4 text-left 	font-['Satoshi_Variable'] font-normal font-medium text-[#c4c4c4]"
                 >
                   {portal}
                 </th>

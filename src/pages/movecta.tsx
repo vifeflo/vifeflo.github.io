@@ -130,7 +130,7 @@ export default function Movecta({
   return (
     <div
       id="movecta-page"
-      className="min-h-dvh bg-[#1c1c1c] font-['Satoshi_Variable:Regular'] text-[#c4c4c4]"
+      className="min-h-dvh bg-[#1c1c1c] 	font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
     >
       <Header
         onGoHome={handleGoHome}

@@ -12,7 +12,7 @@ export default function StatGrid({ items }: StatGridProps) {
           key={value + label}
           className="bg-gradient-to-b from-[#242424] to-[#262626] p-3 shadow-[0_4px_4px_rgba(0,0,0,0.12)]"
         >
-          <p className="font-['Satoshi_Variable:Regular'] text-xl font-medium text-[#faf9f6]">
+          <p className="	font-['Satoshi_Variable'] font-normal text-xl font-medium text-[#faf9f6]">
             <AnimatedNumber value={value} />
           </p>
 

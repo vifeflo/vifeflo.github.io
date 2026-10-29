@@ -762,7 +762,7 @@ function ElevationTheme({ mode }: { mode: "light" | "dark" }) {
                   {level.name}
                 </p>
 
-                <p className="font-['Satoshi_Variable:Regular'] text-xs leading-4 text-[#696969]">
+                <p className="	font-['Satoshi_Variable'] font-normal text-xs leading-4 text-[#696969]">
                   {level.layer}
                 </p>
               </div>
@@ -836,7 +836,7 @@ function ResponsiveGridExample({ grid }: { grid: ResponsiveGridConfig }) {
           {grid.name}
         </h3>
 
-        <p className="font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+        <p className="	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
           {grid.description}
         </p>
 
@@ -853,7 +853,7 @@ function ResponsiveGridExample({ grid }: { grid: ResponsiveGridConfig }) {
                 </dt>
               </div>
 
-              <dd className="col-span-5 min-w-0 font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4] max-md:col-span-1">
+              <dd className="col-span-5 min-w-0 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4] max-md:col-span-1">
                 {value}
               </dd>
             </div>
@@ -911,7 +911,7 @@ function ComponentDocumentation({
           {component.description.map((paragraph) => (
             <p
               key={paragraph}
-              className="font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]"
+              className="	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]"
             >
               {paragraph}
             </p>
@@ -950,7 +950,7 @@ function ComponentDocumentation({
                   )}
                 </div>
 
-                <dd className="col-span-5 min-w-0 font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4] max-md:col-span-1">
+                <dd className="col-span-5 min-w-0 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4] max-md:col-span-1">
                   {property.description}
                 </dd>
               </div>
@@ -1144,7 +1144,7 @@ export default function BasicUIKitProject({
   return (
     <div
       id="basic-ui-kit-page"
-      className="min-h-dvh bg-[#1c1c1c] font-['Satoshi_Variable:Regular'] text-[#c4c4c4]"
+      className="min-h-dvh bg-[#1c1c1c] 	font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
     >
       <Header
         onGoHome={() => onShowProjects()}
@@ -1267,7 +1267,7 @@ export default function BasicUIKitProject({
                         {palette.name}
                       </h3>
 
-                      <p className="font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#ababab]">
+                      <p className="	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#ababab]">
                         {palette.description}
                       </p>
                     </div>
@@ -1290,11 +1290,11 @@ export default function BasicUIKitProject({
                             title={`${shade.token} · ${shade.hex}`}
                           />
 
-                          <p className="mt-[3px] font-['Satoshi_Variable:Regular'] text-xs leading-4 text-[#ababab]">
+                          <p className="mt-[3px] 	font-['Satoshi_Variable'] font-normal text-xs leading-4 text-[#ababab]">
                             {shade.token}
                           </p>
 
-                          <p className="break-all font-['Satoshi_Variable:Regular'] text-[10px] leading-3 text-[#ababab]">
+                          <p className="break-all 	font-['Satoshi_Variable'] font-normal text-[10px] leading-3 text-[#ababab]">
                             {shade.hex}
                           </p>
                         </div>
@@ -1325,7 +1325,7 @@ export default function BasicUIKitProject({
                       </dt>
                     </div>
 
-                    <dd className="col-span-5 min-w-0 font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4] max-md:col-span-1">
+                    <dd className="col-span-5 min-w-0 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4] max-md:col-span-1">
                       {description}
                     </dd>
                   </div>
@@ -1344,7 +1344,7 @@ export default function BasicUIKitProject({
               Sistema multi-marca
             </h2>
 
-            <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+            <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
               O Basic não é só UI Kit, é um sistema multi-marcas flexível criado
               a partir de uma única fonte de verdade. Cada marca mantém sua
               identidade única enquanto compartilha a mesma arquitetura de
@@ -1403,7 +1403,7 @@ export default function BasicUIKitProject({
             </h2>
 
             <div className="flex flex-col gap-4">
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 O modo escuro do{" "}
                 <span className="font-['Satoshi_Variable'] font-medium">
                   Basic UI Kit
@@ -1416,7 +1416,7 @@ export default function BasicUIKitProject({
                 .
               </p>
 
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 Desse modo, a paleta de cores é adaptada para o fundo escuro,
                 mantendo a mesma escala de uso e a hierarquia visual do modo
                 claro. Assim, os componentes preservam sua consistência visual e
@@ -1463,7 +1463,7 @@ export default function BasicUIKitProject({
             </h2>
 
             <div className="flex flex-col gap-4">
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 O sistema de grid proporciona uma estrutura de layout
                 consistente em todos os breakpoints suportados, garantindo
                 alinhamento, escalabilidade e comportamento responsivo em toda a
@@ -1473,7 +1473,7 @@ export default function BasicUIKitProject({
                 do conteúdo.
               </p>
 
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 O grid deve ser utilizado como base para a construção de layouts
                 de páginas, o posicionamento de componentes e as decisões de
                 design responsivo. Sempre que possível, o conteúdo deve seguir
@@ -1506,7 +1506,7 @@ export default function BasicUIKitProject({
             </h2>
 
             <div className="flex flex-col gap-4">
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 As sombras são utilizadas para comunicar elevação, reforçar a
                 hierarquia visual e ampliar a percepção de profundidade na
                 interface. Devem ser aplicadas de forma consistente para
@@ -1514,7 +1514,7 @@ export default function BasicUIKitProject({
                 se tornarem o principal elemento visual.
               </p>
 
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 O sistema de sombras é composto por três níveis de elevação
                 predefinidos: Soft (camada 1), Medium (camada 2) e Hard (camada
                 3), garantindo consistência na aplicação entre diferentes
@@ -1544,7 +1544,7 @@ export default function BasicUIKitProject({
             </h2>
 
             <div className="flex flex-col gap-4">
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 O Basic UI Kit conta com{" "}
                 <span className="font-['Satoshi_Variable'] font-medium text-[#faf9f6]">
                   32 componentes acessíveis
@@ -1554,7 +1554,7 @@ export default function BasicUIKitProject({
                 interfaces.
               </p>
 
-              <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+              <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
                 Cada componente segue padrões de acessibilidade da{" "}
                 <span className="font-['Satoshi_Variable'] font-medium text-[#faf9f6]">
                   WCAG 2.2
@@ -1573,7 +1573,7 @@ export default function BasicUIKitProject({
               </Fragment>
             ))}
 
-            <p className="w-full font-['Satoshi_Variable:Regular'] text-base leading-[27px] text-[#c4c4c4]">
+            <p className="w-full 	font-['Satoshi_Variable'] font-normal text-base leading-[27px] text-[#c4c4c4]">
               Esses foram apenas alguns exemplos dos 32 componentes
               reutilizáveis disponíveis no Basic UI Kit. Para acessar a lista
               completa e utilizar a biblioteca, acesse o{" "}

@@ -108,11 +108,11 @@ export default function Card({
             {project.tags}
           </p>
 
-          <h3 className="font-['Satoshi_Variable:Regular'] text-xl text-[#faf9f6]">
+          <h3 className="	font-['Satoshi_Variable'] font-normal text-xl text-[#faf9f6]">
             {project.title}
           </h3>
 
-          <p className="font-['Satoshi_Variable:Regular'] text-base text-[#c4c4c4]">
+          <p className="	font-['Satoshi_Variable'] font-normal text-base text-[#c4c4c4]">
             {project.description}
           </p>
         </div>
