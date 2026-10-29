@@ -434,7 +434,7 @@ type DocumentedComponent = {
 const documentedComponents: DocumentedComponent[] = [
   {
     name: "Accordion",
-    image: "../assets/accordion.png",
+    image: "../assets/accordion-v2.png",
     description: [
       "Organiza conteúdos relacionados em seções expansíveis, permitindo que os usuários exibam ou ocultem informações conforme necessário.",
       "Ajuda a reduzir a complexidade visual, facilitando a descoberta de conteúdo e a organização da página.",
@@ -483,7 +483,7 @@ const documentedComponents: DocumentedComponent[] = [
   },
   {
     name: "Avatar",
-    image: "../assets/accordion-v2.png",
+    image: "../assets/avatar.png",
     description: [
       "Representa usuários, marcas, países ou entidades genéricas em toda a interface. Oferece um identificador visual consistente, com suporte a diferentes tipos de conteúdo e indicadores de status.",
       "O componente conta com quatro variantes, nove opções de tamanho e indicadores de presença opcionais, permitindo sua adaptação a diferentes cenários de uso do produto, mantendo a consistência em todo o Design System.",
