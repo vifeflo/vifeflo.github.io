@@ -42,6 +42,14 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("/assets/satoshi-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
