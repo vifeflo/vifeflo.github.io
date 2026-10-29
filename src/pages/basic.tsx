@@ -483,7 +483,7 @@ const documentedComponents: DocumentedComponent[] = [
   },
   {
     name: "Avatar",
-    image: "../assets/avatar.png",
+    image: "../assets/accordion-v2.png",
     description: [
       "Representa usuários, marcas, países ou entidades genéricas em toda a interface. Oferece um identificador visual consistente, com suporte a diferentes tipos de conteúdo e indicadores de status.",
       "O componente conta com quatro variantes, nove opções de tamanho e indicadores de presença opcionais, permitindo sua adaptação a diferentes cenários de uso do produto, mantendo a consistência em todo o Design System.",
@@ -1162,7 +1162,7 @@ export default function BasicUIKitProject({
           footerVisible={footerVisible}
         />
 
-        <div className="col-start-4 col-end-12 row-start-1 flex min-w-0 flex-col gap-20 pb-20 max-md:col-start-2">
+        <div className="col-start-4 col-end-12 row-start-1 flex min-w-0 flex-col gap-20 pb-20 max-md:col-start-2 max-md:gap-12 max-md:pb-12">
           <section
             id="basic-ui-kit-inicio"
             className="scroll-mt-32 flex flex-col gap-6"
