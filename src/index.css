@@ -1,0 +1,530 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'IBM Plex Mono:Light';
+  src: url('https://static.figma.com/font/IBMPlexMono-Light_3') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono:Medium';
+  src: url('https://static.figma.com/font/IBMPlexMono-Medium_3') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono:SemiBold';
+  src: url('https://static.figma.com/font/IBMPlexMono-SemiBold_3') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono:Regular';
+  src: url('https://static.figma.com/font/IBMPlexMono-Regular_2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Instrument Serif:Regular';
+  src: url('https://static.figma.com/font/InstrumentSerif-Regular_1') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Satoshi Variable:Regular';
+  src: url('/fonts/Satoshi_Variable-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scrollbar-width: none;
+    background: #1c1c1c;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    min-width: 320px;
+    scroll-behavior: smooth;
+    background: #1c1c1c;
+    scrollbar-width: none;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .nav-button:hover {
+    color: #faf9f6;
+  }
+
+  .nav-button:focus-visible {
+    outline: 2px solid #faf9f6;
+    outline-offset: 4px;
+  }
+
+  .dropdown-link {
+    color: #ababab;
+    font-family: "IBM Plex Mono:SemiBold";
+    font-size: 12px;
+    white-space: nowrap;
+    transition: color 180ms ease;
+  }
+
+  .dropdown-link:hover {
+    color: #faf9f6;
+  }
+
+  .dropdown-link:focus-visible {
+    outline: 2px solid #faf9f6;
+    outline-offset: 4px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fade-in 850ms ease-out forwards;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    animation: fade-in-up 850ms 980ms ease-out forwards;
+  }
+
+  .dropdown-menu {
+    animation: dropdown-in 180ms ease-out both;
+  }
+
+  .portrait-parallax {
+    transform: perspective(900px) rotateX(0deg) rotateY(0deg) scale(1);
+    transform-style: preserve-3d;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .scroll-cue-icon {
+    animation: scroll-cue 1.6s ease-in-out infinite;
+  }
+
+  .home-fade-item {
+    transition:
+      opacity 800ms ease,
+      transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .home-hero {
+    will-change: opacity, transform;
+  }
+
+  .hero-eyebrow {
+    transition-delay: 0ms;
+  }
+
+  .hero-image {
+    transition-delay: 100ms;
+  }
+
+  .hero-title {
+    transition-delay: 120ms;
+  }
+
+  .hero-description {
+    transition-delay: 240ms;
+  }
+
+  .hero-links {
+    transition-delay: 360ms;
+  }
+
+  .hero-scroll-cue {
+    transition-delay: 480ms;
+  }
+
+  .scroll-reveal,
+  .case-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 900ms ease-out,
+      transform 900ms ease-out;
+  }
+
+  .scroll-reveal.is-visible,
+  .case-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #movecta-page main .case-reveal:nth-child(3n + 2) {
+    transition-delay: 100ms;
+  }
+
+  #movecta-page main .case-reveal:nth-child(3n + 3) {
+    transition-delay: 200ms;
+  }
+
+  .about-reveal {
+    transition-duration: 1400ms;
+  }
+
+  .skill-progress {
+    width: 0;
+    transition: width 1200ms cubic-bezier(0.22, 1, 0.36, 1) 240ms;
+  }
+
+  .skill-track.is-visible .skill-progress {
+    width: var(--skill-progress);
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mobile-submenu {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    color: #ababab;
+    font-size: inherit;
+    line-height: 1.25;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-cue {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fade-in,
+  .fade-in-up,
+  .dropdown-menu {
+    opacity: 1;
+    animation: none;
+  }
+
+  .portrait-parallax {
+    transform: none !important;
+    transition: none;
+  }
+
+  .scroll-cue-icon {
+    animation: none;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .case-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .skill-progress,
+  .skill-progress.is-visible {
+    width: var(--skill-progress);
+    transition: none;
+  }
+
+  .home-fade-item {
+    transition: none;
+  }
+
+  .holographic-shine--ambient::before {
+    animation: none;
+    opacity: 0;
+  }
+
+}
+
+@media (max-width: 767px) {
+  article.scroll-reveal.col-span-2 {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-eyebrow {
+    animation-delay: 240ms !important;
+  }
+}
+
+/* Oculta a barra de rolagem, mantendo a rolagem funcional */
+.benchmarking-table-wrapper {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.benchmarking-table-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+main>aside>button {
+  text-align: right !important;
+}
+
+/* Animações de entrada e saída dos componentes ao rolar a página */
+.scroll-reveal,
+.case-reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible,
+.case-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.skill-reveal:not(.scroll-reveal) {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.skill-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.skill-progress {
+  width: 0;
+  transition: width 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-track.is-visible .skill-progress {
+  width: var(--skill-progress);
+}
+
+/* Animações iniciais da hero */
+.fade-in {
+  animation: portfolio-fade-in 850ms ease both;
+}
+
+.fade-in-up {
+  animation: portfolio-fade-in-up 850ms ease both;
+}
+
+@keyframes portfolio-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes portfolio-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .scroll-reveal,
+  .case-reveal,
+  .skill-reveal,
+  .skill-progress,
+  .fade-in,
+  .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition-duration: 0.01ms !important;
+    animation: none !important;
+  }
+}
+
+/* ========================================
+   HOLOGRAPHIC SHINE — PROJECT CARDS
+   ======================================== */
+
+/* Parallax 3D */
+.holographic-shine {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --card-scale: 1;
+
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+
+  transform:
+    perspective(900px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) scale(var(--card-scale));
+
+  transition: transform 220ms ease-out;
+  will-change: transform;
+}
+
+/* Feixe de luz prateado */
+.holographic-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+
+  background: linear-gradient(115deg,
+      transparent 42%,
+      rgba(255, 255, 255, 0.015) 46%,
+      rgba(255, 255, 255, 0.06) 49%,
+      rgba(255, 255, 255, 0.14) 50%,
+      rgba(255, 255, 255, 0.06) 53%,
+      rgba(255, 255, 255, 0.015) 57%,
+      transparent 61%);
+
+  background-size: 250% 250%;
+  mix-blend-mode: screen;
+}
+
+/* Animação periódica no hover ou foco */
+.holographic-shine:hover::before,
+button:focus-visible .holographic-shine::before {
+  animation: holographic-shine-sweep 3s ease-in-out infinite;
+}
+
+@keyframes holographic-shine-sweep {
+
+  0%,
+  10% {
+    background-position: 140% 0%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  55% {
+    background-position: -40% 100%;
+    opacity: 0.8;
+  }
+
+  65%,
+  100% {
+    background-position: -40% 100%;
+    opacity: 0;
+  }
+}
+
+/* Preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .holographic-shine {
+    transition: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .holographic-shine:hover::before,
+  button:focus-visible .holographic-shine::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Brilho automático nas imagens do Hero e Sobre mim */
+.holographic-shine--ambient {
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
+/* Mantém o feixe em movimento sem precisar de hover */
+.holographic-shine.holographic-shine--ambient::before {
+  animation: holographic-shine-sweep 4.5s ease-in-out infinite;
+}
