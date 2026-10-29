@@ -94,10 +94,10 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Figma Make App"
+  const title = "Vinicius Florencio | Product Designer"
   const description = config.description ?? ""
   // Imported HTML keeps its own favicon; new Makes default to the Make product icon.
-  const favicon = config.icons?.icon ?? "/favicon.svg"
+  const favicon = "/assets/favicon.png"
   const socialImage = config.openGraph?.image ?? ""
   const language = sanitizeHtmlValue(config.language) || "en"
   const googleAnalyticsId = sanitizeHtmlValue(
@@ -499,7 +499,7 @@ function figmaLinkedPackageSourcemaps(): Plugin {
           mapDir: path.dirname(mapFile),
         }
       }
-    } catch {}
+    } catch { }
     // Without a usable input map, map every line to itself.
     const mappings = code.split("\n").map((_, i) => (i ? "AACA" : "AAAA"))
     const map = {
