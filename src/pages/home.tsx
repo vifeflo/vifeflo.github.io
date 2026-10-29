@@ -22,6 +22,10 @@ type ContentView = "projects" | "about"
 const homeSections = [
   { id: "projetos", label: "PROJETOS" },
   { id: "sobre", label: "SOBRE MIM" },
+  { id: "competencias", label: "COMPETÊNCIAS" },
+  { id: "experiencia", label: "EXPERIÊNCIA" },
+  { id: "educacao", label: "EDUCAÇÃO" },
+  { id: "certificacoes", label: "CERTIFICAÇÕES" },
 ]
 
 const projects: Project[] = [
@@ -286,30 +290,19 @@ function AboutContent({
       onPointerLeave={onPortraitPointerLeave}
     >
       {/* Apresentação */}
-      <section className="grid grid-cols-8 gap-6 max-md:flex max-md:flex-col-reverse">
+      <section
+        id="apresentacao"
+        className="scroll-mt-32 grid grid-cols-8 gap-6 max-md:flex max-md:flex-col-reverse"
+      >
         <div className="col-span-5 flex flex-col gap-6">
           <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[56px] leading-none text-[#faf9f6] max-md:text-5xl">
             Vinicius Florencio
           </h2>
 
-          <p className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
-            Product Designer com 2 anos de experiência no desenvolvimento de
-            produtos digitais B2B, especializado em pesquisas com usuários,
-            testes de usabilidade, Design Systems, wireframing, prototipação
-            responsiva de alta fidelidade, acessibilidade (WCAG 2.2) e mentoria
-            de estagiários.
-          </p>
-
-          <p className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
-            Autodidata, desenvolvi fluência em inglês, o que me permite
-            colaborar em ambientes internacionais e acompanhar as melhores
-            práticas de design.
-          </p>
-
-          <div className="flex flex-wrap gap-10">
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-3 max-sm:gap-x-6">
             <ArrowLink
               className="about-reveal scroll-reveal"
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/viniciusferreiraflorencio/"
             >
               LINKEDIN
             </ArrowLink>
@@ -328,9 +321,93 @@ function AboutContent({
               WHATSAPP
             </ArrowLink>
 
-            <ArrowLink className="about-reveal scroll-reveal" href="#cv">
+            <ArrowLink
+              className="about-reveal scroll-reveal"
+              href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=jHMXmm"
+            >
               CV
             </ArrowLink>
+          </div>
+
+          <div className="flex flex-col gap-5 font-['Satoshi_Variable'] text-base font-normal leading-[27px]">
+            <p className="about-reveal scroll-reveal">
+              Santista, gamer, apaixonado por música e discos de vinil. Sou <span className="font-medium">Product Designer</span> com
+              mais de 2 anos de experiência criando produtos digitais que
+              equilibram necessidade do usuário e resultado de negócio.
+            </p>
+
+            <p className="about-reveal scroll-reveal">
+              Formado em <span className="font-medium">Análise e Desenvolvimento de Sistemas</span> pela <span className="font-medium">Universidade Santa Cecília</span> e pela <span className="font-medium">Fatec Rubens Lara</span> eu iniciei
+              minha jornada na TI atuando como <span className="font-medium">Estagiário de Desenvolvimento Front-end</span>, com foco em Wordpress, e transicionei para a área de <span className="font-medium">Design de Produtos</span> no fim do período de estágio.
+            </p>
+
+            <p className="about-reveal scroll-reveal">
+              Atuo de ponta a ponta nos projetos que participo: conduzo
+              pesquisas, trato dados brutos e transformo em insights utilizando{" "}
+              <span className="font-medium">agentes LLM</span> treinados,
+              conduzo testes de usabilidade no{" "}
+              <span className="font-medium">Maze</span>, facilito sessões de
+              discovery, crio protótipos de alta fidelidade responsivos e
+              estruturo <span className="font-medium">Design Systems</span> no{" "}
+              <span className="font-medium">Figma</span> e no{" "}
+              <span className="font-medium">Zeroheight</span>, garantindo que
+              cada decisão de design esteja embasada em dados e validada com
+              usuários reais.
+            </p>
+
+            <p className="about-reveal scroll-reveal">
+              Tenho experiência em produtos de alta complexidade,
+              principalmente no setor{" "}
+              <span className="font-medium">logístico</span>, onde a clareza de
+              fluxo e a confiabilidade da interface são críticas. Ao longo
+              dessa jornada:
+            </p>
+
+            <ul className="list-outside list-disc space-y-2 pl-6 marker:text-[#ababab]">
+              <li className="about-reveal scroll-reveal">
+                Reduzi o tempo de prototipação em{" "}
+                <span className="font-medium">20%</span> com a criação e
+                manutenção de um Design System escalável.
+              </li>
+
+              <li className="about-reveal scroll-reveal">
+                Apoiei a atração de{" "}
+                <span className="font-medium">3 clientes de grande porte</span>{" "}
+                por meio do desenvolvimento de MVPs com alto padrão de UX.
+              </li>
+
+              <li className="about-reveal scroll-reveal">
+                Apliquei critérios de{" "}
+                <span className="font-medium">
+                  Acessibilidade Digital (WCAG)
+                </span>{" "}
+                para garantir inclusão nos produtos que construo.
+              </li>
+
+              <li className="about-reveal scroll-reveal">
+                <span className="font-medium">Mentorei</span> estagiários e
+                contribuí para uma cultura de design centrada no usuário dentro
+                do time.
+              </li>
+            </ul>
+
+            <p className="about-reveal scroll-reveal">
+              Atuo como{" "}
+              <span className="font-medium">UX Designer Voluntário</span> em
+              uma ONG de desenvolvimento socioemocional.
+            </p>
+
+            <p className="about-reveal scroll-reveal">
+              Acredito que design de produto vai além da estética: é sobre
+              resolver problemas reais com empatia, método e colaboração
+              próxima com times de produto, engenharia e negócios.{" "}
+              <a
+                href="mailto:viniciusferreiraflorencio@live.com"
+                className="font-medium underline decoration-dotted decoration-[#ababab]/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#faf9f6]"
+              >
+                Vamos conversar?
+              </a>
+            </p>
           </div>
         </div>
 
@@ -355,7 +432,10 @@ function AboutContent({
       <Divider />
 
       {/* Competências, ferramentas e idiomas */}
-      <section className="flex flex-col gap-10">
+      <section
+        id="competencias"
+        className="scroll-mt-32 flex flex-col gap-10"
+      >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Competências
         </h2>
@@ -367,11 +447,11 @@ function AboutContent({
 
               <article className="grid grid-cols-8 gap-6 py-10 first:pt-0 last:pb-0 max-md:flex max-md:flex-col">
                 <div className="col-span-5 flex flex-col gap-3">
-                  <h3 className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-xl text-[#faf9f6]">
+                  <h3 className="about-reveal scroll-reveal font-['Satoshi_Variable'] font-normal text-xl text-[#faf9f6]">
                     {skill.title}
                   </h3>
 
-                  <p className="about-reveal scroll-reveal 	font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
+                  <p className="about-reveal scroll-reveal font-['Satoshi_Variable'] font-normal text-base leading-[27px]">
                     {skill.text}
                   </p>
                 </div>
@@ -499,7 +579,10 @@ function AboutContent({
       <DashedDivider />
 
       {/* Experiência */}
-      <section className="flex flex-col gap-10">
+      <section
+        id="experiencia"
+        className="scroll-mt-32 flex flex-col gap-10"
+      >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Experiência
         </h2>
@@ -550,7 +633,10 @@ function AboutContent({
       <DashedDivider />
 
       {/* Educação */}
-      <section className="flex flex-col gap-10">
+      <section
+        id="educacao"
+        className="scroll-mt-32 flex flex-col gap-10"
+      >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Educação
         </h2>
@@ -579,7 +665,10 @@ function AboutContent({
       <DashedDivider />
 
       {/* Certificações */}
-      <section className="flex flex-col gap-6">
+      <section
+        id="certificacoes"
+        className="scroll-mt-32 flex flex-col gap-6"
+      >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Certificações
         </h2>
@@ -691,7 +780,6 @@ export default function Home({
         return
       }
 
-      // O footer recebe a mesma classe de animação dos demais itens.
       if (
         element.closest("#contatos") &&
         !element.matches(".scroll-reveal, .case-reveal, .skill-reveal")
@@ -738,8 +826,7 @@ export default function Home({
     }
   }, [])
 
-  // Exibe SEÇÕES somente depois que a hero inteira sair da tela.
-  // Também atualiza a seção ativa e detecta a chegada ao rodapé.
+  // Atualiza a navegação conforme a seção visível e a posição do rodapé.
   useEffect(() => {
     const updateNavigation = () => {
       const hero = heroSectionRef.current
@@ -893,7 +980,7 @@ export default function Home({
               </h1>
 
               <p
-                className="home-fade-item hero-description fade-in 	font-['Satoshi_Variable'] font-normal text-xl leading-[27px] text-[#c4c4c4] max-sm:text-lg max-sm:leading-6"
+                className="home-fade-item hero-description fade-in font-['Satoshi_Variable'] text-xl leading-[27px] font-normal text-[#c4c4c4] max-sm:text-lg max-sm:leading-6"
                 style={{ animationDelay: "640ms" }}
               >
                 Product Designer Jr., analista de sistemas, santista e
@@ -906,10 +993,18 @@ export default function Home({
               className="home-fade-item hero-links fade-in flex items-center gap-10 max-sm:flex-wrap max-sm:gap-x-6 max-sm:gap-y-3"
               style={{ animationDelay: "780ms" }}
             >
-              <ArrowLink href="https://www.linkedin.com/in/viniciusferreiraflorencio/">LINKEDIN</ArrowLink>
-              <ArrowLink href="mailto:viniciusferreiraflorencio@live.com">E-MAIL</ArrowLink>
-              <ArrowLink href="https://wa.me/5513992024705">WHATSAPP</ArrowLink>
-              <ArrowLink href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=jHMXmm">CV</ArrowLink>
+              <ArrowLink href="https://www.linkedin.com/in/viniciusferreiraflorencio/">
+                LINKEDIN
+              </ArrowLink>
+              <ArrowLink href="mailto:viniciusferreiraflorencio@live.com">
+                E-MAIL
+              </ArrowLink>
+              <ArrowLink href="https://wa.me/5513992024705">
+                WHATSAPP
+              </ArrowLink>
+              <ArrowLink href="https://1drv.ms/b/c/36d9a1f2622bc4f7/IQB-hqoOwoHYSr-GSILMZvxRAe68qrWIetjkFI3rP3nDdCU?e=jHMXmm">
+                CV
+              </ArrowLink>
             </div>
           </div>
 
@@ -961,35 +1056,44 @@ export default function Home({
         />
 
         <div className="relative col-start-4 col-end-12 row-start-1 max-md:col-start-2">
-          <div
-            id="projetos"
-            className="scroll-mt-32 grid grid-cols-2 gap-6 max-md:grid-cols-1"
-          >
-            {projects.map((project, index) => (
-              <Card
-                key={project.id}
-                project={project}
-                delay={(index + 1) * 300}
-                underConstruction={project.id === "studyin"}
-                onOpen={
-                  project.id === "movecta"
-                    ? onOpenMovecta
-                    : project.id === "basic-ui-kit"
-                      ? onOpenBasic
-                      : undefined
-                }
-              />
-            ))}
-          </div>
+          {/* Projetos */}
+          <section id="projetos" className="scroll-mt-32">
+            <h2 className="about-reveal scroll-reveal mb-10 font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6] max-md:mb-8 max-md:text-4xl">
+              Projetos
+            </h2>
+
+            <div className="grid grid-cols-2 gap-6 max-md:grid-cols-1">
+              {projects.map((project, index) => (
+                <Card
+                  key={project.id}
+                  project={project}
+                  delay={(index + 1) * 300}
+                  underConstruction={project.id === "studyin"}
+                  onOpen={
+                    project.id === "movecta"
+                      ? onOpenMovecta
+                      : project.id === "basic-ui-kit"
+                        ? onOpenBasic
+                        : undefined
+                  }
+                />
+              ))}
+            </div>
+          </section>
 
           <div className="my-32 max-md:my-24">
             <Divider />
           </div>
 
+          {/* Sobre mim */}
           <section
             id="sobre"
-            className="scroll-mt-32 bg-[#1c1c1c] 	font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
+            className="scroll-mt-32 bg-[#1c1c1c] font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
           >
+            <h2 className="about-reveal scroll-reveal mb-10 font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6] max-md:mb-8 max-md:text-4xl">
+              Sobre mim
+            </h2>
+
             <AboutContent
               portraitRef={aboutPortraitRef}
               onPortraitPointerMove={moveAboutPortrait}

@@ -69,6 +69,14 @@ export default function Header({
     }, 0)
   }
 
+  // Deixa a navegação para Sobre mim sob responsabilidade do componente pai,
+  // sem executar uma segunda rolagem após a troca de conteúdo.
+  const handleShowAbout = () => {
+    setOpenMenu(null)
+    closeMobileMenu()
+    onShowAbout()
+  }
+
   const toggleDesktopMenu = (menu: MenuName) => {
     setOpenMenu((current) => (current === menu ? null : menu))
   }
@@ -195,10 +203,7 @@ export default function Header({
           <button
             type="button"
             className="nav-button"
-            onClick={() => {
-              setOpenMenu(null)
-              onShowAbout()
-            }}
+            onClick={handleShowAbout}
           >
             SOBRE MIM
           </button>
@@ -284,8 +289,8 @@ export default function Header({
           {/* Overlay: fecha o menu ao clicar fora do painel */}
           <div
             className={`fixed inset-0 z-[2147483645] transition-[visibility,opacity] duration-300 md:hidden ${mobileOpen
-              ? "visible opacity-100"
-              : "invisible pointer-events-none opacity-0"
+                ? "visible opacity-100"
+                : "invisible pointer-events-none opacity-0"
               }`}
             aria-hidden={!mobileOpen}
           >
@@ -351,8 +356,8 @@ export default function Header({
 
                   <div
                     className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileSubmenu === "projects"
-                      ? "mt-5 grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
+                        ? "mt-5 grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                       }`}
                   >
                     <div className="overflow-hidden">
@@ -392,7 +397,7 @@ export default function Header({
                   type="button"
                   tabIndex={mobileOpen ? 0 : -1}
                   className="w-full border-b border-[#333333] py-5 text-left transition-colors hover:text-[#faf9f6]"
-                  onClick={() => navigateMobile(onShowAbout)}
+                  onClick={handleShowAbout}
                 >
                   SOBRE MIM
                 </button>
@@ -419,8 +424,8 @@ export default function Header({
 
                   <div
                     className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileSubmenu === "contacts"
-                      ? "mt-5 grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
+                        ? "mt-5 grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                       }`}
                   >
                     <div className="overflow-hidden">
@@ -446,8 +451,8 @@ export default function Header({
                             }
                             onClick={closeMobileMenu}
                             className={`py-4 transition-colors hover:text-[#faf9f6] ${index < contacts.length - 1
-                              ? "border-b border-[#333333]/70"
-                              : ""
+                                ? "border-b border-[#333333]/70"
+                                : ""
                               }`}
                           >
                             {contact.label} ↗
@@ -481,8 +486,8 @@ export default function Header({
 
                     <div
                       className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileSubmenu === "language"
-                        ? "mt-5 grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
+                          ? "mt-5 grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
                         }`}
                     >
                       <div className="overflow-hidden">

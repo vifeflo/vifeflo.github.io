@@ -130,7 +130,7 @@ export default function Movecta({
   return (
     <div
       id="movecta-page"
-      className="min-h-dvh bg-[#1c1c1c] 	font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
+      className="min-h-dvh bg-[#1c1c1c] font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
     >
       <Header
         onGoHome={handleGoHome}
@@ -243,27 +243,35 @@ export default function Movecta({
               e-mails para contato com o operador do terminal.
             </p>
 
-            <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
-              <ProjectImage
-                mobileBleed
-                file="e4225.png"
-                alt="Portal anterior, tela um"
-              />
-              <ProjectImage
-                mobileBleed
-                file="6ac05.png"
-                alt="Portal anterior, tela dois"
-              />
-              <ProjectImage
-                mobileBleed
-                file="6eb7c.png"
-                alt="Portal anterior, tela três"
-              />
-              <ProjectImage
-                mobileBleed
-                file="20509.png"
-                alt="Portal anterior, tela quatro"
-              />
+            <div className="grid grid-cols-2 items-stretch gap-6 max-sm:grid-cols-1">
+              {[
+                {
+                  file: "e4225.png",
+                  alt: "Portal anterior, tela um",
+                },
+                {
+                  file: "6ac05.png",
+                  alt: "Portal anterior, tela dois",
+                },
+                {
+                  file: "6eb7c.png",
+                  alt: "Portal anterior, tela três",
+                },
+                {
+                  file: "20509.png",
+                  alt: "Portal anterior, tela quatro",
+                },
+              ].map((image) => (
+                <div
+                  key={image.file}
+                  className="relative aspect-[4/3] w-full min-w-0 overflow-hidden [&>*]:!absolute [&>*]:!inset-0 [&>*]:!m-0 [&>*]:!h-full [&>*]:!w-full [&_img]:!h-full [&_img]:!w-full [&_img]:!max-w-none [&_img]:!object-cover [&_img]:!object-left"
+                >
+                  <ProjectImage
+                    file={image.file}
+                    alt={image.alt}
+                  />
+                </div>
+              ))}
             </div>
 
             <blockquote className="border-l border-[#ababab] pl-3 font-medium text-[#ababab]">
@@ -676,7 +684,6 @@ export default function Movecta({
         </div>
 
         <Footer id="movecta-contatos" />
-
       </main>
     </div>
   )

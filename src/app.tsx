@@ -132,17 +132,17 @@ export default function App() {
         })
     }
 
+    // Usa o mesmo comportamento de rolagem do Navbar para alinhar a seção.
     const showAbout = () => {
         setPageView("portfolio")
         setContentView("about")
 
         window.requestAnimationFrame(() => {
             window.requestAnimationFrame(() => {
-                const target = document.getElementById("sobre")
-
-                if (target) {
-                    scrollToTarget(target, -120)
-                }
+                document.getElementById("sobre")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                })
             })
         })
     }
