@@ -1162,7 +1162,7 @@ export default function BasicUIKitProject({
           footerVisible={footerVisible}
         />
 
-        <div className="col-start-4 col-end-12 row-start-1 flex min-w-0 flex-col gap-20 pb-20 max-md:col-start-2 max-md:gap-12 max-md:pb-12">
+        <div className="col-start-4 col-end-12 row-start-1 flex min-w-0 flex-col gap-20 pb-20 max-md:col-start-2">
           <section
             id="basic-ui-kit-inicio"
             className="scroll-mt-32 flex flex-col gap-6"

@@ -292,9 +292,9 @@ function AboutContent({
       {/* Apresentação */}
       <section
         id="apresentacao"
-        className="scroll-mt-32 grid grid-cols-8 gap-6 max-md:flex max-md:flex-col-reverse"
+        className="scroll-mt-32 grid grid-cols-[minmax(0,1fr)_300px] gap-10 max-xl:flex max-xl:flex-col-reverse"
       >
-        <div className="col-span-5 flex flex-col gap-6">
+        <div className="min-w-0 flex flex-col gap-6">
           <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[56px] leading-none text-[#faf9f6] max-md:text-5xl">
             Vinicius Florencio
           </h2>
@@ -411,7 +411,7 @@ function AboutContent({
           </div>
         </div>
 
-        <div className="col-span-3 flex justify-end max-md:justify-center">
+        <div className="flex justify-end max-xl:justify-center">
           <div className="size-[300px] shrink-0 max-md:size-[min(220px,58vw)]">
             <div
               ref={portraitRef}
