@@ -1231,7 +1231,7 @@ export default function BasicUIKitProject({
 
               <div className="w-full min-w-0">
                 <ProjectImage
-                  file="..assets/figma-variables.png"
+                  file="../assets/figma-variables.png"
                   alt="Variáveis e design tokens no Figma"
                   className="!w-auto max-w-full object-contain shadow-none"
                 />
