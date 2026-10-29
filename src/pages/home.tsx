@@ -867,7 +867,7 @@ export default function Home({
     <div className="bg-[#1c1c1c] text-[#c4c4c4]">
       <main
         ref={heroSectionRef}
-        className="page-grid relative min-h-dvh content-center overflow-hidden bg-[#1c1c1c] py-10 text-[#c4c4c4] max-md:overflow-y-auto"
+        className="page-grid relative min-h-dvh content-center overflow-hidden bg-[#1c1c1c] py-10 text-[#c4c4c4]"
         onPointerMove={movePortrait}
         onPointerLeave={resetPortrait}
       >
@@ -931,7 +931,7 @@ export default function Home({
             </div>
           </div>
 
-          <div className="absolute top-[calc(100%+120px)] left-1/2 -translate-x-1/2 max-md:top-[calc(100%+88px)]">
+          <div className="absolute top-[calc(100%+120px)] left-1/2 -translate-x-1/2 max-md:top-[calc(100%+32px)]">
             <button
               type="button"
               onClick={() => {
