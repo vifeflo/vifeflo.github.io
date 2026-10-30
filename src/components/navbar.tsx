@@ -19,6 +19,7 @@ type ScrollMetrics = {
   startOffset: number
   progress: number
   visible: boolean
+  mobileTrackVisible: boolean
 }
 
 const clamp = (value: number, min: number, max: number) =>
@@ -38,8 +39,7 @@ export default function Navbar({
   const homeCardsVisibleRef = useRef(false)
   const draggingTrackRef = useRef<HTMLDivElement | null>(null)
 
-  // Na Home, a navbar e o indicador seguem os cards de projeto:
-  // aparecem quando pelo menos um card tem .is-visible e somem após o último sair.
+  // Na Home, a navbar e o indicador acompanham a visibilidade dos cards.
   const isHome =
     sections.some((section) => section.id === "projetos") &&
     sections.some((section) => section.id === "sobre")
@@ -66,15 +66,22 @@ export default function Navbar({
     let startOffset = 0
 
     if (isHome) {
-      // O progresso chega ao topo exatamente no início de Projetos.
       const projectsSection = document.getElementById(
         firstSectionId ?? "projetos",
       )
 
       if (projectsSection) {
+        const projectsTop =
+          projectsSection.getBoundingClientRect().top + window.scrollY
+
+        const isMobile = window.matchMedia("(max-width: 767px)").matches
+
+        // O progresso começa quando Projetos alcança o top-24 da barra mobile.
+        const mobileAlignmentOffset = isMobile ? 96 : 0
+
         startOffset = Math.max(
           0,
-          projectsSection.getBoundingClientRect().top + window.scrollY,
+          projectsTop - mobileAlignmentOffset,
         )
       }
     }
@@ -88,27 +95,35 @@ export default function Navbar({
         ? clamp((window.scrollY - startOffset) / scrollRange, 0, 1)
         : 0
 
-    // O conteúdo de Sobre Mim substitui os cards na Home.
-    // Nesse caso a navbar deve continuar visível.
+    // A seção Sobre Mim também mantém a navegação visível quando está na viewport.
     const aboutView = isHome
       ? document.getElementById("sobre")
       : null
 
+    const aboutViewRect = aboutView?.getBoundingClientRect()
+
     const aboutViewIsActive = Boolean(
       aboutView &&
       !aboutView.classList.contains("hidden") &&
-      window.getComputedStyle(aboutView).display !== "none",
+      window.getComputedStyle(aboutView).display !== "none" &&
+      aboutViewRect &&
+      aboutViewRect.bottom > 0 &&
+      aboutViewRect.top < window.innerHeight,
     )
+
+    // Uma única condição controla a navegação desktop e o indicador mobile.
+    const shouldShowNavigation =
+      !isHome ||
+      homeCardsVisibleRef.current ||
+      aboutViewIsActive ||
+      footerVisible
 
     return {
       maxScroll,
       startOffset,
       progress,
-      visible:
-        !isHome ||
-        homeCardsVisibleRef.current ||
-        aboutViewIsActive ||
-        footerVisible,
+      visible: shouldShowNavigation,
+      mobileTrackVisible: shouldShowNavigation,
     }
   }
 
@@ -142,7 +157,10 @@ export default function Navbar({
       : Math.max(...allDelays, 0)
   }
 
-  const updateTrack = (track: HTMLDivElement | null) => {
+  const updateTrack = (
+    track: HTMLDivElement | null,
+    isVisible?: boolean,
+  ) => {
     if (!track) return
 
     const thumb = track.querySelector<HTMLDivElement>(
@@ -152,18 +170,18 @@ export default function Navbar({
     if (!thumb) return
 
     const metrics = getScrollMetrics()
-    const revealDelay = getRevealDelay(metrics.visible)
+    const shouldShow = isVisible ?? metrics.visible
+    const revealDelay = getRevealDelay(shouldShow)
 
-    // Mantém a trilha montada para executar o fade-out.
     track.style.visibility = "visible"
-    track.style.opacity = metrics.visible ? "1" : "0"
-    track.style.pointerEvents = metrics.visible ? "auto" : "none"
+    track.style.opacity = shouldShow ? "1" : "0"
+    track.style.pointerEvents = shouldShow ? "auto" : "none"
     track.style.transitionDelay = `${revealDelay}ms`
-    track.tabIndex = metrics.visible ? 0 : -1
+    track.tabIndex = shouldShow ? 0 : -1
 
     track.setAttribute(
       "aria-hidden",
-      metrics.visible ? "false" : "true",
+      shouldShow ? "false" : "true",
     )
     track.setAttribute(
       "aria-valuenow",
@@ -206,12 +224,13 @@ export default function Navbar({
   const updateAllTracks = () => {
     const metrics = getScrollMetrics()
     const navItems = navItemsRef.current
-    const revealDelay = getRevealDelay(metrics.visible)
 
-    // Links e indicador seguem a mesma visibilidade e temporização.
+    // Cada link aparece e desaparece gradualmente.
     if (navItems) {
-      navItems.style.transitionDelay = `${revealDelay}ms`
-      navItems.style.opacity = metrics.visible ? "1" : "0"
+      const buttons = Array.from(
+        navItems.querySelectorAll<HTMLButtonElement>("button"),
+      )
+
       navItems.style.pointerEvents = metrics.visible ? "auto" : "none"
 
       navItems.setAttribute(
@@ -219,15 +238,24 @@ export default function Navbar({
         metrics.visible ? "false" : "true",
       )
 
-      navItems
-        .querySelectorAll<HTMLButtonElement>("button")
-        .forEach((button) => {
-          button.tabIndex = metrics.visible ? 0 : -1
-        })
+      buttons.forEach((button, index) => {
+        const delay = metrics.visible
+          ? index * 75
+          : (buttons.length - index - 1) * 45
+
+        button.style.transitionDelay = `${delay}ms`
+        button.style.opacity = metrics.visible ? "1" : "0"
+        button.style.transform = metrics.visible
+          ? "translateY(0)"
+          : "translateY(8px)"
+
+        button.tabIndex = metrics.visible ? 0 : -1
+      })
     }
 
-    updateTrack(desktopTrackRef.current)
-    updateTrack(mobileTrackRef.current)
+    // Desktop e mobile recebem a mesma condição de visibilidade.
+    updateTrack(desktopTrackRef.current, metrics.visible)
+    updateTrack(mobileTrackRef.current, metrics.mobileTrackVisible)
   }
 
   const scrollToProgress = (progress: number) => {
@@ -420,8 +448,7 @@ export default function Navbar({
     }
   }, [isHome, firstSectionId, footerVisible])
 
-  // Fecha apenas o painel mobile ao chegar ao footer.
-  // A navbar e o indicador de progresso continuam visíveis.
+  // Fecha o painel mobile ao chegar ao footer.
   useEffect(() => {
     if (footerVisible) {
       setMobileNavOpen(false)
@@ -478,6 +505,8 @@ export default function Navbar({
     onKeyDown: handleTrackKeyDown,
   }
 
+  const shouldShowMobileButton = mobileButtonVisible && !footerVisible
+
   return (
     <>
       {/* O indicador personalizado substitui a barra nativa da página. */}
@@ -493,20 +522,17 @@ export default function Navbar({
           height: 0;
         }
 
-        @keyframes navbarFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        .navbar-fade-in {
+        .navbar-link {
           opacity: 0;
-          animation: navbarFadeIn 450ms ease-out forwards;
+          transform: translateY(8px);
+          transition:
+            opacity 450ms ease,
+            transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .navbar-fade-in {
-            animation: none;
-            opacity: 1;
+          .navbar-link {
+            transition: none;
           }
         }
       `}</style>
@@ -519,9 +545,9 @@ export default function Navbar({
         <div
           ref={navItemsRef}
           aria-hidden="false"
-          className="flex flex-col items-end gap-3 transition-opacity duration-[680ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="flex flex-col items-end gap-3"
         >
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <button
               key={section.id}
               type="button"
@@ -530,11 +556,14 @@ export default function Navbar({
                   ? "location"
                   : undefined
               }
-              tabIndex={0}
-              style={{ animationDelay: `${index * 45}ms` }}
-              className={`navbar-fade-in shrink-0 text-right transition-colors hover:text-[#faf9f6] ${activeSection === section.id
-                  ? "text-[#faf9f6]"
-                  : "text-[#ababab]"
+              tabIndex={-1}
+              style={{
+                opacity: 0,
+                transform: "translateY(8px)",
+              }}
+              className={`navbar-link shrink-0 text-right transition-colors hover:text-[#faf9f6] ${activeSection === section.id
+                ? "text-[#faf9f6]"
+                : "text-[#ababab]"
                 }`}
               onClick={() => onNavigate(section.id)}
             >
@@ -566,7 +595,7 @@ export default function Navbar({
         </div>
       </aside>
 
-      {/* Indicador mobile à esquerda, clicável e arrastável. */}
+      {/* Indicador mobile alinhado à seção Projetos, com comportamento sticky. */}
       <div
         ref={mobileTrackRef}
         role="scrollbar"
@@ -577,7 +606,7 @@ export default function Navbar({
         aria-valuenow={0}
         aria-valuetext="0% da página"
         tabIndex={0}
-        className="fixed bottom-20 left-1 top-24 z-40 w-4 cursor-pointer touch-none select-none opacity-0 outline-none transition-opacity duration-[680ms] ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-1 focus-visible:ring-[#ababab]/60 md:hidden"
+        className="sticky top-24 z-40 col-start-1 col-end-2 row-start-1 row-end-3 h-[calc(100dvh-11rem)] w-4 justify-self-center self-start cursor-pointer touch-none select-none opacity-0 outline-none transition-opacity duration-[680ms] ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-1 focus-visible:ring-[#ababab]/60 md:hidden"
         {...scrollTrackHandlers}
       >
         <div className="pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-[#ababab]/20" />
@@ -597,8 +626,8 @@ export default function Navbar({
           aria-modal={mobileNavOpen}
           aria-hidden={!mobileNavOpen}
           className={`fixed inset-0 z-[2147483647] transition-[visibility] duration-300 md:hidden ${mobileNavOpen
-              ? "visible"
-              : "invisible pointer-events-none"
+            ? "visible"
+            : "invisible pointer-events-none"
             }`}
         >
           {/* Fundo escurecido: clicar fora fecha o painel. */}
@@ -615,8 +644,8 @@ export default function Navbar({
           <nav
             aria-label="Seções da página"
             className={`absolute inset-y-0 left-0 z-10 flex h-dvh w-[80vw] flex-col overflow-y-auto bg-[#1c1c1c] px-6 pt-6 pb-12 text-[#ababab] shadow-[8px_0_32px_rgba(0,0,0,0.2)] [scrollbar-width:thin] [scrollbar-color:#666666_#1c1c1c] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-[#1c1c1c] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#666666] transition-[transform,opacity] duration-300 ease-in-out ${mobileNavOpen
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0"
+              ? "translate-x-0 opacity-100"
+              : "-translate-x-full opacity-0"
               }`}
           >
             {/* Cabeçalho */}
@@ -684,11 +713,13 @@ export default function Navbar({
         aria-expanded={mobileNavOpen}
         aria-controls="project-mobile-navigation"
         aria-label="Abrir navegação"
-        tabIndex={mobileNavOpen ? -1 : 0}
+        aria-hidden={!shouldShowMobileButton}
+        tabIndex={shouldShowMobileButton && !mobileNavOpen ? 0 : -1}
         style={{
-          transform: !mobileButtonVisible
+          transform: !shouldShowMobileButton
             ? "translate(-50%, calc(100% + 24px))"
             : "translate(-50%, 0)",
+          pointerEvents: shouldShowMobileButton ? "auto" : "none",
           transition:
             "transform 500ms ease-in-out, color 200ms ease-in-out",
         }}

@@ -1,12 +1,12 @@
 import { Fragment, useLayoutEffect, useState } from "react"
 import ArrowLink from "../components/arrowLink"
+import AnimatedNumber from "../components/animatedNumber"
 import Divider from "../components/divider"
 import DashedDivider from "../components/dashedDivider"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import Navbar from "../components/navbar"
 import ProjectImage from "../components/projectImage"
-import StatGrid from "../components/statGrid"
 
 const sectionNav = [
   ["basic-ui-kit-inicio", "INÍCIO"],
@@ -1195,7 +1195,17 @@ export default function BasicUIKitProject({
               premissa em cada componente.
             </p>
 
-            <StatGrid items={statItems} />
+            <div className="grid grid-cols-4 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1">
+              {statItems.map(([value, label]) => (
+                <div key={value}>
+                  <p className="text-xl font-medium text-[#faf9f6]">
+                    <AnimatedNumber value={value} />
+                  </p>
+
+                  <p className="leading-[27px]">{label}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <Divider />

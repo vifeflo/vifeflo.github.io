@@ -1,3 +1,4 @@
+
 import {
   Fragment,
   useEffect,
@@ -292,7 +293,7 @@ function AboutContent({
       {/* Apresentação */}
       <section
         id="apresentacao"
-        className="scroll-mt-32 grid grid-cols-[minmax(0,1fr)_300px] gap-10 max-xl:flex max-xl:flex-col-reverse"
+        className="scroll-mt-32 max-md:scroll-mt-24 grid grid-cols-[minmax(0,1fr)_300px] gap-10 max-xl:flex max-xl:flex-col-reverse"
       >
         <div className="min-w-0 flex flex-col gap-6">
           <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[56px] leading-none text-[#faf9f6] max-md:text-5xl">
@@ -389,13 +390,12 @@ function AboutContent({
                 contribuí para uma cultura de design centrada no usuário dentro
                 do time.
               </li>
-            </ul>
 
-            <p className="about-reveal scroll-reveal">
-              Atuo como{" "}
-              <span className="font-medium">UX Designer Voluntário</span> em
-              uma ONG de desenvolvimento socioemocional.
-            </p>
+              <li className="about-reveal scroll-reveal">
+                Atuo como <span className="font-medium">UX Designer Voluntário</span> em
+                uma ONG de desenvolvimento socioemocional.
+              </li>
+            </ul>
 
             <p className="about-reveal scroll-reveal">
               Acredito que design de produto vai além da estética: é sobre
@@ -434,7 +434,7 @@ function AboutContent({
       {/* Competências, ferramentas e idiomas */}
       <section
         id="competencias"
-        className="scroll-mt-32 flex flex-col gap-10"
+        className="scroll-mt-32 max-md:scroll-mt-24 flex flex-col gap-10"
       >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Competências
@@ -581,7 +581,7 @@ function AboutContent({
       {/* Experiência */}
       <section
         id="experiencia"
-        className="scroll-mt-32 flex flex-col gap-10"
+        className="scroll-mt-32 max-md:scroll-mt-24 flex flex-col gap-10"
       >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Experiência
@@ -635,7 +635,7 @@ function AboutContent({
       {/* Educação */}
       <section
         id="educacao"
-        className="scroll-mt-32 flex flex-col gap-10"
+        className="scroll-mt-32 max-md:scroll-mt-24 flex flex-col gap-10"
       >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Educação
@@ -667,7 +667,7 @@ function AboutContent({
       {/* Certificações */}
       <section
         id="certificacoes"
-        className="scroll-mt-32 flex flex-col gap-6"
+        className="scroll-mt-32 max-md:scroll-mt-24 flex flex-col gap-6"
       >
         <h2 className="about-reveal scroll-reveal font-['Instrument_Serif'] text-[32px] text-[#faf9f6]">
           Certificações
@@ -837,15 +837,38 @@ export default function Home({
 
       const marker = window.innerHeight * 0.35
 
-      const visibleSections = homeSections
-        .map((section) => document.getElementById(section.id))
-        .filter((element): element is HTMLElement => element !== null)
-        .filter((element) => {
-          if (element.classList.contains("hidden")) return false
+      // Cada item é avaliado pelo seu próprio intervalo visível.
+      // SOBRE MIM considera apenas a apresentação, não o conteúdo inteiro
+      // de competências, experiência, educação e certificações.
+      const visibleSections = homeSections.filter((section) => {
+        const element = document.getElementById(section.id)
 
+        if (!element || element.classList.contains("hidden")) {
+          return false
+        }
+
+        let top: number
+        let bottom: number
+
+        if (section.id === "sobre") {
+          const presentation = document.getElementById("apresentacao")
+
+          if (!presentation) return false
+
+          const sectionRect = element.getBoundingClientRect()
+          const presentationRect = presentation.getBoundingClientRect()
+
+          top = sectionRect.top
+          bottom = presentationRect.bottom
+        } else {
           const rect = element.getBoundingClientRect()
-          return rect.top <= marker && rect.bottom > marker
-        })
+
+          top = rect.top
+          bottom = rect.bottom
+        }
+
+        return top <= marker && bottom > marker
+      })
 
       if (visibleSections.length > 0) {
         setActiveSection(visibleSections[visibleSections.length - 1].id)
@@ -1057,7 +1080,10 @@ export default function Home({
 
         <div className="relative col-start-4 col-end-12 row-start-1 max-md:col-start-2">
           {/* Projetos */}
-          <section id="projetos" className="scroll-mt-32">
+          <section
+            id="projetos"
+            className="scroll-mt-32 max-md:scroll-mt-24"
+          >
             <h2 className="about-reveal scroll-reveal mb-10 font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6] max-md:mb-8 max-md:text-4xl">
               Projetos
             </h2>
@@ -1088,7 +1114,7 @@ export default function Home({
           {/* Sobre mim */}
           <section
             id="sobre"
-            className="scroll-mt-32 bg-[#1c1c1c] font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
+            className="scroll-mt-32 max-md:scroll-mt-24 bg-[#1c1c1c] font-['Satoshi_Variable'] font-normal text-[#c4c4c4]"
           >
             <h2 className="about-reveal scroll-reveal mb-10 font-['Instrument_Serif'] text-[32px] leading-none text-[#faf9f6] max-md:mb-8 max-md:text-4xl">
               Sobre mim
