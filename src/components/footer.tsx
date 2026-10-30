@@ -31,7 +31,7 @@ export default function Footer({
   const copyrightRef = useRef<HTMLDivElement>(null)
   const [copyrightVisible, setCopyrightVisible] = useState(false)
 
-  // Controla o fade-in e fade-out do copyright independentemente do Home.
+  // Controla o fade-in e fade-out do copyright em desktop e mobile.
   useEffect(() => {
     const element = copyrightRef.current
 
@@ -42,8 +42,8 @@ export default function Footer({
         setCopyrightVisible(entry.isIntersecting)
       },
       {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10% 0px",
+        threshold: 0,
+        rootMargin: "0px",
       },
     )
 
@@ -102,7 +102,7 @@ export default function Footer({
             </div>
           ))}
 
-          {/* Copyright com observação e animação independentes. */}
+          {/* Copyright com fade-in e fade-out independentes. */}
           <div
             ref={copyrightRef}
             className="footer-copyright relative z-10 mt-14 block w-full font-['Instrument_Serif'] text-base text-[#faf9f6] max-md:mt-10"
